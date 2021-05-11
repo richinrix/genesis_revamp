@@ -1,16 +1,20 @@
-import logo from "./logo.svg";
+import React from "react";
+
 import "./App.css";
+import Section from "./Components/Section/Section";
+import SmoothScroll from "./Components/SmoothScroll/SmoothScroll";
 
 function App() {
   return (
-    <div class="p-6 max-w-sm mx-auto bg-dark rounded-xl shadow-md flex items-center space-x-4">
-      <div>
-        <div class="text-xxl font-bold text-black">Genesis Design</div>
-        <p class="text-yellow-500 font-bold">
-          Website Under Development <br /> Please wait :0
-        </p>
-      </div>
-    </div>
+    <SmoothScroll>
+      <h2>Smooth Scrolling</h2>
+      <Section flexDirection="row" />
+      <Section flexDirection="row-reverse" />
+      <Section flexDirection="row" />
+      <Section flexDirection="row-reverse" />
+      <Section flexDirection="row" />
+      <Section flexDirection="row-reverse" />
+    </SmoothScroll>
   );
 }
 
