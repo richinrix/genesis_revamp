@@ -1,0 +1,27 @@
+.imageflip_c {
+  position: absolute;
+  cursor: pointer;
+  will-change: transform, opacity;
+  height: 350px;
+  width: 150px;
+}
+
+.imageflip_front,
+.imageflip_back {
+  background-size: cover;
+}
+.imageflip_wrapper {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+.imageflip_container {
+  height: 350px;
+  width: 150px;
+}
+@media (max-width: 376px) {
+  .imageflip_container .imageflip_c {
+    height: 300px;
+    width: 150px;
+  }
+}

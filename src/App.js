@@ -1,20 +1,15 @@
 import React from "react";
 
 import "./App.css";
-import Section from "./Components/Section/Section";
-import SmoothScroll from "./Components/SmoothScroll/SmoothScroll";
+// import SmoothScroll from "./Components/Essentials/SmoothScroll";
+//components
+import FlipContainer from "./Components/FlipContainer";
 
 function App() {
   return (
-    <SmoothScroll>
-      <h2>Smooth Scrolling</h2>
-      <Section flexDirection="row" />
-      <Section flexDirection="row-reverse" />
-      <Section flexDirection="row" />
-      <Section flexDirection="row-reverse" />
-      <Section flexDirection="row" />
-      <Section flexDirection="row-reverse" />
-    </SmoothScroll>
+    <>
+      <FlipContainer />
+    </>
   );
 }
 
