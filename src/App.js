@@ -1,14 +1,17 @@
 import React from "react";
 
 import "./App.css";
-// import SmoothScroll from "./Components/Essentials/SmoothScroll";
 //components
+import Navbar from "./Components/Navbar";
+import Sidebar from "./Components/Sidebar";
 import FlipContainer from "./Components/FlipContainer";
 
 function App() {
   return (
     <>
-      <FlipContainer />
+      <Navbar />
+      <Sidebar />
+      {/* <FlipContainer /> */}
     </>
   );
 }

@@ -1,0 +1,109 @@
+/* Yellow Hex: ffd805 */
+
+@media (max-width: 767px) {
+  .navicon {
+    width: 1.125em;
+    height: 0.125em;
+  }
+
+  .navLogoText {
+    text-align: center;
+  }
+
+  .navicon::before,
+  .navicon::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-out;
+    content: "";
+    background: #3d4852;
+  }
+
+  .navicon::before {
+    top: 5px;
+  }
+
+  .navicon::after {
+    top: -5px;
+  }
+
+  .menu-btn:not(:checked) ~ .menu {
+    display: none;
+  }
+
+  .menu-btn:checked ~ .menu {
+    display: block;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon::before {
+    transform: rotate(-45deg);
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon::after {
+    transform: rotate(45deg);
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon::before,
+  .menu-btn:checked ~ .menu-icon .navicon::after {
+    top: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #navList {
+    box-sizing: border-box;
+    transition: all 0.35s ease;
+  }
+  #navList li {
+    display: inline-block;
+    padding: 0;
+    margin: 0.5em 1em;
+  }
+  #navList a {
+    padding: 0.5em 0.8em;
+    color: black;
+    position: relative;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  #navList a::before,
+  #navList a::after {
+    content: "";
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    transition: all 0.35s ease;
+    opacity: 0;
+  }
+  #navList a::before {
+    content: "";
+    right: 0;
+    top: 0;
+    border-top: 3px solid #ffd805;
+    border-right: 3px solid #e0c10e;
+    transform: translate(-100%, 50%);
+  }
+  #navList a:after {
+    content: "";
+    left: 0;
+    bottom: 0;
+    border-bottom: 3px solid #e0c10e;
+    border-left: 3px solid #ffd805;
+    transform: translate(100%, -50%);
+  }
+  #navList a:hover:before,
+  #navList a:hover:after {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  #navList a:hover {
+    color: #e6d226;
+  }
+}

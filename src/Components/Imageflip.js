@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, a } from "@react-spring/web";
-// import Flippy, { FrontSide, BackSide } from "react-flippy";
-import "./css/imageflip.css";
+import "./CSS/imageflip.css";
 export default function Imageflip(props) {
   const position = props.position;
   const card = props.card;
