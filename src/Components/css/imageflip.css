@@ -20,8 +20,9 @@
   width: 150px;
 }
 @media (max-width: 376px) {
-  .imageflip_container .imageflip_c {
+  .imageflip_container,
+  .imageflip_c {
     height: 300px;
-    width: 150px;
+    width: 140px;
   }
 }
