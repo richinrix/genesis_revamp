@@ -4,10 +4,10 @@ import IMAGES from "./services/IMAGES";
 export default function Testimonials() {
   const [startCard, setStartCard] = useState(0);
   useEffect(() => {
-    // changing the visible 3 cards evert 10s
-    setInterval(() => {
-      setStartCard((state) => (state + 3) % testimonails.length);
-    }, 6000);
+    // changing the visible 3 cards every 6s
+    // setInterval(() => {
+    //   setStartCard((state) => (state + 3) % testimonails.length);
+    // }, 6000);
   }, []);
 
   // replace with api whn api available
@@ -15,44 +15,43 @@ export default function Testimonials() {
     {
       name: "Bruce Wayne",
       statement:
-        "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
     {
       name: "Bruce Wayne",
       statement:
-        "2 Lorem ipsum dolor s Lorem adipisicing elit. Rem magni, impedit reicit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
+        "Lorem ipsum dolor s Lorem adipisicing elit. Rem magni, impedit reicit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
     {
       name: "Bruce Wayne",
       statement:
-        "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ipsum dolor sit amet consem magni, impedit reic",
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ipsum dolor sit amet consem magni, impedit reic",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
     {
       name: "Bruce Wayne",
       statement:
-        "4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
     {
       name: "Bruce Wayne",
       statement:
-        "4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
     {
       name: "Bruce Wayne",
       statement:
-        "4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
+        "Lorem ipsum dolor s Lorem adipisicing elit. Rem magni, impedit reicit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
   ];
   function card(testimonial, index) {
     // quote image color
     let image, bottomImg;
-
     if (index === 0) {
       image = IMAGES.leftQuoteGreen;
       bottomImg = IMAGES.testimonialBottomGreen;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, a } from "@react-spring/web";
-import "./css/imageflip.css";
+import "./CSS/imageflip.css";
 
 export default function Imageflip(props) {
   const position = props.position;
@@ -19,13 +19,12 @@ export default function Imageflip(props) {
   const flip = () => setFlipped((state) => !state);
 
   useEffect(() => {
+    // trigger this when div on view
+    flipOnView();
+  }, []);
+  let flipOnView = () => {
     setTimeout(flip, 10);
     setTimeout(flip, 400);
-  }, []);
-  let flipStarting = () => {
-    let start = setInterval(flip, 500);
-    let clear = clearInterval(start);
-    setTimeout(clear, 1500);
   };
 
   function imageCard(pos, card, phoneDisplay, phonePos) {
@@ -39,9 +38,7 @@ export default function Imageflip(props) {
     else if (pos === 1) classname += " md:mt-0";
     else if (pos === 2) classname += " md:mt-12";
 
-    // not displaying the image on phone if value sent on calling this component is false
-    // currently the limit is set to 6 , more than 6 imgs don display on phone,
-    // can be changed in FlipContainer.js line:51
+    // hiding card if it exceeds the limit mentioned in flipcontainer
     if (!phoneDisplay) classname += " md:block hidden";
 
     return (
