@@ -5,7 +5,11 @@ const IMAGES = {
   leftQuotePurple: require("../../images/icons/left-quotation-purple.png")
     .default,
   testimonialBottomGreen:
-    require("../../images/icons/testimonial-bottom-color.png").default,
+    require("../../images/icons/testimonial-bottom-green.png").default,
+  testimonialBottomPurple:
+    require("../../images/icons/testimonial-bottom-purple.png").default,
+  testimonialBottomBlue:
+    require("../../images/icons/testimonial-bottom-blue.png").default,
 };
 
 export default IMAGES;

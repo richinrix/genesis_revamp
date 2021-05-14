@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSpring, a } from "@react-spring/web";
+import { useSpring, a, Parallax, ParallaxLayer } from "@react-spring/web";
 import "./CSS/imageflip.css";
 
 export default function Imageflip(props) {
@@ -8,7 +8,7 @@ export default function Imageflip(props) {
   const phoneDisplay = props.phoneDisplay;
   const card = props.card;
   const [flipped, setFlipped] = useState(false);
-
+  const flipDuration = 3000;
   // change mass tension and friction values to change the spinning effects
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
@@ -19,13 +19,9 @@ export default function Imageflip(props) {
   const flip = () => setFlipped((state) => !state);
 
   useEffect(() => {
-    // trigger this when div on view
-    flipOnView();
+    // flipping card evry 3s
+    setInterval(flip, flipDuration);
   }, []);
-  let flipOnView = () => {
-    setTimeout(flip, 10);
-    setTimeout(flip, 400);
-  };
 
   function imageCard(pos, card, phoneDisplay, phonePos) {
     const frontImagePath = card.frontImage;
@@ -38,16 +34,11 @@ export default function Imageflip(props) {
     else if (pos === 1) classname += " md:mt-0";
     else if (pos === 2) classname += " md:mt-12";
 
-    // hiding card if it exceeds the limit mentioned in flipcontainer
+    // hiding card on phone if it exceeds the limit mentioned in flipcontainer
     if (!phoneDisplay) classname += " md:block hidden";
 
     return (
-      <div
-        className={classname}
-        onMouseEnter={flip}
-        onMouseLeave={flip}
-        onClick={flip}
-      >
+      <div offset={0.5} speed={1} className={classname}>
         <a.div
           className="imageflip_c imageflip_back "
           style={{

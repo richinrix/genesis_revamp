@@ -7,7 +7,6 @@
 }
 .imageflip_c {
   position: absolute;
-  cursor: pointer;
   will-change: transform, opacity;
   height: 350px;
   width: 150px;

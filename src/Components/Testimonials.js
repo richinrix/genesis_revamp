@@ -3,13 +3,6 @@ import IMAGES from "./services/IMAGES";
 
 export default function Testimonials() {
   const [startCard, setStartCard] = useState(0);
-  useEffect(() => {
-    // changing the visible 3 cards every 6s
-    // setInterval(() => {
-    //   setStartCard((state) => (state + 3) % testimonails.length);
-    // }, 6000);
-  }, []);
-
   // replace with api whn api available
   const testimonails = [
     {
@@ -49,23 +42,24 @@ export default function Testimonials() {
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
   ];
+
   function card(testimonial, index) {
-    // quote image color
-    let image, bottomImg;
+    // quote color
+    let image, footerImg;
     if (index === 0) {
       image = IMAGES.leftQuoteGreen;
-      bottomImg = IMAGES.testimonialBottomGreen;
+      footerImg = IMAGES.testimonialBottomGreen;
     } else if (index === 1) {
       image = IMAGES.leftQuotePurple;
-      bottomImg = IMAGES.testimonialBottomGreen;
+      footerImg = IMAGES.testimonialBottomPurple;
     } else if (index === 2) {
       image = IMAGES.leftQuoteBlue;
-      bottomImg = IMAGES.testimonialBottomGreen;
+      footerImg = IMAGES.testimonialBottomBlue;
     }
 
     return (
       <div
-        className="relative mx-10 my-3 p-10 text-center flex flex-col justify-between"
+        className="relative mx-10 my-3 p-10 text-center flex flex-col justify-between overflow-hidden"
         style={{
           height: "450px",
           width: "330px",
@@ -83,33 +77,52 @@ export default function Testimonials() {
         <div className="mt-10 leading-snug">{testimonial.statement}</div>
 
         <div
-          id="name"
+          id="name "
           className="  flex flex-col mb-5"
-          style={{ bottom: "30px" }}
+          style={{ bottom: "30px", zIndex: "10" }}
         >
           {/* profile image  */}
           <div
             className="bg-gray-500 mx-auto"
             style={{
               borderRadius: "50%",
-              height: "90px",
-              width: "90px",
-              border: "5px solid white",
+              height: "96px",
+              width: "96px",
+              border: "8px solid white",
               backgroundImage: `url('${testimonial.image}')`,
             }}
           />
-          <h2>{testimonial.name}</h2>
+          <h2 className="text-white">{testimonial.name}</h2>
         </div>
+        <div
+          className="absolute"
+          style={{
+            backgroundImage: `url('${footerImg}')`,
+            backgroundRepeat: "no-repeat",
+            width: "440px",
+            height: "248px",
+            zIndex: "1",
+            bottom: "-80px",
+            left: "-62px",
+          }}
+        ></div>
       </div>
     );
   }
   // displaying the current three cards
-  function currentView(cards) {
+  function currenDesktoptView(cards) {
     return <>{cards.map((testimonial, index) => card(testimonial, index))}</>;
   }
   return (
-    <div className="md:h-screen md:my-2 my-8 flex md:flex-row flex-col justify-center items-center overflow-hidden">
-      {currentView(testimonails.slice(startCard, startCard + 3))}
-    </div>
+    <>
+      {/* phone view */}
+      <div className="md:h-screen md:my-2 my-8 md:hidden flex md:flex-row flex-col justify-center items-center overflow-hidden ">
+        {currenDesktoptView(testimonails.slice(startCard, startCard + 1))}
+      </div>
+      {/* desktop view */}
+      <div className="md:h-screen md:my-2 my-8 md:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden ">
+        {currenDesktoptView(testimonails.slice(startCard, startCard + 3))}
+      </div>
+    </>
   );
 }
