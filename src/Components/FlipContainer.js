@@ -1,7 +1,8 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import React from "react";
-import ImageFlip from "./Imageflip";
-
+import ImageFlip from "./Essentials/Imageflip";
+import Fade from "react-reveal/Fade";
+import FadeIn from "react-fade-in";
 export default function FlipContainer() {
   // replace with api whn api available
   const cards = [
@@ -56,7 +57,7 @@ export default function FlipContainer() {
   ];
   function imageFlip(index, card) {
     // change the limit to change the no. of cards displayed on phone
-    let phoneCardsLimit = 6;
+    let phoneCardsLimit = 4;
     let phoneDisplay = index + 1 > phoneCardsLimit ? false : true;
     return (
       <ImageFlip
@@ -69,20 +70,23 @@ export default function FlipContainer() {
   }
   return (
     <div className="md:h-full flex flex-col mx-auto  mt-5 md:px-10 sm:px-5 py-10 w-11/12 ">
-      <div
-        id="ImageFlip-Text"
-        className="font-plantc text-5xl mb-10  md:ml-0 ml-3 "
-      >
-        <h2 className=" ">We're more than</h2>
-        <h2 className="text-gray-500 md:mt-4 ">just a web agency</h2>
-      </div>
-      <div
-        pages={1}
-        id="image-flip-wrapper"
-        className=" flex flex-wrap md:mt-8 md:ml-2 ml-0 md:justify-start justify-center "
-      >
-        {cards.slice(0, 7).map((card, index) => imageFlip(index, card))}
-      </div>
+      <Fade bottom>
+        <div
+          id="ImageFlip-Text"
+          className="font-plantc text-5xl mb-10  md:ml-0 ml-3 "
+        >
+          <h2 className=" ">We're more than</h2>
+          <h2 className="text-gray-500 md:mt-4 ">just a web agency</h2>
+        </div>
+      </Fade>
+      <Fade bottom cascade>
+        <FadeIn
+          id="image-flip-wrapper"
+          className=" flex flex-wrap md:mt-8 md:ml-3 md:justify-start justify-center md:w-max"
+        >
+          {cards.slice(0, 7).map((card, index) => imageFlip(index, card))}
+        </FadeIn>
+      </Fade>
     </div>
   );
 }

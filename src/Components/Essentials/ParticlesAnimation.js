@@ -1,6 +1,6 @@
 import React from "react";
 import Particles from "react-tsparticles";
-import "./CSS/animation.css";
+import "../CSS/animation.css";
 export default function ParticlesAnimation() {
   return (
     <div className=" flex justify-center ">
@@ -41,7 +41,7 @@ export default function ParticlesAnimation() {
                 distance: 400,
               },
               push: {
-                quantity: 8,
+                quantity: 1,
               },
               repulse: {
                 distance: 150,
@@ -80,7 +80,7 @@ export default function ParticlesAnimation() {
               density: {
                 enable: true,
               },
-              value: 170,
+              value: 60,
             },
             opacity: {
               random: {
@@ -92,7 +92,7 @@ export default function ParticlesAnimation() {
               },
               animation: {
                 enable: true,
-                speed: 3,
+                speed: 1,
                 minimumValue: 0.1,
               },
             },
@@ -106,7 +106,7 @@ export default function ParticlesAnimation() {
               },
               animation: {
                 enable: true,
-                speed: 20,
+                speed: 10,
                 minimumValue: 0.1,
               },
             },

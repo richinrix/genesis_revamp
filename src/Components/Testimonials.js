@@ -1,50 +1,58 @@
 import React, { useState, useEffect } from "react";
 import IMAGES from "./services/IMAGES";
-
+// import "./CSS/imageflip.css";
 export default function Testimonials() {
   const [startCard, setStartCard] = useState(0);
   // replace with api whn api available
   const testimonails = [
     {
+      index: 1,
       name: "Bruce Wayne",
       statement:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
     {
+      index: 2,
       name: "Bruce Wayne",
       statement:
         "Lorem ipsum dolor s Lorem adipisicing elit. Rem magni, impedit reicit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
     {
+      index: 3,
       name: "Bruce Wayne",
       statement:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ipsum dolor sit amet consem magni, impedit reic",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
     {
+      index: 4,
       name: "Bruce Wayne",
       statement:
         " Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
     {
+      index: 5,
       name: "Bruce Wayne",
       statement:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
     {
+      index: 6,
       name: "Bruce Wayne",
       statement:
         "Lorem ipsum dolor s Lorem adipisicing elit. Rem magni, impedit reicit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
       image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
     },
   ];
-
+  // renders each testimonial card
   function card(testimonial, index) {
-    // quote color
+    // quote and footer color
+    let className =
+      "relative mx-10 my-3 p-10 text-center flex flex-col justify-between overflow-hidden";
     let image, footerImg;
     if (index === 0) {
       image = IMAGES.leftQuoteGreen;
@@ -56,14 +64,18 @@ export default function Testimonials() {
       image = IMAGES.leftQuoteBlue;
       footerImg = IMAGES.testimonialBottomBlue;
     }
-
+    className = testimonial.index < 4 ? className + " active" : className + "";
     return (
       <div
-        className="relative mx-10 my-3 p-10 text-center flex flex-col justify-between overflow-hidden"
+        id="testimonial-card"
+        className={className}
+        animationIn={"bounceInRight"}
+        animationOut={"bounceOutLeft"}
+        animationInDelay={"1s"}
+        isVisible={true}
         style={{
           height: "450px",
           width: "330px",
-          boxShadow: "10px 10px 10px #00000029",
         }}
       >
         <img

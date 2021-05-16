@@ -1,13 +1,17 @@
 import "./CSS/navbar.css";
-
+import logo from "../images/icons/logo.png";
 function Navbar() {
   return (
     <div class="navContainer">
       <nav class="nav flex flex-wrap items-center justify-between px-9">
         <div class="navLogoText flex items-center py-3 text-grey-lightest">
           <span class="font-bold text-xl self-center">
-            GENESIS <br />
-            MEDIA
+            <img
+              src={logo}
+              alt=""
+              srcset=""
+              style={{ height: "60px", width: "150px" }}
+            />
           </span>
         </div>
 

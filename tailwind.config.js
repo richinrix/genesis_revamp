@@ -174,7 +174,7 @@ module.exports = {
       DEFAULT: "1",
     },
     fontFamily: {
-      custom: ["plantcherokee", "font-indie-flower"],
+      custom: ["plantcherokee", "font-orbitron"],
       raleways: [
         "Raleway",
         "sans-serif",

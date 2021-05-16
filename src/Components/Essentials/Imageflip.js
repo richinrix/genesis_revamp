@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, a, Parallax, ParallaxLayer } from "@react-spring/web";
-import "./CSS/imageflip.css";
-
+import "../CSS/imageflip.css";
 export default function Imageflip(props) {
   const position = props.position;
   const phonePosition = props.phonePosition;
@@ -36,9 +35,8 @@ export default function Imageflip(props) {
 
     // hiding card on phone if it exceeds the limit mentioned in flipcontainer
     if (!phoneDisplay) classname += " md:block hidden";
-
     return (
-      <div offset={0.5} speed={1} className={classname}>
+      <div className={classname}>
         <a.div
           className="imageflip_c imageflip_back "
           style={{
