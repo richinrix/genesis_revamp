@@ -23,7 +23,7 @@ export default function Testimonials() {
       res.json().then((info) => setTestimonials(info))
     );
   };
-  // const testimonails =
+
   // renders each testimonial card
   function card(testimonial, index) {
     // quote and footer color
