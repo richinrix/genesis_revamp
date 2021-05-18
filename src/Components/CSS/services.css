@@ -1,0 +1,22 @@
+#yellowRectangle {
+  width: 280px;
+  height: 450px;
+}
+#servicesImage {
+  /* width: 570px; */
+  width: 95%;
+  height: 340px;
+}
+@media (max-width: 428px) {
+  #yellowRectangle {
+    width: 140px;
+    height: 355px;
+  }
+  #servicesImage {
+    width: 90%;
+    height: 280px;
+  }
+}
+.font-helvetica {
+  font-family: Arial, Helvetica, sans-serif;
+}

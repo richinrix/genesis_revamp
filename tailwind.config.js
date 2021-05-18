@@ -174,7 +174,8 @@ module.exports = {
       DEFAULT: "1",
     },
     fontFamily: {
-      custom: ["plantcherokee", "font-orbitron"],
+      plantc: "plantcherokee",
+      orbitron: "orbitron",
       raleways: [
         "Raleway",
         "sans-serif",

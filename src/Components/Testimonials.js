@@ -1,53 +1,29 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+// services
 import IMAGES from "./services/IMAGES";
+import API from "./services/API";
+// carousel
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 // import "./CSS/imageflip.css";
+
 export default function Testimonials() {
   const [startCard, setStartCard] = useState(0);
-  // replace with api whn api available
-  const testimonails = [
-    {
-      index: 1,
-      name: "Bruce Wayne",
-      statement:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
-      image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
-    },
-    {
-      index: 2,
-      name: "Bruce Wayne",
-      statement:
-        "Lorem ipsum dolor s Lorem adipisicing elit. Rem magni, impedit reicit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
-      image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
-    },
-    {
-      index: 3,
-      name: "Bruce Wayne",
-      statement:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ipsum dolor sit amet consem magni, impedit reic",
-      image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
-    },
-    {
-      index: 4,
-      name: "Bruce Wayne",
-      statement:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
-      image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
-    },
-    {
-      index: 5,
-      name: "Bruce Wayne",
-      statement:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
-      image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
-    },
-    {
-      index: 6,
-      name: "Bruce Wayne",
-      statement:
-        "Lorem ipsum dolor s Lorem adipisicing elit. Rem magni, impedit reicit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
-      image: "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
-    },
-  ];
+  const [testimonials, setTestimonials] = useState();
+
+  useEffect(() => {
+    getData();
+  }, []);
+  let getData = async () => {
+    // const { data: info } = await axios.get(API.testimonails);
+    // setTestimonials(info);
+
+    await fetch(API.testimonials).then((res) =>
+      res.json().then((info) => setTestimonials(info))
+    );
+  };
+  // const testimonails =
   // renders each testimonial card
   function card(testimonial, index) {
     // quote and footer color
@@ -128,12 +104,23 @@ export default function Testimonials() {
   return (
     <>
       {/* phone view */}
-      <div className="md:h-screen md:my-2 my-8 md:hidden flex md:flex-row flex-col justify-center items-center overflow-hidden ">
-        {currenDesktoptView(testimonails.slice(startCard, startCard + 1))}
+      <div
+        className="md:h-screen md:my-2 my-8 md:hidden flex md:flex-row flex-col justify-center items-center overflow-hidden "
+        // style={{ background: "#e0e0e0" }}
+      >
+        {testimonials &&
+          testimonials.slice &&
+          currenDesktoptView(testimonials.slice(startCard, startCard + 1))}
       </div>
       {/* desktop view */}
-      <div className="md:h-screen md:my-2 my-8 md:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden ">
-        {currenDesktoptView(testimonails.slice(startCard, startCard + 3))}
+      <div
+        axis="horizontal"
+        className="md:h-screen md:my-2 my-8 md:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden"
+        // style={{ background: "#e0e0e0" }}
+      >
+        {testimonials &&
+          testimonials.slice &&
+          currenDesktoptView(testimonials.slice(startCard, startCard + 3))}
       </div>
     </>
   );

@@ -6,12 +6,7 @@ function Navbar() {
       <nav class="nav flex flex-wrap items-center justify-between px-9">
         <div class="navLogoText flex items-center py-3 text-grey-lightest">
           <span class="font-bold text-xl self-center">
-            <img
-              src={logo}
-              alt=""
-              srcset=""
-              style={{ height: "60px", width: "150px" }}
-            />
+            <img src={logo} alt="" style={{ height: "60px", width: "150px" }} />
           </span>
         </div>
 

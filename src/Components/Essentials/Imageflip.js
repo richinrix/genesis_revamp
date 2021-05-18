@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, a, Parallax, ParallaxLayer } from "@react-spring/web";
 import "../CSS/imageflip.css";
+
 export default function Imageflip(props) {
   const position = props.position;
   const phonePosition = props.phonePosition;
@@ -8,12 +9,14 @@ export default function Imageflip(props) {
   const card = props.card;
   const [flipped, setFlipped] = useState(false);
   const flipDuration = 3000;
+
   // change mass tension and friction values to change the spinning effects
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
-    config: { mass: 5, tension: 500, friction: 70 },
+    config: { mass: 6, tension: 500, friction: 70 },
   });
+
   // flips the image when called
   const flip = () => setFlipped((state) => !state);
 
