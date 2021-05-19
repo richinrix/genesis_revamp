@@ -1,0 +1,11 @@
+/* For mobile displays */
+@media (max-width: 767px) {
+  .teamTitle {
+    font-size: 3em !important;
+  }
+  .teamImage {
+    width: 100% !important;
+    display: flex;
+    padding-top: 100px;
+  }
+}

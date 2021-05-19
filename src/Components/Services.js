@@ -80,7 +80,7 @@ export default function Services() {
   }
   function service(service, index) {
     let imagePos = index % 2 === 0 ? "right" : "left";
-    let classname = "flex  flex-col-reverse mt-5 justify-center h-600";
+    let classname = "flex  flex-col-reverse mt-5 justify-center h-screen";
     if (imagePos === "right") classname += " md:flex-row";
     else classname += " md:flex-row-reverse";
 

@@ -1,0 +1,78 @@
+.contactFlexContainer {
+  display: flex !important;
+  background-color: transparent;
+  height: 100vh;
+  align-items: center !important;
+}
+
+.contactFields input {
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid gray;
+  width: 300px;
+}
+
+.checkItem input {
+  margin-right: 7px;
+}
+
+.btn:active,
+.btn:hover,
+.btn:focus {
+  outline: 0 !important;
+  outline-offset: 0;
+}
+.btn::before,
+.btn::after {
+  position: absolute;
+  content: "";
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  min-width: 50px;
+}
+.btn span {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  transition: 0.3s;
+}
+
+.btn-1::before {
+  background-color: rgb(28, 31, 30);
+  transition: 0.3s ease-out;
+}
+.btn-1 span {
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(28, 31, 30);
+  transition: 0.2s 0.1s;
+}
+.btn-1 span:hover {
+  color: rgb(28, 31, 30);
+  transition: 0.2s 0.1s;
+}
+.btn.hover-filled-opacity::before {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+.btn.hover-filled-opacity:hover::before {
+  opacity: 0;
+}

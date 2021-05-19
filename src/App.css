@@ -8,3 +8,7 @@
 .font-orbitron {
   font-family: "Orbitron", sans-serif;
 }
+
+body {
+  scroll-behavior: smooth;
+}

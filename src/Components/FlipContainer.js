@@ -32,7 +32,7 @@ export default function FlipContainer() {
   }
   return (
     <div className="md:h-screen flex flex-col mx-auto  mt-5 md:px-10 sm:px-5 py-10 w-11/12 ">
-      <div>
+      <Fade bottom>
         <div
           id="ImageFlip-Text"
           className="font-plantc text-5xl mb-10  md:ml-0 ml-3 md:mt-10"
@@ -40,16 +40,16 @@ export default function FlipContainer() {
           <h2 className=" ">We're more than</h2>
           <h2 className="text-gray-500 md:mt-4 ">just a web agency</h2>
         </div>
-      </div>
-      <div>
-        <div
+      </Fade>
+      <Fade bottom cascade>
+        <FadeIn
           id="image-flip-wrapper"
           className=" flex flex-wrap md:mt-8 md:ml-3 md:justify-start justify-center md:w-max"
         >
           {cards &&
             cards.slice(0, 7).map((card, index) => imageFlip(index, card))}
-        </div>
-      </div>
+        </FadeIn>
+      </Fade>
     </div>
   );
 }
