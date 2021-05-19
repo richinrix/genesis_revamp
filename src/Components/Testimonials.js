@@ -62,7 +62,9 @@ export default function Testimonials() {
           alt=""
         />
 
-        <div className="mt-10 leading-snug">{testimonial.statement}</div>
+        <div className="mt-10 leading-snug overflow-hidden">
+          {testimonial.statement}
+        </div>
 
         <div
           id="name "
@@ -105,7 +107,7 @@ export default function Testimonials() {
     <>
       {/* phone view */}
       <div
-        className="md:h-screen md:my-2 my-8 md:hidden flex md:flex-row flex-col justify-center items-center overflow-hidden "
+        className="lg:h-screen mx-auto md:my-2 my-8 lg:hidden flex md:flex-row flex-col justify-center items-center overflow-hidden "
         // style={{ background: "#e0e0e0" }}
       >
         {testimonials &&
@@ -115,7 +117,7 @@ export default function Testimonials() {
       {/* desktop view */}
       <div
         axis="horizontal"
-        className="md:h-screen md:my-2 my-8 md:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden"
+        className="md:h-screen mx-auto md:my-2 my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden"
         // style={{ background: "#e0e0e0" }}
       >
         {testimonials &&

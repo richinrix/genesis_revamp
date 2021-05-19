@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { servicesVersion } from "typescript";
 // image
-import lineImg from "../images/icons/services-line-and-dots.png";
+import linesImg from "../images/icons/services-line-and-dots.png";
+// services
 import API from "./services/API";
 import axios from "axios";
 // css
 import "./CSS/services.css";
+
 export default function Services() {
   const [services, setServices] = useState();
 
@@ -32,6 +33,7 @@ export default function Services() {
     };
     // container class
     let containerClassname = "relative ";
+
     if (floatPos === "right") containerClassname += "md:mr-20";
     else containerClassname += "md:ml-20";
     // image classname
@@ -42,7 +44,10 @@ export default function Services() {
     return (
       <>
         {" "}
-        <div className={containerClassname}>
+        <div
+          className={containerClassname}
+          // style={{ width: "378px", height: "450px" }}
+        >
           {yellowRectangle(floatPos)}
           <div
             id="servicesImage"
@@ -60,19 +65,26 @@ export default function Services() {
       </div>
     );
   }
+  function serviceSteps(step, index) {
+    return (
+      <div>
+        <img src={linesImg} alt="" className="absolute " />
+        <li className=" lg:py-3 py-2 pl-5 font-helvetica " key={index}>
+          {step}
+        </li>
+      </div>
+    );
+  }
   function textSection(desc, steps) {
     return (
-      <div className="flex-col mx-auto md:w-1/2 ">
+      <div className="flex-col mx-auto grid md:w-1/2 ">
         {" "}
-        <div className="w-11/12 mx-auto">{description(desc)}</div>
-        <div className="flex md:ml-4 ml-8 mx-auto  my-10">
-          <img src={lineImg} alt="" />
-          <ul className="ml-4">
-            {steps.map((step, index) => (
-              <li className="py-4 px-3 font-helvetica" key={index}>
-                {step}
-              </li>
-            ))}
+        <div className="w-11/12 mx-auto align-self-center">
+          {description(desc)}
+        </div>
+        <div className="flex md:pl-4 pl-8 my-auto py-5">
+          <ul className="ml-4 my-auto">
+            {steps.map((step, index) => serviceSteps(step, index))}
           </ul>
         </div>
       </div>
@@ -85,16 +97,16 @@ export default function Services() {
     else classname += " md:flex-row-reverse";
 
     return (
-      <div className="md:h-screen  " key={index}>
+      <div className="lg:h-screen  ">
         <div className="mx-auto p-5">
           <div className="mx-auto mb-12 md:mt-10 text-center font-plantc text-5xl">
             <h2>{service.heading}</h2>
           </div>
           <div className={classname}>
-            <div className="md:w-1/2  mt-10">
+            <div className="lg:w-3/6  mt-10">
               {textSection(service.description, service.steps)}
             </div>
-            <div className="md:w-1/2">
+            <div className="md:w-4/6">
               {imageSection(service.image, imagePos)}
             </div>
           </div>
@@ -103,6 +115,8 @@ export default function Services() {
     );
   }
   return (
-    <div>{services && services.map((data, index) => service(data, index))}</div>
+    <div className="mx-auto">
+      {services && services.map((data, index) => service(data, index))}
+    </div>
   );
 }

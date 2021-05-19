@@ -6,6 +6,8 @@ export default function Imageflip(props) {
   const position = props.position;
   const phonePosition = props.phonePosition;
   const phoneDisplay = props.phoneDisplay;
+  const tabDisplay = props.tabDisplay;
+
   const card = props.card;
   const [flipped, setFlipped] = useState(false);
   const flipDuration = 3000;
@@ -25,7 +27,7 @@ export default function Imageflip(props) {
     setInterval(flip, flipDuration);
   }, []);
 
-  function imageCard(pos, card, phoneDisplay, phonePos) {
+  function imageCard(pos, card, phoneDisplay, tabDisplay, phonePos) {
     const frontImagePath = card.frontImage;
     const backImagePath = card.backImage;
     let classname = "imageflip_container text-center md:mx-3 mx-2 ";
@@ -37,7 +39,8 @@ export default function Imageflip(props) {
     else if (pos === 2) classname += " md:mt-12";
 
     // hiding card on phone if it exceeds the limit mentioned in flipcontainer
-    if (!phoneDisplay) classname += " md:block hidden";
+    if (!phoneDisplay) classname += " lg:block md:block hidden";
+    if (!tabDisplay) classname += " md:hidden ";
     return (
       <div className={classname}>
         <a.div
@@ -60,5 +63,7 @@ export default function Imageflip(props) {
       </div>
     );
   }
-  return <>{imageCard(position, card, phoneDisplay, phonePosition)}</>;
+  return (
+    <>{imageCard(position, card, phoneDisplay, tabDisplay, phonePosition)}</>
+  );
 }
