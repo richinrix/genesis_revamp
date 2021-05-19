@@ -5,6 +5,8 @@
 .icon-bar {
   position: fixed;
   top: 75%;
+  z-index: 50;
+  background-color: transparent;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -20,11 +22,11 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  margin-left: 15px;
+  margin-left: 20px;
   margin: 8px;
   transition: all 0.3s ease;
-  color: black;
-  background-color: white;
+  color: grey;
+  background-color: transparent;
   text-decoration: none;
   font-size: 20px;
 }
@@ -34,6 +36,12 @@
   color: black;
   z-index: 1;
   transition: all 0.3s ease;
+  padding: 15px;
+}
+
+.social-icon i:hover {
+  color: black;
+  z-index: 2;
 }
 
 .social-icon:after {

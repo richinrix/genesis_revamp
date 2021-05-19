@@ -63,6 +63,7 @@ module.exports = {
       72: "18rem",
       80: "20rem",
       96: "24rem",
+      108: "108rem",
     },
     animation: {
       none: "none",
@@ -174,8 +175,7 @@ module.exports = {
       DEFAULT: "1",
     },
     fontFamily: {
-      plantc: "plantcherokee",
-      orbitron: "orbitron",
+      custom: ["plantcherokee", "font-orbitron"],
       raleways: [
         "Raleway",
         "sans-serif",

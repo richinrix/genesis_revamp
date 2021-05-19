@@ -23,12 +23,12 @@ export default function Testimonials() {
       res.json().then((info) => setTestimonials(info))
     );
   };
-
+  // const testimonails =
   // renders each testimonial card
   function card(testimonial, index) {
     // quote and footer color
     let className =
-      "relative mx-10 my-3 p-10 text-center flex flex-col justify-between overflow-hidden";
+      "relative mx-10 my-3 p-10 text-center flex h-screen flex-col justify-between overflow-hidden";
     let image, footerImg;
     if (index === 0) {
       image = IMAGES.leftQuoteGreen;

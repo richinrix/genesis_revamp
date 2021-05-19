@@ -12,17 +12,6 @@ export default function ComingSoon() {
       </div>
     );
   }
-  function boxSliding() {
-    return (
-      <div class="boxAnimation-container">
-        <div class="📦"></div>
-        <div class="📦"></div>
-        <div class="📦"></div>
-        <div class="📦"></div>
-        <div class="📦"></div>
-      </div>
-    );
-  }
   return (
     <>
       <div className="h-screen  justify-center items-center text-center flex md:flex-row flex-col bg-black ">
@@ -38,7 +27,7 @@ export default function ComingSoon() {
           <span className="md:text-5xl text-3xl ">oon</span>
         </h2>
         {dashedAnimation()}
-        {/* { {boxSliding()} */}
+        {}
       </div>
       <ParticleAnimation />
     </>

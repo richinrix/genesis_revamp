@@ -1,5 +1,4 @@
 import "./CSS/sidebar.css";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 
 function Sidebar() {
   return (

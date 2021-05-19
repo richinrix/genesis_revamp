@@ -14,6 +14,7 @@
     "@testing-library/user-event": "^12.8.3",
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
+    "jquery": "^3.6.0",
     "postcss": "^7.0.35",
     "react": "^17.0.2",
     "react-animated-css": "^1.2.1",
@@ -25,6 +26,7 @@
     "react-scripts": "4.0.3",
     "react-spring": "^9.1.2",
     "react-tsparticles": "^1.27.0",
+    "smoothscroll-polyfill": "^0.4.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
     "web-vitals": "^1.1.2"
   },
