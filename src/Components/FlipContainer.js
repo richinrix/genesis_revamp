@@ -21,10 +21,13 @@ export default function FlipContainer() {
     // change the limit to change the no. of cards displayed on phone
     const phoneCardsLimit = 4;
     const tabCardsLimit = 6;
+
     let phoneDisplay = index + 1 > phoneCardsLimit ? false : true;
     let tabDisplay = index + 1 > tabCardsLimit ? false : true;
+
     return (
       <ImageFlip
+        index={index}
         phoneDisplay={phoneDisplay}
         tabDisplay={tabDisplay}
         position={index % 3}
@@ -34,7 +37,7 @@ export default function FlipContainer() {
     );
   }
   return (
-    <div className="lg:h-screen flex flex-col mx-auto  mt-5 md:px-10 sm:px-5 py-10 w-11/12 ">
+    <div className="lg:h-screen flex flex-col mx-auto md:px-10 sm:px-5 py-5 w-11/12 ">
       <div>
         <div
           id="ImageFlip-Text"

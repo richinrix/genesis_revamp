@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 // import smoothscroll from "smoothscroll-polyfill";
 import "./App.css";
 
@@ -42,6 +47,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/career" component={ComingSoon} />
+        <Redirect to="/notfound" component={ComingSoon} />
       </Switch>
     </Router>
   );

@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 // services
 import IMAGES from "./services/IMAGES";
 import API from "./services/API";
 // carousel
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-// import "./CSS/imageflip.css";
 
 export default function Testimonials() {
   const [startCard, setStartCard] = useState(0);
   const [testimonials, setTestimonials] = useState();
+
+  // aos animation
+  const cardContainer = {
+    duration: "1500",
+    offset: "300",
+  };
 
   useEffect(() => {
     getData();
@@ -23,8 +27,7 @@ export default function Testimonials() {
       res.json().then((info) => setTestimonials(info))
     );
   };
-  // const testimonails =
-  // renders each testimonial card
+
   function card(testimonial, index) {
     // quote and footer color
     let className =
@@ -45,10 +48,6 @@ export default function Testimonials() {
       <div
         id="testimonial-card"
         className={className}
-        animationIn={"bounceInRight"}
-        animationOut={"bounceOutLeft"}
-        animationInDelay={"1s"}
-        isVisible={true}
         style={{
           height: "450px",
           width: "330px",
@@ -107,8 +106,8 @@ export default function Testimonials() {
     <>
       {/* phone view */}
       <div
+        data-aos="slide-right"
         className="lg:h-screen mx-auto md:my-2 my-8 lg:hidden flex md:flex-row flex-col justify-center items-center overflow-hidden "
-        // style={{ background: "#e0e0e0" }}
       >
         {testimonials &&
           testimonials.slice &&
@@ -116,9 +115,10 @@ export default function Testimonials() {
       </div>
       {/* desktop view */}
       <div
-        axis="horizontal"
+        data-aos="slide-right"
+        data-aos-duration={cardContainer.duration}
+        data-aos-offset={cardContainer.offset}
         className="md:h-screen mx-auto md:my-2 my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden"
-        // style={{ background: "#e0e0e0" }}
       >
         {testimonials &&
           testimonials.slice &&

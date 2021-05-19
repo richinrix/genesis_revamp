@@ -1,16 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./CSS/homepage.css";
 
 function Homepage() {
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "./Essentials/HomeParticles.js";
-    script.type = "type/javascript";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
+    console.log(loading);
+    if (loading) {
+      console.log(loading);
+      const script = document.createElement("script");
+      script.src = "./Essentials/HomeParticles.js";
+      script.type = "type/javascript";
+      script.async = true;
+      document.body.appendChild(script);
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+    setLoading(true);
   }, []);
 
   return (
@@ -21,7 +27,7 @@ function Homepage() {
           who want to challenge the ordinary
         </h1>
       </div>
-      <canvas id="c"></canvas>
+      {loading && <canvas id="c"></canvas>}
     </div>
   );
 }
