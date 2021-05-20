@@ -5,7 +5,12 @@ import circles from "../images/contact.png";
 function Contact() {
   return (
     <div id="contactContainer" className="h-screen">
-      <div className="contactFlexContainer flex flex-row bg-yellow-400 justify-between overflow-hidden">
+      <div
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="800"
+        className="contactFlexContainer flex flex-row bg-yellow-400 justify-between overflow-hidden"
+      >
         <div className="contactForm pl-20 w-3/5">
           <h2 className="font-plantc text-5xl pb-2">Get in touch</h2>
           <p className="pb-5">

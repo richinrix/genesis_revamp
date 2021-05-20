@@ -4,6 +4,10 @@ function About() {
   return (
     <div id="aboutContainer" className="h-screen w-auto">
       <div
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="800"
+        data-aos-offset="200"
         id="aboutFlexContainer"
         class="aboutContainer flex flex-row justify-center items-center bg-transparent h-auto md:h-full mx-auto mt-20 md:px-10 sm:px-5 py-10 w-5/6 flex-shrink-0"
       >

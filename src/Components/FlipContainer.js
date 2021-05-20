@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Fade from "react-reveal/Fade";
-import FadeIn from "react-fade-in";
 // other components
 import API from "./services/API";
 import ImageFlip from "./Essentials/Imageflip";
