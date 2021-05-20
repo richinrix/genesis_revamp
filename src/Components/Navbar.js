@@ -46,7 +46,7 @@ function Navbar() {
 
           <li class="border-t md:border-none">
             <a
-              href="/coming-soon"
+              href="/blog"
               target="_blank"
               class="block md:inline-block px-4 py-3 no-underline"
             >
@@ -56,7 +56,7 @@ function Navbar() {
 
           <li class="border-t md:border-none">
             <a
-              href="#contactContainer"
+              href="#mapContainer"
               class="block md:inline-block px-4 py-3 no-underline"
             >
               Contact

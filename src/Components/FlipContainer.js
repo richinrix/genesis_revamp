@@ -35,7 +35,10 @@ export default function FlipContainer() {
     );
   }
   return (
-    <div className="lg:h-screen flex flex-col mx-auto md:px-10 sm:px-5 py-5 w-11/12 ">
+    <div
+      id="imageFlipContainer"
+      className="lg:h-screen flex flex-col mx-auto md:px-10 sm:px-5 py-5 w-11/12 "
+    >
       <div>
         <div
           id="ImageFlip-Text"

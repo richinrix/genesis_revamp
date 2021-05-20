@@ -136,7 +136,7 @@ export default function Services() {
     else classname += " md:flex-row-reverse";
 
     return (
-      <div className="lg:h-screen  ">
+      <div className="lg:h-screen  h-auto w-auto bg-gray-600">
         <div className="mx-auto p-5">
           <div className="mx-auto  md:mt-20 text-center font-plantc text-5xl">
             <h2>{service.heading}</h2>
