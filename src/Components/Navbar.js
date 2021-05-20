@@ -28,7 +28,7 @@ function Navbar() {
         <ul className="navList menu border-b md:border-none font-normal flex mr-10 items-center justify-end list-reset m-0 w-full md:w-auto">
           <li class="border-t md:border-none">
             <a
-              href="#teamCall"
+              href="#services"
               class="block md:inline-block px-4 py-3 no-underline"
             >
               Services
@@ -46,7 +46,7 @@ function Navbar() {
 
           <li class="border-t md:border-none">
             <a
-              href="/coming-soon"
+              href="/blog"
               target="_blank"
               class="block md:inline-block px-4 py-3 no-underline"
             >

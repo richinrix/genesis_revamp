@@ -3,7 +3,10 @@ import "./CSS/map.css";
 
 function Map() {
   return (
-    <div className="mapContainer flex flex-col pl-32 pt-12 justify-start items-start w-auto h-screen">
+    <div
+      id="mapContainer"
+      className="mapContainer flex flex-col pl-32 pt-12 justify-start items-start w-auto h-screen"
+    >
       <div
         data-aos="fade-right"
         data-aos-easing="linear"
@@ -45,31 +48,21 @@ function Map() {
         data-aos-duration="800"
         className="mapBox mt-2 overflow-hidden"
       >
-        <span>
-          <div class="mapouter">
-            <div class="gmap_canvas">
-              <iframe
-                width="1200"
-                height="268"
-                id="gmap_canvas"
-                src="https://maps.google.com/maps?q=Vidhana%20Soudha&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-              ></iframe>
-              <a href="https://putlocker-is.org"></a>
-              <br />
-            </div>
-          </div>
-        </span>
+        <iframe
+          className="gMap"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8776164898522!2d77.58905561389585!3d12.979678618215052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1672094c0ca7%3A0xffa0605b3255e77d!2sKarnataka%20Vidhana%20Soudha!5e0!3m2!1sen!2sin!4v1621493886894!5m2!1sen!2sin"
+          width="1000"
+          height="600"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
       </div>
       <div
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="800"
         data-aos-offset="-300"
-        className="mapFooter flex flex-row justify-between pt-4"
+        className="mapFooter flex flex-row justify-between pt-4 pb-20"
       >
         <p>XYZ, ZYX road, 2nd Main, Bangalore 560097, Karnataka, India</p>
         <p className="ml-52 text-gray-600">

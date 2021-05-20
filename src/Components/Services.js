@@ -97,7 +97,7 @@ export default function Services() {
 
     return (
       <div>
-        <img src={linesImg} alt="" className="absolute " />
+        <img src={linesImg} alt="" className="absolute" />
         <li
           className={className}
           data-aos="slide-up"
@@ -156,7 +156,7 @@ export default function Services() {
       "mx-auto  md:mt-20 text-center font-plantc text-5xl ";
 
     return (
-      <div className="lg:h-screen ">
+      <div className="lg:h-screen h-auto ">
         <div className="mx-auto p-5">
           <div className={headingClassname}>
             <h2>{service.heading}</h2>
@@ -174,7 +174,7 @@ export default function Services() {
     );
   }
   return (
-    <div className="mx-auto">
+    <div className="mx-auto" id="services">
       {services && services.map((data, index) => service(data, index))}
     </div>
   );

@@ -106,6 +106,7 @@ export default function Testimonials() {
     <>
       {/* phone view */}
       <div
+        id="testimonials"
         data-aos="slide-right"
         className="lg:h-screen mx-auto md:my-2 my-8 lg:hidden flex md:flex-row flex-col justify-center items-center overflow-hidden "
       >
@@ -115,10 +116,11 @@ export default function Testimonials() {
       </div>
       {/* desktop view */}
       <div
+        id="testimonials"
         data-aos="slide-right"
         data-aos-duration={cardContainer.duration}
         data-aos-offset={cardContainer.offset}
-        className="md:h-screen mx-auto md:my-2 my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden"
+        className="md:h-auto mx-auto md:my-auto my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden "
       >
         {testimonials &&
           testimonials.slice &&

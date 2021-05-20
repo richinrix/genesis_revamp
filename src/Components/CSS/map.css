@@ -17,8 +17,6 @@
 }
 
 .mapBox {
-  height: 50%;
-  width: 85%;
   border: 1px solid black;
   background-color: lightskyblue;
 }
@@ -27,16 +25,6 @@
   margin-left: 550px;
 }
 
-.mapouter {
-  position: relative;
-  text-align: right;
-  height: 400px;
-  width: 1200px;
-}
-
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  height: 400px;
-  width: 1200px;
+.gMap {
+  border: 0;
 }

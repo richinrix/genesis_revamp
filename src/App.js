@@ -22,22 +22,28 @@ import Services from "./Components/Services";
 import Map from "./Components/Map";
 
 function App() {
-  // let [firstScroll, setFirstScroll] = useState(false);
+  let [firstScroll, setFirstScroll] = useState(false);
+  const pageIds = {
+    0: "homeContainer",
+    1: "teamCall",
+    2: "aboutContainer",
+    3: "imageFlipContainer",
+    4: "testimonials",
+  };
 
   // useEffect(() => {
   //   //Function to smooth scroll to second div on a single scroll and change theme
-  //   const changeBack = () => {
-  //     if (window.scrollY > 0) {
-  //       document
-  //         .querySelector(
-  //           ".team"                                                                                                                                                                                                                                                             ntainer"
-  //         )
-  //         .scrollIntoView({ behavior: "smooth" });
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", changeBack);
-  //   smoothscroll.polyfill(); //kicking smooth scroll polyfill off
+  //   // const changeBack = () => {
+  //   //   if (window.scrollY > 0) {
+  //   //     document
+  //   //       .querySelector(
+  //   //         ".team"                                                                                                                                                                                                                                                             ntainer"
+  //   //       )
+  //   //       .scrollIntoView({ behavior: "smooth" });
+  //   //   }
+  //   // };
+  //   // window.addEventListener("scroll", changeBack);
+  //   // smoothscroll.polyfill(); //kicking smooth scroll polyfill off
   // }, []);
 
   return (
@@ -55,12 +61,11 @@ function App() {
 const Home = () => (
   <>
     <Homepage />
-    <Team className="team" />
+    <Team />
     <About />
     <FlipContainer />
     <Services />
     <Testimonials />
-
     <Contact />
     <Map />
   </>
