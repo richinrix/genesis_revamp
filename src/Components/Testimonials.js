@@ -12,8 +12,8 @@ export default function Testimonials() {
 
   // aos animation
   const cardContainer = {
-    duration: "1500",
-    offset: "300",
+    duration: "1300",
+    offset: "200",
   };
 
   useEffect(() => {

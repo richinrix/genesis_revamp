@@ -92,7 +92,9 @@ export default function Services() {
   }
   function serviceSteps(step, index, length) {
     let className = "pl-5 font-helvetica ";
-    className += length > 5 ? " lg:py-1.5 py-2 " : " lg:py-3 py-2 ";
+    if (length > 5) className += " lg:py-1.6 py-2 ";
+    else className += "lg:py-2.5 py-2";
+
     return (
       <div>
         <img src={linesImg} alt="" className="absolute " />
@@ -101,7 +103,7 @@ export default function Services() {
           data-aos="slide-up"
           data-aos-easing={serviceStep.easing}
           data-aos-duration={serviceStep.duration}
-          data-aos-offset={serviceStep.offset}
+          data-aos-offset={"50"}
           key={index}
         >
           {step}
@@ -112,8 +114,10 @@ export default function Services() {
   function textSection(desc, steps, position) {
     let textSlideDirection =
       position === "right" ? "slide-right" : "slide-left";
+    let textSectionClassname = " flex-col mx-auto grid md:w-1/2  ";
+    textSectionClassname += steps.length > 9 ? " mb-16 " : " ";
     return (
-      <div className="flex-col mx-auto grid md:w-1/2 ">
+      <div className={textSectionClassname}>
         {" "}
         <div
           className="w-11/12 mx-auto align-self-center "
@@ -123,7 +127,17 @@ export default function Services() {
         >
           {description(desc)}
         </div>
-        <div className="flex md:pl-4 pl-8 my-auto py-5">
+        <div className="flex md:pl-4 pl-8 my-auto pt-5">
+          {/* <ul className="">
+            {steps.map(() => (
+              <img
+                src={linesImg}
+                alt=""
+                className="w-1.5 h-9"
+                // style={{ height: "10px" }}
+              />
+            ))}
+          </ul> */}
           <ul className="ml-4 my-auto">
             {steps.map((step, index) =>
               serviceSteps(step, index, steps.length)
@@ -135,17 +149,19 @@ export default function Services() {
   }
   function service(service, index) {
     let imagePos = index % 2 === 0 ? "right" : "left";
-    let classname = "flex  flex-col-reverse mt-5 justify-center h-screen";
-    if (imagePos === "right") classname += " md:flex-row";
-    else classname += " md:flex-row-reverse";
+    let descriptionClassname = "flex  flex-col-reverse mt-5 justify-center ";
+    if (imagePos === "right") descriptionClassname += " md:flex-row";
+    else descriptionClassname += " md:flex-row-reverse";
+    let headingClassname =
+      "mx-auto  md:mt-20 text-center font-plantc text-5xl ";
 
     return (
-      <div className="lg:h-screen  ">
+      <div className="lg:h-screen ">
         <div className="mx-auto p-5">
-          <div className="mx-auto  md:mt-20 text-center font-plantc text-5xl">
+          <div className={headingClassname}>
             <h2>{service.heading}</h2>
           </div>
-          <div className={classname}>
+          <div className={descriptionClassname}>
             <div className="lg:w-3/6  mt-10">
               {textSection(service.description, service.steps, imagePos)}
             </div>

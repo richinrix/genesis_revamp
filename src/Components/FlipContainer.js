@@ -16,7 +16,7 @@ export default function FlipContainer() {
   };
 
   function imageFlip(index, card) {
-    // change the limit to change the no. of cards displayed on phone
+    // change the limit to change the no. of cards displayed on phone and tab screen size
     const phoneCardsLimit = 4;
     const tabCardsLimit = 6;
 

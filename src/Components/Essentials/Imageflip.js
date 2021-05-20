@@ -14,30 +14,34 @@ export default function Imageflip(props) {
   const tabDisplay = props.tabDisplay;
   const card = props.card;
   const [flipped, setFlipped] = useState(false);
-  const flipDuration = 7000 + props.index * 1000;
-  const fadeUpOffset = props.index * 50 + 20;
+  const flipDuration = 1500 + props.index * 500;
   const aosDuration = props.index * 250;
-  // aos animation
 
+  // aos animation
   const cardAnimate = {
     easing: "linear",
     offset: "200",
     duration: aosDuration,
   };
-
   // change mass tension and friction values to change the spinning effects
+  const mass = 6,
+    tension = 400,
+    friction = 70;
+
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
-    config: { mass: 6, tension: 500, friction: 70 },
+    config: { mass: mass, tension: tension, friction: friction },
   });
 
   // flips the image when called
   const flip = () => setFlipped((state) => !state);
-  console.log(props.index);
   useEffect(() => {
     // flipping card evry few seconds
-    // setInterval(flip, flipDuration);
+    setTimeout(flip, flipDuration);
+    setTimeout(flip, flipDuration + 7 * 500);
+    // setTimeout(flip, flipDuration + 7 * 1000);
+    // setInterval(flip, 3000);
   }, []);
 
   function imageCard(pos, card, phoneDisplay, tabDisplay, phonePos) {

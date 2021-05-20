@@ -58,8 +58,9 @@ const Home = () => (
     <Team className="team" />
     <About />
     <FlipContainer />
-    <Testimonials />
     <Services />
+    <Testimonials />
+
     <Contact />
     <Map />
   </>
