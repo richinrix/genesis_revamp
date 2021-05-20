@@ -1,37 +1,54 @@
 [
   {
+    "heading": "Development",
+    "description": "Proper branding brings an invaluable personal dimension to your business",
+    "steps": [
+      "UI Design",
+      "Website Development",
+      "AR Integrated Web Development",
+      "Application Development"
+    ],
+    "image": "https://webmarketsupport.com/wp-content/uploads/2016/10/free-stock-photos-for-commercial-use-skitterphoto.jpg"
+  },
+  {
     "heading": "Branding",
     "description": "Proper branding brings an invaluable personal dimension to your business",
     "steps": [
-      "User Research",
-      "Strategy",
-      "Brandbook",
-      "Marketing Assets",
-      "Logo"
+      "Consultation",
+      "Market Research",
+      "Logo Design",
+      "Archetype Defenition",
+      "Visual Design",
+      "COllateral Design",
+      "Launch Strategy"
     ],
     "image": "https://webmarketsupport.com/wp-content/uploads/2016/10/free-stock-photos-for-commercial-use-skitterphoto.jpg"
   },
   {
-    "heading": "Technology",
+    "heading": "Marketing",
     "description": "Proper branding brings an invaluable personal dimension to your business",
     "steps": [
-      "User Research",
-      "Strategy",
-      "Brandbook",
-      "Marketing Assets",
-      "Logo"
+      "SEO",
+      "Social Media Marketing",
+      "Content Marketing",
+      "Website Automation",
+      "E-mail Marketing",
+      "E-commerce Marketing",
+      "Campagn Optimization",
+      "Influencer Marketing",
+      "Marketing Psychology",
+      "Market analysis / Data Analysis"
     ],
     "image": "https://webmarketsupport.com/wp-content/uploads/2016/10/free-stock-photos-for-commercial-use-skitterphoto.jpg"
   },
   {
-    "heading": "Design",
+    "heading": "Production",
     "description": "Proper branding brings an invaluable personal dimension to your business",
     "steps": [
-      "User Research",
-      "Strategy",
-      "Brandbook",
-      "Marketing Assets",
-      "Logo"
+      "Commercial AD Films",
+      "Product Photography",
+      "Copy Writing",
+      "Creative Design"
     ],
     "image": "https://webmarketsupport.com/wp-content/uploads/2016/10/free-stock-photos-for-commercial-use-skitterphoto.jpg"
   }

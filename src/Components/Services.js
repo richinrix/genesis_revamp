@@ -90,12 +90,14 @@ export default function Services() {
       </div>
     );
   }
-  function serviceSteps(step, index) {
+  function serviceSteps(step, index, length) {
+    let className = "pl-5 font-helvetica ";
+    className += length > 5 ? " lg:py-1.5 py-2 " : " lg:py-3 py-2 ";
     return (
       <div>
         <img src={linesImg} alt="" className="absolute " />
         <li
-          className=" lg:py-3 py-2 pl-5 font-helvetica "
+          className={className}
           data-aos="slide-up"
           data-aos-easing={serviceStep.easing}
           data-aos-duration={serviceStep.duration}
@@ -123,7 +125,9 @@ export default function Services() {
         </div>
         <div className="flex md:pl-4 pl-8 my-auto py-5">
           <ul className="ml-4 my-auto">
-            {steps.map((step, index) => serviceSteps(step, index))}
+            {steps.map((step, index) =>
+              serviceSteps(step, index, steps.length)
+            )}
           </ul>
         </div>
       </div>
