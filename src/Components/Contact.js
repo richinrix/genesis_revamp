@@ -9,7 +9,7 @@ function Contact() {
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="800"
-        className="contactFlexContainer flex flex-row bg-yellow-400 justify-between overflow-hidden"
+        className="contactFlexContainer inline bg-yellow-400 justify-between overflowY-hidden"
       >
         <div className="contactForm pl-20 w-3/5">
           <h2 className="font-plantc text-5xl pb-2">Get in touch</h2>
@@ -96,7 +96,7 @@ function Contact() {
           </button>
         </div>
         <div className="circles w-screen">
-          <img className="contactCircles ml-96 pl-24" src={circles}></img>
+          <img className="contactCircles ml-64" src={circles}></img>
         </div>
       </div>
     </div>

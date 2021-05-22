@@ -37,12 +37,12 @@ export default function FlipContainer() {
   return (
     <div
       id="imageFlipContainer"
-      className="lg:h-screen flex flex-col mx-auto md:px-10 sm:px-5 py-5 w-11/12 "
+      className="lg:h-screen flex flex-col mx-auto my-auto md:px-10 sm:px-5 py-5 w-11/12 "
     >
       <div>
         <div
           id="ImageFlip-Text"
-          className="font-plantc text-5xl mb-10  md:ml-0 ml-3 md:mt-10"
+          className="font-plantc text-5xl mb-10  md:ml-0 ml-3 md:mt-16"
         >
           <h2 className=" ">We're more than</h2>
           <h2 className="text-gray-500 md:mt-4 ">just a web agency</h2>

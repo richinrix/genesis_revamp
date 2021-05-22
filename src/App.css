@@ -10,6 +10,19 @@
 }
 
 body {
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  background-color: black;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hides Scroll arrows in Number type inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }

@@ -5,7 +5,6 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-// import smoothscroll from "smoothscroll-polyfill";
 import "./App.css";
 
 //components
@@ -23,28 +22,19 @@ import Map from "./Components/Map";
 
 function App() {
   let [firstScroll, setFirstScroll] = useState(false);
+  let [currentScroll, setCurrentScroll] = useState(0);
   const pageIds = {
     0: "homeContainer",
     1: "teamCall",
     2: "aboutContainer",
     3: "imageFlipContainer",
-    4: "testimonials",
+    4: "services",
+    5: "testimonials",
+    6: "contactContainer",
+    7: "mapContainer",
   };
 
-  // useEffect(() => {
-  //   //Function to smooth scroll to second div on a single scroll and change theme
-  //   // const changeBack = () => {
-  //   //   if (window.scrollY > 0) {
-  //   //     document
-  //   //       .querySelector(
-  //   //         ".team"                                                                                                                                                                                                                                                             ntainer"
-  //   //       )
-  //   //       .scrollIntoView({ behavior: "smooth" });
-  //   //   }
-  //   // };
-  //   // window.addEventListener("scroll", changeBack);
-  //   // smoothscroll.polyfill(); //kicking smooth scroll polyfill off
-  // }, []);
+  useEffect(() => {}, []);
 
   return (
     <Router>
@@ -52,7 +42,7 @@ function App() {
       <Sidebar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/career" component={ComingSoon} />
+        <Route path="/notfound" component={ComingSoon} />
         <Redirect to="/notfound" component={ComingSoon} />
       </Switch>
     </Router>
