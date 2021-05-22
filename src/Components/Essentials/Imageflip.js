@@ -3,11 +3,10 @@ import { useSpring, a } from "@react-spring/web";
 import "../CSS/imageflip.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import handleViewport from "react-in-viewport";
 
-export default function Imageflip(props) {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+const Imageflip = (props) => {
+  const { inViewport, forwardedRef } = props;
   const position = props.position;
   const phonePosition = props.phonePosition;
   const phoneDisplay = props.phoneDisplay;
@@ -20,7 +19,7 @@ export default function Imageflip(props) {
   // aos animation
   const cardAnimate = {
     easing: "linear",
-    offset: "200",
+    offset: "250",
     duration: aosDuration,
   };
   // change mass tension and friction values to change the spinning effects
@@ -35,14 +34,27 @@ export default function Imageflip(props) {
   });
 
   // flips the image when called
+
   const flip = () => setFlipped((state) => !state);
+  let flipTimerId;
+  function ripple() {
+    flipTimerId = setTimeout(flip, flipDuration);
+    // setTimeout(flip, flipDuration + 7 * 500);
+  }
   useEffect(() => {
+    AOS.init();
+
     // flipping card evry few seconds
-    setTimeout(flip, flipDuration);
-    setTimeout(flip, flipDuration + 7 * 500);
-    // setTimeout(flip, flipDuration + 7 * 1000);
-    // setInterval(flip, 3000);
-  }, []);
+    if (inViewport && !flipped) {
+      ripple();
+      // console.log("in view", flipTimerId);
+    } else if (!inViewport && flipped) {
+      // console.log("not in view", flipTimerId);
+      clearTimeout(flipTimerId);
+      // flip();
+      setFlipped(false);
+    }
+  }, [inViewport]);
 
   function imageCard(pos, card, phoneDisplay, tabDisplay, phonePos) {
     const frontImagePath = card.frontImage;
@@ -66,6 +78,7 @@ export default function Imageflip(props) {
         data-aos-easing={cardAnimate.easeing}
         data-aos-offset={cardAnimate.offset}
         data-aos-duration={cardAnimate.duration}
+        ref={forwardedRef}
       >
         <a.div
           className="imageflip_c imageflip_back "
@@ -90,4 +103,19 @@ export default function Imageflip(props) {
   return (
     <>{imageCard(position, card, phoneDisplay, tabDisplay, phonePosition)}</>
   );
-}
+};
+
+const ViewportBlock = handleViewport(Imageflip);
+
+const Component = (props) => (
+  <ViewportBlock
+    index={props.index}
+    phoneDisplay={props.phoneDisplay}
+    tabDisplay={props.tabDisplay}
+    position={props.position}
+    card={props.card}
+    phonePosition={props.phonePosition}
+  />
+);
+
+export default Component;

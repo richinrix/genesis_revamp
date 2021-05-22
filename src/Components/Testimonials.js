@@ -2,9 +2,18 @@ import React, { useState, useEffect } from "react";
 // services
 import IMAGES from "./services/IMAGES";
 import API from "./services/API";
+// other component
+import TestimonialCard from "./Essentials/TestimonialCard";
 // carousel
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css";
+import "swiper/components/navigation/navigation.min.css";
+// import Swiper core and required modules
+import SwiperCore, { Pagination, Navigation } from "swiper/core";
+// install Swiper modules
+SwiperCore.use([Pagination, Navigation]);
 
 export default function Testimonials() {
   const [startCard, setStartCard] = useState(0);
@@ -99,15 +108,24 @@ export default function Testimonials() {
     );
   }
   // displaying the current three cards
-  function currenDesktoptView(cards) {
-    return <>{cards.map((testimonial, index) => card(testimonial, index))}</>;
+  function currenDesktoptView(cards, index) {
+    return (
+      <SwiperSlide className="mx-auto md:my-auto my-8 lg:flex hidden md:flex-row flex-col justify-center items-center">
+        {<TestimonialCard testimonial={cards} index={index} />}
+      </SwiperSlide>
+    );
+  }
+  function renderCards() {
+    for (let i = 0; i < testimonials.length; i++) {
+      return currenDesktoptView(testimonials.slice(startCard, startCard + 3));
+    }
   }
   return (
     <>
       {/* phone view */}
       <div
         id="testimonials"
-        data-aos="slide-right"
+        // data-aos="slide-right"
         className="lg:h-screen mx-auto md:my-2 my-8 lg:hidden flex md:flex-row flex-col justify-center items-center overflow-hidden "
       >
         {testimonials &&
@@ -115,17 +133,29 @@ export default function Testimonials() {
           currenDesktoptView(testimonials.slice(startCard, startCard + 1))}
       </div>
       {/* desktop view */}
-      <div
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={0}
+        breakpoints={{
+          769: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+          },
+        }}
+        loop={true}
+        navigation={true}
         id="testimonials"
-        data-aos="slide-right"
-        data-aos-duration={cardContainer.duration}
-        data-aos-offset={cardContainer.offset}
-        className="md:h-auto mx-auto md:my-auto my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden "
+        // data-aos="slide-right"
+        // data-aos-duration={cardContainer.duration}
+        // data-aos-offset={cardContainer.offset}
+        className="md:h-screen mx-auto md:my-auto my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden "
       >
         {testimonials &&
           testimonials.slice &&
-          currenDesktoptView(testimonials.slice(startCard, startCard + 3))}
-      </div>
+          testimonials.map((testimonial, index) =>
+            currenDesktoptView(testimonial, index)
+          )}
+      </Swiper>
     </>
   );
 }

@@ -46,8 +46,9 @@
 }
 /* testimonial card animation */
 #testimonial-card {
-  animation: popout ease-in 800ms;
-  animation-fill-mode: forwards;
+  transition-property: all;
+  transition-duration: 1s;
+  /* animation: popout ease-in 800ms; */
   border-radius: 5px;
 }
 @keyframes popout {
@@ -65,4 +66,9 @@
     box-shadow: 5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,
       -5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7;
   }
+}
+
+/* testimonial navigation buttons */
+.swiper-button-next {
+  color: yellow;
 }
