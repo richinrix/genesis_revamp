@@ -120,7 +120,7 @@ export default function Testimonials() {
         data-aos="slide-right"
         data-aos-duration={cardContainer.duration}
         data-aos-offset={cardContainer.offset}
-        className="md:h-auto mx-auto md:my-auto my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden "
+        className="md:h-screen mx-auto md:my-auto my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden "
       >
         {testimonials &&
           testimonials.slice &&

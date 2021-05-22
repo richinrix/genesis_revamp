@@ -38,6 +38,9 @@
   transition: all 0.3s ease;
   padding: 15px;
 }
+.slite i {
+  color: white;
+}
 
 .social-icon i:hover {
   color: black;

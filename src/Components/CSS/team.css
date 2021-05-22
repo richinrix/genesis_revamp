@@ -1,5 +1,9 @@
 /* For mobile displays */
 @media (max-width: 767px) {
+  #teamCall {
+    padding-top: 60px !important;
+  }
+
   .teamTitle {
     font-size: 3em !important;
   }

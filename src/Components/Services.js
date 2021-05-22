@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import AOS from "aos";
 // image
 import linesImg from "../images/icons/services-line-and-dots.png";
 // services
