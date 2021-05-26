@@ -56,10 +56,12 @@ const Imageflip = (props) => {
     // flipping card evry few seconds
     if (inViewport && !flipped) {
       ripple();
-    } else if (!inViewport && flipped) {
-      // clearTimeout(flipTimerId);
-      setFlipped(false);
     }
+    // uncomment these if you need the images to flip back to initial state when scrolled away
+    // else if (!inViewport && flipped) {
+    //   // clearTimeout(flipTimerId);
+    //   setFlipped(false);
+    // }
   }, [inViewport]);
   useEffect(() => {
     if (!inViewport) setFlipped(false);
@@ -81,32 +83,34 @@ const Imageflip = (props) => {
     if (!tabDisplay) classname += " md:hidden ";
 
     return (
-      <div
-        className={classname}
-        data-aos="slide-up"
-        data-aos-easing={cardAnimate.easeing}
-        data-aos-offset={cardAnimate.offset}
-        data-aos-duration={cardAnimate.duration}
-        ref={forwardedRef}
-      >
-        <a.div
-          className="imageflip_c imageflip_back "
-          style={{
-            opacity: opacity.to((o) => 1 - o),
-            transform,
-            backgroundImage: `url('${frontImagePath}')`,
-          }}
-        ></a.div>
-        <a.div
-          className="imageflip_c imageflip_front"
-          style={{
-            opacity,
-            transform,
-            rotateY: "180deg",
-            backgroundImage: `url('${backImagePath}')`,
-          }}
-        />
-      </div>
+      <>
+        <div ref={forwardedRef} className="h-1"></div>
+        <div
+          className={classname}
+          data-aos="slide-up"
+          data-aos-easing={cardAnimate.easeing}
+          data-aos-offset={cardAnimate.offset}
+          data-aos-duration={cardAnimate.duration}
+        >
+          <a.div
+            className="imageflip_c imageflip_back "
+            style={{
+              opacity: opacity.to((o) => 1 - o),
+              transform,
+              backgroundImage: `url('${frontImagePath}')`,
+            }}
+          ></a.div>
+          <a.div
+            className="imageflip_c imageflip_front"
+            style={{
+              opacity,
+              transform,
+              rotateY: "180deg",
+              backgroundImage: `url('${backImagePath}')`,
+            }}
+          />
+        </div>
+      </>
     );
   }
   return (

@@ -6,7 +6,7 @@ import { Parallax } from "react-scroll-parallax";
 
 import "../../App.css";
 const ServiceCard = (props) => {
-  const { inViewport, forwardedRef, service, index } = props;
+  const { inViewport, forwardedRef, service, index, screenWidth } = props;
   let imagePos = index % 2 === 0 ? "right" : "left";
   let descriptionClassname = "flex  flex-col-reverse mt-5 justify-center ";
   if (imagePos === "right") descriptionClassname += " md:flex-row";
@@ -21,19 +21,20 @@ const ServiceCard = (props) => {
   // aos styling settings
   let yellowRect = {
     duration: "500",
-    offset: "250",
+    offset: screenWidth > 650 ? "250" : "50",
     offset2: "400",
     easing: "ease-in",
   };
   let servicePoint = {
     duration: "600",
-    offset: "200",
+    offset: screenWidth > 650 ? "200" : "100",
     easing: "linear",
   };
   let serviceDesc = {
-    offset: "200",
+    offset: screenWidth > 650 ? "250" : "150",
     duration: "1200",
   };
+  useEffect(() => {}, [screenWidth]);
   // function to400() {
   //   console.log(index, "changed to 400");
   //   setYellowOff("400");
@@ -109,7 +110,9 @@ const ServiceCard = (props) => {
           {/* <div x={xvalues} className="lg:block hidden">
             {yellowRectangle(floatPos)}
           </div> */}
-          <div className="">{yellowRectangle(floatPos, true)}</div>
+          <div className="lg:hidden block">
+            {yellowRectangle(floatPos, true)}
+          </div>
           <div
             id="servicesImage"
             className={imageClassname}
@@ -178,7 +181,7 @@ const ServiceCard = (props) => {
 
   return (
     <>
-      <div className="lg:h-screen   " id="proximity-snap">
+      <div className="h-screen   " id="proximity-snap">
         <div
           className="mx-auto p-5 my-auto"
           // style={{ border: "2px solid white" }}

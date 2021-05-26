@@ -6,7 +6,7 @@ import API from "./services/API";
 
 function Contact() {
   const url = API.contactSheet;
-  const sheetdb = require("sheetdb-node");
+  // const sheetdb = require("sheetdb-node");
   const [data, setdata] = useState({
     name: "",
     mail: "",
@@ -31,12 +31,17 @@ function Contact() {
         msg: data.msg,
       },
     ]);
+
     axios
       .post(url, {
-        name: data.name,
-        mail: data.mail,
-        phno: parseInt(data.phno),
-        msg: data.msg,
+        data: [
+          {
+            name: data.name,
+            mail: data.mail,
+            phno: parseInt(data.phno),
+            msg: data.msg,
+          },
+        ],
       })
       .then((res) => {
         console.log(res.data);
@@ -44,7 +49,7 @@ function Contact() {
   }
 
   return (
-    <div id="contactContainer" className="h-screen">
+    <div id="contactContainer" className="h-screen ">
       <div
         data-aos="fade-up"
         data-aos-easing="linear"

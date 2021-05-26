@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./CSS/map.css";
+import axios from "axios";
+import API from "./services/API";
 
 function Map() {
+  const [email, setEmail] = useState("");
+
+  function validateEmail(email) {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+  function emailSubmiteHandler(e) {
+    e.preventDefault();
+    if (validateEmail(email))
+      axios.post(API.newsLetter, {
+        data: [
+          {
+            email: email,
+          },
+        ],
+      });
+  }
+
   return (
     <div
       id="mapContainer"
-      className="mapContainer flex flex-col pl-32 pt-12 justify-start items-start w-auto h-screen"
+      className="mapContainer flex flex-col pl-32 pt-12 justify-start items-start w-auto h-screen "
     >
       <div
         data-aos="fade-right"
@@ -21,9 +42,14 @@ function Map() {
               className="pb-1 mb-2"
               type="email"
               id="nMail"
-              placeholder="your@emailaddress.com"
+              placeholder={email === "" && "your@emailaddress.com"}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <button class="bton bton-white bton-animate" type="submit">
+            <button
+              class="bton bton-white bton-animate"
+              type="submit"
+              onClick={(e) => emailSubmiteHandler(e)}
+            >
               Subscribe
             </button>
           </form>

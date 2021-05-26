@@ -37,24 +37,26 @@ export default function FlipContainer() {
   return (
     <div
       id="imageFlipContainer"
-      className="lg:h-screen flex flex-col mx-auto my-auto md:px-10 sm:px-5 py-5 w-11/12 proximity-snap"
+      className="md:h-screen  flex flex-col   my-auto md:px-10 sm:px-5 py-5 w-11/12 proximity-snap   "
     >
-      <div>
-        <div
-          id="ImageFlip-Text"
-          className="font-plantc text-5xl mb-10  md:ml-0 ml-3 md:mt-16"
-        >
-          <h2 className=" ">We're more than</h2>
-          <h2 className="text-gray-500 md:mt-4 ">just a web agency</h2>
+      <div className="mx-auto">
+        <div>
+          <div
+            id="ImageFlip-Text"
+            className="font-plantc text-5xl mb-10  md:ml-0 ml-3 md:mt-16"
+          >
+            <h2 className=" ">We're more than</h2>
+            <h2 className="text-gray-500 md:mt-4 ">just a web agency</h2>
+          </div>
         </div>
-      </div>
-      <div>
-        <div
-          id="image-flip-wrapper"
-          className=" flex flex-wrap md:mt-8 md:ml-3 lg:justify-start justify-center lg:w-max"
-        >
-          {cards &&
-            cards.slice(0, 7).map((card, index) => imageFlip(index, card))}
+        <div>
+          <div
+            id="image-flip-wrapper"
+            className=" flex flex-wrap md:mt-8 md:ml-3 lg:justify-start justify-center lg:w-max"
+          >
+            {cards &&
+              cards.slice(0, 7).map((card, index) => imageFlip(index, card))}
+          </div>
         </div>
       </div>
     </div>

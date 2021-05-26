@@ -5,7 +5,7 @@ import "./CSS/navbar.css";
 
 function Navbar() {
   const [scrollDetect, setScrollDetect] = useState(false);
-
+  const [width, setWidth] = useState(window.innerWidth);
   // Function to detect scrolling and change theme based on that
   const handleScroll = () => {
     if (window.scrollY > 600) {
