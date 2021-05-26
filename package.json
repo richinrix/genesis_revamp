@@ -23,6 +23,7 @@
     "react-scroll-parallax": "^2.4.0",
     "react-spring": "^9.2.0-beta.6",
     "react-tsparticles": "^1.27.0",
+    "sheetdb-node": "^0.0.12",
     "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^6.6.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",

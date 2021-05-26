@@ -1,15 +1,7 @@
 /* For mobile displays */
-@media (max-width: 767px) {
-  #teamCall {
-    padding-top: 60px !important;
-  }
-
-  .teamTitle {
-    font-size: 3em !important;
-  }
-  .teamImage {
-    width: 100% !important;
-    display: flex;
-    padding-top: 100px;
+@media (min-width: 767px) {
+  .arrw {
+    width: 50px !important;
+    height: 40px !important;
   }
 }

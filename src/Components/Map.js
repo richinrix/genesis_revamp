@@ -14,17 +14,19 @@ function Map() {
         data-aos-offset="200"
         className="newsLetter flex flex-col mt-12"
       >
-        <p>Stay up to date, subscribe to our newsletter.</p>
+        <p className="text-lg">Stay up to date, subscribe to our newsletter:</p>
         <div className="newsInputs flex flex-row pt-2">
-          <input
-            className="pb-1 mb-2"
-            type="email"
-            id="nMail"
-            placeholder="your@emailaddress.com"
-          />
-          <button class="bton btn-1 hover-filled-opacity">
-            <span>Subscribe</span>
-          </button>
+          <form>
+            <input
+              className="pb-1 mb-2"
+              type="email"
+              id="nMail"
+              placeholder="your@emailaddress.com"
+            />
+            <button class="bton bton-white bton-animate" type="submit">
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
       <div
