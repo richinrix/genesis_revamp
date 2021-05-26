@@ -1,8 +1,13 @@
+@media (min-width: 767px) {
+  .contactFlexContainer {
+    width: 120%;
+  }
+}
 .contactFlexContainer {
   display: flex !important;
   background-color: transparent;
   height: 100vh;
-  width: 120%;
+  /* width: 120%; */
   align-items: center !important;
 }
 .contactCircles {
@@ -78,4 +83,30 @@
 }
 .btn.hover-filled-opacity:hover::before {
   opacity: 0;
+}
+
+@media (max-width: 767px) {
+  .circles {
+    display: none;
+  }
+  .contactForm {
+    text-align: center;
+  }
+  .contactHelpYou {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+  }
+  .contactChecks {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    font-size: 20px;
+  }
+  .contactFields {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    font-size: 1.25rem;
+  }
+  .btn {
+    margin-top: 1rem;
+  }
 }

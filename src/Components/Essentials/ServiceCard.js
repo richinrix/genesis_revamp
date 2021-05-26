@@ -181,7 +181,7 @@ const ServiceCard = (props) => {
 
   return (
     <>
-      <div className="h-screen   " id="proximity-snap">
+      <div className="md:h-screen h-full   " id="proximity-snap">
         <div
           className="mx-auto p-5 my-auto"
           // style={{ border: "2px solid white" }}

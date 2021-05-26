@@ -66,6 +66,9 @@
   animation: moveInBottom 5s ease-out;
   animation-fill-mode: backwards;
 }
+.footerPhone {
+  display: none !important;
+}
 
 @keyframes moveInBottom {
   0% {
@@ -76,5 +79,53 @@
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+@media (max-width: 767px) {
+  .mapContainer {
+    padding-left: 1rem;
+    height: screen !important;
+  }
+  .newsletter {
+    order: 1;
+  }
+  .preMap {
+    display: none;
+  }
+  .mapBox {
+    order: 2;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .gMap {
+    width: screen;
+    height: 300px;
+  }
+  .mapFooter {
+    order: 4;
+    padding-left: 1rem;
+  }
+  .bton {
+    margin-left: 0.5rem;
+  }
+  .footerText {
+    margin-top: 3.5rem;
+    margin-left: -2rem;
+    padding-left: 0;
+    text-align: center;
+  }
+  .mapMail {
+    display: none;
+  }
+  .footerPhone {
+    display: flex !important;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 0 !important;
+  }
+  iframe {
+    border: 0.5px solid black;
   }
 }

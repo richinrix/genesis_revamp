@@ -26,7 +26,7 @@ function Map() {
   return (
     <div
       id="mapContainer"
-      className="mapContainer flex flex-col pl-32 pt-12 justify-start items-start w-auto h-screen "
+      className="mapContainer flex flex-col pl-28 pt-12 md:justify-start md:items-start w-screen md:w-auto h-screen mt-3"
     >
       <div
         data-aos="fade-right"
@@ -74,7 +74,7 @@ function Map() {
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="800"
-        className="mapBox mt-2 overflow-hidden"
+        className="mapBox mt-2 mb-3 md:mb-0 overflow-hidden"
       >
         <iframe
           className="gMap"
@@ -90,11 +90,21 @@ function Map() {
         data-aos-easing="linear"
         data-aos-duration="300"
         data-aos-offset="-300"
-        className="mapFooter flex flex-row justify-between pt-4 pb-12"
+        className="mapFooter flex flex-col md:flex-row justify-between pt-4 "
       >
-        <p>XYZ, ZYX road, 2nd Main, Bangalore 560097, Karnataka, India</p>
-        <p className="ml-80 pl-40 text-gray-600">
-          Copyright © 2021, Genesis Media, All Rights Reserved.
+        <p className="order-1 mb-4 pt-3 md:mt-0 text-xl md:text-base md:pb-2">
+          XYZ, ZYX road, 2nd Main, Bangalore 560097, Karnataka, India
+        </p>
+        <div className="footerPhone order-2 md:none pl-0.5 flex flex-row">
+          <i id="fPicon" class="fa fa-phone pt-1.5 pr-1.5 flex-shrink-0"></i>
+          <p>+91 8792384161/ +91 9886031980</p>
+        </div>
+        <h2 className="md:hidden order-3 text-3xl mt-4">Say Hello!</h2>
+        <p className=" md:hidden order-4 text-xl">
+          We'd love to hear from you.
+        </p>
+        <p className="footerText md:mt-1 z-10 order-5 md:ml-80 md:pl-40 text-gray-600">
+          Copyright © 2021, Genesis Media, All Rights Reserved
         </p>
       </div>
     </div>

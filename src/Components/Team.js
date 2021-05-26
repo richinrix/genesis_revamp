@@ -25,7 +25,10 @@ function Team() {
         data-aos-offset="200"
         class="teamContainer md:h-full flex flex-col mx-auto md:px-10 sm:px-5 py-10 w-11/12 "
       >
-        <div id="teamTitle" className="font-plantc text-5xl mt-14 mb-3 ml-0 ">
+        <div
+          id="teamTitle"
+          className="teamWords font-plantc text-5xl mt-14 mb-3 ml-0 "
+        >
           <h2 className={scrollDetect ? "text-black" : "text-white"}>
             We're creative thinkers
           </h2>
