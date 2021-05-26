@@ -4,13 +4,23 @@ import arrow from "../images/icons/right-arrow.png";
 
 function Team() {
   const [scrollDetect, setScrollDetect] = useState(false);
+  const screenWidth = useState(window.innerWidth);
 
   // Function to detect scrolling and change theme based on that
   const handleScroll = () => {
-    if (window.scrollY > 600) {
-      setScrollDetect(true);
+    console.log(window.scrollY);
+    if (screenWidth > 500) {
+      if (window.scrollY > 400) {
+        setScrollDetect(true);
+      } else {
+        setScrollDetect(false);
+      }
     } else {
-      setScrollDetect(false);
+      if (window.scrollY > 350) {
+        setScrollDetect(true);
+      } else {
+        setScrollDetect(false);
+      }
     }
   };
 

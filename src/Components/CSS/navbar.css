@@ -13,10 +13,10 @@
     height: 100%;
     transition: all 0.2s ease-out;
     content: "";
-    background: black;
+    background: gray;
   }
   .nav ul li a {
-    color: black;
+    color: gray;
   }
 
   .navicon::before {
@@ -54,7 +54,7 @@
 }
 
 .nav ul li a {
-  color: black;
+  color: rgb(95, 91, 91);
 }
 
 .nav {

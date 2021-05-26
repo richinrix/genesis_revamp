@@ -20,7 +20,10 @@ function Homepage() {
   }, []);
 
   return (
-    <div id="homeContainer" className="homeContainer w-auto h-screen">
+    <div
+      id="homeContainer"
+      className="homeContainer w-screen md:w-auto h-screen"
+    >
       <div className="homeText text-white m-0 md:m-0 md:text-2xl h-screen text-center flex justify-center items-center">
         <h1>
           We are creative partners to ambitious brands <br />
