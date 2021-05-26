@@ -57,9 +57,12 @@ const ServiceCard = (props) => {
     //  + floatPos;
     classname += floatPos === "left" ? " ml-10 " : " mr-10 ";
     const slideIn = floatPos === "right" ? "slide-left" : "slide-right";
+
+    let floatDirection = floatPos === "right" ? "right" : "left";
     let style = {
       // backgroundColor: "#ffd805",
       backgroundColor: "#FFE450",
+      float: floatDirection,
     };
     if (!phone)
       return (
@@ -69,7 +72,7 @@ const ServiceCard = (props) => {
           // data-aos-easing={yellowRect.easing}
           // data-aos-duration={yellowRect.duration}
           // data-aos-offset={yellowOff}
-          className={classname}
+          // className={classname}
           style={style}
         ></div>
       );
@@ -100,15 +103,11 @@ const ServiceCard = (props) => {
     if (floatPos === "right") imageClassname += "md:right-24 right-6 top-10 ";
     else imageClassname += "md:left-24 left-6  md:top-16 top-10 ";
 
-    let yellowRectClassName = "lg:block hidden  float-";
-    yellowRectClassName += floatPos === "left" ? "left" : "right ";
-
-    const xvalues = floatPos === "left" ? [-40, 20] : [40, -20];
+    const xvalues = floatPos === "left" ? [-20, 10] : [20, -10];
     return (
       <>
-        {" "}
         <div className={containerClassname}>
-          <Parallax x={xvalues} className={yellowRectClassName}>
+          <Parallax x={xvalues} className="lg:block hidden ">
             {yellowRectangle(floatPos)}
           </Parallax>
           {/* <div x={xvalues} className="lg:block hidden">
