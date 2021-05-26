@@ -49,17 +49,22 @@ function Contact() {
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="800"
-        className="contactFlexContainer inline bg-yellow-400 justify-between overflowY-hidden"
+        className="contactFlexContainer flex justify-between overflowY-hidden"
       >
-        <form className="contactForm pl-20 w-3/5" onSubmit={(e) => submit(e)}>
+        <form
+          className="contactForm h-screen pt-28 md:pt-24 px-5 md:pl-20 md:w-3/5 w-auto"
+          onSubmit={(e) => submit(e)}
+        >
           <h2 className="font-plantc text-5xl pb-2">Get in touch</h2>
           <p className="pb-5">
             You have your craft. We have ours.
             <br />
             And that's bringing creative people together.
           </p>
-          <p className="font-medium pb-2">What can we help you with?</p>
-          <div className="contactChecks grid grid-cols-3 gap-1 pb-6">
+          <p className="contactHelpYou font-medium pb-2">
+            What can we help you with?
+          </p>
+          <div className="contactChecks text-left grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-1 pb-6">
             <div className="checkItem">
               <input type="checkbox" id="fWebsite" value="fWebsite" />
               <label for="fWebsite">Website</label>
@@ -72,7 +77,7 @@ function Contact() {
 
             <div className="checkItem">
               <input type="checkbox" id="fLogo" name="fLogo" value="fLogo" />
-              <label for="fLogo"> Logo Design</label>
+              <label for="fLogo">Logo Design</label>
             </div>
 
             <div className="checkItem">
@@ -105,7 +110,7 @@ function Contact() {
               <label for="fOther">Other</label>
             </div>
           </div>
-          <div className="contactFields flex flex-col h-36 mb-4">
+          <div className="contactFields flex flex-col md:h-36 mb-4">
             <input
               className="pb-1 mb-2"
               type="text"
@@ -143,8 +148,11 @@ function Contact() {
             <span>Submit</span>
           </button>
         </form>
-        <div className="circles w-screen">
-          <img className="contactCircles ml-64" src={circles}></img>
+        <div className="circles md:w-screen">
+          <img
+            className="contactCircles none md:inline-block ml-64"
+            src={circles}
+          ></img>
         </div>
       </div>
     </div>

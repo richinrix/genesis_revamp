@@ -1,7 +1,10 @@
 /* For mobile displays */
-@media (min-width: 767px) {
-  .arrw {
-    width: 50px !important;
-    height: 40px !important;
+.arrw {
+  width: 50px !important;
+  height: 40px !important;
+}
+@media (max-width: 767px) {
+  .teamImage {
+    height: 550px !important;
   }
 }

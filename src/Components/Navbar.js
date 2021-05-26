@@ -5,15 +5,27 @@ import "./CSS/navbar.css";
 
 function Navbar() {
   const [scrollDetect, setScrollDetect] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   // Function to detect scrolling and change theme based on that
   const handleScroll = () => {
-    if (window.scrollY > 600) {
-      setScrollDetect(true);
-      document.body.style.backgroundColor = "white";
+    console.log(window.scrollY);
+    if (screenWidth > 500) {
+      if (window.scrollY > 600) {
+        setScrollDetect(true);
+        document.body.style.backgroundColor = "white";
+      } else {
+        setScrollDetect(false);
+        document.body.style.backgroundColor = "black";
+      }
     } else {
-      setScrollDetect(false);
-      document.body.style.backgroundColor = "black";
+      if (window.scrollY > 250) {
+        setScrollDetect(true);
+        document.body.style.backgroundColor = "white";
+      } else {
+        setScrollDetect(false);
+        document.body.style.backgroundColor = "black";
+      }
     }
   };
 
@@ -44,8 +56,8 @@ function Navbar() {
         <ul
           className={
             scrollDetect
-              ? "navList lite menu border-b md:border-none font-normal flex mr-10 items-center justify-end list-reset m-0 w-full md:w-auto"
-              : "navList menu border-b md:border-none font-normal flex mr-10 items-center justify-end list-reset m-0 w-full md:w-auto"
+              ? "navList lite menu border-b md:border-none font-normal flex mr-10 items-center justify-end list-reset m-0 w-screen md:w-auto"
+              : "navList menu border-b md:border-none font-normal flex mr-10 items-center justify-end list-reset m-0 w-screen md:w-auto"
           }
         >
           <li class="border-t md:border-none">
