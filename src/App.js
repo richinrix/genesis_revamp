@@ -8,6 +8,9 @@ import {
 import "./App.css";
 
 //components
+// test
+import Test from "./Components/Test";
+//
 import Homepage from "./Components/Homepage";
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
@@ -49,7 +52,7 @@ function App() {
   );
 }
 const Home = () => (
-  <>
+  <div className="scroll-snap-container">
     <Homepage />
     <Team />
     <About />
@@ -58,6 +61,6 @@ const Home = () => (
     <Testimonials />
     <Contact />
     <Map />
-  </>
+  </div>
 );
 export default App;

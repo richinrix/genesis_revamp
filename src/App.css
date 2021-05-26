@@ -11,10 +11,9 @@
 
 body {
   overflow-x: hidden;
-  background-color: black;
-}
-html {
   scroll-behavior: smooth;
+  background-color: black;
+  /* overflow-y: hidden; */
 }
 
 /* Hides Scroll arrows in Number type inputs */
@@ -26,3 +25,16 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* .scroll-snap-container {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  scroll-snap-type: y proximity;
+  -ms-scroll-snap-type: y proximity;
+  max-height: 100vh;
+}
+.proximity-snap {
+  scroll-snap-align: start;
+  min-height: 100vh;
+} */

@@ -110,28 +110,35 @@ export default function Testimonials() {
   // displaying the current three cards
   function currenDesktoptView(cards, index) {
     return (
-      <SwiperSlide className="mx-auto md:my-auto my-8 lg:flex hidden md:flex-row flex-col justify-center items-center">
+      <SwiperSlide className="mx-auto md:my-auto my-8 lg:flex hidden md:flex-row  justify-center items-center">
         {<TestimonialCard testimonial={cards} index={index} />}
       </SwiperSlide>
     );
   }
-  function renderCards() {
-    for (let i = 0; i < testimonials.length; i++) {
-      return currenDesktoptView(testimonials.slice(startCard, startCard + 3));
-    }
+  function currentPhoneView(cards, index) {
+    return (
+      <SwiperSlide className="mx-auto md:my-auto my-8 md:flex-row  justify-center items-center">
+        {<TestimonialCard testimonial={cards} index={index} />}
+      </SwiperSlide>
+    );
   }
   return (
-    <>
+    <div className="proximity-snap">
       {/* phone view */}
-      <div
+      <Swiper
         id="testimonials"
+        slidesPerView={1}
+        spaceBetween={0}
+        loop={true}
+        navigation={false}
         // data-aos="slide-right"
-        className="lg:h-screen mx-auto md:my-2 my-8 lg:hidden flex md:flex-row flex-col justify-center items-center overflow-hidden "
+        className=" mx-auto md:my-2 my-8 overflow-hidden lg:hidden flex"
       >
         {testimonials &&
-          testimonials.slice &&
-          currenDesktoptView(testimonials.slice(startCard, startCard + 1))}
-      </div>
+          testimonials.map((testimonial, index) =>
+            currentPhoneView(testimonial, index)
+          )}
+      </Swiper>
       {/* desktop view */}
       <Swiper
         slidesPerView={3}
@@ -151,11 +158,10 @@ export default function Testimonials() {
         className="md:h-screen mx-auto md:my-auto my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden "
       >
         {testimonials &&
-          testimonials.slice &&
           testimonials.map((testimonial, index) =>
             currenDesktoptView(testimonial, index)
           )}
       </Swiper>
-    </>
+    </div>
   );
 }

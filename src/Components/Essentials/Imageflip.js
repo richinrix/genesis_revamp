@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { useSpring, a } from "@react-spring/web";
 import "../CSS/imageflip.css";
+// aos
 import AOS from "aos";
 import "aos/dist/aos.css";
+//dependencies
 import handleViewport from "react-in-viewport";
+import { useSpring, a } from "@react-spring/web";
 
 const Imageflip = (props) => {
-  const { inViewport, forwardedRef } = props;
-  const position = props.position;
-  const phonePosition = props.phonePosition;
-  const phoneDisplay = props.phoneDisplay;
-  const tabDisplay = props.tabDisplay;
-  const card = props.card;
-  const [flipped, setFlipped] = useState(false);
+  const {
+    inViewport,
+    forwardedRef,
+    position,
+    phonePosition,
+    phoneDisplay,
+    tabDisplay,
+    card,
+  } = props;
   const flipDuration = 1500 + props.index * 500;
   const aosDuration = props.index * 250;
+  const [flipped, setFlipped] = useState(false);
 
   // aos animation
   const cardAnimate = {
@@ -34,27 +39,31 @@ const Imageflip = (props) => {
   });
 
   // flips the image when called
-
   const flip = () => setFlipped((state) => !state);
+
   let flipTimerId;
   function ripple() {
-    flipTimerId = setTimeout(flip, flipDuration);
+    if (!flipped) {
+      flipTimerId = setTimeout(flip, flipDuration);
+    }
     // setTimeout(flip, flipDuration + 7 * 500);
   }
   useEffect(() => {
     AOS.init();
-
+  });
+  useEffect(() => {
+    AOS.init();
     // flipping card evry few seconds
     if (inViewport && !flipped) {
       ripple();
-      // console.log("in view", flipTimerId);
     } else if (!inViewport && flipped) {
-      // console.log("not in view", flipTimerId);
-      clearTimeout(flipTimerId);
-      // flip();
+      // clearTimeout(flipTimerId);
       setFlipped(false);
     }
   }, [inViewport]);
+  useEffect(() => {
+    if (!inViewport) setFlipped(false);
+  }, [flipped]);
 
   function imageCard(pos, card, phoneDisplay, tabDisplay, phonePos) {
     const frontImagePath = card.frontImage;

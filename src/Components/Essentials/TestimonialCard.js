@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import handleViewport from "react-in-viewport";
 import IMAGES from "../services/IMAGES";
 const Block = (props) => {
@@ -6,9 +7,26 @@ const Block = (props) => {
     ? "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7"
     : "none";
   let scale = inViewport ? "scale(1)" : "scale(0.98)";
+  // let boxShadow = "none",
+  //   scale = "scale(1)";
+
+  // only first 3
+  // let boxShadow =
+  //   testimonial.index > 3
+  //     ? inViewport
+  //       ? "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7"
+  //       : "none"
+  //     : "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7";
+  // let scale =
+  //   testimonial.index > 3
+  //     ? inViewport
+  //       ? "scale(1)"
+  //       : "scale(0.98)"
+  //     : "scale(1)";
+
   const transitionDelay = inViewport ? (testimonial.index % 4) / 2 + "s" : "0s";
   let className =
-    "relative mx-10 my-3 p-10 text-center flex h-screen flex-col justify-between overflow-hidden";
+    "relative llg:mx-10 mx-auto my-3 p-10 text-center flex h-screen flex-col justify-between overflow-hidden";
   let image, footerImg;
   if (index % 3 === 0) {
     image = IMAGES.leftQuoteGreen;
@@ -20,7 +38,6 @@ const Block = (props) => {
     image = IMAGES.leftQuoteBlue;
     footerImg = IMAGES.testimonialBottomBlue;
   }
-  className = testimonial.index < 4 ? className + " active" : className + "";
   return (
     <div
       id="testimonial-card"
