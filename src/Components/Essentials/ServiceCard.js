@@ -53,8 +53,9 @@ const ServiceCard = (props) => {
   // }, [inViewport]);
 
   function yellowRectangle(floatPos, phone = false) {
-    let classname = "float-" + floatPos;
-    // classname += floatPos === "left" ? " ml-10 " : " mr-10 ";
+    let classname = "float-";
+    //  + floatPos;
+    classname += floatPos === "left" ? " ml-10 " : " mr-10 ";
     const slideIn = floatPos === "right" ? "slide-left" : "slide-right";
     let style = {
       // backgroundColor: "#ffd805",
@@ -99,12 +100,15 @@ const ServiceCard = (props) => {
     if (floatPos === "right") imageClassname += "md:right-24 right-6 top-10 ";
     else imageClassname += "md:left-24 left-6  md:top-16 top-10 ";
 
-    const xvalues = floatPos === "left" ? [-20, 5] : [20, -5];
+    let yellowRectClassName = "lg:block hidden  float-";
+    yellowRectClassName += floatPos === "left" ? "left" : "right ";
+
+    const xvalues = floatPos === "left" ? [-40, 20] : [40, -20];
     return (
       <>
         {" "}
         <div className={containerClassname}>
-          <Parallax x={xvalues} className="lg:block hidden">
+          <Parallax x={xvalues} className={yellowRectClassName}>
             {yellowRectangle(floatPos)}
           </Parallax>
           {/* <div x={xvalues} className="lg:block hidden">
@@ -156,7 +160,7 @@ const ServiceCard = (props) => {
     let textSlideDirection =
       position === "right" ? "slide-right" : "slide-left";
     let textSectionClassname =
-      " flex-col content-center items-center h-min my-auto   mx-auto  md:w-1/2  ";
+      " flex-col content-center items-center h-min my-auto   mx-auto  md:w-3/4  ";
     return (
       <div className={textSectionClassname}>
         {" "}
@@ -182,10 +186,7 @@ const ServiceCard = (props) => {
   return (
     <>
       <div className="md:h-screen h-full   " id="proximity-snap">
-        <div
-          className="mx-auto p-5 my-auto"
-          // style={{ border: "2px solid white" }}
-        >
+        <div className="mx-auto p-5 my-auto">
           <div className={headingClassname}>
             <h2>{service.heading}</h2>
           </div>

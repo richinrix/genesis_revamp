@@ -37,7 +37,7 @@ export default function FlipContainer() {
   return (
     <div
       id="imageFlipContainer"
-      className="md:h-screen  flex flex-col   my-auto md:px-10 sm:px-5 py-5 w-11/12 proximity-snap   "
+      className="md:h-screen h-full  flex flex-col   my-auto md:px-10 sm:px-5 py-5 w-11/12 proximity-snap   "
     >
       <div className="mx-auto">
         <div>

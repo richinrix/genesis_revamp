@@ -56,6 +56,9 @@ const Imageflip = (props) => {
     // flipping card evry few seconds
     if (inViewport && !flipped) {
       ripple();
+    } else if (inViewport && flipped) {
+      flip();
+      flip();
     }
     // uncomment these if you need the images to flip back to initial state when scrolled away
     // else if (!inViewport && flipped) {
