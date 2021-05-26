@@ -1,8 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CSS/contact.css";
 import circles from "../images/contact.png";
+import axios from "axios";
+import API from "./services/API";
 
 function Contact() {
+  const url = API.contactSheet;
+  const sheetdb = require("sheetdb-node");
+  const [data, setdata] = useState({
+    name: "",
+    mail: "",
+    phno: "",
+    msg: "",
+  });
+
+  function handle(e) {
+    const newdata = { ...data };
+    newdata[e.target.id] = e.target.value;
+    setdata(newdata);
+    console.log(newdata);
+  }
+
+  function submit(e) {
+    e.preventDefault();
+    console.log([
+      {
+        name: data.name,
+        mail: data.mail,
+        phno: parseInt(data.phno),
+        msg: data.msg,
+      },
+    ]);
+    axios
+      .post(url, {
+        name: data.name,
+        mail: data.mail,
+        phno: parseInt(data.phno),
+        msg: data.msg,
+      })
+      .then((res) => {
+        console.log(res.data);
+      });
+  }
+
   return (
     <div id="contactContainer" className="h-screen">
       <div
@@ -11,7 +51,7 @@ function Contact() {
         data-aos-duration="800"
         className="contactFlexContainer inline bg-yellow-400 justify-between overflowY-hidden"
       >
-        <div className="contactForm pl-20 w-3/5">
+        <form className="contactForm pl-20 w-3/5" onSubmit={(e) => submit(e)}>
           <h2 className="font-plantc text-5xl pb-2">Get in touch</h2>
           <p className="pb-5">
             You have your craft. We have ours.
@@ -69,32 +109,40 @@ function Contact() {
             <input
               className="pb-1 mb-2"
               type="text"
-              id="fname"
+              id="name"
               placeholder="Name"
+              value={data.name}
+              onChange={(e) => handle(e)}
             />
             <input
               className="pb-1 mb-2"
               type="email"
-              id="fmail"
+              id="mail"
               placeholder="E-mail"
+              value={data.mail}
+              onChange={(e) => handle(e)}
             />
             <input
               className="pb-1 mb-2"
               type="number"
-              id="fphone"
+              id="phno"
               placeholder="Phone Number"
+              value={data.phno}
+              onChange={(e) => handle(e)}
             />
             <input
               className="pb-1 mb-2"
               type="textarea"
-              id="fmessage"
+              id="msg"
               placeholder="Message"
+              value={data.msg}
+              onChange={(e) => handle(e)}
             />
           </div>
-          <button class="btn btn-1 hover-filled-opacity">
+          <button type="submit" class="btn btn-1 hover-filled-opacity">
             <span>Submit</span>
           </button>
-        </div>
+        </form>
         <div className="circles w-screen">
           <img className="contactCircles ml-64" src={circles}></img>
         </div>

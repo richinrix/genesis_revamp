@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./CSS/team.css";
-import arrow from "../images/icons/arrow.svg";
+import arrow from "../images/icons/right-arrow.png";
 
 function Team() {
   const [scrollDetect, setScrollDetect] = useState(false);
@@ -35,17 +35,17 @@ function Team() {
           <h5
             className={
               scrollDetect
-                ? "text-black relative text-base my-0 ml-2"
-                : "text-white relative text-base my-0 ml-2"
+                ? "text-black relative text-lg my-0 ml-2 tracking-wide"
+                : "text-white relative text-lg my-0 ml-2"
             }
           >
             See our job openings
           </h5>
-          <img className="ml-2" src={arrow} height="10px" width="25px"></img>
+          <img className="arrw ml-2 pb-2" src={arrow}></img>
         </a>
         <img
           className="teamImage mt-6"
-          src="https://images.unsplash.com/photo-1621302698884-a02929870bf7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+          src="https://via.placeholder.com/1500x350?text=Image"
           alt=""
           srcset=""
           style={{ height: "350px", width: "1500px" }}
