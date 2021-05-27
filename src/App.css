@@ -9,6 +9,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: black;
+  transition: all 1000ms;
   /* overflow-y: hidden; */
 }
 
