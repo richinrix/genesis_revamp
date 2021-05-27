@@ -6,10 +6,14 @@ import "./CSS/navbar.css";
 function Navbar() {
   const [scrollDetect, setScrollDetect] = useState(false);
   const screenWidth = useState(window.innerWidth);
+  const [isPhone, setIsPhone] = useState(false);
 
+  if (screenWidth > 700) {
+    setIsPhone(true);
+    console.log(isPhone);
+  }
   // Function to detect scrolling and change theme based on that
   const handleScroll = () => {
-    console.log(window.scrollY);
     if (screenWidth > 500) {
       if (window.scrollY > 600) {
         setScrollDetect(true);
@@ -37,6 +41,7 @@ function Navbar() {
         <div class="flex flex-no-shrink items-center mr-6 py-5 pl-0 md:pl-8">
           <a className="navLogo self-center" href="#">
             <img
+              className={isPhone ? "hidden" : ""}
               src={scrollDetect ? logoLite : logoDark}
               alt=""
               srcset=""

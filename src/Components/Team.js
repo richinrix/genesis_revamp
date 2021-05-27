@@ -8,7 +8,6 @@ function Team() {
 
   // Function to detect scrolling and change theme based on that
   const handleScroll = () => {
-    console.log(window.scrollY);
     if (screenWidth > 500) {
       if (window.scrollY > 400) {
         setScrollDetect(true);
