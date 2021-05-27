@@ -3,6 +3,7 @@
   .navicon {
     width: 1.125em;
     height: 0.125em;
+    margin-top: 2rem;
   }
 
   .navicon::before,
@@ -15,8 +16,16 @@
     content: "";
     background: gray;
   }
+  .nav {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
   .nav ul li a {
-    color: gray;
+    color: black;
+    background-color: rgba(238, 255, 0, 0.8);
+    font-weight: 500;
+  }
+  .nav ul li {
+    text-align: center;
   }
 
   .navicon::before {
@@ -54,7 +63,7 @@
 }
 
 .nav ul li a {
-  color: rgb(95, 91, 91);
+  color: black;
 }
 
 .nav {

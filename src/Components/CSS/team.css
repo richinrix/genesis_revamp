@@ -8,3 +8,8 @@
     height: 550px !important;
   }
 }
+@media (max-width: 400px) {
+  .teamImage {
+    height: 400px !important;
+  }
+}

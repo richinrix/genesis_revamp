@@ -92,14 +92,14 @@ function Map() {
         data-aos-offset="-300"
         className="mapFooter flex flex-col md:flex-row justify-between pt-4 "
       >
-        <p className="order-1 mb-4 pt-3 md:mt-0 text-xl md:text-base md:pb-2">
+        <p className="order-1 mb-5 pt-3 md:mt-0 text-lg md:text-base md:pb-2">
           XYZ, ZYX road, 2nd Main, Bangalore 560097, Karnataka, India
         </p>
         <div className="footerPhone order-2 md:none pl-0.5 flex flex-row">
           <i id="fPicon" class="fa fa-phone pt-1.5 pr-1.5 flex-shrink-0"></i>
           <p>+91 8792384161/ +91 9886031980</p>
         </div>
-        <h2 className="md:hidden order-3 text-3xl mt-4">Say Hello!</h2>
+        <h2 className="md:hidden order-3 text-2xl mt-4">Say Hello!</h2>
         <p className=" md:hidden order-4 text-xl">
           We'd love to hear from you.
         </p>

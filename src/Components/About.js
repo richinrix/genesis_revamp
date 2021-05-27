@@ -16,7 +16,7 @@ function About() {
           <h1 className="aboutHead font-plantc text-5xl md:mr-20 ml-5 md:ml-10  pb-3 md:pb-5 md:pt-16">
             About Us
           </h1>
-          <p className="md:mr-20 ml-5 md:ml-10 md:tracking-wider	">
+          <p className="aboutParagraphs md:mr-20 ml-5 md:ml-10 md:tracking-wider	">
             How are we different from the millions of companies out there,
             calling themselves the ‘Best Digital Agency’?
             <br /> Genesis Media is not just a digital agency, we are a
