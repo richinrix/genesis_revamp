@@ -77,7 +77,7 @@ const ServiceCard = (props) => {
       backgroundRepeat: "no-repeat",
     };
     let containerClassname = "relative  ";
-    containerClassname += steps > 5 ? " mt-14 " : " ";
+    containerClassname += steps > 5 ? " md:mt-14 " : " ";
     if (floatPos === "right") containerClassname += " md:mr-20";
     else containerClassname += " md:ml-20";
 
@@ -95,7 +95,7 @@ const ServiceCard = (props) => {
           <Parallax x={yellowRectXval} className="md:block hidden ">
             {yellowRectangle(floatPos)}
           </Parallax>
-          <Parallax x={yellowRectXval} className="md:hidden block ">
+          <Parallax x={yellowRectXvalPh} className="md:hidden block ">
             {yellowRectangle(floatPos)}
           </Parallax>
           {/* <div x={xvalues} className="lg:block hidden">
@@ -124,7 +124,7 @@ const ServiceCard = (props) => {
   }
   function description(desc) {
     return (
-      <div className="font-plantc text-2xl mx-auto text-gray-500 leading-7">
+      <div className="font-plantc md:text-2xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
         {desc}
       </div>
     );
@@ -155,9 +155,12 @@ const ServiceCard = (props) => {
   function textSection(desc, steps, position) {
     let textSlideDirection =
       position === "right" ? "slide-right" : "slide-left";
-    let xval = position === "right" ? [-20, 20] : [20, -8];
+    let descXval = position === "right" ? [-20, 20] : [20, -8];
+    let descXvalPh = position === "right" ? [-20, 20] : [20, -3];
 
-    if (position === "right" && steps.length > 8) xval = [-20, 15];
+    if (position === "right" && steps.length > 8) descXval = [-20, 15];
+    if (position === "right" && steps.length > 8) descXvalPh = [-20, 15];
+
     let textSectionClassname =
       " flex-col content-center items-center h-min my-auto   mx-auto  md:w-3/4  ";
     let descriptionClassname = "w-11/12 ";
@@ -172,8 +175,17 @@ const ServiceCard = (props) => {
     return (
       <div className={textSectionClassname}>
         <Parallax
-          className={descriptionClassname}
-          x={xval}
+          className={"w-11/12  md:block hidden"}
+          x={descXval}
+          // data-aos={textSlideDirection}
+          // data-aos-offset={serviceDescOff}
+          // data-aos-duration={serviceDesc.duration}
+        >
+          {description(desc)}
+        </Parallax>
+        <Parallax
+          className={"w-11/12  md:hidden block"}
+          x={descXvalPh}
           // data-aos={textSlideDirection}
           // data-aos-offset={serviceDescOff}
           // data-aos-duration={serviceDesc.duration}
