@@ -16,7 +16,6 @@ const ServiceCard = (props) => {
   // offset vars ......
   const [servicePointOff, setServicePointOff] = useState("00");
   const [serviceDescOff, setServiceDescOff] = useState("200");
-  const [yellowOff, setYellowOff] = useState("0");
 
   // aos styling settings
   let yellowRect = {
@@ -34,23 +33,6 @@ const ServiceCard = (props) => {
     offset: screenWidth > 650 ? "250" : "150",
     duration: "1200",
   };
-  useEffect(() => {}, [screenWidth]);
-  // function to400() {
-  //   console.log(index, "changed to 400");
-  //   setYellowOff("400");
-  //   setServiceDescOff("200");
-  //   setServicePointOff("100");
-  // }
-  // function to0() {
-  //   console.log(index, "changed to 0");
-  //   setYellowOff("0");
-  //   setServiceDescOff("0");
-  //   setServicePointOff("0");
-  // }
-
-  // useEffect(() => {
-  //   inViewport ? setTimeout(to400, 750) : setTimeout(to0, 1000);
-  // }, [inViewport]);
 
   function yellowRectangle(floatPos, phone = false) {
     let classname = "float-";
@@ -103,24 +85,39 @@ const ServiceCard = (props) => {
     if (floatPos === "right") imageClassname += "md:right-24 right-6 top-10 ";
     else imageClassname += "md:left-24 left-6  md:top-16 top-10 ";
 
-    const xvalues = floatPos === "left" ? [-20, 10] : [20, -10];
+    const yellowRectXval = floatPos === "left" ? [-20, 10] : [20, -10];
+    const yellowRectXvalPh = floatPos === "left" ? [-20, 10] : [20, -10];
+    const imageXval = floatPos === "left" ? [-10, 5] : [10, -5];
+    const imageXvalPh = floatPos === "left" ? [-10, 10] : [10, -10];
     return (
       <>
         <div className={containerClassname}>
-          <Parallax x={xvalues} className="lg:block hidden ">
+          <Parallax x={yellowRectXval} className="md:block hidden ">
+            {yellowRectangle(floatPos)}
+          </Parallax>
+          <Parallax x={yellowRectXval} className="md:hidden block ">
             {yellowRectangle(floatPos)}
           </Parallax>
           {/* <div x={xvalues} className="lg:block hidden">
             {yellowRectangle(floatPos)}
           </div> */}
-          <div className="lg:hidden block">
+          {/* <div className="lg:hidden block">
             {yellowRectangle(floatPos, true)}
-          </div>
-          <div
-            id="servicesImage"
-            className={imageClassname}
-            style={style}
-          ></div>
+          </div> */}
+          <Parallax x={imageXval} className="md:block hidden">
+            <div
+              id="servicesImage"
+              className={imageClassname}
+              style={style}
+            ></div>
+          </Parallax>
+          <Parallax x={imageXvalPh} className="md:hidden block">
+            <div
+              id="servicesImage"
+              className={imageClassname}
+              style={style}
+            ></div>
+          </Parallax>
         </div>
       </>
     );
@@ -158,19 +155,31 @@ const ServiceCard = (props) => {
   function textSection(desc, steps, position) {
     let textSlideDirection =
       position === "right" ? "slide-right" : "slide-left";
+    let xval = position === "right" ? [-20, 20] : [20, -8];
+
+    if (position === "right" && steps.length > 8) xval = [-20, 15];
     let textSectionClassname =
       " flex-col content-center items-center h-min my-auto   mx-auto  md:w-3/4  ";
+    let descriptionClassname = "w-11/12 ";
+    //  + steps.length < 6
+    //   ? position === "right"
+    //     ? " ml-12 "
+    //     : " mr-0 "
+    //   : position === "right"
+    //   ? " ml-0 "
+    //   : " mr-0";
+
     return (
       <div className={textSectionClassname}>
-        {" "}
-        <div
-          className="w-11/12 mx-auto  "
-          data-aos={textSlideDirection}
-          data-aos-offset={serviceDescOff}
-          data-aos-duration={serviceDesc.duration}
+        <Parallax
+          className={descriptionClassname}
+          x={xval}
+          // data-aos={textSlideDirection}
+          // data-aos-offset={serviceDescOff}
+          // data-aos-duration={serviceDesc.duration}
         >
           {description(desc)}
-        </div>
+        </Parallax>
         <div className="flex  my-auto pt-5">
           <ul className="ml-4 my-auto">
             {steps.map((step, index) =>
