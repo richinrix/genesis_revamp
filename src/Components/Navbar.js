@@ -5,7 +5,7 @@ import "./CSS/navbar.css";
 
 function Navbar() {
   const [scrollDetect, setScrollDetect] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const screenWidth = useState(window.innerWidth);
 
   // Function to detect scrolling and change theme based on that
   const handleScroll = () => {
@@ -19,7 +19,7 @@ function Navbar() {
         document.body.style.backgroundColor = "black";
       }
     } else {
-      if (window.scrollY > 250) {
+      if (window.scrollY > 350) {
         setScrollDetect(true);
         document.body.style.backgroundColor = "white";
       } else {
@@ -50,7 +50,7 @@ function Navbar() {
           class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none"
           for="menu-btn"
         >
-          <span class="navicon bg-grey-darkest flex items-center relative"></span>
+          <span class="navicon bg-gray-600 flex items-center relative"></span>
         </label>
 
         <ul
