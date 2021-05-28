@@ -73,11 +73,8 @@ function Navbar() {
             </a>
           </li>
 
-          <li class="border-none">
-            <a
-              href="/#services"
-              class="block md:inline-block  py-3 no-underline"
-            >
+          <li class="navSer border-none">
+            <a href="/#teams" class=" block md:inline-block  py-3 no-underline">
               Services
             </a>
           </li>

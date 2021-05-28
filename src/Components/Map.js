@@ -7,31 +7,46 @@ function Map() {
   const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(true);
   const [borderColor, setBorderColor] = useState("black");
-  function validateEmail(email) {
+  const [subbed, setSubbed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const checkPhone = () => {
+    if (window.innerWidth > 700) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  function validateNewsEmail(email) {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
-  function emailSubmiteHandler(e) {
+  function newsEmailSubmiteHandler(e) {
     e.preventDefault();
-    if (validateEmail(email)) {
+    if (validateNewsEmail(email)) {
       setValidEmail(true);
       setBorderColor("black");
       e.target.value = null;
       axios.post(API.newsLetter, {
         data: [
           {
-            email: email,
-            date: new Date().toLocaleString(),
+            Email: email,
+            Date: new Date().toLocaleString(),
           },
         ],
       });
+      setBorderColor("green");
+      setSubbed(true);
     } else {
       setBorderColor("red");
       setValidEmail(false);
+      setSubbed(false);
     }
   }
 
+  window.addEventListener("scroll", checkPhone);
   return (
     <div
       id="mapContainer"
@@ -56,14 +71,25 @@ function Map() {
               style={{ borderColor: borderColor }}
             />
             {!validEmail && (
-              <h6 className="absolute ml-2 top-20 " style={{ color: "red" }}>
+              <h6
+                className="absolute text-lg ml-36 mt-2.5 md:ml-2 md:top-20 "
+                style={{ color: "red" }}
+              >
                 Invalid e-mail
+              </h6>
+            )}
+            {subbed && (
+              <h6
+                className="subGreen absolute mt-2.5 md:ml-2 md:top-20 "
+                style={{ color: "green" }}
+              >
+                You are now subscribed!
               </h6>
             )}
             <button
               class="bton bton-white bton-animate"
               type="submit"
-              onClick={(e) => emailSubmiteHandler(e)}
+              onClick={(e) => newsEmailSubmiteHandler(e)}
             >
               Subscribe
             </button>
@@ -92,9 +118,9 @@ function Map() {
         className="mapBox mt-2 mb-3 md:mb-0 overflow-hidden"
       >
         <iframe
-          className="gMap"
+          className="gMap ml-3 md:ml-0"
           src="https://maps.google.com/maps?width=720&amp;height=600&amp;hl=en&amp;q=Genesis%20Media,%20Doddabommasandra+(Genesis%20Media)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          width="1300"
+          width={isMobile ? "1300" : "400"}
           height="300"
           allowfullscreen=""
           loading="lazy"
@@ -107,19 +133,24 @@ function Map() {
         data-aos-offset="-300"
         className="mapFooter flex flex-col md:flex-row justify-between pt-4 "
       >
-        <p className="order-1 mb-5 pt-3 md:mt-0 text-lg md:text-base md:pb-2">
+        <p className="order-1 mb-5 pt-3 md:mt-0 text-base md:text-base md:pb-2">
           65, 1st Main, 3rd Cross Road, Deshbandunagara, DB Sandra,
           Bengaluru-560097, Karnataka, India
         </p>
         <div className="footerPhone order-2 md:none pl-0.5 flex flex-row">
-          <i id="fPicon" class="fa fa-phone pt-1.5 pr-1.5 flex-shrink-0"></i>
-          <p className="text-sm md:text-base">+91 8792384161/ +91 9886031980</p>
+          <i
+            id="fPicon"
+            class="fa fa-phone mt-3 md:mt-0  pt-1.5 pr-1.5 flex-shrink-0"
+          ></i>
+          <p className="text-lg mt-3 md:mt-0 md:text-base">
+            +91 8792384161/ +91 9886031980
+          </p>
         </div>
-        <h2 className="md:hidden order-3 text-2xl mt-4">Say Hello!</h2>
-        <p className=" md:hidden order-4 text-xl">
+        <h2 className="md:hidden order-3 text-xl mt-4">Say Hello!</h2>
+        <p className=" md:hidden order-4 text-lg">
           We'd love to hear from you.
         </p>
-        <p className="footerText md:mt-1 z-10 order-5 md:ml-32 md:pl-20 text-gray-600">
+        <p className="footerText md:mt-1 z-10 order-5 md:ml-32 md:pl-20 text-gray-700">
           Copyright © 2021, Genesis Media, All Rights Reserved
         </p>
       </div>
