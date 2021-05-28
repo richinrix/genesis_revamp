@@ -44,8 +44,8 @@ export default function FlipContainer() {
           id="ImageFlip-Text"
           className="font-plantc md:text-5xl text-4xl md:mb-10 mb-5  md:ml-0 ml-8 md:mt-16"
         >
-          <h2 className=" ">Meet the team</h2>
-          <h2 className="text-gray-500 md:mt-4 ">delete or replace</h2>
+          <h2 className=" ">Meet our team</h2>
+          {/* <h2 className="text-gray-500 md:mt-4 ">delete or replace</h2> */}
         </div>
         <div>
           <div

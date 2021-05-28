@@ -1,42 +1,90 @@
 [
   {
-    "name": "Lorem ipsumsfd",
-    "frontImage": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
-    "backImage": "https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop"
+    "name": "Vidya ",
+    "desktopImg": {
+      "frontImage": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622220627/Genesis-media/genesis-imageflip-images/Desktop/Vidya_ywal8d.png"
+    },
+    "phoneImg": {
+      "frontImage": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622222157/Genesis-media/genesis-imageflip-images/genesis-imageflip-images-phone/Phone/Vidya_fvdg4l.png"
+    }
   },
   {
-    "name": "Lorem ipsumafds",
-    "frontImage": "http://www.winwallpapers.net/w1/2014/01/Batman-Begins-2005-Wallpapers-2.jpg",
-    "backImage": "https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop"
+    "name": "Sarvesh ",
+    "desktopImg": {
+      "frontImage": "http://www.winwallpapers.net/w1/2014/01/Batman-Begins-2005-Wallpapers-2.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622220626/Genesis-media/genesis-imageflip-images/Desktop/Sarvesh_ewqniu.png"
+    },
+    "phoneImg": {
+      "frontImage": "http://www.winwallpapers.net/w1/2014/01/Batman-Begins-2005-Wallpapers-2.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622222156/Genesis-media/genesis-imageflip-images/genesis-imageflip-images-phone/Phone/Sarvesh_xipyjg.png"
+    }
   },
   {
-    "name": "tenletters elevenchars",
-    "frontImage": "https://www.fightersgeneration.com/nx5/char/flash-injustice-concept.jpg",
-    "backImage": "https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop"
+    "name": "Deepak ",
+    "desktopImg": {
+      "frontImage": "https://www.fightersgeneration.com/nx5/char/flash-injustice-concept.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622220625/Genesis-media/genesis-imageflip-images/Desktop/Deepak_oqr6un.jpg"
+    },
+    "phoneImg": {
+      "frontImage": "https://www.fightersgeneration.com/nx5/char/flash-injustice-concept.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622222155/Genesis-media/genesis-imageflip-images/genesis-imageflip-images-phone/Phone/Deepak_bpqcn0.jpg"
+    }
   },
   {
-    "name": "Lorem ipsum",
-    "frontImage": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
-    "backImage": "https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop"
+    "name": "Dheeraj ",
+    "desktopImg": {
+      "frontImage": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622220626/Genesis-media/genesis-imageflip-images/Desktop/Dheeraj_um5ani.jpg"
+    },
+    "phoneImg": {
+      "frontImage": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622222155/Genesis-media/genesis-imageflip-images/genesis-imageflip-images-phone/Phone/Dheeraj_cfuu2d.jpg"
+    }
   },
   {
-    "name": "Lorem ipsum",
-    "frontImage": "https://www.fightersgeneration.com/nx5/char/flash-injustice-concept.jpg",
-    "backImage": "https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop"
+    "name": "Sharan ",
+    "desktopImg": {
+      "frontImage": "https://www.fightersgeneration.com/nx5/char/flash-injustice-concept.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622220626/Genesis-media/genesis-imageflip-images/Desktop/Sharan_xxl2no.png"
+    },
+    "phoneImg": {
+      "frontImage": "https://www.fightersgeneration.com/nx5/char/flash-injustice-concept.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622222157/Genesis-media/genesis-imageflip-images/genesis-imageflip-images-phone/Phone/Sharan_qser3m.png"
+    }
   },
   {
-    "name": "Lorem ipsum",
-    "frontImage": "http://www.winwallpapers.net/w1/2014/01/Batman-Begins-2005-Wallpapers-2.jpg",
-    "backImage": "https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop"
+    "name": "Ashwin ",
+    "desktopImg": {
+      "frontImage": "http://www.winwallpapers.net/w1/2014/01/Batman-Begins-2005-Wallpapers-2.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622220625/Genesis-media/genesis-imageflip-images/Desktop/Ashwin_l9fwji.jpg"
+    },
+    "phoneImg": {
+      "frontImage": "http://www.winwallpapers.net/w1/2014/01/Batman-Begins-2005-Wallpapers-2.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622222155/Genesis-media/genesis-imageflip-images/genesis-imageflip-images-phone/Phone/Ashwin_lypzff.jpg"
+    }
   },
   {
-    "name": "Lorem ipsum",
-    "frontImage": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
-    "backImage": "https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop"
+    "name": "Rohith ",
+    "desktopImg": {
+      "frontImage": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622220626/Genesis-media/genesis-imageflip-images/Desktop/Rohith_boxqh5.png"
+    },
+    "phoneImg": {
+      "frontImage": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622222156/Genesis-media/genesis-imageflip-images/genesis-imageflip-images-phone/Phone/Rohith_llirka.png"
+    }
   },
   {
-    "name": "Lorem ipsum",
-    "frontImage": "http://www.winwallpapers.net/w1/2014/01/Batman-Begins-2005-Wallpapers-2.jpg",
-    "backImage": "https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop"
+    "name": "Ragini ",
+    "desktopImg": {
+      "frontImage": "http://www.winwallpapers.net/w1/2014/01/Batman-Begins-2005-Wallpapers-2.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622220626/Genesis-media/genesis-imageflip-images/Desktop/Ragini_cstrsj.png"
+    },
+    "phoneImg": {
+      "frontImage": "http://www.winwallpapers.net/w1/2014/01/Batman-Begins-2005-Wallpapers-2.jpg",
+      "backImage": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622222156/Genesis-media/genesis-imageflip-images/genesis-imageflip-images-phone/Phone/Ragini_oihtpx.png"
+    }
   }
 ]

@@ -11,7 +11,6 @@ import "./CSS/services.css";
 
 export default function Services() {
   const [services, setServices] = useState();
-  const [screenwidth, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     getData();
@@ -26,7 +25,7 @@ export default function Services() {
       <div id="services" className="h-0"></div>
       {services &&
         services.map((data, index) => (
-          <ServiceCard index={index} service={data} screenwidth={screenwidth} />
+          <ServiceCard index={index} service={data} />
         ))}
     </ParallaxProvider>
   );

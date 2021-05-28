@@ -39,7 +39,8 @@
       "Marketing Psychology",
       "Market analysis / Data Analysis"
     ],
-    "image": "https://webmarketsupport.com/wp-content/uploads/2016/10/free-stock-photos-for-commercial-use-skitterphoto.jpg"
+
+    "video": "https://res.cloudinary.com/genesiscloudimages/video/upload/v1622214435/Genesis-media/genesis-marketing-service_citpb0.mp4"
   },
   {
     "heading": "Production",
@@ -51,6 +52,6 @@
       "Creative Design"
     ],
     "image": null,
-    "video": "https://www.youtube.com/embed/4DRnhmdUu8A"
+    "YTvideo": "https://www.youtube.com/embed/4DRnhmdUu8A"
   }
 ]

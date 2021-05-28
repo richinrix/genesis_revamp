@@ -70,8 +70,11 @@ const Imageflip = (props) => {
   // }, [flipped]);
 
   function imageCard(pos, card, phoneDisplay, tabDisplay, phonePos) {
-    const frontImagePath = card.frontImage;
-    const backImagePath = card.backImage;
+    const frontImage = card.desktopImg.frontImage;
+    const backImage = card.desktopImg.backImage;
+    const frontImagePhone = card.phoneImg.frontImage;
+    const backImagePhone = card.phoneImg.backImage;
+
     const name = card.name;
     let classname = "imageflip_container text-center md:mx-3 mx-1.5 ";
 
@@ -87,37 +90,73 @@ const Imageflip = (props) => {
 
     return (
       <>
-        <div ref={forwardedRef} className="h-1"></div>
-        <div
-          className={classname}
-          data-aos="slide-up"
-          data-aos-easing={cardAnimate.easeing}
-          data-aos-offset={cardAnimate.offset}
-          data-aos-duration={cardAnimate.duration}
-          onMouseEnter={() => setFlipped((state) => !state)}
-          onMouseLeave={() => setFlipped((state) => !state)}
-        >
-          <a.div
-            className="imageflip_c imageflip_back "
-            style={{
-              opacity: opacity.to((o) => 1 - o),
-              transform,
-              backgroundImage: `url('${frontImagePath}')`,
-            }}
+        {/* desktop */}
+        <div className="lg:block hidden">
+          <div
+            className={classname}
+            data-aos="slide-up"
+            data-aos-easing={cardAnimate.easeing}
+            data-aos-offset={cardAnimate.offset}
+            data-aos-duration={cardAnimate.duration}
+            onMouseEnter={() => setFlipped((state) => !state)}
+            onMouseLeave={() => setFlipped((state) => !state)}
           >
-            <div className="md:text-3xl text-2xl text-left absolute md:bottom-5 bottom-1  ml-2 text-white">
-              {name}
-            </div>
-          </a.div>
-          <a.div
-            className="imageflip_c imageflip_front"
-            style={{
-              opacity,
-              transform,
-              rotateY: "180deg",
-              backgroundImage: `url('${backImagePath}')`,
-            }}
-          />
+            <a.div
+              className="imageflip_c imageflip_back "
+              style={{
+                opacity: opacity.to((o) => 1 - o),
+                transform,
+                backgroundImage: `url('${frontImage}')`,
+              }}
+            >
+              <div className="md:text-3xl text-2xl text-left absolute md:bottom-5 bottom-1  ml-2 text-white">
+                {name}
+              </div>
+            </a.div>
+            <a.div
+              className="imageflip_c imageflip_front"
+              style={{
+                opacity,
+                transform,
+                rotateY: "180deg",
+                backgroundImage: `url('${backImage}')`,
+              }}
+            />
+          </div>
+        </div>
+        {/* phone */}
+        <div className="lg:hidden block">
+          <div
+            className={classname}
+            data-aos="slide-up"
+            data-aos-easing={cardAnimate.easeing}
+            data-aos-offset={cardAnimate.offset}
+            data-aos-duration={cardAnimate.duration}
+            onMouseEnter={() => setFlipped((state) => !state)}
+            onMouseLeave={() => setFlipped((state) => !state)}
+          >
+            <a.div
+              className="imageflip_c imageflip_back "
+              style={{
+                opacity: opacity.to((o) => 1 - o),
+                transform,
+                backgroundImage: `url('${frontImagePhone}')`,
+              }}
+            >
+              <div className="md:text-3xl text-2xl text-left absolute md:bottom-5 bottom-1  ml-2 text-white">
+                {name}
+              </div>
+            </a.div>
+            <a.div
+              className="imageflip_c imageflip_front"
+              style={{
+                opacity,
+                transform,
+                rotateY: "180deg",
+                backgroundImage: `url('${backImagePhone}')`,
+              }}
+            />
+          </div>
         </div>
       </>
     );

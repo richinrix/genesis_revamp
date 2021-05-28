@@ -4,35 +4,37 @@ import handleViewport from "react-in-viewport";
 import linesImg from "../../images/icons/services-line-and-dots.png";
 // other modules
 import { Parallax } from "react-scroll-parallax";
-import Youtube from "@u-wave/react-youtube";
+import ReactPlayer from "react-player/lazy";
 import "../../App.css";
+
 const ServiceCard = (props) => {
-  const { inViewport, forwardedRef, service, index, screenWidth } = props;
+  const { inViewport, forwardedRef, service, index } = props;
   let imagePos = index % 2 === 0 ? "right" : "left";
   let descriptionClassname = "flex  flex-col-reverse mt-5 justify-center ";
   if (imagePos === "right") descriptionClassname += " md:flex-row";
   else descriptionClassname += " md:flex-row-reverse";
   let headingClassname = "mx-auto  md:mt-10 text-center font-plantc text-5xl ";
 
+  const [videoPlayState, setPlayState] = useState(false);
   // offset vars ......
   const [servicePointOff, setServicePointOff] = useState("00");
   const [serviceDescOff, setServiceDescOff] = useState("200");
 
+  useEffect(() => {
+    inViewport ? setPlayState(true) : setPlayState(false);
+    // console.log(videoPlayState);
+  }, [inViewport]);
   // aos styling settings
   let yellowRect = {
     duration: "500",
-    offset: screenWidth > 650 ? "250" : "50",
+    offset: "50",
     offset2: "400",
     easing: "ease-in",
   };
   let servicePoint = {
     duration: "600",
-    offset: screenWidth > 650 ? "200" : "100",
+    offset: "100",
     easing: "linear",
-  };
-  let serviceDesc = {
-    offset: screenWidth > 650 ? "250" : "150",
-    duration: "1200",
   };
 
   function yellowRectangle(floatPos, phone = false) {
@@ -52,43 +54,50 @@ const ServiceCard = (props) => {
       return (
         <div
           id="yellowRectangle"
-          data-aos={slideIn}
-          data-aos-easing={yellowRect.easing}
-          data-aos-duration={yellowRect.duration}
-          data-aos-offset={yellowRect.offset2}
+          // data-aos={slideIn}
+          // data-aos-easing={yellowRect.easing}
+          // data-aos-duration={yellowRect.duration}
+          // data-aos-offset={yellowRect.offset2}
           className={classname}
           style={style}
         ></div>
       );
   }
-  function iframeYT(video, classname, xval, xvalPh) {
-    const src = video + "?controls=0&?autoplay=1&mute=1";
-
+  function iframeYT(video, YTvideo, classname, xval, xvalPh) {
+    const YTsrc = YTvideo ? YTvideo + "?autoplay=1&mute=1" : "";
+    const className = classname + " md:bg-black ";
     return (
       <>
-        <Parallax x={xval} className=" md:block hidden">
-          <iframe
+        {/* desktop  */}
+        <Parallax x={xval} className=" md:block hidden ">
+          <ReactPlayer
+            ref={forwardedRef}
             id="servicesImage"
-            className={classname}
-            src={src}
-            frameborder="0"
-            allow=" encrypted-media"
-            allowfullscreen
-          ></iframe>
+            className={className}
+            url={video ? video : YTsrc}
+            controls={true}
+            loop={true}
+            playing={videoPlayState}
+          />
         </Parallax>
-        <Parallax x={xvalPh} className=" md:hidden block">
-          <iframe
+        {/* phone */}
+        <Parallax x={xval} className=" md:hidden block">
+          <ReactPlayer
+            ref={forwardedRef}
             id="servicesImage"
             className={classname}
-            src={src}
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
+            url={video ? video : YTsrc}
+            width={"80%"}
+            height={"280px"}
+            loop={true}
+            playing={videoPlayState}
+            // controls={true}
+          />
         </Parallax>
       </>
     );
   }
-  function imageSection(image_path, video, floatPos, steps) {
+  function imageSection(image_path, video, YTvideo, floatPos, steps) {
     const imageStyle = {
       backgroundImage: `url('${image_path}')`,
       backgroundRepeat: "no-repeat",
@@ -116,12 +125,7 @@ const ServiceCard = (props) => {
           <Parallax x={yellowRectXvalPh} className="md:hidden block ">
             {yellowRectangle(floatPos)}
           </Parallax>
-          {/* <div x={xvalues} className="lg:block hidden">
-            {yellowRectangle(floatPos)}
-          </div> */}
-          {/* <div className="lg:hidden block">
-            {yellowRectangle(floatPos, true)}
-          </div> */}
+
           {image_path && !video ? (
             <>
               <Parallax x={imageXval} className="md:block hidden">
@@ -140,7 +144,7 @@ const ServiceCard = (props) => {
               </Parallax>
             </>
           ) : (
-            iframeYT(video, imageClassname, imageXval, imageXvalPh)
+            iframeYT(video, YTvideo, imageClassname, imageXval, imageXvalPh)
           )}
         </div>
       </>
@@ -178,8 +182,7 @@ const ServiceCard = (props) => {
     );
   }
   function textSection(desc, steps, position) {
-    let textSlideDirection =
-      position === "right" ? "slide-right" : "slide-left";
+    // let textSlideDirection = position === "right" ? "slide-right" : "slide-left";
     let descXval = position === "right" ? [-20, 19] : [25, -10];
     if (steps.length > 7)
       descXval = position === "right" ? [-20, 13] : [20, -8];
@@ -225,10 +228,11 @@ const ServiceCard = (props) => {
             <div className="lg:w-3/6 flex content-center">
               {textSection(service.description, service.steps, imagePos)}
             </div>
-            <div className="md:w-4/6 lg:mb-0 mb-4" ref={forwardedRef}>
+            <div className="md:w-4/6 lg:mb-0 mb-4">
               {imageSection(
                 service.image,
                 service.video,
+                service.YTvideo,
                 imagePos,
                 service.steps.length
               )}

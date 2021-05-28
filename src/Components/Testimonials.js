@@ -50,7 +50,7 @@ export default function Testimonials() {
         spaceBetween={0}
         loop={true}
         navigation={true}
-        className=" mx-auto md:my-2 my-8 overflow-hidden lg:hidden flex justify-around "
+        className=" mx-auto md:my-2 mt-8 mb-0 overflow-hidden lg:hidden  "
       >
         {testimonials &&
           testimonials.map((testimonial, index) =>
@@ -70,7 +70,7 @@ export default function Testimonials() {
         loop={true}
         navigation={true}
         id="testimonials"
-        className="h-full mx-auto md:my-14 my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden "
+        className="h-full mx-auto md:my-14 my-8 lg:flex hidden  overflow-hidden "
       >
         {testimonials &&
           testimonials.map((testimonial, index) =>
