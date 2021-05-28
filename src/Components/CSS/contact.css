@@ -1,6 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 @media (min-width: 767px) {
   .contactFlexContainer {
     width: 120%;
+  }
+  .contactCraft {
+    font-family: "Montserrat", sans-serif;
+  }
+  .contactHelpYou {
+    font-weight: 400;
+  }
+  .contactChecks {
+    font-family: "Montserrat", sans-serif;
+
+    font-weight: 300;
+  }
+  .contactFields {
+    font-size: large;
+    margin-bottom: 20px;
+  }
+  .contactFields input {
+    margin-bottom: 15px;
+  }
+  .contactFields input::placeholder {
+    padding-left: -5px;
+  }
+  .msgContact {
+    margin-bottom: 5px !important;
   }
 }
 .contactFlexContainer {
@@ -25,66 +51,57 @@
   margin-right: 7px;
 }
 
-.btn:active,
-.btn:hover,
-.btn:focus {
-  outline: 0 !important;
-  outline-offset: 0;
-}
-.btn::before,
-.btn::after {
-  position: absolute;
-  content: "";
-}
 .btn {
-  position: relative;
-  display: inline-block;
-  width: auto;
-  height: auto;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  min-width: 50px;
-}
-.btn span {
-  position: relative;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 2px;
   text-transform: uppercase;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px 20px;
-  transition: 0.3s;
+  text-decoration: none;
+  padding: 8px 8px;
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  transition: all 0.2s;
 }
 
-.btn-1::before {
-  background-color: rgb(28, 31, 30);
-  transition: 0.3s ease-out;
+.btn:hover {
+  transform: translateY(-3px);
+  background-color: #ffd805;
+  color: black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-.btn-1 span {
-  color: rgb(255, 255, 255);
-  border: 1px solid rgb(28, 31, 30);
-  transition: 0.2s 0.1s;
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-.btn-1 span:hover {
-  color: rgb(28, 31, 30);
-  transition: 0.2s 0.1s;
+
+.btn-white {
+  background-color: black;
+  color: white;
 }
-.btn.hover-filled-opacity::before {
-  top: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 1;
-}
-.btn.hover-filled-opacity:hover::before {
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
 
+.btn-animated {
+  animation: moveBottom 5s ease-out;
+  animation-fill-mode: backwards;
+}
+.btn:focus {
+  outline: 0;
+}
+
+@keyframes moveBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 @media (max-width: 767px) {
   .circles {
     display: none;

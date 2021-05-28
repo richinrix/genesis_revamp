@@ -5,7 +5,12 @@
     height: 0.125em;
     margin-top: 2rem;
   }
-
+  .navList a {
+    border: none !important;
+  }
+  .navList {
+    background: #ffd805;
+  }
   .navicon::before,
   .navicon::after {
     display: block;
@@ -23,11 +28,10 @@
     color: black;
     background-color: #ffd805;
     font-weight: 500;
-    margin-left: 30px;
+    /* margin-left: 30px; */
   }
   .nav ul li {
     text-align: center;
-    content: "";
   }
 
   .navicon::before {

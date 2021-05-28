@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.plContainer {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100px;
+  width: 240px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  z-index: -5;
+}
+
+.ball {
+  padding: 0;
+  box-sizing: border-box;
+  width: 30px;
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 999;
+}
+
+.ball-one {
+  background-color: #ffd805;
+  animation: jump 0.5s ease 0s infinite alternate;
+}
+
+.ball-two {
+  background-color: #4bb3ef;
+  animation: jump 0.5s ease 0.15s infinite alternate;
+}
+
+.ball-three {
+  background-color: #63dd79;
+  animation: jump 0.5s ease 0.25s infinite alternate;
+}
+
+.ball-four {
+  background-color: #fd6c6c;
+  animation: jump 0.5s ease 0.35s infinite alternate;
+}
+
+.shadow {
+  position: relative;
+  bottom: 30px;
+  width: 30px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  margin: 10px;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+.shadow-one {
+  animation: shrink 0.5s ease 0s infinite alternate;
+}
+
+.shadow-two {
+  animation: shrink 0.5s ease 0.15s infinite alternate;
+}
+
+.shadow-three {
+  animation: shrink 0.5s ease 0.25s infinite alternate;
+}
+
+.shadow-four {
+  animation: shrink 0.5s ease 0.35s infinite alternate;
+}
+
+@keyframes jump {
+  0% {
+    height: 7px;
+    border-radius: 50px 50px 25px 25px;
+    bottom: 0%;
+    transform: scaleX(1.7);
+  }
+  40% {
+    height: 30px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    bottom: 90px;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scaleX(1.5);
+  }
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4;
+  }
+}

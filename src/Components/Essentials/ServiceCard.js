@@ -4,7 +4,6 @@ import handleViewport from "react-in-viewport";
 import linesImg from "../../images/icons/services-line-and-dots.png";
 // other modules
 import { Parallax } from "react-scroll-parallax";
-import Youtube from "@u-wave/react-youtube";
 import "../../App.css";
 const ServiceCard = (props) => {
   const { inViewport, forwardedRef, service, index, screenWidth } = props;

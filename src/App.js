@@ -8,8 +8,6 @@ import {
 import "./App.css";
 
 //components
-// test
-import Test from "./Components/Test";
 //
 import Homepage from "./Components/Homepage";
 import Navbar from "./Components/Navbar";
@@ -22,7 +20,7 @@ import Contact from "./Components/Contact";
 import ComingSoon from "./Components/Essentials/ComingSoon";
 import Services from "./Components/Services";
 import Map from "./Components/Map";
-import HomeParticles from "./Components/Essentials/HomeParticles";
+import PreLoader from "./Components/Essentials/PreLoader";
 
 function App() {
   return (
@@ -47,6 +45,7 @@ const Home = () => (
     <Testimonials />
     <Contact />
     <Map />
+    <PreLoader />
   </div>
 );
 export default App;
