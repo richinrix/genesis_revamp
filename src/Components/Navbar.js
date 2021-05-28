@@ -10,7 +10,6 @@ function Navbar() {
 
   if (screenWidth > 700) {
     setIsPhone(true);
-    console.log(isPhone);
   }
   // Function to detect scrolling and change theme based on that
   const handleScroll = () => {

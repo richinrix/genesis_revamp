@@ -8,7 +8,6 @@ function Sidebar() {
   const screenWidth = useState(window.innerWidth);
 
   const handleScroll = () => {
-    console.log(window.scrollY);
     if (screenWidth > 500) {
       if (window.scrollY > 600) {
         setScrollDetect(true);
