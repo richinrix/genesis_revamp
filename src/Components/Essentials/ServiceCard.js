@@ -65,7 +65,8 @@ const ServiceCard = (props) => {
   }
   function iframeYT(video, YTvideo, classname, xval, xvalPh) {
     const YTsrc = YTvideo ? YTvideo + "?autoplay=1&mute=1" : "";
-    const className = classname + " md:bg-black ";
+    const className = classname;
+    // + " md:bg-black ";
     return (
       <>
         {/* desktop  */}
@@ -76,6 +77,7 @@ const ServiceCard = (props) => {
             className={className}
             url={video ? video : YTsrc}
             controls={true}
+            playIcon
             loop={true}
             playing={videoPlayState}
           />

@@ -8,9 +8,6 @@ import {
 import "./App.css";
 
 //components
-// test
-import Test from "./Components/Test";
-//
 import Homepage from "./Components/Homepage";
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
@@ -22,7 +19,7 @@ import Contact from "./Components/Contact";
 import ComingSoon from "./Components/Essentials/ComingSoon";
 import Services from "./Components/Services";
 import Map from "./Components/Map";
-import HomeParticles from "./Components/Essentials/HomeParticles";
+import PreLoader from "./Components/Essentials/PreLoader";
 
 function App() {
   return (
@@ -37,16 +34,20 @@ function App() {
     </Router>
   );
 }
-const Home = () => (
-  <div className="scroll-snap-container">
-    <Homepage />
-    <Team />
-    <About />
-    <FlipContainer />
-    <Services />
-    <Testimonials />
-    <Contact />
-    <Map />
-  </div>
-);
+const Home = () => {
+  // return <PreLoader />;
+  return (
+    <div className="scroll-snap-container">
+      <Homepage />
+      <Team />
+      <About />
+      <FlipContainer />
+      <Services />
+      <Testimonials />
+      <Contact />
+      <Map />
+      <PreLoader />
+    </div>
+  );
+};
 export default App;

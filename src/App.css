@@ -23,15 +23,13 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* .scroll-snap-container {
-  overflow-y: scroll;
-  overflow-x: hidden;
-
-  scroll-snap-type: y proximity;
-  -ms-scroll-snap-type: y proximity;
-  max-height: 100vh;
+/*Hides the blue highlight on mobile devices*/
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.proximity-snap {
-  scroll-snap-align: start;
-  min-height: 100vh;
-} */

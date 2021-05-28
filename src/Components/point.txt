@@ -1,20 +1,12 @@
-Align sidebar with logo
-Remove team image animation
-team before sevices navbar
-Montserrat 100 for about us
+Align sidebar with logo...done
+Remove team image animation...done
+team before sevices navbar...done
+Montserrat 100 for about us...done
 
 Change title to Meet the team/No auto ripple/hover flips images
 
-Uniform padding all over
+Uniform padding all over...done
 
-Font and spacing in Map
+Font and spacing in Map...done
 
-Link navigation
-
-
-Side eye chloe
-Success kid
-Drake yes
-Michael ready to get hurt again
-One does not simply
-burnie sanders (not decided)
+Link navigation...done

@@ -6,7 +6,6 @@ import API from "./services/API";
 
 function Contact() {
   const url = API.contactSheet;
-  // const sheetdb = require("sheetdb-node");
   const [data, setdata] = useState({
     name: "",
     mail: "",
@@ -37,7 +36,7 @@ function Contact() {
   }
 
   return (
-    <div id="contactContainer" className="h-screen ">
+    <div id="contactContainer" className="h-screen">
       <div
         data-aos="fade-up"
         data-aos-easing="linear"
@@ -45,16 +44,18 @@ function Contact() {
         className="contactFlexContainer flex justify-between overflowY-hidden"
       >
         <form
-          className="contactForm h-screen pt-28 md:pt-24 px-5 md:pl-20 md:w-3/5 w-auto"
+          className="contactForm h-screen pt-28 md:pt-24 px-5 md:pl-24 md:w-3/5 w-screen"
           onSubmit={(e) => submit(e)}
         >
-          <h2 className="font-plantc text-5xl pb-2">Get in touch</h2>
-          <p className="pb-5">
+          <h2 className="font-plantc text-5xl md:text-6xl pb-2 md:pb-4">
+            Get in Touch
+          </h2>
+          <p className="contactCraft pb-5 md:text-lg">
             You have your craft. We have ours.
             <br />
             And that's bringing creative people together.
           </p>
-          <p className="contactHelpYou font-medium pb-2">
+          <p className="contactHelpYou font-medium md:text-xl pb-2">
             What can we help you with?
           </p>
           <div className="contactChecks text-left grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-1 pb-6">
@@ -69,8 +70,8 @@ function Contact() {
             </div>
 
             <div className="checkItem">
-              <input type="checkbox" id="fLogo" name="fLogo" value="fLogo" />
-              <label for="fLogo">Logo Design</label>
+              <input type="checkbox" id="fMarketing" value="fMarketing" />
+              <label for="fMarketing">Marketing</label>
             </div>
 
             <div className="checkItem">
@@ -79,8 +80,8 @@ function Contact() {
             </div>
 
             <div className="checkItem">
-              <input type="checkbox" id="fMarketing" value="fMarketing" />
-              <label for="fMarketing">Marketing</label>
+              <input type="checkbox" id="fLogo" name="fLogo" value="fLogo" />
+              <label for="fLogo">Logo Design</label>
             </div>
 
             <div className="checkItem">
@@ -103,7 +104,7 @@ function Contact() {
               <label for="fOther">Other</label>
             </div>
           </div>
-          <div className="contactFields flex flex-col md:h-36 mb-4">
+          <div className="contactFields flex flex-col md:h-auto mb-4">
             <input
               className="pb-1 mb-2"
               type="text"
@@ -129,7 +130,7 @@ function Contact() {
               onChange={(e) => handle(e)}
             />
             <input
-              className="pb-1 mb-2"
+              className="msgContact pb-1 mb-2"
               type="textarea"
               id="msg"
               placeholder="Message"
@@ -137,8 +138,8 @@ function Contact() {
               onChange={(e) => handle(e)}
             />
           </div>
-          <button type="submit" class="btn btn-1 hover-filled-opacity">
-            <span>Submit</span>
+          <button class="btn btn-white btn-animate" type="submit">
+            Submit
           </button>
         </form>
         <div className="circles md:w-screen">

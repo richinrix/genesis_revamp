@@ -54,48 +54,48 @@ function Navbar() {
           class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none"
           for="menu-btn"
         >
-          <span class="navicon bg-gray-600 flex items-center relative"></span>
+          <span class="navicon  flex items-center relative"></span>
         </label>
 
         <ul
           className={
             scrollDetect
-              ? "navList lite menu border-b md:border-none font-normal flex mr-10 items-center justify-end list-reset m-0 w-screen md:w-auto"
-              : "navList menu border-b md:border-none font-normal flex mr-10 items-center justify-end list-reset m-0 w-screen md:w-auto"
+              ? "navList lite menu md:border-none font-normal flex mr-10 ml-10  items-center justify-end m-0 list-none p-0 w-screen md:w-auto  md:bg-transparent"
+              : "navList menu md:border-none font-normal flex mr-10 ml-10 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent"
           }
         >
-          <li class="border-t md:border-none">
+          <li class="border-none">
             <a
               href="/#aboutContainer"
-              class="block md:inline-block px-4 py-3 no-underline"
+              class="block md:inline-block  py-3 no-underline"
             >
               Team
             </a>
           </li>
 
-          <li class="border-t md:border-none">
+          <li class="border-none">
             <a
               href="/#services"
-              class="block md:inline-block px-4 py-3 no-underline"
+              class="block md:inline-block  py-3 no-underline"
             >
               Services
             </a>
           </li>
 
-          <li class="border-t md:border-none">
+          <li class="border-none">
             <a
               href="/blog"
               target="_blank"
-              class="block md:inline-block px-4 py-3 no-underline"
+              class="block md:inline-block py-3 no-underline"
             >
               Blog
             </a>
           </li>
 
-          <li class="border-t md:border-none">
+          <li class="border-none">
             <a
               href="/#contactContainer"
-              class="block md:inline-block px-4 py-3 no-underline"
+              class="block md:inline-block  py-3 no-underline"
             >
               Contact
             </a>
