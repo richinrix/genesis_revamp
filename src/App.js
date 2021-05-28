@@ -22,6 +22,7 @@ import Contact from "./Components/Contact";
 import ComingSoon from "./Components/Essentials/ComingSoon";
 import Services from "./Components/Services";
 import Map from "./Components/Map";
+import HomeParticles from "./Components/Essentials/HomeParticles";
 
 function App() {
   let [firstScroll, setFirstScroll] = useState(false);
@@ -53,14 +54,14 @@ function App() {
 }
 const Home = () => (
   <div className="scroll-snap-container">
-    <Homepage />
+    <Homepage></Homepage>
     <Team />
     <About />
+    <Contact />
+    <Map />
     <FlipContainer />
     <Services />
     <Testimonials />
-    <Contact />
-    <Map />
   </div>
 );
 export default App;

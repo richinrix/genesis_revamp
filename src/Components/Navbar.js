@@ -38,10 +38,10 @@ function Navbar() {
   return (
     <div className="navContainer">
       <nav class="nav scrol flex flex-wrap items-center justify-between px-4">
-        <div class="flex flex-no-shrink items-center mr-6 py-5 pl-0 md:pl-8">
+        <div class="flex flex-no-shrink items-center mr-6 py-5 pl-0 md:pl-2">
           <a className="navLogo self-center" href="#">
             <img
-              className={isPhone ? "hidden" : ""}
+              className="hidden md:block"
               src={scrollDetect ? logoLite : logoDark}
               alt=""
               srcset=""
@@ -67,19 +67,19 @@ function Navbar() {
         >
           <li class="border-t md:border-none">
             <a
-              href="#services"
+              href="/#aboutContainer"
               class="block md:inline-block px-4 py-3 no-underline"
             >
-              Services
+              Team
             </a>
           </li>
 
           <li class="border-t md:border-none">
             <a
-              href="#aboutContainer"
+              href="/#services"
               class="block md:inline-block px-4 py-3 no-underline"
             >
-              Team
+              Services
             </a>
           </li>
 
@@ -95,7 +95,7 @@ function Navbar() {
 
           <li class="border-t md:border-none">
             <a
-              href="#contactContainer"
+              href="/#contactContainer"
               class="block md:inline-block px-4 py-3 no-underline"
             >
               Contact

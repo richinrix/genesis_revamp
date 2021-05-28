@@ -27,13 +27,7 @@ function Team() {
 
   return (
     <div id="teamCall" className="h-screen w-auto">
-      <div
-        data-aos="fade-right"
-        data-aos-easing="linear"
-        data-aos-duration="800"
-        data-aos-offset="200"
-        class="teamContainer md:h-full flex flex-col mx-auto md:px-10 sm:px-5 py-10 w-11/12 "
-      >
+      <div class="teamContainer md:h-full flex flex-col mx-auto md:px-10 sm:px-5 py-10 w-11/12 ">
         <div
           id="teamTitle"
           className="teamWords font-plantc text-5xl mt-14 mb-3 ml-0 "
