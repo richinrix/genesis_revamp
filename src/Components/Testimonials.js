@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 // services
-import IMAGES from "./services/IMAGES";
 import API from "./services/API";
 // other component
 import TestimonialCard from "./Essentials/TestimonialCard";
@@ -16,97 +15,17 @@ import SwiperCore, { Pagination, Navigation } from "swiper/core";
 SwiperCore.use([Pagination, Navigation]);
 
 export default function Testimonials() {
-  const [startCard, setStartCard] = useState(0);
   const [testimonials, setTestimonials] = useState();
-
-  // aos animation
-  const cardContainer = {
-    duration: "1300",
-    offset: "200",
-  };
 
   useEffect(() => {
     getData();
   }, []);
   let getData = async () => {
-    // const { data: info } = await axios.get(API.testimonails);
-    // setTestimonials(info);
-
     await fetch(API.testimonials).then((res) =>
       res.json().then((info) => setTestimonials(info))
     );
   };
 
-  function card(testimonial, index) {
-    // quote and footer color
-    let className =
-      "relative mx-10 my-3 p-10 text-center flex h-screen flex-col justify-between overflow-hidden";
-    let image, footerImg;
-    if (index === 0) {
-      image = IMAGES.leftQuoteGreen;
-      footerImg = IMAGES.testimonialBottomGreen;
-    } else if (index === 1) {
-      image = IMAGES.leftQuotePurple;
-      footerImg = IMAGES.testimonialBottomPurple;
-    } else if (index === 2) {
-      image = IMAGES.leftQuoteBlue;
-      footerImg = IMAGES.testimonialBottomBlue;
-    }
-    className = testimonial.index < 4 ? className + " active" : className + "";
-    return (
-      <div
-        id="testimonial-card"
-        className={className}
-        style={{
-          height: "450px",
-          width: "330px",
-        }}
-      >
-        <img
-          id="quoteImg"
-          className="absolute"
-          src={image}
-          style={{ width: "25px" }}
-          alt=""
-        />
-
-        <div className="mt-10 leading-snug overflow-hidden">
-          {testimonial.statement}
-        </div>
-
-        <div
-          id="name "
-          className="  flex flex-col mb-5"
-          style={{ bottom: "30px", zIndex: "10" }}
-        >
-          {/* profile image  */}
-          <div
-            className="bg-gray-500 mx-auto"
-            style={{
-              borderRadius: "50%",
-              height: "96px",
-              width: "96px",
-              border: "8px solid white",
-              backgroundImage: `url('${testimonial.image}')`,
-            }}
-          />
-          <h2 className="text-white">{testimonial.name}</h2>
-        </div>
-        <div
-          className="absolute"
-          style={{
-            backgroundImage: `url('${footerImg}')`,
-            backgroundRepeat: "no-repeat",
-            width: "440px",
-            height: "248px",
-            zIndex: "1",
-            bottom: "-80px",
-            left: "-62px",
-          }}
-        ></div>
-      </div>
-    );
-  }
   // displaying the current three cards
   function currenDesktoptView(cards, index) {
     return (
@@ -130,9 +49,8 @@ export default function Testimonials() {
         slidesPerView={1}
         spaceBetween={0}
         loop={true}
-        navigation={false}
-        // data-aos="slide-right"
-        className=" mx-auto md:my-2 my-8 overflow-hidden lg:hidden flex"
+        navigation={true}
+        className=" mx-auto md:my-2 my-8 overflow-hidden lg:hidden flex justify-around "
       >
         {testimonials &&
           testimonials.map((testimonial, index) =>
@@ -152,10 +70,7 @@ export default function Testimonials() {
         loop={true}
         navigation={true}
         id="testimonials"
-        // data-aos="slide-right"
-        // data-aos-duration={cardContainer.duration}
-        // data-aos-offset={cardContainer.offset}
-        className="md:h-screen mx-auto md:my-auto my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden "
+        className="h-full mx-auto md:my-14 my-8 lg:flex hidden md:flex-row flex-col justify-center items-center overflow-hidden "
       >
         {testimonials &&
           testimonials.map((testimonial, index) =>

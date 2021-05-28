@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import handleViewport from "react-in-viewport";
 // image
 import linesImg from "../../images/icons/services-line-and-dots.png";
+// other modules
 import { Parallax } from "react-scroll-parallax";
-
+import Youtube from "@u-wave/react-youtube";
 import "../../App.css";
 const ServiceCard = (props) => {
   const { inViewport, forwardedRef, service, index, screenWidth } = props;
@@ -46,18 +47,7 @@ const ServiceCard = (props) => {
       backgroundColor: "#FFE450",
       float: floatDirection,
     };
-    if (!phone)
-      return (
-        <div
-          id="yellowRectangle"
-          // data-aos={slideIn}
-          // data-aos-easing={yellowRect.easing}
-          // data-aos-duration={yellowRect.duration}
-          // data-aos-offset={yellowOff}
-          // className={classname}
-          style={style}
-        ></div>
-      );
+    if (!phone) return <div id="yellowRectangle" style={style}></div>;
     else
       return (
         <div
@@ -71,8 +61,35 @@ const ServiceCard = (props) => {
         ></div>
       );
   }
-  function imageSection(image_path, floatPos, steps) {
-    const style = {
+  function iframeYT(video, classname, xval, xvalPh) {
+    const src = video + "?controls=0&?autoplay=1&mute=1";
+
+    return (
+      <>
+        <Parallax x={xval} className=" md:block hidden">
+          <iframe
+            id="servicesImage"
+            className={classname}
+            src={src}
+            frameborder="0"
+            allow=" encrypted-media"
+            allowfullscreen
+          ></iframe>
+        </Parallax>
+        <Parallax x={xvalPh} className=" md:hidden block">
+          <iframe
+            id="servicesImage"
+            className={classname}
+            src={src}
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </Parallax>
+      </>
+    );
+  }
+  function imageSection(image_path, video, floatPos, steps) {
+    const imageStyle = {
       backgroundImage: `url('${image_path}')`,
       backgroundRepeat: "no-repeat",
     };
@@ -88,6 +105,7 @@ const ServiceCard = (props) => {
     const yellowRectXval = floatPos === "left" ? [-20, 10] : [20, -10];
     const yellowRectXvalPh = floatPos === "left" ? [-20, 10] : [20, -10];
     const imageXval = floatPos === "left" ? [-10, 5] : [10, -5];
+
     const imageXvalPh = floatPos === "left" ? [-10, 10] : [10, -10];
     return (
       <>
@@ -104,20 +122,26 @@ const ServiceCard = (props) => {
           {/* <div className="lg:hidden block">
             {yellowRectangle(floatPos, true)}
           </div> */}
-          <Parallax x={imageXval} className="md:block hidden">
-            <div
-              id="servicesImage"
-              className={imageClassname}
-              style={style}
-            ></div>
-          </Parallax>
-          <Parallax x={imageXvalPh} className="md:hidden block">
-            <div
-              id="servicesImage"
-              className={imageClassname}
-              style={style}
-            ></div>
-          </Parallax>
+          {image_path && !video ? (
+            <>
+              <Parallax x={imageXval} className="md:block hidden">
+                <div
+                  id="servicesImage"
+                  className={imageClassname}
+                  style={imageStyle}
+                ></div>
+              </Parallax>
+              <Parallax x={imageXvalPh} className="md:hidden block">
+                <div
+                  id="servicesImage"
+                  className={imageClassname}
+                  style={imageStyle}
+                ></div>
+              </Parallax>
+            </>
+          ) : (
+            iframeYT(video, imageClassname, imageXval, imageXvalPh)
+          )}
         </div>
       </>
     );
@@ -131,8 +155,9 @@ const ServiceCard = (props) => {
   }
   function servicePoints(step, index, length) {
     let className = "pl-5 font-helvetica ";
-    if (length > 5) className += " lg:py-1.5 py-2 ";
-    else className += "lg:py-2.5 py-2";
+    if (length > 5) className += " lg:py-1.5 py-1.5 ";
+    // else if (length > 7) className += " lg:py-1.5 py-1 ";
+    else className += " lg:py-2.5 py-2 ";
 
     return (
       <div>
@@ -155,22 +180,15 @@ const ServiceCard = (props) => {
   function textSection(desc, steps, position) {
     let textSlideDirection =
       position === "right" ? "slide-right" : "slide-left";
-    let descXval = position === "right" ? [-20, 20] : [20, -8];
-    let descXvalPh = position === "right" ? [-20, 20] : [20, -3];
-
-    if (position === "right" && steps.length > 8) descXval = [-20, 15];
-    if (position === "right" && steps.length > 8) descXvalPh = [-20, 15];
+    let descXval = position === "right" ? [-20, 19] : [25, -10];
+    if (steps.length > 7)
+      descXval = position === "right" ? [-20, 13] : [20, -8];
+    if (position === "right" && steps.length > 8) {
+      descXval = [-20, 15];
+    }
 
     let textSectionClassname =
       " flex-col content-center items-center h-min my-auto   mx-auto  md:w-3/4  ";
-    let descriptionClassname = "w-11/12 ";
-    //  + steps.length < 6
-    //   ? position === "right"
-    //     ? " ml-12 "
-    //     : " mr-0 "
-    //   : position === "right"
-    //   ? " ml-0 "
-    //   : " mr-0";
 
     return (
       <div className={textSectionClassname}>
@@ -183,15 +201,14 @@ const ServiceCard = (props) => {
         >
           {description(desc)}
         </Parallax>
-        <Parallax
-          className={"w-11/12  md:hidden block"}
-          x={descXvalPh}
-          // data-aos={textSlideDirection}
-          // data-aos-offset={serviceDescOff}
-          // data-aos-duration={serviceDesc.duration}
+        <div
+          className={"w-11/12 ml-4  md:hidden block"}
+          data-aos={textSlideDirection}
+          data-aos-offset={"100"}
+          data-aos-duration={serviceDesc.duration}
         >
           {description(desc)}
-        </Parallax>
+        </div>
         <div className="flex  my-auto pt-5">
           <ul className="ml-4 my-auto">
             {steps.map((step, index) =>
@@ -205,7 +222,7 @@ const ServiceCard = (props) => {
 
   return (
     <>
-      <div className="md:h-screen h-full   " id="proximity-snap">
+      <div className=" h-full   " id="proximity-snap">
         <div className="mx-auto p-5 my-auto">
           <div className={headingClassname}>
             <h2>{service.heading}</h2>
@@ -215,7 +232,12 @@ const ServiceCard = (props) => {
               {textSection(service.description, service.steps, imagePos)}
             </div>
             <div className="md:w-4/6 lg:mb-0 mb-4" ref={forwardedRef}>
-              {imageSection(service.image, imagePos, service.steps.length)}
+              {imageSection(
+                service.image,
+                service.video,
+                imagePos,
+                service.steps.length
+              )}
             </div>
           </div>
         </div>
@@ -232,8 +254,6 @@ const entered = () => {
 };
 const ServiceCardComp = (props) => (
   <ViewportBlock
-    // onEnterViewport={}
-    // onLeaveViewport={}
     service={props.service}
     index={props.index}
     onEnter={entered}

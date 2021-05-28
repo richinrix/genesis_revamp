@@ -24,7 +24,7 @@ const Imageflip = (props) => {
   // aos animation
   const cardAnimate = {
     easing: "linear",
-    offset: "250",
+    offset: "150",
     duration: aosDuration,
   };
   // change mass tension and friction values to change the spinning effects
@@ -41,42 +41,42 @@ const Imageflip = (props) => {
   // flips the image when called
   const flip = () => setFlipped((state) => !state);
 
-  let flipTimerId;
-  function ripple() {
-    if (!flipped) {
-      flipTimerId = setTimeout(flip, flipDuration);
-    }
-    // setTimeout(flip, flipDuration + 7 * 500);
-  }
   useEffect(() => {
     AOS.init();
   });
-  useEffect(() => {
-    AOS.init();
-    // flipping card evry few seconds
-    if (inViewport && !flipped) {
-      ripple();
-    } else if (inViewport && flipped) {
-      flip();
-      flip();
-    }
-    // uncomment these if you need the images to flip back to initial state when scrolled away
-    // else if (!inViewport && flipped) {
-    //   // clearTimeout(flipTimerId);
-    //   setFlipped(false);
-    // }
-  }, [inViewport]);
-  useEffect(() => {
-    if (!inViewport) setFlipped(false);
-  }, [flipped]);
+  // ripple effect
+  // let flipTimerId;
+  // function ripple() {
+  //   if (!flipped) {
+  //     flipTimerId = setTimeout(flip, flipDuration);
+  //   }
+  //   // setTimeout(flip, flipDuration + 7 * 500);
+  // }
+  // useEffect(() => {
+  //   if (inViewport && !flipped) {
+  //     ripple();
+  //   } else if (inViewport && flipped) {
+  //     flip();
+  //     flip();
+  //   }
+  //   // uncomment these if you need the images to flip back to initial state when scrolled away
+  //   // else if (!inViewport && flipped) {
+  //   //   // clearTimeout(flipTimerId);
+  //   //   setFlipped(false);
+  //   // }
+  // }, [inViewport]);
+  // useEffect(() => {
+  //   if (!inViewport) setFlipped(false);
+  // }, [flipped]);
 
   function imageCard(pos, card, phoneDisplay, tabDisplay, phonePos) {
     const frontImagePath = card.frontImage;
     const backImagePath = card.backImage;
-    let classname = "imageflip_container text-center md:mx-3 mx-2 ";
+    const name = card.name;
+    let classname = "imageflip_container text-center md:mx-3 mx-1.5 ";
 
     // assigning margin top values based on their position
-    if (phonePos === 0) classname += "mt-7";
+    if (phonePos === 0) classname += " md:mt-7 mt-3 ";
     if (pos === 0) classname += " md:mt-5 ";
     else if (pos === 1) classname += " md:mt-0";
     else if (pos === 2) classname += " md:mt-12";
@@ -94,6 +94,8 @@ const Imageflip = (props) => {
           data-aos-easing={cardAnimate.easeing}
           data-aos-offset={cardAnimate.offset}
           data-aos-duration={cardAnimate.duration}
+          onMouseEnter={() => setFlipped((state) => !state)}
+          onMouseLeave={() => setFlipped((state) => !state)}
         >
           <a.div
             className="imageflip_c imageflip_back "
@@ -102,7 +104,11 @@ const Imageflip = (props) => {
               transform,
               backgroundImage: `url('${frontImagePath}')`,
             }}
-          ></a.div>
+          >
+            <div className="md:text-3xl text-2xl text-left absolute md:bottom-5 bottom-1  ml-2 text-white">
+              {name}
+            </div>
+          </a.div>
           <a.div
             className="imageflip_c imageflip_front"
             style={{

@@ -29,11 +29,5 @@ export default function Services() {
           <ServiceCard index={index} service={data} screenwidth={screenwidth} />
         ))}
     </ParallaxProvider>
-    // <>
-    //   {services &&
-    //     services.map((data, index) => (
-    //       <ServiceCard index={index} service={data} />
-    //     ))}
-    // </>
   );
 }

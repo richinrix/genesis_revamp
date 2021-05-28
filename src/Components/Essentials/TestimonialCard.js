@@ -7,26 +7,15 @@ const Block = (props) => {
     ? "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7"
     : "none";
   let scale = inViewport ? "scale(1)" : "scale(0.98)";
-  // let boxShadow = "none",
-  //   scale = "scale(1)";
-
-  // only first 3
-  // let boxShadow =
-  //   testimonial.index > 3
-  //     ? inViewport
-  //       ? "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7"
-  //       : "none"
-  //     : "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7";
-  // let scale =
-  //   testimonial.index > 3
-  //     ? inViewport
-  //       ? "scale(1)"
-  //       : "scale(0.98)"
-  //     : "scale(1)";
-
-  const transitionDelay = inViewport ? (testimonial.index % 4) / 2 + "s" : "0s";
+  console.log(testimonial.index, index);
+  let transitionDelay = " md:delay-";
+  transitionDelay += inViewport
+    ? ((testimonial.index % 3) * 1000) / 2 + " delay-1000"
+    : "0";
+  console.log(transitionDelay);
   let className =
-    "relative llg:mx-10 mx-auto my-3 p-10 text-center flex h-screen flex-col justify-between overflow-hidden";
+    "relative llg:mx-10 mx-auto my-3 md:p-10 p-7 text-center flex h-screen flex-col justify-between overflow-hidden " +
+    transitionDelay;
   let image, footerImg;
   if (index % 3 === 0) {
     image = IMAGES.leftQuoteGreen;
@@ -42,13 +31,10 @@ const Block = (props) => {
     <div
       id="testimonial-card"
       className={className}
-      ref={forwardedRef}
       style={{
-        height: "450px",
-        width: "330px",
         boxShadow: boxShadow,
         transform: scale,
-        transitionDelay: transitionDelay,
+        // transitionDelay: transitionDelay,
       }}
     >
       <img
@@ -65,32 +51,25 @@ const Block = (props) => {
 
       <div
         id="name "
-        className="  flex flex-col mb-5"
+        className="  flex flex-col md:mb-5 mb-2"
         style={{ bottom: "30px", zIndex: "10" }}
       >
         {/* profile image  */}
         <div
-          className="bg-gray-500 mx-auto"
+          ref={forwardedRef}
+          className=" testimonialProfilePic bg-gray-500 mx-auto"
           style={{
-            borderRadius: "50%",
-            height: "96px",
-            width: "96px",
-            border: "8px solid white",
             backgroundImage: `url('${testimonial.image}')`,
           }}
         />
         <h2 className="text-white">{testimonial.name}</h2>
       </div>
       <div
+        id="testimonialFooterImg"
         className="absolute"
         style={{
           backgroundImage: `url('${footerImg}')`,
           backgroundRepeat: "no-repeat",
-          width: "440px",
-          height: "248px",
-          zIndex: "1",
-          bottom: "-80px",
-          left: "-62px",
         }}
       ></div>
     </div>

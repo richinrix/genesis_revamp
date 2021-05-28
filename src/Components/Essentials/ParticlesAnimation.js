@@ -9,7 +9,7 @@ export default function ParticlesAnimation() {
         options={{
           background: {
             color: {
-              value: "#020303",
+              value: "#202020",
             },
             position: "50% 50%",
             repeat: "no-repeat",
