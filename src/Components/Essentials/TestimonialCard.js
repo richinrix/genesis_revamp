@@ -7,12 +7,8 @@ const Block = (props) => {
     ? "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7"
     : "none";
   let scale = inViewport ? "scale(1)" : "scale(0.98)";
-  console.log(testimonial.index, index);
   let transitionDelay = " md:delay-";
-  transitionDelay += inViewport
-    ? ((testimonial.index % 3) * 1000) / 2 + " delay-1000"
-    : "0";
-  console.log(transitionDelay);
+  transitionDelay += inViewport ? ((index % 3) + 1) * 500 + " delay-300" : "0";
   let className =
     "relative llg:mx-10 mx-auto my-3 md:p-10 p-7 text-center flex h-screen flex-col justify-between overflow-hidden " +
     transitionDelay;

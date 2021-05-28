@@ -188,27 +188,21 @@ const ServiceCard = (props) => {
     }
 
     let textSectionClassname =
-      " flex-col content-center items-center h-min my-auto   mx-auto  md:w-3/4  ";
+      " flex-col content-center items-center h-min my-auto   mx-auto  md:w-3/4 px-5 ";
 
     return (
       <div className={textSectionClassname}>
-        <Parallax
-          className={"w-11/12  md:block hidden"}
-          x={descXval}
-          // data-aos={textSlideDirection}
-          // data-aos-offset={serviceDescOff}
-          // data-aos-duration={serviceDesc.duration}
-        >
+        <Parallax className={"w-11/12  md:block "} x={descXval}>
           {description(desc)}
         </Parallax>
-        <div
+        {/* <div
           className={"w-11/12 ml-4  md:hidden block"}
           data-aos={textSlideDirection}
           data-aos-offset={"100"}
           data-aos-duration={serviceDesc.duration}
         >
           {description(desc)}
-        </div>
+        </div> */}
         <div className="flex  my-auto pt-5">
           <ul className="ml-4 my-auto">
             {steps.map((step, index) =>
