@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -35,8 +35,17 @@ function App() {
   );
 }
 const Home = () => {
-  // return <PreLoader />;
-  return (
+  const [loading, setLoading] = useState(false);
+
+  setTimeout(() => {
+    setLoading(true);
+  }, 2000);
+
+  return !loading ? (
+    <div className="">
+      <PreLoader />
+    </div>
+  ) : (
     <div className="scroll-snap-container">
       <Homepage />
       <Team />
@@ -46,7 +55,6 @@ const Home = () => {
       <Testimonials />
       <Contact />
       <Map />
-      <PreLoader />
     </div>
   );
 };
