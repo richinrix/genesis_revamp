@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,21 +25,6 @@ import Map from "./Components/Map";
 import HomeParticles from "./Components/Essentials/HomeParticles";
 
 function App() {
-  let [firstScroll, setFirstScroll] = useState(false);
-  let [currentScroll, setCurrentScroll] = useState(0);
-  const pageIds = {
-    0: "homeContainer",
-    1: "teamCall",
-    2: "aboutContainer",
-    3: "imageFlipContainer",
-    4: "services",
-    5: "testimonials",
-    6: "contactContainer",
-    7: "mapContainer",
-  };
-
-  useEffect(() => {}, []);
-
   return (
     <Router>
       <Navbar />
@@ -54,14 +39,14 @@ function App() {
 }
 const Home = () => (
   <div className="scroll-snap-container">
-    <Homepage></Homepage>
+    <Homepage />
     <Team />
     <About />
-    <Contact />
-    <Map />
     <FlipContainer />
     <Services />
     <Testimonials />
+    <Contact />
+    <Map />
   </div>
 );
 export default App;

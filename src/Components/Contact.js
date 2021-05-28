@@ -18,20 +18,10 @@ function Contact() {
     const newdata = { ...data };
     newdata[e.target.id] = e.target.value;
     setdata(newdata);
-    console.log(newdata);
   }
 
   function submit(e) {
     e.preventDefault();
-    console.log([
-      {
-        name: data.name,
-        mail: data.mail,
-        phno: parseInt(data.phno),
-        msg: data.msg,
-      },
-    ]);
-
     axios
       .post(url, {
         data: [
@@ -43,9 +33,7 @@ function Contact() {
           },
         ],
       })
-      .then((res) => {
-        console.log(res.data);
-      });
+      .then((res) => {});
   }
 
   return (
