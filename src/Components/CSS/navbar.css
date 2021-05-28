@@ -21,11 +21,13 @@
   }
   .nav ul li a {
     color: black;
-    background-color: rgba(238, 255, 0, 0.8);
+    background-color: #ffd805;
     font-weight: 500;
+    margin-left: 30px;
   }
   .nav ul li {
     text-align: center;
+    content: "";
   }
 
   .navicon::before {

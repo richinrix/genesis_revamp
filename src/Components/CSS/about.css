@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.aboutParagraphs {
+  font-family: "Montserrat", sans-serif;
+}
+
 @media (max-width: 767px) {
   .aboutHead {
     display: block;
