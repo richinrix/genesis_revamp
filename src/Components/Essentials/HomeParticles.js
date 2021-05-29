@@ -208,7 +208,7 @@ export default function HomeParticles() {
                   },
                   opacity: {
                     animation: {
-                      speed: 3,
+                      speed: 2,
                       minimumValue: 0.1,
                     },
                   },

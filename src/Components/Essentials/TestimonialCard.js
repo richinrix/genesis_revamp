@@ -7,11 +7,12 @@ const Block = (props) => {
     ? "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7"
     : "none";
   let scale = inViewport ? "scale(1)" : "scale(0.98)";
-  let transitionDelay = " md:delay-";
-  transitionDelay += inViewport ? ((index % 3) + 1) * 500 + " delay-300" : "0";
+  // let transitionDelay = " md:delay-";
+  // transitionDelay += inViewport ? ((index % 3) + 1) * 500 + " delay-300" : "0";
+  let transitionDelay = inViewport ? ((index % 3) + 1) * 500 + "ms" : "0s";
+
   let className =
-    "relative llg:mx-10 mx-auto my-3 md:p-10 p-7 text-center flex h-screen flex-col justify-between overflow-hidden " +
-    transitionDelay;
+    "relative llg:mx-10 mx-auto my-3 md:p-10 p-7 text-center flex h-screen flex-col justify-between overflow-hidden ";
   let image, footerImg;
   if (index % 3 === 0) {
     image = IMAGES.leftQuoteGreen;
@@ -30,7 +31,7 @@ const Block = (props) => {
       style={{
         boxShadow: boxShadow,
         transform: scale,
-        // transitionDelay: transitionDelay,
+        transitionDelay: transitionDelay,
       }}
     >
       <img
