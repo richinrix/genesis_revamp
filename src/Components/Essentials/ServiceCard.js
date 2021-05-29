@@ -25,7 +25,6 @@ const ServiceCard = (props) => {
     if (screenWidth < 700) {
       setIsPhone(true);
     }
-    console.log(isPhone, screenWidth, screenWidth < 700);
   }, [screenWidth]);
   useEffect(() => {
     inViewport ? setPlayState(true) : setPlayState(false);

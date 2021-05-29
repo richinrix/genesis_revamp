@@ -1,5 +1,6 @@
 .comingSoonContainer {
-  background: linear-gradient(to left, #000000, #252525);
+  /* background: linear-gradient(to left, #000000, #252525); */
+  background: radial-gradient(#252525, #000000);
 }
 
 .dash-container {
