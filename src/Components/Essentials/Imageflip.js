@@ -29,7 +29,6 @@ const Imageflip = (props) => {
     if (screenWidth < 700) {
       setIsPhone(true);
     }
-    console.log(isPhone, screenWidth);
   }, []);
 
   // aos animation
@@ -102,7 +101,6 @@ const Imageflip = (props) => {
     // hiding card on phone if it exceeds the limit mentioned in flipcontainer
     if (!phoneDisplay) classname += " lg:block md:block hidden";
     if (!tabDisplay) classname += " md:hidden ";
-    console.log(isPhone);
     return !isPhone ? (
       <div className="lg:block hidden" ref={forwardedRef}>
         <div

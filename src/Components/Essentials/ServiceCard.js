@@ -236,15 +236,9 @@ const ServiceCard = (props) => {
 
 // for checkin if its in viewport
 const ViewportBlock = handleViewport(ServiceCard);
-const entered = () => {
-  console.log("entered");
-};
+
 const ServiceCardComp = (props) => (
-  <ViewportBlock
-    service={props.service}
-    index={props.index}
-    onEnter={entered}
-  />
+  <ViewportBlock service={props.service} index={props.index} />
 );
 
 export default ServiceCardComp;
