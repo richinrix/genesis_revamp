@@ -5,6 +5,12 @@ import arrow from "../images/icons/right-arrow.png";
 function Team() {
   const [scrollDetect, setScrollDetect] = useState(false);
   const screenWidth = useState(window.innerWidth);
+  const [isPhone, setIsPhone] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth < 700) {
+      setIsPhone(true);
+    }
+  }, []);
 
   // Function to detect scrolling and change theme based on that
   const handleScroll = () => {
@@ -51,10 +57,14 @@ function Team() {
         </a>
         <img
           className="teamImage mt-6"
-          src="https://via.placeholder.com/1500x350?text=Image"
+          src={
+            isPhone
+              ? "https://wallpapercave.com/wp/wp2554899.jpg"
+              : "https://wallpapercave.com/wp/wp2992033.jpg"
+          }
           alt=""
           srcset=""
-          style={{ height: "350px", width: "1500px" }}
+          style={{ height: "350px", width: "1300px" }}
         ></img>
       </div>
     </div>

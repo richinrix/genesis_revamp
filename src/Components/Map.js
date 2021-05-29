@@ -106,10 +106,13 @@ function Map() {
           <i class="fa fa-phone pt-1.5 pr-1.5 flex-shrink-0"></i>
           <p>+91 8792384161/ +91 9886031980</p>
         </div>
-        <div className="mapMail flex flex-row">
+        <a
+          className="mapMail flex flex-row"
+          href="mailto:info@genesismedia.com"
+        >
           <i class="fa fa-envelope pt-1 pr-1.5 pl-64"></i>
           <p>info@genesismedia.com</p>
-        </div>
+        </a>
       </div>
       <div
         data-aos="fade-up"
@@ -133,7 +136,7 @@ function Map() {
         data-aos-offset="-300"
         className="mapFooter flex flex-col md:flex-row justify-between pt-4 "
       >
-        <p className="order-1 mb-5 pt-3 md:mt-0 text-base md:text-base md:pb-2">
+        <p className="order-1 mb-5 pt-3 md:-mt-2 text-base md:text-base md:pb-2">
           65, 1st Main, 3rd Cross Road, Deshbandunagara, DB Sandra,
           Bengaluru-560097, Karnataka, India
         </p>
