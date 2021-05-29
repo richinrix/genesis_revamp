@@ -27,11 +27,13 @@
   .nav ul li a {
     color: black;
     background-color: #ffd805;
+
     font-weight: 500;
     /* margin-left: 30px; */
   }
   .nav ul li {
     text-align: center;
+    border-bottom: 1px solid black;
   }
 
   .navicon::before {

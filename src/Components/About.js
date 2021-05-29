@@ -3,7 +3,7 @@ import "./CSS/about.css";
 
 function About() {
   return (
-    <div id="aboutContainer" className="h-auto w-auto bg-red-400">
+    <div id="aboutContainer" className="h-auto w-auto">
       <div
         data-aos="fade-up"
         data-aos-easing="linear"

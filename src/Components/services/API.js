@@ -2,7 +2,7 @@ const API = {
   imageflip: "/JSON/imageflip.json",
   testimonials: "/JSON/testimonials.json",
   services: "/JSON/services.json",
-  contactSheet: "https://sheetdb.io/api/v1/8pnq96e3qb6cd",
-  newsLetter: "https://sheetdb.io/api/v1/5ylm82d564c2p",
+  contactSheet: "https://sheetdb.io/api/v1/792wfwnj5x1un",
+  newsLetter: "https://sheetdb.io/api/v1/r4tef8faon0rx",
 };
 export default API;
