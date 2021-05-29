@@ -44,6 +44,9 @@ const Imageflip = (props) => {
   useEffect(() => {
     AOS.init();
   });
+  useEffect(() => {
+    flip();
+  }, [inViewport]);
   // ripple effect
   // let flipTimerId;
   // function ripple() {
@@ -91,15 +94,15 @@ const Imageflip = (props) => {
     return (
       <>
         {/* desktop */}
-        <div className="lg:block hidden">
+        <div className="lg:block hidden" ref={forwardedRef}>
           <div
             className={classname}
             data-aos="slide-up"
             data-aos-easing={cardAnimate.easeing}
             data-aos-offset={cardAnimate.offset}
             data-aos-duration={cardAnimate.duration}
-            onMouseEnter={() => setFlipped((state) => !state)}
-            onMouseLeave={() => setFlipped((state) => !state)}
+            onMouseEnter={flip}
+            onMouseLeave={flip}
           >
             <a.div
               className="imageflip_c imageflip_back "

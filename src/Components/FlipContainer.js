@@ -37,7 +37,7 @@ export default function FlipContainer() {
   return (
     <div
       id="teams"
-      className="md:h-screen w-full h-full flex flex-col my-auto md:px-10 sm:px-5 py-5 content-center justify-center proximity-snap "
+      className=" w-full h-full flex flex-col my-auto md:px-10 sm:px-5 py-5 content-center justify-center proximity-snap "
     >
       <div className="mx-auto">
         <div

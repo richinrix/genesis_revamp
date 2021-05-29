@@ -1,5 +1,6 @@
 import React from "react";
 import ParticleAnimation from "./ParticlesAnimation";
+import logo from "../../images/icons/logoDark.png";
 import "../CSS/comingsoon.css";
 export default function ComingSoon() {
   function dashedAnimation() {
@@ -15,6 +16,9 @@ export default function ComingSoon() {
   return (
     <>
       <div className="h-screen  justify-center items-center text-center flex md:flex-row flex-col  comingSoonContainer">
+        <div className="logoHomeDark md:hidden flex justify-center items-center w-screen ">
+          <img src={logo}></img>
+        </div>
         <h2 className="mx-12 px-12 py-5 flex  md:items-center items-end  text-white opacity-60 font-orbitron font-semibold z-10">
           {" "}
           <span className="md:text-6xl text-5xl font-bold px-0 mx-0">

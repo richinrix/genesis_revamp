@@ -18,19 +18,20 @@ const ServiceCard = (props) => {
   const [videoPlayState, setPlayState] = useState(false);
   // offset vars ......
   const [servicePointOff, setServicePointOff] = useState("00");
-  const [serviceDescOff, setServiceDescOff] = useState("200");
+  const [screenWidth, SetScreenWidth] = useState(window.innerWidth);
+  const [isPhone, setIsPhone] = useState(false);
 
+  useEffect(() => {
+    if (screenWidth < 700) {
+      setIsPhone(true);
+    }
+    console.log(isPhone, screenWidth, screenWidth < 700);
+  }, [screenWidth]);
   useEffect(() => {
     inViewport ? setPlayState(true) : setPlayState(false);
     // console.log(videoPlayState);
   }, [inViewport]);
   // aos styling settings
-  let yellowRect = {
-    duration: "500",
-    offset: "50",
-    offset2: "400",
-    easing: "ease-in",
-  };
   let servicePoint = {
     duration: "600",
     offset: "100",
@@ -38,10 +39,9 @@ const ServiceCard = (props) => {
   };
 
   function yellowRectangle(floatPos, phone = false) {
-    let classname = "float-";
+    let classname = " ";
     //  + floatPos;
     classname += floatPos === "left" ? " ml-10 " : " mr-10 ";
-    const slideIn = floatPos === "right" ? "slide-left" : "slide-right";
 
     let floatDirection = floatPos === "right" ? "right" : "left";
     let style = {
@@ -52,51 +52,41 @@ const ServiceCard = (props) => {
     if (!phone) return <div id="yellowRectangle" style={style}></div>;
     else
       return (
-        <div
-          id="yellowRectangle"
-          // data-aos={slideIn}
-          // data-aos-easing={yellowRect.easing}
-          // data-aos-duration={yellowRect.duration}
-          // data-aos-offset={yellowRect.offset2}
-          className={classname}
-          style={style}
-        ></div>
+        <div id="yellowRectangle" className={classname} style={style}></div>
       );
   }
-  function iframeYT(video, YTvideo, classname, xval, xvalPh) {
+  function videoCard(video, YTvideo, classname, xval, xvalPh) {
     const YTsrc = YTvideo ? YTvideo + "?autoplay=1&mute=1" : "";
     const className = classname;
-    // + " md:bg-black ";
-    return (
-      <>
-        {/* desktop  */}
-        <Parallax x={xval} className=" md:block hidden ">
-          <ReactPlayer
-            ref={forwardedRef}
-            id="servicesImage"
-            className={className}
-            url={video ? video : YTsrc}
-            controls={true}
-            playIcon
-            loop={true}
-            playing={videoPlayState}
-          />
-        </Parallax>
-        {/* phone */}
-        <Parallax x={xval} className=" md:hidden block">
-          <ReactPlayer
-            ref={forwardedRef}
-            id="servicesImage"
-            className={classname}
-            url={video ? video : YTsrc}
-            width={"80%"}
-            height={"280px"}
-            loop={true}
-            playing={videoPlayState}
-            controls={true}
-          />
-        </Parallax>
-      </>
+    //  + " md:bg-black ";
+    // desktop
+    return !isPhone ? (
+      <Parallax x={xval} className=" md:block hidden ">
+        <ReactPlayer
+          ref={forwardedRef}
+          id="servicesImage"
+          className={className}
+          url={video ? video : YTsrc}
+          controls={true}
+          playIcon
+          loop={true}
+          playing={videoPlayState}
+        />
+      </Parallax>
+    ) : (
+      <Parallax x={xvalPh} className="  block">
+        <ReactPlayer
+          ref={forwardedRef}
+          id="servicesImage"
+          className={classname}
+          url={video ? video : YTsrc}
+          width={"80%"}
+          height={"280px"}
+          loop={true}
+          playing={videoPlayState}
+          controls={true}
+        />
+      </Parallax>
     );
   }
   function imageSection(image_path, video, YTvideo, floatPos, steps) {
@@ -146,7 +136,7 @@ const ServiceCard = (props) => {
               </Parallax>
             </>
           ) : (
-            iframeYT(video, YTvideo, imageClassname, imageXval, imageXvalPh)
+            videoCard(video, YTvideo, imageClassname, imageXval, imageXvalPh)
           )}
         </div>
       </>
@@ -162,7 +152,6 @@ const ServiceCard = (props) => {
   function servicePoints(step, index, length) {
     let className = "pl-5 font-helvetica ";
     if (length > 5) className += " lg:py-1.5 py-1.5 ";
-    // else if (length > 7) className += " lg:py-1.5 py-1 ";
     else className += " lg:py-2.5 py-2 ";
 
     return (
