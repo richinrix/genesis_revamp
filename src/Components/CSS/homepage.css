@@ -1,8 +1,14 @@
-#homeTsparticles {
+.particleContainer {
   position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: lightgreen;
+  height: screen;
+  width: screen;
+  overflow: hidden !important;
+}
+
+#homeTs {
+  position: absolute;
+  height: screen;
+  width: screen;
   margin: 0;
   padding: 0;
   top: 0;
@@ -12,7 +18,11 @@
 .homeText {
   position: absolute;
 }
-@media only screen and (min-width: 768px) {
-  .homeText {
-  }
+
+.logoHomeDark {
+  text-align: center;
+  z-index: 20;
+}
+.logoHomeDark img {
+  width: 150px;
 }

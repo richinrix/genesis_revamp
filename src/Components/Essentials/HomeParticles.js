@@ -1,50 +1,32 @@
 import React from "react";
-import Particles, {
-  InteractivityDetect,
-  MoveDirection,
-  OutMode,
-  ShapeType,
-  SizeMode,
-  StartValueType,
-} from "tsparticles";
-import "../CSS/animation.css";
+import Particles from "react-tsparticles";
 
 export default function HomeParticles() {
   return (
-    <div className=" flex justify-center ">
+    <div className=" flex justify-center w-screen h-screen">
       <Particles
-        id="homeTsparticles"
+        id="tsparticles"
         options={{
           background: {
             color: {
-              value: "#000000",
+              value: "transparent",
             },
             position: "50% 50%",
             repeat: "no-repeat",
-            size: "cover",
+            size: "fit",
           },
           fullScreen: {
-            enable: true,
-            zIndex: 1,
+            enable: false,
+            zIndex: 0,
           },
           interactivity: {
             events: {
               onClick: {
-                enable: true,
                 mode: "push",
-              },
-              onDiv: {
-                selectors: "#repulse-div",
-                enable: true,
-                mode: "repulse",
               },
               onHover: {
                 enable: true,
                 mode: "repulse",
-                parallax: {
-                  enable: true,
-                  force: 60,
-                },
               },
             },
             modes: {
@@ -52,13 +34,15 @@ export default function HomeParticles() {
                 distance: 400,
                 duration: 2,
                 opacity: 0.8,
-                size: 80,
+                size: 40,
               },
               grab: {
                 distance: 400,
               },
               repulse: {
-                distance: 80,
+                distance: 100,
+                duration: 0.8,
+                speed: 0.5,
               },
             },
           },
@@ -83,40 +67,57 @@ export default function HomeParticles() {
               enable: true,
               path: {},
               outModes: {
-                bottom: "out",
-                left: "out",
-                right: "out",
-                top: "out",
+                default: "destroy",
+                bottom: "destroy",
+                left: "destroy",
+                right: "destroy",
+                top: "destroy",
               },
-              speed: 6,
+              speed: 5,
             },
             number: {
               density: {
                 enable: true,
+                factor: 3000,
               },
-              limit: 500,
-              value: 1000,
+              value: 0,
             },
             opacity: {
-              value: 0.5,
               animation: {
-                speed: 1,
+                speed: 3,
                 minimumValue: 0.1,
               },
             },
             size: {
-              random: {
-                enable: true,
-                minimumValue: 0.5,
-              },
               value: {
-                min: 0.5,
-                max: 2.5,
+                min: 0.1,
+                max: 20,
               },
               animation: {
-                speed: 40,
+                enable: true,
+                sync: true,
+                destroy: "max",
                 minimumValue: 0.1,
+                startValue: "min",
               },
+            },
+          },
+          emitters: {
+            autoPlay: true,
+            direction: "top",
+            life: {},
+            rate: {
+              quantity: 2,
+              delay: 0.1,
+            },
+            size: {
+              mode: "percent",
+              height: 0,
+              width: 100,
+            },
+            position: {
+              x: 50,
+              y: 100,
             },
           },
         }}

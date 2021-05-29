@@ -73,7 +73,7 @@ function Map() {
             {!validEmail && (
               <h6
                 className="absolute text-lg ml-36 mt-2.5 md:ml-2 md:top-20 "
-                style={{ color: "red" }}
+                style={{ color: "red", border: "2" }}
               >
                 Invalid e-mail
               </h6>

@@ -38,7 +38,7 @@ function Navbar() {
     <div className="navContainer">
       <nav class="nav scrol flex flex-wrap items-center justify-between px-4">
         <div class="flex flex-no-shrink items-center mr-6 py-5 pl-0 md:pl-2">
-          <a className="navLogo self-center" href="#">
+          <a className="navLogo self-center" href="/#">
             <img
               className="hidden md:block"
               src={scrollDetect ? logoLite : logoDark}

@@ -13,6 +13,7 @@ function Contact() {
   const [validEmail, setValidEmail] = useState(true);
   const [validPhone, setValidPhone] = useState(true);
   const [borderColor, setBorderColor] = useState("gray");
+  const [bordWidth, setBordWidth] = useState(1);
   const [submitted, setSubmitted] = useState(false);
 
   const addInterest = (item) => {
@@ -49,10 +50,12 @@ function Contact() {
         ],
       });
       setBorderColor("green");
+      setBordWidth(2);
       setSubmitted(true);
       setCheckz("");
     } else {
       setBorderColor("red");
+      setBordWidth(2);
       setValidEmail(false);
       setSubmitted(false);
       setSubmitted(false);
@@ -181,7 +184,7 @@ function Contact() {
               type="text"
               id="name"
               placeholder={name === "" && "Name"}
-              style={{ borderColor: borderColor }}
+              style={{ borderColor: borderColor, borderWidth: bordWidth }}
               onChange={(e) => setName(e.target.value)}
             />
             <input
@@ -189,14 +192,14 @@ function Contact() {
               type="email"
               id="mail"
               placeholder={mail === "" && "E-Mail"}
-              style={{ borderColor: borderColor }}
+              style={{ borderColor: borderColor, borderWidth: bordWidth }}
               onChange={(e) => setMail(e.target.value)}
             />
             <input
               className="pb-1 mb-2"
               type="number"
               id="phno"
-              style={{ borderColor: borderColor }}
+              style={{ borderColor: borderColor, borderWidth: bordWidth }}
               placeholder={phno === "" && "Phone Number"}
               onChange={(e) => setPhno(e.target.value)}
             />
@@ -204,7 +207,7 @@ function Contact() {
               className="msgContact pb-1 mb-2"
               type="textarea"
               id="msg"
-              style={{ borderColor: borderColor }}
+              style={{ borderColor: borderColor, borderWidth: bordWidth }}
               placeholder={msg === "" && "Message"}
               onChange={(e) => setMsg(e.target.value)}
             />
