@@ -24,7 +24,7 @@ const Imageflip = (props) => {
   const [flipped, setFlipped] = useState(false);
   const [screenWidth, setScreen] = useState(window.innerWidth);
   const [isPhone, setIsPhone] = useState(false);
-
+  const [initFlip, setInitFlip] = useState(false);
   useEffect(() => {
     if (screenWidth < 700) {
       setIsPhone(true);
@@ -54,8 +54,13 @@ const Imageflip = (props) => {
   useEffect(() => {
     AOS.init();
   });
+  // to flip when in view
   useEffect(() => {
-    inViewport ? setFlipped(false) : setFlipped(true);
+    if (!inViewport && !initFlip) setFlipped(true);
+    if (inViewport && !initFlip) {
+      setFlipped(false);
+      setInitFlip(true);
+    }
   }, [inViewport]);
 
   // ripple effect

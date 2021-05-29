@@ -116,7 +116,7 @@ export default function HomeParticles() {
                   direction: "top",
                   life: {},
                   rate: {
-                    quantity: 2,
+                    quantity: 1,
                     delay: 0.1,
                   },
                   size: {
