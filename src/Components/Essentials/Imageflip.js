@@ -17,9 +17,20 @@ const Imageflip = (props) => {
     tabDisplay,
     card,
   } = props;
-  const flipDuration = 1500 + props.index * 500;
+
+  const flipDuration = 1500 + props.index * 500; //dealy of flip for ripple effect
+
   const aosDuration = props.index * 250;
   const [flipped, setFlipped] = useState(false);
+  const [screenWidth, setScreen] = useState(window.innerWidth);
+  const [isPhone, setIsPhone] = useState(false);
+
+  useEffect(() => {
+    if (screenWidth < 700) {
+      setIsPhone(true);
+    }
+    console.log(isPhone, screenWidth);
+  }, []);
 
   // aos animation
   const cardAnimate = {
@@ -91,79 +102,76 @@ const Imageflip = (props) => {
     // hiding card on phone if it exceeds the limit mentioned in flipcontainer
     if (!phoneDisplay) classname += " lg:block md:block hidden";
     if (!tabDisplay) classname += " md:hidden ";
-
-    return (
-      <>
-        {/* desktop */}
-        <div className="lg:block hidden" ref={forwardedRef}>
-          <div
-            className={classname}
-            data-aos="slide-up"
-            data-aos-easing={cardAnimate.easeing}
-            data-aos-offset={cardAnimate.offset}
-            data-aos-duration={cardAnimate.duration}
-            onMouseEnter={flip}
-            onMouseLeave={flip}
+    console.log(isPhone);
+    return !isPhone ? (
+      <div className="lg:block hidden" ref={forwardedRef}>
+        <div
+          className={classname}
+          data-aos="slide-up"
+          data-aos-easing={cardAnimate.easeing}
+          data-aos-offset={cardAnimate.offset}
+          data-aos-duration={cardAnimate.duration}
+          onMouseEnter={flip}
+          onMouseLeave={flip}
+        >
+          <a.div
+            className="imageflip_c imageflip_back "
+            style={{
+              opacity: opacity.to((o) => 1 - o),
+              transform,
+              backgroundImage: `url('${frontImage}')`,
+            }}
           >
-            <a.div
-              className="imageflip_c imageflip_back "
-              style={{
-                opacity: opacity.to((o) => 1 - o),
-                transform,
-                backgroundImage: `url('${frontImage}')`,
-              }}
-            >
-              <div className="md:text-3xl text-2xl text-left absolute md:bottom-5 bottom-1  ml-2 text-white">
-                {name}
-              </div>
-            </a.div>
-            <a.div
-              className="imageflip_c imageflip_front"
-              style={{
-                opacity,
-                transform,
-                rotateY: "180deg",
-                backgroundImage: `url('${backImage}')`,
-              }}
-            />
-          </div>
+            <div className="md:text-3xl text-2xl text-left absolute md:bottom-5 bottom-1  ml-2 text-white">
+              {name}
+            </div>
+          </a.div>
+          <a.div
+            className="imageflip_c imageflip_front"
+            style={{
+              opacity,
+              transform,
+              rotateY: "180deg",
+              backgroundImage: `url('${backImage}')`,
+            }}
+          />
         </div>
-        {/* phone */}
-        <div className="lg:hidden block">
-          <div
-            ref={forwardedRef}
-            className={classname}
-            data-aos="slide-up"
-            data-aos-easing={cardAnimate.easeing}
-            data-aos-offset={cardAnimate.offset}
-            data-aos-duration={cardAnimate.duration}
-            onMouseEnter={() => setFlipped((state) => !state)}
-            onMouseLeave={() => setFlipped((state) => !state)}
+      </div>
+    ) : (
+      <div className=" block">
+        <div
+          ref={forwardedRef}
+          className={classname}
+          data-aos="slide-up"
+          data-aos-easing={cardAnimate.easeing}
+          data-aos-offset={cardAnimate.offset}
+          data-aos-duration={cardAnimate.duration}
+          onMouseEnter={() => setFlipped((state) => !state)}
+          onMouseLeave={() => setFlipped((state) => !state)}
+        >
+          <a.div
+            className="imageflip_c imageflip_back "
+            style={{
+              opacity: opacity.to((o) => 1 - o),
+              transform,
+              backgroundImage: `url('${frontImagePhone}')`,
+            }}
           >
-            <a.div
-              className="imageflip_c imageflip_back "
-              style={{
-                opacity: opacity.to((o) => 1 - o),
-                transform,
-                backgroundImage: `url('${frontImagePhone}')`,
-              }}
-            >
-              <div className="md:text-3xl text-2xl text-left absolute md:bottom-5 bottom-1  ml-2 text-white">
-                {name}
-              </div>
-            </a.div>
-            <a.div
-              className="imageflip_c imageflip_front"
-              style={{
-                opacity,
-                transform,
-                rotateY: "180deg",
-                backgroundImage: `url('${backImagePhone}')`,
-              }}
-            />
-          </div>
+            <div className="md:text-3xl text-2xl text-left absolute md:bottom-5 bottom-1  ml-2 text-white">
+              {name}
+            </div>
+          </a.div>
+          <a.div
+            className="imageflip_c imageflip_front"
+            style={{
+              opacity,
+              transform,
+              rotateY: "180deg",
+              backgroundImage: `url('${backImagePhone}')`,
+            }}
+          />
         </div>
-      </>
+      </div>
     );
   }
   return (

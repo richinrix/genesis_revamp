@@ -5,11 +5,11 @@ import "../CSS/comingsoon.css";
 export default function ComingSoon() {
   function dashedAnimation() {
     return (
-      <div class="dash-container my-10 z-10">
-        <div class="dash uno"></div>
-        <div class="dash dos"></div>
-        <div class="dash tres"></div>
-        <div class="dash cuatro"></div>
+      <div className="dash-container my-10 z-10">
+        <div className="dash uno"></div>
+        <div className="dash dos"></div>
+        <div className="dash tres"></div>
+        <div className="dash cuatro"></div>
       </div>
     );
   }

@@ -28,7 +28,6 @@ const ServiceCard = (props) => {
   }, [screenWidth]);
   useEffect(() => {
     inViewport ? setPlayState(true) : setPlayState(false);
-    // console.log(videoPlayState);
   }, [inViewport]);
   // aos styling settings
   let servicePoint = {
@@ -58,7 +57,7 @@ const ServiceCard = (props) => {
     const YTsrc = YTvideo ? YTvideo + "?autoplay=1&mute=1" : "";
     const className = classname;
     //  + " md:bg-black ";
-    // desktop
+
     return !isPhone ? (
       <Parallax x={xval} className=" md:block hidden ">
         <ReactPlayer
