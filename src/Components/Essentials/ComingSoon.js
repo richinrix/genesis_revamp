@@ -14,7 +14,7 @@ export default function ComingSoon() {
   }
   return (
     <>
-      <div className="h-screen  justify-center items-center text-center flex md:flex-row flex-col  ">
+      <div className="h-screen  justify-center items-center text-center flex md:flex-row flex-col  comingSoonContainer">
         <h2 className="mx-12 px-12 py-5 flex  md:items-center items-end  text-white opacity-60 font-orbitron font-semibold z-10">
           {" "}
           <span className="md:text-6xl text-5xl font-bold px-0 mx-0">

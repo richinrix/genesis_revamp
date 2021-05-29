@@ -79,7 +79,7 @@ const Imageflip = (props) => {
     let classname = "imageflip_container text-center md:mx-3 mx-1.5 ";
 
     // assigning margin top values based on their position
-    if (phonePos === 0) classname += " md:mt-7 mt-3 ";
+    if (phonePos === 0) classname += "  mt-3 ";
     if (pos === 0) classname += " md:mt-5 ";
     else if (pos === 1) classname += " md:mt-0";
     else if (pos === 2) classname += " md:mt-12";

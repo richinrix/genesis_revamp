@@ -8,9 +8,9 @@ export default function ParticlesAnimation() {
         id="tsparticles"
         options={{
           background: {
-            color: {
-              value: "#202020",
-            },
+            // color: {
+            //   value: "#202020",
+            // },
             position: "50% 50%",
             repeat: "no-repeat",
             size: "cover",

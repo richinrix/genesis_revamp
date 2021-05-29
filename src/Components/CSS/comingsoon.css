@@ -1,3 +1,7 @@
+.comingSoonContainer {
+  background: linear-gradient(to right, #1d1d1d, black);
+}
+
 .dash-container {
   display: flex;
 }

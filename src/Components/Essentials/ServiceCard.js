@@ -93,7 +93,7 @@ const ServiceCard = (props) => {
             height={"280px"}
             loop={true}
             playing={videoPlayState}
-            // controls={true}
+            controls={true}
           />
         </Parallax>
       </>
