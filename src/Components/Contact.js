@@ -82,7 +82,7 @@ function Contact() {
           <p className="contactHelpYou font-medium md:text-xl pb-2">
             What can we help you with?
           </p>
-          <div className="contactChecks text-left grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-1 pb-6">
+          <div className="contactChecks text-left grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-1 pb-6">
             <div className="checkItem">
               <input
                 type="checkbox"
@@ -107,13 +107,13 @@ function Contact() {
             <div className="checkItem">
               <input
                 type="checkbox"
-                id="fMarketing"
-                value="Marketing"
+                id="fLogo"
+                name="fLogo"
+                value="Logo"
                 onChange={(e) => addInterest(e.target.value)}
               />
-              <label for="fMarketing">Marketing</label>
+              <label for="fLogo">Logo Design</label>
             </div>
-
             <div className="checkItem">
               <input
                 type="checkbox"
@@ -123,16 +123,14 @@ function Contact() {
               />
               <label for="fGraphics">Graphic Design</label>
             </div>
-
             <div className="checkItem">
               <input
                 type="checkbox"
-                id="fLogo"
-                name="fLogo"
-                value="Logo"
+                id="fMarketing"
+                value="Marketing"
                 onChange={(e) => addInterest(e.target.value)}
               />
-              <label for="fLogo">Logo Design</label>
+              <label for="fMarketing">Marketing</label>
             </div>
 
             <div className="checkItem">

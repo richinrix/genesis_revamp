@@ -60,16 +60,16 @@ function Navbar() {
           }
         >
           <li class="border-none">
-            <a
-              href="/#aboutContainer"
-              class="block md:inline-block  py-3 no-underline"
-            >
+            <a href="/#teams" class="block md:inline-block  py-3 no-underline">
               Team
             </a>
           </li>
 
           <li class="navSer border-none">
-            <a href="/#teams" class=" block md:inline-block  py-3 no-underline">
+            <a
+              href="/#services"
+              class=" block md:inline-block  py-3 no-underline"
+            >
               Services
             </a>
           </li>
