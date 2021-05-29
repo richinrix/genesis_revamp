@@ -45,8 +45,9 @@ const Imageflip = (props) => {
     AOS.init();
   });
   useEffect(() => {
-    flip();
+    inViewport ? setFlipped(false) : setFlipped(true);
   }, [inViewport]);
+
   // ripple effect
   // let flipTimerId;
   // function ripple() {
@@ -130,6 +131,7 @@ const Imageflip = (props) => {
         {/* phone */}
         <div className="lg:hidden block">
           <div
+            ref={forwardedRef}
             className={classname}
             data-aos="slide-up"
             data-aos-easing={cardAnimate.easeing}
