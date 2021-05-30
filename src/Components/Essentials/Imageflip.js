@@ -18,7 +18,8 @@ const Imageflip = (props) => {
     card,
   } = props;
 
-  const flipDuration = 1500 + props.index * 500; //dealy of flip for ripple effect
+  //dealy of flip for ripple effect
+  const flipDuration = 1500 + props.index * 500;
 
   const aosDuration = props.index * 250;
   const [flipped, setFlipped] = useState(false);
@@ -107,7 +108,7 @@ const Imageflip = (props) => {
     if (!phoneDisplay) classname += " lg:block md:block hidden";
     if (!tabDisplay) classname += " md:hidden ";
     return !isPhone ? (
-      <div className="lg:block hidden" ref={forwardedRef}>
+      <div className="lg:block " ref={forwardedRef}>
         <div
           className={classname}
           data-aos="slide-up"
@@ -149,8 +150,10 @@ const Imageflip = (props) => {
           data-aos-easing={cardAnimate.easeing}
           data-aos-offset={cardAnimate.offset}
           data-aos-duration={cardAnimate.duration}
-          onMouseEnter={() => setFlipped((state) => !state)}
-          onMouseLeave={() => setFlipped((state) => !state)}
+          // disable onclick and use the other 2 if you want the image to flip back when clicked outside the image
+          // onMouseEnter={flip}
+          // onMouseLeave={flip}
+          onClick={flip}
         >
           <a.div
             className="imageflip_c imageflip_back "
@@ -195,4 +198,4 @@ const Component = (props) => (
   />
 );
 
-export default Component;
+export default React.memo(Component);

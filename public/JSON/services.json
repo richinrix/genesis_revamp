@@ -2,7 +2,7 @@
   {
     "heading": "Development",
     "description": "Good design makes a strong and lasting impression of a brand on people. Turning creative designs into functional products is a skill that comes easily to us.",
-    "steps": [
+    "points": [
       "UI Design",
       "Website Development",
       "AR Integrated Web Development",
@@ -13,7 +13,7 @@
   {
     "heading": "Branding",
     "description": "Proper branding brings an invaluable personal dimension to your business",
-    "steps": [
+    "points": [
       "Consultation",
       "Market Research",
       "Logo Design",
@@ -27,7 +27,7 @@
   {
     "heading": "Marketing",
     "description": "By blending great ideas and technology, we ensure that you have all the ingredients to make the right noises in the market.",
-    "steps": [
+    "points": [
       "SEO",
       "Social Media Marketing",
       "Content Marketing",
@@ -45,7 +45,7 @@
   {
     "heading": "Production",
     "description": "Being authentic is vital to a brand’s legacy. Our in-house production team is dedicated to creating rich media content on the fly.",
-    "steps": [
+    "points": [
       "Commercial AD Films",
       "Product Photography",
       "Copy Writing",

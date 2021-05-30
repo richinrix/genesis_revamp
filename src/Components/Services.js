@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 // services
 import API from "./services/API";
 import axios from "axios";

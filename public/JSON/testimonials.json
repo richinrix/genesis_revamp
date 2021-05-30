@@ -1,19 +1,19 @@
 [
   {
     "index": 1,
-    "name": "Bruce Wayne",
+    "name": "Bruce Wayne1",
     "statement": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ips um dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
     "image": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg"
   },
   {
     "index": 2,
-    "name": "Bruce Wayne",
+    "name": "Bruce Wayne2",
     "statement": "Lorem ipsum dolor s Lorem adipisicing elit. Rem magni, impedit reicit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
     "image": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg"
   },
   {
     "index": 3,
-    "name": "Bruce Wayne",
+    "name": "Bruce Wayne3",
     "statement": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas! Lorem ipsum dolor sit amet consem magni, impedit reic",
     "image": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg"
   },
@@ -31,7 +31,7 @@
   },
   {
     "index": 6,
-    "name": "Bruce Wayne",
+    "name": "Bruce Wayne6",
     "statement": "Lorem ipsum dolor s Lorem adipisicing elit. Rem magni, impedit reicit amet consectetur adipisicing elit. Rem magni, impedit reiciendis numquam eveniet voluptas!",
     "image": "https://www.originalcomics.fr/12689/batman-metal-tome-3-vf.jpg"
   }

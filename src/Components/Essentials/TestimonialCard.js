@@ -1,18 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import handleViewport from "react-in-viewport";
 import IMAGES from "../services/IMAGES";
-const Block = (props) => {
-  const { inViewport, forwardedRef, testimonial, index } = props;
-  let boxShadow = inViewport
-    ? "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7"
-    : "none";
-  let scale = inViewport ? "scale(1)" : "scale(0.98)";
-  // let transitionDelay = " md:delay-";
-  // transitionDelay += inViewport ? ((index % 3) + 1) * 500 + " delay-300" : "0";
-  let transitionDelay = inViewport ? ((index % 3) + 1) * 500 + "ms" : "0s";
 
-  let className =
-    "relative llg:mx-10 mx-auto my-3 md:p-10 p-7 text-center flex h-screen flex-col justify-between overflow-hidden ";
+const Card = (props) => {
+  const { inViewport, forwardedRef, testimonial, index, isPhone } = props;
+  const [bShadow, setBShadow] = useState("none");
+  const [scale, setScale] = useState("scale(0.98)");
+  const [transitionDelay, SetDelay] = useState("0s");
+
+  useEffect(() => {
+    if (inViewport) {
+      if (!isPhone) SetDelay(((index % 3) + 1) * 400 + "ms");
+      else SetDelay("300ms");
+      setScale("scale(1)");
+      setBShadow(
+        "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7"
+      );
+    } else {
+      SetDelay("0s");
+      setScale("scale(0.98");
+      setBShadow("none");
+    }
+  }, [inViewport]);
+
+  // choosing color for images based on its position
   let image, footerImg;
   if (index % 3 === 0) {
     image = IMAGES.leftQuoteGreen;
@@ -27,9 +38,9 @@ const Block = (props) => {
   return (
     <div
       id="testimonial-card"
-      className={className}
+      className="relative lg:mx-10 mx-auto my-3 md:p-10 p-7 text-center flex h-screen flex-col justify-between overflow-hidden "
       style={{
-        boxShadow: boxShadow,
+        boxShadow: bShadow,
         transform: scale,
         transitionDelay: transitionDelay,
       }}
@@ -41,11 +52,10 @@ const Block = (props) => {
         style={{ width: "25px" }}
         alt=""
       />
-
+      {/* text  */}
       <div className="mt-10 leading-snug overflow-hidden">
         {testimonial.statement}
       </div>
-
       <div
         id="name "
         className="  flex flex-col md:mb-5 mb-2"
@@ -73,10 +83,14 @@ const Block = (props) => {
   );
 };
 
-const ViewportBlock = handleViewport(Block);
+const ViewportBlock = handleViewport(Card);
 
 const Component = (props) => (
-  <ViewportBlock testimonial={props.testimonial} index={props.index} />
+  <ViewportBlock
+    testimonial={props.testimonial}
+    index={props.index}
+    isPhone={props.isPhone}
+  />
 );
 
-export default Component;
+export default React.memo(Component);

@@ -16,10 +16,16 @@ SwiperCore.use([Pagination, Navigation]);
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState();
+  const [isPhone, setIsPhone] = useState(false);
+  const [screenWidth, SetScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     getData();
+    if (screenWidth < 700) {
+      setIsPhone(true);
+    }
   }, []);
+
   let getData = async () => {
     await fetch(API.testimonials).then((res) =>
       res.json().then((info) => setTestimonials(info))
@@ -30,53 +36,54 @@ export default function Testimonials() {
   function currenDesktoptView(cards, index) {
     return (
       <SwiperSlide className="mx-auto md:my-auto my-8 lg:flex hidden md:flex-row  justify-center items-center">
-        {<TestimonialCard testimonial={cards} index={index} />}
+        {<TestimonialCard testimonial={cards} index={index} isPhone={false} />}
       </SwiperSlide>
     );
   }
   function currentPhoneView(cards, index) {
     return (
       <SwiperSlide className="mx-auto md:my-auto my-8 md:flex-row  justify-center items-center">
-        {<TestimonialCard testimonial={cards} index={index} />}
+        {<TestimonialCard testimonial={cards} index={index} isPhone={true} />}
       </SwiperSlide>
     );
   }
   return (
     <div className="proximity-snap">
-      {/* phone view */}
-      <Swiper
-        id="testimonials"
-        slidesPerView={1}
-        spaceBetween={0}
-        loop={true}
-        navigation={true}
-        className=" mx-auto md:my-2 mt-8 mb-0 overflow-hidden lg:hidden  "
-      >
-        {testimonials &&
-          testimonials.map((testimonial, index) =>
-            currentPhoneView(testimonial, index)
-          )}
-      </Swiper>
-      {/* desktop view */}
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={0}
-        breakpoints={{
-          769: {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
-          },
-        }}
-        loop={true}
-        navigation={true}
-        id="testimonials"
-        className="h-full mx-auto md:my-14 my-8 lg:flex hidden  overflow-hidden "
-      >
-        {testimonials &&
-          testimonials.map((testimonial, index) =>
-            currenDesktoptView(testimonial, index)
-          )}
-      </Swiper>
+      {isPhone ? (
+        <Swiper
+          id="testimonials"
+          slidesPerView={1}
+          spaceBetween={0}
+          loop={true}
+          navigation={true}
+          className=" mx-auto md:my-2 mt-8 mb-0 overflow-hidden lg:hidden  "
+        >
+          {testimonials &&
+            testimonials.map((testimonial, index) =>
+              currentPhoneView(testimonial, index)
+            )}
+        </Swiper>
+      ) : (
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={0}
+          breakpoints={{
+            769: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+            },
+          }}
+          loop={true}
+          navigation={true}
+          id="testimonials"
+          className="h-full mx-auto md:my-14 my-8 lg:block hidden  overflow-hidden "
+        >
+          {testimonials &&
+            testimonials.map((testimonial, index) =>
+              currenDesktoptView(testimonial, index)
+            )}
+        </Swiper>
+      )}
     </div>
   );
 }

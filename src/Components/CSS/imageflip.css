@@ -22,17 +22,7 @@
   padding: 20px;
   justify-content: center;
 }
-/* #image-flip-wrapper :nth-child(n) {
-  animation: imageFadeUp ease-in-out 2s;
-  animation-fill-mode: forwards;
-}
 
-@keyframes imageFadeUp {
-  0% {
-    margin-top: 200px; 
-     transform: translateY(50px);
-  }
-} */
 .imageflip_container {
   height: 350px;
   width: 140px;
@@ -48,7 +38,7 @@
 
 /* testimonial card  */
 #testimonial-card {
-  transition-property: box-shadow;
+  transition-property: all;
   transition-duration: 1s;
   height: 450px;
   width: 300px;
