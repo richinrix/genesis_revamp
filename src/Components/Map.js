@@ -93,7 +93,7 @@ function Map() {
         data-aos-easing="linear"
         data-aos-duration="800"
         data-aos-offset="200"
-        className="newsLetter flex flex-col mt-12"
+        className="newsLetter flex flex-col mt-7 md:mt-12"
       >
         <p className="text-lg">Stay up to date, subscribe to our newsletter:</p>
         <div className="newsInputs flex flex-row pt-2">

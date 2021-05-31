@@ -229,7 +229,7 @@ function Contact() {
         </form>
         <div className="circles md:w-screen">
           <img
-            className="contactCircles none md:inline-block ml-64"
+            className="contactCircles none md:inline-block ml-40 mt-20"
             src={circles}
           ></img>
         </div>

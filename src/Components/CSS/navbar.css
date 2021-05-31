@@ -80,6 +80,7 @@
   z-index: 50;
   top: 0;
   width: 100%;
+  height: 90px;
 }
 
 /* For bigger displays */
@@ -138,5 +139,8 @@
   .navList a:hover,
   .navList .lite a:hover {
     color: black;
+  }
+  .navLiteBack {
+    background-color: rgba(0, 0, 0, 0.2) !important;
   }
 }
