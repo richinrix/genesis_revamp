@@ -54,7 +54,7 @@ function Map() {
   return (
     <div
       id="mapContainer"
-      className="mapContainer flex flex-col pl-28 pt-12 md:justify-start md:items-start w-screen md:w-auto h-auto mt-3 mb-3"
+      className="mapContainer flex flex-col pl-28 md:pt-12  md:justify-start md:items-start w-screen md:w-auto h-auto md:mt-3 mb-3"
     >
       <div class="socialMapContainer md:hidden  ">
         <div class="iconMapBar flex flex-row w-screen">

@@ -16,14 +16,10 @@ SwiperCore.use([Pagination, Navigation]);
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState();
-  const [isPhone, setIsPhone] = useState(false);
-  const [screenWidth, SetScreenWidth] = useState(window.innerWidth);
+  const isPhone = window.innerWidth < 700;
 
   useEffect(() => {
     getData();
-    if (screenWidth < 700) {
-      setIsPhone(true);
-    }
   }, []);
 
   let getData = async () => {

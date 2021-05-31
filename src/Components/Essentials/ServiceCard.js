@@ -16,14 +16,7 @@ const ServiceCard = (props) => {
   let headingClassname = "mx-auto  md:mt-10 text-center font-plantc text-5xl ";
 
   const [videoPlayState, setPlayState] = useState(false);
-  const [isPhone, setIsPhone] = useState(false);
-  const [screenWidth, SetScreenWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    if (screenWidth < 700) {
-      setIsPhone(true);
-    }
-  }, [screenWidth]);
+  const isPhone = window.innerWidth < 700;
 
   // playing video  when in view
   useEffect(() => {

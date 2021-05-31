@@ -23,14 +23,8 @@ const Imageflip = (props) => {
 
   const aosDuration = props.index * 250;
   const [flipped, setFlipped] = useState(false);
-  const [screenWidth, setScreen] = useState(window.innerWidth);
-  const [isPhone, setIsPhone] = useState(false);
+  const isPhone = window.innerWidth < 700;
   const [initFlip, setInitFlip] = useState(false);
-  useEffect(() => {
-    if (screenWidth < 700) {
-      setIsPhone(true);
-    }
-  }, []);
 
   // aos animation
   const cardAnimate = {
@@ -126,7 +120,7 @@ const Imageflip = (props) => {
               backgroundImage: `url('${frontImage}')`,
             }}
           >
-            <div className="md:text-3xl text-2xl text-left absolute md:bottom-5 bottom-1  ml-2 text-white">
+            <div className="md:text-3xl text-2xl  absolute md:bottom-5 bottom-1   text-white">
               {name}
             </div>
           </a.div>

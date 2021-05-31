@@ -72,14 +72,14 @@ function Contact() {
   }
 
   return (
-    <div id="contactContainer" className="h-screen">
+    <div id="contactContainer" className="md:h-screen h-full">
       <div
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="800"
         className="contactFlexContainer flex justify-between overflowY-hidden"
       >
-        <form className="contactForm h-screen pt-8 md:pt-24 px-5 md:pl-24 md:w-3/5 w-screen">
+        <form className="contactForm md:h-screen pt-8 md:pt-24 px-5 md:pl-24 md:w-3/5 w-screen">
           <h2 className="font-plantc text-5xl md:text-6xl pb-2 md:pb-4">
             Get in Touch
           </h2>
