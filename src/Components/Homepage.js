@@ -6,7 +6,7 @@ import HomeParticles from "./Essentials/HomeParticles";
 function Homepage() {
   function videoCard() {
     return (
-      <video style={{ opacity: "70%", width: "120%" }} loop autoPlay muted>
+      <video style={{ width: "120%" }} loop autoPlay muted>
         <source
           src="https://res.cloudinary.com/genesiscloudimages/video/upload/v1622463883/Genesis-media/sprint-mask-ad_qr7jzn.mp4"
           type="video/mp4"

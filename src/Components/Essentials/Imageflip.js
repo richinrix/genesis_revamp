@@ -120,7 +120,7 @@ const Imageflip = (props) => {
               backgroundImage: `url('${frontImage}')`,
             }}
           >
-            <div className="md:text-3xl text-2xl  absolute md:bottom-5 bottom-1   text-white">
+            <div className="md:text-3xl text-2xl text-center w-full  absolute  md:bottom-5 bottom-1 text-gray-300">
               {name}
             </div>
           </a.div>
@@ -136,7 +136,7 @@ const Imageflip = (props) => {
         </div>
       </div>
     ) : (
-      <div className=" block">
+      <div className=" block ">
         <div
           ref={forwardedRef}
           className={classname}
@@ -150,14 +150,14 @@ const Imageflip = (props) => {
           onClick={flip}
         >
           <a.div
-            className="imageflip_c imageflip_back "
+            className="imageflip_c imageflip_back flex"
             style={{
               opacity: opacity.to((o) => 1 - o),
               transform,
               backgroundImage: `url('${frontImagePhone}')`,
             }}
           >
-            <div className="md:text-3xl text-2xl text-left absolute md:bottom-5 bottom-1  ml-2 text-white">
+            <div className="md:text-3xl text-2xl  mx-auto md:bottom-5 bottom-1   text-white">
               {name}
             </div>
           </a.div>

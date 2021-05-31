@@ -62,7 +62,7 @@ export default function Testimonials() {
       ) : (
         <Swiper
           slidesPerView={3}
-          spaceBetween={0}
+          spaceBetween={-120}
           breakpoints={{
             769: {
               slidesPerView: 3,
