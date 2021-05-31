@@ -10,6 +10,7 @@ function Map() {
   const [subbed, setSubbed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  //Handy function to check if the device is a phone
   const checkPhone = () => {
     if (window.innerWidth > 700) {
       setIsMobile(true);
@@ -18,11 +19,14 @@ function Map() {
     }
   };
 
+  //Email Validator
   function validateNewsEmail(email) {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
+
+  //Newsletter Form submit Handler
   function newsEmailSubmiteHandler(e) {
     e.preventDefault();
     if (validateNewsEmail(email)) {
@@ -52,6 +56,38 @@ function Map() {
       id="mapContainer"
       className="mapContainer flex flex-col pl-28 pt-12 md:justify-start md:items-start w-screen md:w-auto h-auto mt-3 mb-3"
     >
+      <div class="socialMapContainer md:hidden  ">
+        <div class="iconMapBar flex flex-row w-screen">
+          <a
+            href="https://www.instagram.com/genesisproduction.in/"
+            class="social-icons  "
+            target="_blank"
+          >
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a
+            href="https://twitter.com/genesismedia_in"
+            class="social-icons  "
+            target="_blank"
+          >
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/genesisproduction.in/"
+            class="social-icons  "
+            target="_blank"
+          >
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/genesis-production/"
+            class="social-icons  "
+            target="_blank"
+          >
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
       <div
         data-aos="fade-right"
         data-aos-easing="linear"

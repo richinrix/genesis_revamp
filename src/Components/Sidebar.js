@@ -28,24 +28,31 @@ function Sidebar() {
   return (
     <div class="socialContainer">
       <div class="icon-bar">
-        <a href="#" class={scrollDetect ? "social-icon" : "social-icon slite "}>
+        <a
+          href="https://www.instagram.com/genesisproduction.in/"
+          class={scrollDetect ? "social-icon" : "social-icon slite "}
+          target="_blank"
+        >
           <i class="fa fa-instagram"></i>
         </a>
         <a
-          href="#"
+          href="https://twitter.com/genesismedia_in"
           class={scrollDetect ? "social-icon " : "social-icon slite "}
+          target="_blank"
         >
           <i class="fa fa-twitter"></i>
         </a>
         <a
-          href="#"
+          href="https://www.facebook.com/genesisproduction.in/"
           class={scrollDetect ? "social-icon " : "social-icon slite "}
+          target="_blank"
         >
           <i class="fa fa-facebook"></i>
         </a>
         <a
-          href="#"
+          href="https://www.linkedin.com/company/genesis-production/"
           class={scrollDetect ? "social-icon " : "social-icon slite "}
+          target="_blank"
         >
           <i class="fa fa-linkedin"></i>
         </a>

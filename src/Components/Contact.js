@@ -10,16 +10,16 @@ function Contact() {
   const [phno, setPhno] = useState("");
   const [msg, setMsg] = useState("");
   const [checkz, setCheckz] = useState([]);
-  const [validEmail, setValidEmail] = useState(true);
-  const [validPhone, setValidPhone] = useState(true);
   const [borderColor, setBorderColor] = useState("gray");
   const [bordWidth, setBordWidth] = useState(1);
   const [submitted, setSubmitted] = useState(false);
 
+  //Adds list of checked items to an array
   const addInterest = (item) => {
     setCheckz([...checkz, { id: checkz.length, name: item }]);
   };
 
+  //Validates Email and Phone number
   function validateContactEmail(mail) {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -30,11 +30,11 @@ function Contact() {
     return tenPhno.test(phno);
   }
 
+  //Contact Form Handler
   function contactHandler(e) {
     e.preventDefault();
+
     if (validateContactEmail(mail) && validateContactphone(phno)) {
-      setValidEmail(true);
-      setValidPhone(true);
       setBorderColor("gray");
       e.target.value = null;
       axios.post(API.contactSheet, {
@@ -49,15 +49,24 @@ function Contact() {
           },
         ],
       });
-      setBorderColor("green");
-      setBordWidth(2);
+      setBorderColor("green"); //Changes field border color to green
+      setBordWidth(2); //Increases field vorder size
       setSubmitted(true);
+      alert("Details Submitted!");
       setCheckz("");
     } else {
       setBorderColor("red");
       setBordWidth(2);
-      setValidEmail(false);
-      setSubmitted(false);
+      if (!validateContactphone(phno) & !validateContactEmail(mail)) {
+        alert("Check your Email and Phone Number");
+      } else {
+        if (!validateContactEmail(mail)) {
+          alert("Check your mail");
+        }
+        if (!validateContactphone(phno)) {
+          alert("Check your phone number");
+        }
+      }
       setSubmitted(false);
     }
   }
@@ -217,22 +226,6 @@ function Contact() {
           >
             Submit
           </button>
-          {/* {!validEmail && !validPhone && (
-            <h6
-              className="absolute text-lg ml-4 -mt-20 md:ml-24 md:-mt-11 "
-              style={{ color: "red" }}
-            >
-              Check the fields again
-            </h6>
-          )}
-          {submitted && (
-            <h6
-              className="subGreen absolute text-lg right-24  -mt-20 md:mt-0 md:ml-24 md:bottom-8 w-60 md:w-auto"
-              style={{ color: "green" }}
-            >
-              You details are Submitted!
-            </h6>
-          )} */}
         </form>
         <div className="circles md:w-screen">
           <img
