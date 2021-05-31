@@ -32,7 +32,13 @@ function Navbar() {
 
   return (
     <div className="navContainer">
-      <nav class="nav scrol flex flex-wrap items-center justify-between px-4">
+      <nav
+        class={
+          scrollDetect
+            ? "nav scrol flex flex-wrap items-center justify-between px-4 navLiteBack"
+            : "nav scrol flex flex-wrap items-center justify-between px-4"
+        }
+      >
         <div class="flex flex-no-shrink items-center mr-6 py-5 pl-0 md:pl-2">
           <a className="navLogo self-center" href="/#">
             <img
@@ -40,7 +46,7 @@ function Navbar() {
               src={scrollDetect ? logoLite : logoDark}
               alt=""
               srcset=""
-              style={{ height: "60px", width: "120px" }}
+              style={{ height: "60px", width: "160px" }}
             />
           </a>
         </div>
