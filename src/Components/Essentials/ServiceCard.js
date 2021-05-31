@@ -200,7 +200,7 @@ const ServiceCard = (props) => {
 
   return (
     <>
-      <div className=" h-full   " id="proximity-snap">
+      <div className=" md:h-screen h-full   " id="proximity-snap">
         <div className="mx-auto p-5 my-auto">
           <div className={headingClassname}>
             <h2>{service.heading}</h2>

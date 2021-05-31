@@ -59,7 +59,7 @@ function Team() {
           className="teamImage mt-6"
           src={
             isPhone
-              ? "https://wallpapercave.com/wp/wp2554899.jpg"
+              ? "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
               : "https://wallpapercave.com/wp/wp2992033.jpg"
           }
           alt=""
