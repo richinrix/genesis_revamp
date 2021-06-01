@@ -10,7 +10,7 @@ function About() {
         data-aos-duration="800"
         data-aos-offset="200"
         id="aboutFlexContainer"
-        class="aboutContainer flex flex-col md:flex-row justify-center items-center bg-transparent h-auto md:h-full mt-10 md:mt-20 md:px-14 md:pr-24 sm:px-5 py-10 md:w-screen flex-shrink-0"
+        className="aboutContainer flex flex-col md:flex-row justify-center items-center bg-transparent h-auto md:h-full mt-10 md:mt-20 md:px-14 md:pr-24 sm:px-5 py-10 md:w-screen flex-shrink-0"
       >
         <div className="aboutText pt-2 pb-2 pr-8">
           <h1 className="aboutHead font-plantc text-5xl md:mr-20 ml-5 md:ml-10  pb-3 md:pb-5 md:pt-16">
@@ -55,11 +55,11 @@ function About() {
           ></img>
           <div className="hidImg flex flex-col md:hidden md:pb-4 flex-shrink-0">
             <img
-              class="ai2"
+              className="ai2"
               src="https://via.placeholder.com/300x280?text=Image2"
             ></img>
             <img
-              class="ai3"
+              className="ai3"
               src="https://via.placeholder.com/300x200?text=Image3"
             ></img>
           </div>

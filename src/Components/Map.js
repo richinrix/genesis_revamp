@@ -56,35 +56,35 @@ function Map() {
       id="mapContainer"
       className="mapContainer flex flex-col pl-28 md:pt-12  md:justify-start md:items-start w-screen md:w-auto h-auto md:mt-3 mb-3"
     >
-      <div class="socialMapContainer md:hidden  ">
-        <div class="iconMapBar flex flex-row w-screen">
+      <div className="socialMapContainer md:hidden  ">
+        <div className="iconMapBar flex flex-row w-screen">
           <a
             href="https://www.instagram.com/genesisproduction.in/"
-            class="social-icons  "
+            className="social-icons  "
             target="_blank"
           >
-            <i class="fa fa-instagram"></i>
+            <i className="fa fa-instagram"></i>
           </a>
           <a
             href="https://twitter.com/genesismedia_in"
-            class="social-icons  "
+            className="social-icons  "
             target="_blank"
           >
-            <i class="fa fa-twitter"></i>
+            <i className="fa fa-twitter"></i>
           </a>
           <a
             href="https://www.facebook.com/genesisproduction.in/"
-            class="social-icons  "
+            className="social-icons  "
             target="_blank"
           >
-            <i class="fa fa-facebook"></i>
+            <i className="fa fa-facebook"></i>
           </a>
           <a
             href="https://www.linkedin.com/company/genesis-production/"
-            class="social-icons  "
+            className="social-icons  "
             target="_blank"
           >
-            <i class="fa fa-linkedin"></i>
+            <i className="fa fa-linkedin"></i>
           </a>
         </div>
       </div>
@@ -123,7 +123,7 @@ function Map() {
               </h6>
             )}
             <button
-              class="bton bton-white bton-animate"
+              className="bton bton-white bton-animate"
               type="submit"
               onClick={(e) => newsEmailSubmiteHandler(e)}
             >
@@ -139,14 +139,14 @@ function Map() {
         className="preMap flex flex-row content-between mt-14"
       >
         <div className="mapPhone flex flex-row">
-          <i class="fa fa-phone pt-1.5 pr-1.5 flex-shrink-0"></i>
+          <i className="fa fa-phone pt-1.5 pr-1.5 flex-shrink-0"></i>
           <p>+91 8792384161/ +91 9886031980</p>
         </div>
         <a
           className="mapMail flex flex-row"
           href="mailto:info@genesismedia.com"
         >
-          <i class="fa fa-envelope pt-1 pr-1.5 pl-64"></i>
+          <i className="fa fa-envelope pt-1 pr-1.5 pl-64"></i>
           <p>info@genesismedia.com</p>
         </a>
       </div>
@@ -179,7 +179,7 @@ function Map() {
         <div className="footerPhone order-2 md:none pl-0.5 flex flex-row">
           <i
             id="fPicon"
-            class="fa fa-phone mt-3 md:mt-0  pt-1.5 pr-1.5 flex-shrink-0"
+            className="fa fa-phone mt-3 md:mt-0  pt-1.5 pr-1.5 flex-shrink-0"
           ></i>
           <p className="text-lg mt-3 md:mt-0 md:text-base">
             +91 8792384161/ +91 9886031980

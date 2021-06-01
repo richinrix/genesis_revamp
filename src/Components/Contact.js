@@ -220,7 +220,7 @@ function Contact() {
             />
           </div>
           <button
-            class="btn btn-white btn-animate"
+            className="btn btn-white btn-animate"
             type="submit"
             onClick={(e) => contactHandler(e)}
           >

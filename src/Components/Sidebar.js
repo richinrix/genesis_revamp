@@ -26,35 +26,35 @@ function Sidebar() {
   window.addEventListener("scroll", handleScroll);
 
   return (
-    <div class="socialContainer">
-      <div class="icon-bar">
+    <div className="socialContainer">
+      <div className="icon-bar">
         <a
           href="https://www.instagram.com/genesisproduction.in/"
-          class={scrollDetect ? "social-icon" : "social-icon slite "}
+          className={scrollDetect ? "social-icon" : "social-icon slite "}
           target="_blank"
         >
-          <i class="fa fa-instagram"></i>
+          <i className="fa fa-instagram"></i>
         </a>
         <a
           href="https://twitter.com/genesismedia_in"
-          class={scrollDetect ? "social-icon " : "social-icon slite "}
+          className={scrollDetect ? "social-icon " : "social-icon slite "}
           target="_blank"
         >
-          <i class="fa fa-twitter"></i>
+          <i className="fa fa-twitter"></i>
         </a>
         <a
           href="https://www.facebook.com/genesisproduction.in/"
-          class={scrollDetect ? "social-icon " : "social-icon slite "}
+          className={scrollDetect ? "social-icon " : "social-icon slite "}
           target="_blank"
         >
-          <i class="fa fa-facebook"></i>
+          <i className="fa fa-facebook"></i>
         </a>
         <a
           href="https://www.linkedin.com/company/genesis-production/"
-          class={scrollDetect ? "social-icon " : "social-icon slite "}
+          className={scrollDetect ? "social-icon " : "social-icon slite "}
           target="_blank"
         >
-          <i class="fa fa-linkedin"></i>
+          <i className="fa fa-linkedin"></i>
         </a>
       </div>
     </div>

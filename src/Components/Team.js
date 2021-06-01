@@ -33,7 +33,7 @@ function Team() {
 
   return (
     <div id="teamCall" className="h-screen w-auto">
-      <div class="teamContainer md:h-full flex flex-col mx-auto md:px-10 sm:px-5 py-10 w-11/12 ">
+      <div className="teamContainer md:h-full flex flex-col mx-auto md:px-10 sm:px-5 py-10 w-11/12 ">
         <div
           id="teamTitle"
           className="teamWords font-plantc text-5xl mt-14 mb-3 ml-0 "
@@ -43,7 +43,7 @@ function Team() {
           </h2>
           <h2 className="text-gray-500 md:mt-4 ">doing work that matters</h2>
         </div>
-        <a class="flex flex-row" href="/career">
+        <a className="flex flex-row" href="/career">
           <h5
             className={
               scrollDetect

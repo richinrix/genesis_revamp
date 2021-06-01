@@ -33,13 +33,13 @@ function Navbar() {
   return (
     <div className="navContainer">
       <nav
-        class={
+        className={
           scrollDetect
             ? "nav scrol flex flex-wrap items-center justify-between px-4 navLiteBack"
             : "nav scrol flex flex-wrap items-center justify-between px-4"
         }
       >
-        <div class="flex flex-no-shrink items-center mr-6 py-5 pl-0 md:pl-2">
+        <div className="flex flex-no-shrink items-center mr-6 pl-0 md:pl-2">
           <a className="navLogo self-center" href="/#">
             <img
               className="hidden md:block"
@@ -51,50 +51,47 @@ function Navbar() {
           </a>
         </div>
 
-        <input class="menu-btn hidden" type="checkbox" id="menu-btn" />
+        <input className="menu-btn hidden" type="checkbox" id="menu-btn" />
         <label
-          class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none"
+          className="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none"
           for="menu-btn"
         >
-          <span class="navicon  flex items-center relative"></span>
+          <span className="navicon  flex items-center relative"></span>
         </label>
 
-        <ul
-          className={
-            scrollDetect
-              ? "navList lite menu md:border-none font-normal flex mr-10 ml-10  items-center justify-end m-0 list-none p-0 w-screen md:w-auto  md:bg-transparent"
-              : "navList menu md:border-none font-normal flex mr-10 ml-10 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent"
-          }
-        >
-          <li class="border-none">
-            <a href="/#teams" class="block md:inline-block  py-3 no-underline">
+        <ul className="navList menu md:border-none font-normal flex mr-10 ml-10 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent">
+          <li className="border-none">
+            <a
+              href="/#teams"
+              className="block md:inline-block  py-3 no-underline"
+            >
               Team
             </a>
           </li>
 
-          <li class="navSer border-none">
+          <li className="navSer border-none">
             <a
               href="/#services"
-              class=" block md:inline-block  py-3 no-underline"
+              className=" block md:inline-block  py-3 no-underline"
             >
               Services
             </a>
           </li>
 
-          <li class="border-none">
+          <li className="border-none">
             <a
               href="/blog"
               target="_blank"
-              class="block md:inline-block py-3 no-underline"
+              className="block md:inline-block py-3 no-underline"
             >
               Blog
             </a>
           </li>
 
-          <li class="border-none">
+          <li className="border-none">
             <a
               href="/#contactContainer"
-              class="block md:inline-block  py-3 no-underline"
+              className="block md:inline-block  py-3 no-underline"
             >
               Contact
             </a>
