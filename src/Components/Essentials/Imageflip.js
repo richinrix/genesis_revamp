@@ -64,7 +64,7 @@ const Imageflip = (props) => {
   //   if (!flipped) {
   //     flipTimerId = setTimeout(flip, flipDuration);
   //   }
-  //   // setTimeout(flip, flipDuration + 7 * 500);
+  // setTimeout(flip, flipDuration + 7 * 500)
   // }
   // useEffect(() => {
   //   if (inViewport && !flipped) {
@@ -73,11 +73,10 @@ const Imageflip = (props) => {
   //     flip();
   //     flip();
   //   }
-  //   // uncomment these if you need the images to flip back to initial state when scrolled away
-  //   // else if (!inViewport && flipped) {
-  //   //   // clearTimeout(flipTimerId);
-  //   //   setFlipped(false);
-  //   // }
+  // uncomment these if you need the images to flip back to initial state when scrolled away
+  // else if (!inViewport && flipped) {
+  //   setFlipped(false);
+  // }
   // }, [inViewport]);
   // useEffect(() => {
   //   if (!inViewport) setFlipped(false);
@@ -120,7 +119,7 @@ const Imageflip = (props) => {
               backgroundImage: `url('${frontImage}')`,
             }}
           >
-            <div className="md:text-3xl text-2xl text-center w-full  absolute  md:bottom-5 bottom-1 text-gray-300">
+            <div className="text-3xl text-center w-full absolute bottom-5 text-gray-300">
               {name}
             </div>
           </a.div>
@@ -144,7 +143,7 @@ const Imageflip = (props) => {
           data-aos-easing={cardAnimate.easeing}
           data-aos-offset={cardAnimate.offset}
           data-aos-duration={cardAnimate.duration}
-          // disable onclick and use the other 2 if you want the image to flip back when clicked outside the image
+          // disable onclick and use the other 2 if you want the image to flip back when tapped outside the image on phone
           // onMouseEnter={flip}
           // onMouseLeave={flip}
           onClick={flip}
@@ -157,7 +156,7 @@ const Imageflip = (props) => {
               backgroundImage: `url('${frontImagePhone}')`,
             }}
           >
-            <div className="md:text-3xl text-2xl  mx-auto md:bottom-5 bottom-1   text-white">
+            <div className="text-2xl text-center w-full absolute bottom-1 text-white">
               {name}
             </div>
           </a.div>

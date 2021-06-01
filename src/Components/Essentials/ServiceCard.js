@@ -46,7 +46,7 @@ const ServiceCard = (props) => {
   }
   // video element
   function videoCard(video, YTvideo, classname, xval, xvalPh) {
-    const YTsrc = YTvideo ? YTvideo + "?autoplay=1&mute=1" : "";
+    const YTsrc = YTvideo ? YTvideo : "";
     const className = classname;
     //  + " md:bg-black ";
 
@@ -64,17 +64,29 @@ const ServiceCard = (props) => {
           playing={videoPlayState}
         />
       </Parallax>
+    ) : video ? (
+      <Parallax x={xvalPh} className="  block">
+        <video
+          id="servicesImage"
+          className={classname}
+          width="80%"
+          height="280px"
+          autoPlay
+          muted
+          loop
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+      </Parallax>
     ) : (
       <Parallax x={xvalPh} className="  block">
         <ReactPlayer
-          ref={forwardedRef}
+          // ref={forwardedRef}
           id="servicesImage"
           className={classname}
-          url={video ? video : YTsrc}
+          url={YTsrc}
           width="80%"
-          height={"280px"}
-          loop={true}
-          playing={videoPlayState}
+          height="280px"
           controls={!video ? true : false}
         />
       </Parallax>
@@ -113,7 +125,7 @@ const ServiceCard = (props) => {
             {yellowRectangle(floatPos)}
           </Parallax>
         )}
-
+        {/* if its a picture or video */}
         {image_path ? (
           <>
             {!isPhone ? (
