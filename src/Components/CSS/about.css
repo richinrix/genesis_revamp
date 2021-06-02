@@ -1,41 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 .aboutParagraphs {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
-@media (max-width: 767px) {
-  .aboutHead {
-    display: block;
-  }
-  .ai1 {
-    width: 160px;
-    height: 280px;
-    flex-shrink: 0;
-  }
-  .ai2 {
-    width: 160px;
-    height: 180px;
-    padding: 0 0 0.5rem 0.5rem;
-  }
-  .ai3 {
-    width: 160px;
-    height: 110px;
-    padding: 0 0 0.5rem 0.5rem;
-  }
-  .aboutPicz {
-    background-image: url("../../images/icons/aboutPic.jpg") !important;
-    background-position: center;
-    height: 60vh;
-    min-height: 30vh;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-}
-
-@media (max-width: 400px) {
-  .aboutParagraphs {
-    font-size: 0.875rem !important;
-    line-height: 1.25rem !important;
-  }
+.aboutCounters {
+  font-family: "Poppins", sans-serif;
 }
