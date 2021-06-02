@@ -5,8 +5,6 @@ import API from "./services/API";
 import axios from "axios";
 // other comps
 import ServiceCard from "./Essentials/ServiceCard";
-// css
-import "./CSS/services.css";
 
 export default function Services() {
   const [services, setServices] = useState();

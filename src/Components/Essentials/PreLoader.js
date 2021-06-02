@@ -3,8 +3,8 @@ import "../CSS/preloader.css";
 
 function PreLoader() {
   return (
-    <div className="h-screen flex items-center">
-      <div className="plContainer md:mx-auto  md:pl-0 ml-20 pl-2 my-auto">
+    <div className="h-screen flex justify-center items-center">
+      <div className="plContainer pl-5 my-auto">
         <div className="ball ball-one"></div>
         <div className="ball ball-two"></div>
         <div className="ball ball-three"></div>

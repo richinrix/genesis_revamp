@@ -45,13 +45,13 @@ export default function FlipContainer() {
           className="font-plantc md:text-5xl text-4xl md:mb-10 mb-5  md:ml-0 ml-8 md:mt-16"
         >
           <h2 className=" ">Meet our team</h2>
-          {/* <h2 className="text-gray-500 md:mt-4 ">delete or replace</h2> */}
         </div>
         <div>
           <div
             id="image-flip-wrapper"
             className=" flex flex-wrap md:mt-8 md:ml-3 lg:justify-start justify-center lg:w-max"
           >
+            {/* limiting the cards to 8 if the cards are more than 8  */}
             {cards &&
               cards.slice(0, 8).map((card, index) => imageFlip(index, card))}
           </div>

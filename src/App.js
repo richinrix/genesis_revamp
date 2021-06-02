@@ -6,6 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.css";
+import "../src/Components/CSS/component.css";
 
 //components
 import Homepage from "./Components/Homepage";
@@ -41,11 +42,9 @@ const Home = () => {
   }, 2000);
 
   return !loading ? (
-    <div className="">
-      <PreLoader />
-    </div>
+    <PreLoader />
   ) : (
-    <div className="scroll-snap-container">
+    <>
       <Homepage />
       <About />
       <FlipContainer />
@@ -53,7 +52,7 @@ const Home = () => {
       <Testimonials />
       <Contact />
       <Map />
-    </div>
+    </>
   );
 };
 export default App;

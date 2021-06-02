@@ -1,7 +1,6 @@
 import React from "react";
 import ParticleAnimation from "./ParticlesAnimation";
 import logo from "../../images/icons/logoDark.png";
-import "../CSS/comingsoon.css";
 export default function ComingSoon() {
   function dashedAnimation() {
     return (

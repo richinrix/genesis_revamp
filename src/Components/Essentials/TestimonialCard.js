@@ -8,6 +8,7 @@ const Card = (props) => {
   const [scale, setScale] = useState("scale(0.98)");
   const [transitionDelay, SetDelay] = useState("0s");
 
+  // inserting boxshadow when in viewport with a delay depending on its index
   useEffect(() => {
     if (inViewport) {
       if (!isPhone) SetDelay(((index % 3) + 1) * 400 + "ms");
@@ -23,7 +24,7 @@ const Card = (props) => {
     }
   }, [inViewport]);
 
-  // choosing color for images based on its position
+  // choosing color for images based on its index
   let image, footerImg;
   if (index % 3 === 0) {
     image = IMAGES.leftQuoteGreen;

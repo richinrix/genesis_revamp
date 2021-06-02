@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../CSS/imageflip.css";
 // aos
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -18,8 +17,8 @@ const Imageflip = (props) => {
     card,
   } = props;
 
-  //dealy of flip for ripple effect
-  const flipDuration = 1500 + props.index * 500;
+  //delay of flip for ripple effect
+  // const flipDuration = 1500 + props.index * 500;
 
   const aosDuration = props.index * 250;
   const [flipped, setFlipped] = useState(false);
@@ -100,7 +99,7 @@ const Imageflip = (props) => {
     // hiding card on phone if it exceeds the limit mentioned in flipcontainer
     if (!phoneDisplay) classname += " lg:block md:block hidden";
     if (!tabDisplay) classname += " md:hidden ";
-    return !isPhone ? (
+    return (
       <div className="lg:block " ref={forwardedRef}>
         <div
           className={classname}
@@ -116,10 +115,12 @@ const Imageflip = (props) => {
             style={{
               opacity: opacity.to((o) => 1 - o),
               transform,
-              backgroundImage: `url('${frontImage}')`,
+              backgroundImage: !isPhone
+                ? `url('${frontImage}')`
+                : `url('${frontImagePhone}')`,
             }}
           >
-            <div className="text-3xl text-center w-full absolute bottom-5 text-gray-300">
+            <div className="md:text-3xl text-2xl text-center w-full absolute bottom-5 text-gray-300">
               {name}
             </div>
           </a.div>
@@ -129,44 +130,9 @@ const Imageflip = (props) => {
               opacity,
               transform,
               rotateY: "180deg",
-              backgroundImage: `url('${backImage}')`,
-            }}
-          />
-        </div>
-      </div>
-    ) : (
-      <div className=" block ">
-        <div
-          ref={forwardedRef}
-          className={classname}
-          data-aos="slide-up"
-          data-aos-easing={cardAnimate.easeing}
-          data-aos-offset={cardAnimate.offset}
-          data-aos-duration={cardAnimate.duration}
-          // disable onclick and use the other 2 if you want the image to flip back when tapped outside the image on phone
-          // onMouseEnter={flip}
-          // onMouseLeave={flip}
-          onClick={flip}
-        >
-          <a.div
-            className="imageflip_c imageflip_back flex"
-            style={{
-              opacity: opacity.to((o) => 1 - o),
-              transform,
-              backgroundImage: `url('${frontImagePhone}')`,
-            }}
-          >
-            <div className="text-2xl text-center w-full absolute bottom-1 text-white">
-              {name}
-            </div>
-          </a.div>
-          <a.div
-            className="imageflip_c imageflip_front"
-            style={{
-              opacity,
-              transform,
-              rotateY: "180deg",
-              backgroundImage: `url('${backImagePhone}')`,
+              backgroundImage: !isPhone
+                ? `url('${backImage}')`
+                : `url('${backImagePhone}')`,
             }}
           />
         </div>

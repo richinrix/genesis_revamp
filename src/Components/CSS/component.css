@@ -1,3 +1,4 @@
+/* ----------- team image flip --------------- */
 @font-face {
   font-family: Plantagenet;
   src: url("./fonts/plantc.ttf");
@@ -34,6 +35,27 @@
     height: 170px;
     width: 140px;
   }
+}
+/* ------------services ---------------- */
+#yellowRectangle {
+  width: 280px;
+  height: 450px;
+}
+#servicesImage {
+  width: 80%;
+  height: 360px;
+}
+@media (max-width: 428px) {
+  #yellowRectangle {
+    width: 140px;
+    height: 355px;
+  }
+  #servicesImage {
+    height: 300px;
+  }
+}
+.font-helvetica {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* testimonial card  */

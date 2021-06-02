@@ -29,10 +29,16 @@ export default function Testimonials() {
   };
 
   // displaying the current three cards
-  function currenDesktoptView(cards, index) {
+  function currentView(cards, index) {
     return (
-      <SwiperSlide className="mx-auto md:my-auto my-8 lg:flex hidden md:flex-row  justify-center items-center">
-        {<TestimonialCard testimonial={cards} index={index} isPhone={false} />}
+      <SwiperSlide className="mx-auto md:my-auto my-8 lg:flex  md:flex-row  justify-center items-center">
+        {
+          <TestimonialCard
+            testimonial={cards}
+            index={index}
+            isPhone={isPhone}
+          />
+        }
       </SwiperSlide>
     );
   }
@@ -46,6 +52,7 @@ export default function Testimonials() {
   return (
     <div className="proximity-snap">
       {isPhone ? (
+        // phone version
         <Swiper
           id="testimonials"
           slidesPerView={1}
@@ -56,10 +63,11 @@ export default function Testimonials() {
         >
           {testimonials &&
             testimonials.map((testimonial, index) =>
-              currentPhoneView(testimonial, index)
+              currentView(testimonial, index)
             )}
         </Swiper>
       ) : (
+        // desktop version
         <Swiper
           slidesPerView={3}
           spaceBetween={-120}
@@ -76,7 +84,7 @@ export default function Testimonials() {
         >
           {testimonials &&
             testimonials.map((testimonial, index) =>
-              currenDesktoptView(testimonial, index)
+              currentView(testimonial, index)
             )}
         </Swiper>
       )}

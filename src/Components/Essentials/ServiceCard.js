@@ -4,26 +4,25 @@ import handleViewport from "react-in-viewport";
 import linesImg from "../../images/icons/services-line-and-dots.png";
 // other modules
 import { Parallax } from "react-scroll-parallax";
-import ReactPlayer from "react-player/lazy";
-import "../../App.css";
+// import ReactPlayer from "react-player/lazy";
 
 const ServiceCard = (props) => {
-  const { inViewport, forwardedRef, service, index } = props;
+  const { service, index } = props;
   let imagePos = index % 2 === 0 ? "right" : "left";
   let descriptionClassname = "flex  flex-col-reverse mt-5 justify-center ";
   if (imagePos === "right") descriptionClassname += " md:flex-row";
   else descriptionClassname += " md:flex-row-reverse";
-  let headingClassname = "mx-auto  md:mt-10 text-center font-plantc text-5xl ";
 
-  const [videoPlayState, setPlayState] = useState(false);
   const isPhone = window.innerWidth < 700;
 
   // playing video  when in view
-  useEffect(() => {
-    inViewport ? setPlayState(true) : setPlayState(false);
-  }, [inViewport]);
+  // const {inViewport, forwardedRef}=props;
+  // const [videoPlayState, setPlayState] = useState(false);
+  // useEffect(() => {
+  //   inViewport ? setPlayState(true) : setPlayState(false);
+  // }, [inViewport]);
 
-  // aos styling settings for points
+  // aos styling settings for points in service
   let servicePoint = {
     duration: "600",
     offset: "100",
@@ -46,53 +45,77 @@ const ServiceCard = (props) => {
   }
   // video element
   function videoCard(video, YTvideo, classname, xval, xvalPh) {
-    const YTsrc = YTvideo ? YTvideo : "";
-    const className = classname;
-    //  + " md:bg-black ";
-
-    return !isPhone ? (
-      <Parallax x={xval} className=" md:block hidden ">
-        <ReactPlayer
-          ref={forwardedRef}
-          id="servicesImage"
-          className={className}
-          url={video ? video : YTsrc}
-          controls={true}
-          width="80%"
-          playIcon
-          loop={true}
-          playing={videoPlayState}
-        />
-      </Parallax>
-    ) : video ? (
-      <Parallax x={xvalPh} className="  block">
-        <video
-          id="servicesImage"
-          className={classname}
-          width="80%"
-          height="280px"
-          autoPlay
-          muted
-          loop
-        >
-          <source src={video} type="video/mp4" />
-        </video>
-      </Parallax>
-    ) : (
-      <Parallax x={xvalPh} className="  block">
-        <ReactPlayer
-          // ref={forwardedRef}
-          id="servicesImage"
-          className={classname}
-          url={YTsrc}
-          width="80%"
-          height="280px"
-          controls={!video ? true : false}
-        />
+    return (
+      <Parallax x={!isPhone ? xval : xvalPh}>
+        {video ? (
+          <video
+            id="servicesImage"
+            className={classname}
+            width="80%"
+            height="280px"
+            autoPlay
+            muted
+            loop
+          >
+            <source src={video} type="video/mp4" />
+          </video>
+        ) : (
+          <iframe
+            src={YTvideo}
+            id="servicesImage"
+            className={classname}
+            width="80%"
+            height="280px"
+            frameborder="0"
+          ></iframe>
+        )}
       </Parallax>
     );
+
+    // for the video to play when in viewport and pause when offscreen
+    // return !isPhone ? (
+    //   <Parallax x={xval} className=" md:block hidden ">
+    //     <ReactPlayer
+    //       ref={forwardedRef}
+    //       id="servicesImage"
+    //       className={className}
+    //       url={video ? video : YTsrc}
+    //       controls={true}
+    //       width="80%"
+    //       playIcon
+    //       loop={true}
+    //       playing={videoPlayState}
+    //     />
+    //   </Parallax>
+    // ) : video ? (
+    //   <Parallax x={xvalPh} className="  block">
+    //     <video
+    //       id="servicesImage"
+    //       className={classname}
+    //       width="80%"
+    //       height="280px"
+    //       autoPlay
+    //       muted
+    //       loop
+    //     >
+    //       <source src={video} type="video/mp4" />
+    //     </video>
+    //   </Parallax>
+    // ) : (
+    //   <Parallax x={xvalPh} className="  block">
+    //     <ReactPlayer
+    //       id="servicesImage"
+    //       className={classname}
+    //       url={YTsrc}
+    //       width="80%"
+    //       height="280px"
+    //       controls={!video ? true : false}
+    //     />
+    //   </Parallax>
+    // );
   }
-  // image element
+
+  // image/video element
   function imageSection(image_path, video, YTvideo, floatPos, points) {
     const imageStyle = {
       backgroundImage: `url('${image_path}')`,
@@ -152,13 +175,7 @@ const ServiceCard = (props) => {
       </div>
     );
   }
-  function description(desc) {
-    return (
-      <div className="font-plantc md:text-2xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
-        {desc}
-      </div>
-    );
-  }
+
   function servicePoints(point, index, length) {
     let className = "pl-5 font-helvetica ";
     if (length > 5) className += " lg:py-1.5 py-1.5 ";
@@ -197,7 +214,9 @@ const ServiceCard = (props) => {
         }
       >
         <Parallax className={"w-11/12  md:block "} x={descXval}>
-          {description(desc)}
+          <div className="font-plantc md:text-2xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
+            {desc}
+          </div>
         </Parallax>
         <div className="flex  my-auto pt-5">
           <ul className="ml-4 my-auto">
@@ -214,7 +233,7 @@ const ServiceCard = (props) => {
     <>
       <div className=" md:h-screen h-full   " id="proximity-snap">
         <div className="mx-auto p-5 my-auto">
-          <div className={headingClassname}>
+          <div className="mx-auto  md:mt-10 text-center font-plantc text-5xl ">
             <h2>{service.heading}</h2>
           </div>
           <div className={descriptionClassname}>
@@ -237,9 +256,10 @@ const ServiceCard = (props) => {
   );
 };
 
-const ViewportBlock = handleViewport(ServiceCard);
-const ServiceCardComp = (props) => (
-  <ViewportBlock service={props.service} index={props.index} />
-);
+// use if using video play on viewport
+// const ViewportBlock = handleViewport(ServiceCard);
+// const ServiceCardComp = (props) => (
+//   <ViewportBlock service={props.service} index={props.index} />
+// );
 
-export default React.memo(ServiceCardComp);
+export default ServiceCard;

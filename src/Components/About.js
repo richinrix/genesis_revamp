@@ -80,9 +80,9 @@ function About() {
           <div className="aboutPic md:-ml-5 w-screen mt-5 bg-black h-full">
             <img
               className="relative object-cover opacity-80 "
-              srcset="https://res.cloudinary.com/zarry/image/upload/v1622646770/Genesis%20Revamp/aboutPic_mob.jpg 700w, https://res.cloudinary.com/zarry/image/upload/v1622608146/Genesis%20Revamp/imageedit_162_4941086202_uyj96d.jpg 800w"
+              srcset="https://res.cloudinary.com/zarry/image/upload/v1622646770/Genesis%20Revamp/aboutPic_mob.jpg 700w, https://res.cloudinary.com/zarry/image/upload/v1622608146/Genesis%20Revamp/aboutPic.jpg 800w"
               sizes="(max-width: 600px) 700px, 800px"
-              src="https://res.cloudinary.com/zarry/image/upload/v1622608146/Genesis%20Revamp/imageedit_162_4941086202_uyj96d.jpg"
+              src="https://res.cloudinary.com/zarry/image/upload/v1622608146/Genesis%20Revamp/aboutPic.jpg"
               alt="people in a meeting"
             ></img>
           </div>
