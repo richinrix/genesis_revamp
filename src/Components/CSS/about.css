@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-
 .aboutParagraphs {
   font-family: "Montserrat", sans-serif;
 }
@@ -23,7 +22,17 @@
     height: 110px;
     padding: 0 0 0.5rem 0.5rem;
   }
+  .aboutPicz {
+    background-image: url("../../images/icons/aboutPic.jpg") !important;
+    background-position: center;
+    height: 60vh;
+    min-height: 30vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
+
 @media (max-width: 400px) {
   .aboutParagraphs {
     font-size: 0.875rem !important;

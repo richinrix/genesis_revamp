@@ -1,20 +1,3 @@
-/* .particleContainer {
-  position: absolute;
-  height: screen;
-  width: screen;
-  overflow: hidden !important;
-}
-
-#homeTs {
-  position: absolute;
-  height: screen;
-  width: screen;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  z-index: 0;
-} */
 .homeText {
   position: absolute;
 }

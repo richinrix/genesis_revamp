@@ -1,76 +1,80 @@
-import React from "react";
-import "./CSS/about.css";
+import React, { useEffect, useState } from "react";
+import "./CSS/team.css";
 
 function About() {
+  const [scrollDetect, setScrollDetect] = useState(false);
+  const screenWidth = useState(window.innerWidth);
+  const [isPhone, setIsPhone] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth < 700) {
+      setIsPhone(true);
+    }
+  }, []);
+
+  // Function to detect scrolling and change theme based on that
+  const handleScroll = () => {
+    if (screenWidth > 500) {
+      if (window.scrollY > 400) {
+        setScrollDetect(true);
+      } else {
+        setScrollDetect(false);
+      }
+    } else {
+      if (window.scrollY > 350) {
+        setScrollDetect(true);
+      } else {
+        setScrollDetect(false);
+      }
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
-    <div id="aboutContainer" className="h-auto w-auto">
-      <div
-        data-aos="fade-up"
-        data-aos-easing="linear"
-        data-aos-duration="800"
-        data-aos-offset="200"
-        id="aboutFlexContainer"
-        className="aboutContainer flex flex-col md:flex-row justify-center items-center bg-transparent h-auto md:h-full mt-10 md:mt-20 md:px-14 md:pr-24 sm:px-5 py-10 md:w-screen flex-shrink-0"
-      >
-        <div className="aboutText pt-2 pb-2 pr-8">
-          <h1 className="aboutHead font-plantc text-5xl md:mr-20 ml-5 md:ml-10  pb-3 md:pb-5 md:pt-16">
-            About Us
-          </h1>
-          <p className="aboutParagraphs md:mr-20 ml-5 md:ml-10 md:tracking-wider	">
+    <div id="teamCall" className="h-screen md:h-auto w-auto ">
+      <div className="teamContainer md:h-auto flex flex-col mx-auto  sm:px-5 py-10 w-screen ">
+        <div
+          id="teamTitle"
+          className="teamWords font-plantc md:px-20 text-5xl mt-14 md:mt-4 mb-3 ml-0 "
+        >
+          <h2 className={scrollDetect ? "text-black" : "text-white"}>
+            We're creative thinkers
+          </h2>
+          <h2 className="text-gray-500 md:mt-1">doing work that matters</h2>
+        </div>
+        <div className="aboutText pt-2 pb-2 pr-8 md:px-10 md:leading-8">
+          <p className="aboutParagraphs md:mr-20 ml-5 md:ml-10 md:tracking-wider	color-">
             How are we different from the millions of companies out there,
             calling themselves the ‘Best Digital Agency’?
             <br />
-            <br /> Genesis Media is not just a digital agency, we are a
-            transformation agency. We transform your business into a brand that
-            will revolutionize the way the world sees you.
-            <br />
-            <br /> Creating a website and a social media account is not the
-            winning recipe anymore. It’s the extra pinch of lasting impression
-            that you provide to your clients, that wins you the trophy. That’s
-            what we do best at Genesis, we create impactful experiences for your
-            clients. We believe that our success lies in the growth of your
-            brand.
-            <br />
+            Genesis Media is not just a digital agency, we are a transformation
+            agency. We transform your business into a brand that will
+            revolutionize the way the world sees you. Creating a website and a
+            social media account is not the winning recipe anymore. It’s the
+            extra pinch of lasting impression that you provide to your clients,
+            that wins you the trophy. That’s what we do best at Genesis, we
+            create impactful experiences for your clients. We believe that our
+            success lies in the growth of your brand.
             <br />
             After working with over 30+ brands, we understand that our greatest
             strength lies in our comprehensive digital approach structured
             around the basics of branding and brand commerce growth. Making it
             effortless for brands to work with us on anything related to media.
             <br />
-            <br />
             At Genesis, we also obsess over the quality of our work. Our
             creativity is often nurtured by our skills in cutting edge
             technology. Every piece of information we provide to our brands is
-            backed by copious amounts of research, data & experience.
-            <br />
-            <br />
-            Come join hands with us as we bring a remarkable change in marketing
-            & advertising and make them accessible for businesses of all sizes.
+            backed by copious amounts of research, data & experience. Come join
+            hands with us as we bring a remarkable change in marketing &
+            advertising and make them accessible for businesses of all sizes.
           </p>
         </div>
-        <div className="aboutImg flex flex-row flex-shrink-0 pt-10 md:pt-16">
-          <img
-            className="ai1"
-            src="https://via.placeholder.com/300x500?text=Image1"
-          ></img>
-          <div className="hidImg flex flex-col md:hidden md:pb-4 flex-shrink-0">
-            <img
-              className="ai2"
-              src="https://via.placeholder.com/300x280?text=Image2"
-            ></img>
-            <img
-              className="ai3"
-              src="https://via.placeholder.com/300x200?text=Image3"
-            ></img>
+        <div className="aboutPic -ml-5 w-screen bg-yellow-300">
+          <img src="https://res.cloudinary.com/zarry/image/upload/v1622608146/Genesis%20Revamp/imageedit_162_4941086202_uyj96d.jpg"></img>
+          <div className="counters flex row">
+            <div></div>
           </div>
-        </div>
-        <div className="aboutCollage hidden md:flex md:flex-col md:p-4 md:flex-shrink-0 md:pt-20 md:-pr-10">
-          <div className="aboutImg ai2 md:pb-4 flex-shrink-0">
-            <img src="https://via.placeholder.com/300x280?text=Image2"></img>
-          </div>
-          <div className="aboutImg ai3 flex-shrink-0">
-            <img src="https://via.placeholder.com/300x200?text=Image3"></img>
-          </div>
+          <div className=""></div>
         </div>
       </div>
     </div>

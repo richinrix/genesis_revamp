@@ -11,7 +11,6 @@ import "./App.css";
 import Homepage from "./Components/Homepage";
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
-import Team from "./Components/Team";
 import About from "./Components/About";
 import FlipContainer from "./Components/FlipContainer";
 import Testimonials from "./Components/Testimonials";
@@ -48,7 +47,6 @@ const Home = () => {
   ) : (
     <div className="scroll-snap-container">
       <Homepage />
-      <Team />
       <About />
       <FlipContainer />
       <Services />
