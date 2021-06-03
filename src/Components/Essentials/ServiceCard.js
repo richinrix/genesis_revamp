@@ -72,6 +72,7 @@ const ServiceCard = (props) => {
             height="280px"
             frameborder="0"
             disablePictureInPicture
+            style={{ border: "none" }}
           ></iframe>
         )}
       </Parallax>

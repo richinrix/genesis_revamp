@@ -56,6 +56,8 @@
   }
   #servicesImage {
     height: 300px;
+    padding-top: 20%;
+    padding-bottom: 20%;
   }
 }
 .font-helvetica {
