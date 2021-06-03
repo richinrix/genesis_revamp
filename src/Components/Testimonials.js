@@ -62,9 +62,9 @@ export default function Testimonials() {
           className=" mx-auto md:my-2 mt-8 mb-0 overflow-hidden lg:hidden  "
         >
           {testimonials &&
-            testimonials.map((testimonial, index) =>
-              currentView(testimonial, index)
-            )}
+            testimonials
+              .slice(0, 5)
+              .map((testimonial, index) => currentView(testimonial, index))}
         </Swiper>
       ) : (
         // desktop version
