@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import leftArrow from "../images/icons/leftArrow.svg";
 // services
 import API from "./services/API";
 // other component
@@ -70,27 +71,26 @@ export default function Testimonials() {
         </>
       ) : (
         // desktop version
-        <>
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={-120}
-            breakpoints={{
-              769: {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-              },
-            }}
-            loop={true}
-            navigation={true}
-            id="testimonials"
-            className="h-full mx-auto md:my-14 my-8 lg:block hidden  overflow-hidden "
-          >
-            {testimonials &&
-              testimonials.map((testimonial, index) =>
-                currentView(testimonial, index)
-              )}
-          </Swiper>
-        </>
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={-120}
+          breakpoints={{
+            769: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+            },
+          }}
+          loop={true}
+          navigation={true}
+          id="testimonials"
+          className="h-full mx-auto md:my-14 my-8 lg:block hidden  overflow-hidden "
+        >
+          {testimonials &&
+            testimonials.map((testimonial, index) =>
+              currentView(testimonial, index)
+            )}
+          <img src={leftArrow}></img>
+        </Swiper>
       )}
     </div>
   );

@@ -43,6 +43,8 @@ function Map() {
         ],
       });
       setBorderColor("green");
+      document.getElementById("newsForm").reset();
+      // document.getElementById("nMail").placeholder = "your@email.here";
       setSubbed(true);
     } else {
       setBorderColor("red");
@@ -100,7 +102,7 @@ function Map() {
           Stay up to date, subscribe to our newsletter:
         </p>
         <div className="newsInputs flex flex-row pt-2">
-          <form>
+          <form id="newsForm">
             <input
               className="md:pb-2 pb-1 mb-2 border-none outline-none mr-8 text-2xl"
               type="email"
@@ -143,7 +145,7 @@ function Map() {
       >
         <div className="mapPhone flex flex-row">
           <i className="fa fa-phone pt-1.5 pr-1.5 flex-shrink-0"></i>
-          <p>+91 8792384161/ +91 9886031980</p>
+          <p>+91 8792384161/ +91 7349571333</p>
         </div>
         <a
           className="mapMail flex flex-row"
