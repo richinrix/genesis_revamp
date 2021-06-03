@@ -48,14 +48,14 @@ const Card = (props) => {
     >
       <img
         id="quoteImg"
-        className="absolute md:left-8 left-6 md:top-8 top-5"
+        className="absolute md:left-8 left-6 md:top-8 top-4"
         src={image}
         style={{ width: "25px" }}
         alt=""
       />
       {/* text  */}
-      <div className="mt-6 leading-snug  text-xs overflow-hidden">
-        {testimonial.statement}
+      <div className=" leading-snug  my-auto  text-xs overflow-hidden">
+        <div>{testimonial.statement}</div>
       </div>
       <div
         id="name "
