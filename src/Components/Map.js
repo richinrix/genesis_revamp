@@ -175,11 +175,11 @@ function Map() {
         data-aos-offset="-300"
         className="mapFooter flex flex-col md:flex-row justify-between pt-4 "
       >
-        <p className="order-1 mb-5 md:pt-3 md:-mt-2 text-base md:text-base md:pb-2 mr-5">
+        <p className="order-1 mb-5 md:pt-3 md:-mt-2 text-base text-black md:pb-2 mr-5">
           65, 1st Main, 3rd Cross Road, Deshbandunagara, DB Sandra,
           Bengaluru-560097, Karnataka, India
         </p>
-        <div className="footerPhone order-2 md:none pl-0.5 flex flex-row">
+        <div className="order-2 md:hidden pl-0.5 flex z-50 flex-row ">
           <i
             id="fPicon"
             className="fa fa-phone mt-3 md:mt-0  pt-1.5 pr-1.5 flex-shrink-0"

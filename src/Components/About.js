@@ -25,7 +25,7 @@ function About() {
       <div className="teamContainer h-auto flex flex-col mx-auto  sm:px-5 py-10 w-screen ">
         <div
           id="teamTitle"
-          className="teamWords font-plantc md:px-20 text-5xl mt-14 md:mt-4 mb-3 px-4 "
+          className="teamWords font-plantc md:px-20 text-5xl mt-14 mb-3 px-4 "
         >
           <h2 className={scrollDetect ? "text-black" : "text-white"}>
             We're creative thinkers
