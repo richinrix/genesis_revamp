@@ -45,6 +45,7 @@ const ServiceCard = (props) => {
   }
   // video element
   function videoCard(video, YTvideo, classname, xval, xvalPh) {
+    const YTsrc = YTvideo + "?autoplay=1&mute=1";
     return (
       <Parallax x={!isPhone ? xval : xvalPh}>
         {video ? (
@@ -56,22 +57,26 @@ const ServiceCard = (props) => {
             autoPlay
             muted
             loop
+            disablePictureInPicture
           >
             <source src={video} type="video/mp4" />
           </video>
         ) : (
           <iframe
-            src={YTvideo}
+            src={YTsrc}
             id="servicesImage"
             className={classname}
+            autoPlay
+            muted
             width="80%"
             height="280px"
             frameborder="0"
+            disablePictureInPicture
           ></iframe>
         )}
       </Parallax>
     );
-
+    // resource heavy :)
     // for the video to play when in viewport and pause when offscreen
     // return !isPhone ? (
     //   <Parallax x={xval} className=" md:block hidden ">
@@ -214,7 +219,7 @@ const ServiceCard = (props) => {
         }
       >
         <Parallax className={"w-11/12  md:block "} x={descXval}>
-          <div className="font-plantc md:text-2xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
+          <div className="font-plantc md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
             {desc}
           </div>
         </Parallax>
