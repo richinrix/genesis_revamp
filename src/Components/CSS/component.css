@@ -52,12 +52,10 @@
 @media (max-width: 428px) {
   #yellowRectangle {
     width: 140px;
-    height: 355px;
+    height: 220px;
   }
   #servicesImage {
-    height: 300px;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    height: 150px;
   }
 }
 .font-helvetica {
@@ -97,11 +95,12 @@
   }
 }
 
-/* testimonial navigation buttons */
-/* .swiper-button-next,
+/* testimonial navigation buttons  */
+.swiper-button-next,
 .swiper-button-previous,
 .swiper-button-prev {
-} */
+  height: 30px;
+}
 
 /* ----------- About us --------------- */
 
