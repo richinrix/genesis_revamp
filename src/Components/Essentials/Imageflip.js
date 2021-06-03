@@ -88,7 +88,7 @@ const Imageflip = (props) => {
     const backImagePhone = card.phoneImg.backImage;
 
     const name = card.name;
-    let classname = "imageflip_container text-center md:mx-3 mx-1.5 ";
+    let classname = "imageflip_container  md:mx-3 mx-1.5  ";
 
     // assigning margin top values based on their position
     if (phonePos === 0) classname += "  mt-3 ";
@@ -97,7 +97,7 @@ const Imageflip = (props) => {
     else if (pos === 2) classname += " md:mt-12";
 
     // hiding card on phone if it exceeds the limit mentioned in flipcontainer
-    if (!phoneDisplay) classname += " lg:block md:block hidden";
+    if (!phoneDisplay) classname += " lg:block md:block hidden ";
     if (!tabDisplay) classname += " md:hidden ";
     return (
       <div className="lg:block " ref={forwardedRef}>
@@ -110,20 +110,22 @@ const Imageflip = (props) => {
           onMouseEnter={flip}
           onMouseLeave={flip}
         >
-          <a.div
-            className="imageflip_c imageflip_back "
-            style={{
-              opacity: opacity.to((o) => 1 - o),
-              transform,
-              backgroundImage: !isPhone
-                ? `url('${frontImage}')`
-                : `url('${frontImagePhone}')`,
-            }}
-          >
-            <div className="md:text-3xl text-2xl text-center w-full absolute bottom-5 text-gray-300">
-              {name}
-            </div>
-          </a.div>
+          <div className="">
+            <a.div
+              className="imageflip_c imageflip_back  bg-black"
+              style={{
+                opacity: opacity.to((o) => 1 - o),
+                transform,
+                backgroundImage: !isPhone
+                  ? `url('${frontImage}')`
+                  : `url('${frontImagePhone}')`,
+              }}
+            >
+              <div className="md:text-2xl text-2xl  w-full absolute md:bottom-5 bottom-1 md:ml-2  md:text-left text-center text-gray-100">
+                {name}
+              </div>
+            </a.div>
+          </div>
           <a.div
             className="imageflip_c imageflip_front"
             style={{
