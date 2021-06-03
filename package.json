@@ -1,6 +1,7 @@
 {
   "name": "genesis_design",
   "version": "0.1.0",
+  "homepage": "https://genesismedia.in",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.2",

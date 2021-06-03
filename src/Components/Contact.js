@@ -6,10 +6,18 @@ import axios from "axios";
 import API from "./services/API";
 
 function Contact() {
-  const [mail, setMail] = useState("");
-  const [name, setName] = useState("");
-  const [phno, setPhno] = useState("");
-  const [msg, setMsg] = useState("");
+  const [formDetails, setFormDetails] = useState({
+    name: "",
+    mail: "",
+    phno: "",
+    msg: "",
+    error: {
+      name: "Enter a vaild name",
+      mail: "Enter a vaild email address",
+      phno: "Enter a vaild phone number",
+      msg: "Enter a vaild message",
+    },
+  });
   const [checkz, setCheckz] = useState([]);
   const [borderColor, setBorderColor] = useState("gray");
   const [bordWidth, setBordWidth] = useState(1);
@@ -19,32 +27,91 @@ function Contact() {
     setCheckz([...checkz, { id: checkz.length, name: item }]);
   };
 
-  //Validates Email
-  function validateContactEmail(mail) {
-    const re =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(mail).toLowerCase());
-  }
-  //Validates Phone Number
-  function validateContactphone(phno) {
-    const tenPhno = /^\d{10}$/;
-    return tenPhno.test(phno);
-  }
+  let changeHandler = (event) => {
+    let nam = event.target.name;
+    let val = event.target.value;
 
-  //Contact Form Handler
-  function contactHandler(e) {
-    e.preventDefault();
+    const validateContactEmail = RegExp(
+      /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+    );
+    const validateContactphone = RegExp(/^\d{10}$/i);
 
-    if (validateContactEmail(mail) && validateContactphone(phno)) {
-      setBorderColor("gray");
-      e.target.value = null;
+    switch (nam) {
+      case "name":
+        setFormDetails((prevState) => ({
+          ...prevState,
+          error: {
+            ...prevState.error,
+            name: val.length < 2 ? "Enter a vaild name!" : "",
+          },
+        }));
+        break;
+
+      case "mail":
+        setFormDetails((prevState) => ({
+          ...prevState,
+          error: {
+            ...prevState.error,
+            mail: validateContactEmail.test(val)
+              ? ""
+              : "Enter a valid email address!",
+          },
+        }));
+        break;
+
+      case "phno":
+        setFormDetails((prevState) => ({
+          ...prevState,
+          error: {
+            ...prevState.error,
+            phno: validateContactphone.test(val)
+              ? ""
+              : "Enter a valid phone number!",
+          },
+        }));
+        break;
+
+      case "msg":
+        setFormDetails((prevState) => ({
+          ...prevState,
+          error: {
+            ...prevState.error,
+            msg: val.length < 5 ? "Enter a valid message!" : "",
+          },
+        }));
+        break;
+      default:
+        break;
+    }
+
+    setFormDetails((prevState) => ({ ...prevState, [nam]: val }));
+  };
+
+  let handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formDetails.errors);
+    const validateForm = (errors) => {
+      let valid = true;
+      Object.keys(errors).forEach((key) => {
+        if (errors[key].length !== 0 && valid === true) {
+          alert(errors[key]);
+          valid = false;
+        }
+      });
+      if (checkz.length < 1) {
+        alert("Select more than one Service");
+        valid = false;
+      }
+      return valid;
+    };
+    if (validateForm(formDetails.error)) {
       axios.post(API.contactSheet, {
         data: [
           {
-            Name: name,
-            Mail: mail,
-            PhNo: phno,
-            Message: msg,
+            Name: formDetails.name,
+            Mail: formDetails.mail,
+            PhNo: formDetails.phno,
+            Message: formDetails.msg,
             Interests: checkz,
             Date: new Date().toLocaleString(),
           },
@@ -61,21 +128,14 @@ function Contact() {
       document.getElementById("mail").placeholder = "Email";
       document.getElementById("phno").placeholder = "Phone Number";
       document.getElementById("msg").placeholder = "Message";
+
+      console.info("Valid Form");
     } else {
       setBorderColor("red");
       setBordWidth(2);
-      if (!validateContactphone(phno) & !validateContactEmail(mail)) {
-        alert("Check your Email and Phone Number");
-      } else {
-        if (!validateContactEmail(mail)) {
-          alert("Check your mail");
-        }
-        if (!validateContactphone(phno)) {
-          alert("Check your phone number");
-        }
-      }
+      console.error("Invalid Form");
     }
-  }
+  };
 
   return (
     <div id="contactContainer" className=" h-auto md:mt-20  ">
@@ -199,39 +259,53 @@ function Contact() {
               className="pb-1 mb-2 border-none"
               type="text"
               id="name"
-              placeholder={name === "" && "Name"}
+              name="name"
+              placeholder="Name"
               style={{ borderColor: borderColor, borderWidth: bordWidth }}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(event) => {
+                changeHandler(event);
+              }}
             />
             <input
               className="pb-1 mb-2 border-none"
               type="email"
               id="mail"
-              placeholder={mail === "" && "E-Mail"}
+              name="mail"
+              placeholder="E-Mail"
               style={{ borderColor: borderColor, borderWidth: bordWidth }}
-              onChange={(e) => setMail(e.target.value)}
+              onChange={(event) => {
+                changeHandler(event);
+              }}
             />
             <input
               className="pb-1 mb-2 border-none"
               type="number"
               id="phno"
+              name="phno"
               style={{ borderColor: borderColor, borderWidth: bordWidth }}
-              placeholder={phno === "" && "Phone Number"}
-              onChange={(e) => setPhno(e.target.value)}
+              placeholder="Phone Number"
+              onChange={(event) => {
+                changeHandler(event);
+              }}
             />
             <input
               className="msgContact pb-1 mb-2 outline-none bg-transparent border-solid border-b"
               type="textarea"
               id="msg"
+              name="msg"
               style={{ borderColor: borderColor, borderWidth: bordWidth }}
-              placeholder={msg === "" && "Message"}
-              onChange={(e) => setMsg(e.target.value)}
+              placeholder="Message"
+              onChange={(event) => {
+                changeHandler(event);
+              }}
             />
           </div>
           <button
             className="btn btn-white btn-animate uppercase no-underline	inline-block font-bold"
             type="submit"
-            onClick={(e) => contactHandler(e)}
+            onClick={(event) => {
+              handleSubmit(event);
+            }}
           >
             Submit
           </button>

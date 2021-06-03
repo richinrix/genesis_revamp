@@ -97,9 +97,19 @@
 
 /* testimonial navigation buttons  */
 .swiper-button-next,
-.swiper-button-previous,
 .swiper-button-prev {
-  height: 30px;
+  height: 15px !important;
+}
+.swiper-button-next {
+  background-image: url("../../images/icons/rightArrow.svg") !important;
+  background-repeat: no-repeat;
+}
+.swiper-button-prev {
+  display: block !important;
+  background-image: url("../../images/icons/leftArrow.svg") !important;
+  background-repeat: no-repeat;
+  background: red;
+  opacity: 0;
 }
 
 /* ----------- About us --------------- */
