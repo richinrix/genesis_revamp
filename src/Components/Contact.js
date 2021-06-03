@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./CSS/contact.css";
+import "./CSS/animation.css";
+import "./CSS/component.css";
 import circles from "../images/contact.png";
 import axios from "axios";
 import API from "./services/API";
@@ -12,19 +13,19 @@ function Contact() {
   const [checkz, setCheckz] = useState([]);
   const [borderColor, setBorderColor] = useState("gray");
   const [bordWidth, setBordWidth] = useState(1);
-  const [submitted, setSubmitted] = useState(false);
 
   //Adds list of checked items to an array
   const addInterest = (item) => {
     setCheckz([...checkz, { id: checkz.length, name: item }]);
   };
 
-  //Validates Email and Phone number
+  //Validates Email
   function validateContactEmail(mail) {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(mail).toLowerCase());
   }
+  //Validates Phone Number
   function validateContactphone(phno) {
     const tenPhno = /^\d{10}$/;
     return tenPhno.test(phno);
@@ -51,9 +52,15 @@ function Contact() {
       });
       setBorderColor("green"); //Changes field border color to green
       setBordWidth(2); //Increases field vorder size
-      setSubmitted(true);
       alert("Details Submitted!");
       setCheckz("");
+
+      // Reset checkboxes and fields
+      document.getElementById("cForm").reset();
+      document.getElementById("name").placeholder = "Name";
+      document.getElementById("mail").placeholder = "Email";
+      document.getElementById("phno").placeholder = "Phone Number";
+      document.getElementById("msg").placeholder = "Message";
     } else {
       setBorderColor("red");
       setBordWidth(2);
@@ -67,20 +74,22 @@ function Contact() {
           alert("Check your phone number");
         }
       }
-      setSubmitted(false);
     }
   }
 
   return (
-    <div id="contactContainer" className="md:h-screen h-full">
+    <div id="contactContainer" className=" h-screen">
       <div
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="800"
-        className="contactFlexContainer flex justify-between overflowY-hidden"
+        className="contactFlexContainer flex justify-between items-center overflowY-hidden h-100"
       >
-        <form className="contactForm md:h-screen pt-8 md:pt-24 px-5 md:pl-24 md:w-3/5 w-screen">
-          <h2 className="font-plantc text-5xl md:text-6xl pb-2 md:pb-4">
+        <form
+          id="cForm"
+          className="contactForm md:h-screen pt-8 md:pt-24 px-5 md:pl-24 md:w-3/5 w-screen text-center md:text-left"
+        >
+          <h2 className="font-plantc text-5xl md:text-6xl pb-2 md:pb-4 md:-mt-44">
             Get in Touch
           </h2>
           <p className="contactCraft pb-5 md:text-lg">
@@ -88,10 +97,10 @@ function Contact() {
             <br />
             And that's bringing creative people together.
           </p>
-          <p className="contactHelpYou font-medium md:text-xl pb-2">
+          <p className="contactHelpYou font-medium text-xl pb-2 pt-4 md:pt-0">
             What can we help you with?
           </p>
-          <div className="contactChecks text-left grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-1 pb-6">
+          <div className="contactChecks text-left grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-1 pb-6 md:font-light pl-4 md:pl-0 pt-2 md:pt-0 text-xl md:text-base">
             <div className="checkItem">
               <input
                 type="checkbox"
@@ -185,9 +194,9 @@ function Contact() {
               <label for="fOther">Other</label>
             </div>
           </div>
-          <div className="contactFields flex flex-col md:h-auto mb-4">
+          <div className="contactFields flex flex-col md:h-auto mb-4 md:mb-5  pl-4 md:pl-0 pt-2 md:pt-0 text-xl md:text-lg">
             <input
-              className="pb-1 mb-2"
+              className="pb-1 mb-2 border-none"
               type="text"
               id="name"
               placeholder={name === "" && "Name"}
@@ -195,7 +204,7 @@ function Contact() {
               onChange={(e) => setName(e.target.value)}
             />
             <input
-              className="pb-1 mb-2"
+              className="pb-1 mb-2 border-none"
               type="email"
               id="mail"
               placeholder={mail === "" && "E-Mail"}
@@ -203,7 +212,7 @@ function Contact() {
               onChange={(e) => setMail(e.target.value)}
             />
             <input
-              className="pb-1 mb-2"
+              className="pb-1 mb-2 border-none"
               type="number"
               id="phno"
               style={{ borderColor: borderColor, borderWidth: bordWidth }}
@@ -211,7 +220,7 @@ function Contact() {
               onChange={(e) => setPhno(e.target.value)}
             />
             <input
-              className="msgContact pb-1 mb-2"
+              className="msgContact pb-1 mb-2 outline-none bg-transparent border-solid border-b"
               type="textarea"
               id="msg"
               style={{ borderColor: borderColor, borderWidth: bordWidth }}
@@ -220,16 +229,16 @@ function Contact() {
             />
           </div>
           <button
-            className="btn btn-white btn-animate"
+            className="btn btn-white btn-animate uppercase no-underline	inline-block font-bold"
             type="submit"
             onClick={(e) => contactHandler(e)}
           >
             Submit
           </button>
         </form>
-        <div className="circles md:w-screen">
+        <div className="circles md:w-screen md:block hidden">
           <img
-            className="contactCircles none md:inline-block ml-40 mt-20"
+            className="contactCircles none md:inline-block ml-40 md:-mt-32"
             src={circles}
           ></img>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./CSS/map.css";
+import "./CSS/animation.css";
+import "./CSS/component.css";
 import axios from "axios";
 import API from "./services/API";
 
@@ -57,31 +58,31 @@ function Map() {
       className="mapContainer flex flex-col pl-28 md:pt-12  md:justify-start md:items-start w-screen md:w-auto h-auto md:mt-3 mb-3"
     >
       <div className="socialMapContainer md:hidden  ">
-        <div className="iconMapBar flex flex-row w-screen">
+        <div className="iconMapBar flex flex-row w-screen items-center content-center m-0">
           <a
             href="https://www.instagram.com/genesisproduction.in/"
-            className="social-icons  "
+            className="social-icons flex relative text-center overflow-hidden items-center content-center no-underline"
             target="_blank"
           >
             <i className="fa fa-instagram"></i>
           </a>
           <a
             href="https://twitter.com/genesismedia_in"
-            className="social-icons  "
+            className="social-icons  flex relative text-center overflow-hidden items-center content-center no-underline"
             target="_blank"
           >
             <i className="fa fa-twitter"></i>
           </a>
           <a
             href="https://www.facebook.com/genesisproduction.in/"
-            className="social-icons  "
+            className="social-icons  flex relative text-center overflow-hidden items-center content-center no-underline"
             target="_blank"
           >
             <i className="fa fa-facebook"></i>
           </a>
           <a
             href="https://www.linkedin.com/company/genesis-production/"
-            className="social-icons  "
+            className="social-icons  flex relative text-center overflow-hidden items-center content-center no-underline"
             target="_blank"
           >
             <i className="fa fa-linkedin"></i>
@@ -95,11 +96,13 @@ function Map() {
         data-aos-offset="200"
         className="newsLetter flex flex-col mt-7 md:mt-12"
       >
-        <p className="text-lg">Stay up to date, subscribe to our newsletter:</p>
+        <p className="text-lg md:mt-0">
+          Stay up to date, subscribe to our newsletter:
+        </p>
         <div className="newsInputs flex flex-row pt-2">
           <form>
             <input
-              className="pb-1 mb-2"
+              className="pb-1 mb-2 border-none outline-none mr-8 text-2xl"
               type="email"
               id="nMail"
               placeholder={email === "" && "your@email.here"}
@@ -123,7 +126,7 @@ function Map() {
               </h6>
             )}
             <button
-              className="bton bton-white bton-animate"
+              className="bton bton-white bton-animate uppercase no-underline	inline-block font-bold"
               type="submit"
               onClick={(e) => newsEmailSubmiteHandler(e)}
             >
@@ -172,7 +175,7 @@ function Map() {
         data-aos-offset="-300"
         className="mapFooter flex flex-col md:flex-row justify-between pt-4 "
       >
-        <p className="order-1 mb-5 pt-3 md:-mt-2 text-base md:text-base md:pb-2">
+        <p className="order-1 mb-5 md:pt-3 md:-mt-2 text-base md:text-base md:pb-2 mr-5">
           65, 1st Main, 3rd Cross Road, Deshbandunagara, DB Sandra,
           Bengaluru-560097, Karnataka, India
         </p>
@@ -185,11 +188,11 @@ function Map() {
             +91 8792384161/ +91 9886031980
           </p>
         </div>
-        <h2 className="md:hidden order-3 text-xl mt-4">Say Hello!</h2>
+        <h2 className="md:hidden order-3 text-xl mt-2 md:mt-4">Say Hello!</h2>
         <p className=" md:hidden order-4 text-lg">
           We'd love to hear from you.
         </p>
-        <p className="footerText md:mt-1 z-10 order-5 md:ml-32 md:pl-20 text-gray-700">
+        <p className="footerText md:mt-1 z-10 order-5 md:ml-32 md:pl-16 text-gray-700">
           Copyright © 2021, Genesis Media, All Rights Reserved
         </p>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./CSS/sidebar.css";
+import "./CSS/component.css";
 
 function Sidebar() {
   const [scrollDetect, setScrollDetect] = useState(false);
@@ -26,35 +26,51 @@ function Sidebar() {
   window.addEventListener("scroll", handleScroll);
 
   return (
-    <div className="socialContainer">
-      <div className="icon-bar">
+    <div className="socialContainer hidden md:block m-0">
+      <div className="icon-bar fixed top-3/4 z-50 pl-3 ">
         <a
           href="https://www.instagram.com/genesisproduction.in/"
-          className={scrollDetect ? "social-icon" : "social-icon slite "}
+          className={
+            scrollDetect
+              ? "social-icon flex relative text-center overflow-hidden content-center items-center text-gray-600"
+              : "social-icon slite flex relative text-center overflow-hidden content-center items-center text-gray-600"
+          }
           target="_blank"
         >
-          <i className="fa fa-instagram"></i>
+          <i className="fa fa-instagram m-auto text-black z-1"></i>
         </a>
         <a
           href="https://twitter.com/genesismedia_in"
-          className={scrollDetect ? "social-icon " : "social-icon slite "}
+          className={
+            scrollDetect
+              ? "social-icon flex relative text-center overflow-hidden content-center items-center text-gray-600"
+              : "social-icon slite flex relative text-center overflow-hidden content-center items-center text-gray-600"
+          }
           target="_blank"
         >
-          <i className="fa fa-twitter"></i>
+          <i className="fa fa-twitter m-auto text-black z-1"></i>
         </a>
         <a
           href="https://www.facebook.com/genesisproduction.in/"
-          className={scrollDetect ? "social-icon " : "social-icon slite "}
+          className={
+            scrollDetect
+              ? "social-icon flex relative text-center overflow-hidden content-center items-center text-gray-600"
+              : "social-icon slite flex relative text-center overflow-hidden content-center items-center text-gray-600"
+          }
           target="_blank"
         >
-          <i className="fa fa-facebook"></i>
+          <i className="fa fa-facebook m-auto text-black z-1"></i>
         </a>
         <a
           href="https://www.linkedin.com/company/genesis-production/"
-          className={scrollDetect ? "social-icon " : "social-icon slite "}
+          className={
+            scrollDetect
+              ? "social-icon flex relative text-center overflow-hidden content-center items-center text-gray-600"
+              : "social-icon slite flex relative text-center overflow-hidden content-center items-center text-gray-600"
+          }
           target="_blank"
         >
-          <i className="fa fa-linkedin"></i>
+          <i className="fa fa-linkedin m-auto text-black z-1"></i>
         </a>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logoLite from "../images/icons/logoLite.png";
 import logoDark from "../images/icons/logoDark.png";
-import "./CSS/navbar.css";
+import "./CSS/component.css";
 
 function Navbar() {
   const [scrollDetect, setScrollDetect] = useState(false);
@@ -27,7 +27,6 @@ function Navbar() {
       }
     }
   };
-
   window.addEventListener("scroll", handleScroll);
 
   return (
@@ -35,8 +34,8 @@ function Navbar() {
       <nav
         className={
           scrollDetect
-            ? "nav scrol flex flex-wrap items-center justify-between px-4 navLiteBack"
-            : "nav scrol flex flex-wrap items-center justify-between px-4"
+            ? "nav scrol fixed flex flex-wrap items-center justify-between px-4 navLiteBack top-0 w-full z-50"
+            : "nav scrol fixed flex flex-wrap items-center justify-between px-4 top-0 w-full z-50"
         }
       >
         <div className="flex flex-no-shrink items-center mr-6 pl-0 md:pl-2">
@@ -56,42 +55,42 @@ function Navbar() {
           className="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none"
           for="menu-btn"
         >
-          <span className="navicon  flex items-center relative"></span>
+          <span className="navicon flex items-center relative"></span>
         </label>
 
         <ul className="navList menu md:border-none font-normal flex mr-10 ml-10 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent">
-          <li className="border-none">
+          <li className="border-none text-center">
             <a
               href="/#teams"
-              className="block md:inline-block  py-3 no-underline"
+              className="block md:inline-block  py-3 no-underline border-none text-black"
             >
               Team
             </a>
           </li>
 
-          <li className="navSer border-none">
+          <li className="navSer border-none text-center">
             <a
               href="/#services"
-              className=" block md:inline-block  py-3 no-underline"
+              className=" block md:inline-block  py-3 no-underline border-none text-black"
             >
               Services
             </a>
           </li>
 
-          <li className="border-none">
+          <li className="border-none text-center">
             <a
               href="/blog"
               target="_blank"
-              className="block md:inline-block py-3 no-underline"
+              className="block md:inline-block py-3 no-underline border-none text-black"
             >
               Blog
             </a>
           </li>
 
-          <li className="border-none">
+          <li className="border-none text-center">
             <a
               href="/#contactContainer"
-              className="block md:inline-block  py-3 no-underline"
+              className="block md:inline-block  py-3 no-underline border-none text-black"
             >
               Contact
             </a>
