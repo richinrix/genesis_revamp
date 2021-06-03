@@ -78,18 +78,18 @@ function Contact() {
   }
 
   return (
-    <div id="contactContainer" className=" h-screen">
+    <div id="contactContainer" className=" h-auto md:mt-20  ">
       <div
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="800"
-        className="contactFlexContainer flex justify-between items-center overflowY-hidden h-100"
+        className="contactFlexContainer flex  justify-between items-center overflowY-hidden h-100"
       >
         <form
           id="cForm"
-          className="contactForm md:h-screen pt-8 md:pt-24 px-5 md:pl-24 md:w-3/5 w-screen text-center md:text-left"
+          className="contactForm md:h-auto  pt-8 md:pt-0 md:-mt-44 px-5 md:pl-24 md:w-3/5 w-screen text-center md:text-left"
         >
-          <h2 className="font-plantc text-5xl md:text-6xl pb-2 md:pb-4 md:-mt-44">
+          <h2 className="font-plantc text-5xl md:text-6xl pb-2 md:pb-4 md:-mt-0">
             Get in Touch
           </h2>
           <p className="contactCraft pb-5 md:text-lg">
@@ -238,7 +238,7 @@ function Contact() {
         </form>
         <div className="circles md:w-screen md:block hidden">
           <img
-            className="contactCircles none md:inline-block ml-40 md:-mt-32"
+            className="contactCircles none md:inline-block ml-60 md:-mt-30 "
             src={circles}
           ></img>
         </div>

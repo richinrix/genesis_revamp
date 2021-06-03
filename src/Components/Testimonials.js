@@ -50,7 +50,7 @@ export default function Testimonials() {
     );
   }
   return (
-    <div className="proximity-snap">
+    <div className="md:h-screen">
       {isPhone ? (
         // phone version
         <Swiper

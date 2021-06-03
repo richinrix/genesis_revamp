@@ -55,7 +55,7 @@ function Map() {
   return (
     <div
       id="mapContainer"
-      className="mapContainer flex flex-col pl-28 md:pt-12  md:justify-start md:items-start w-screen md:w-auto h-auto md:mt-3 mb-3"
+      className="mapContainer flex flex-col pl-28 md:pt-12  md:justify-start md:items-start w-screen md:w-auto h-auto mb-3 md:-mt-32"
     >
       <div className="socialMapContainer md:hidden  ">
         <div className="iconMapBar flex flex-row w-screen items-center content-center m-0">
@@ -102,7 +102,7 @@ function Map() {
         <div className="newsInputs flex flex-row pt-2">
           <form>
             <input
-              className="pb-1 mb-2 border-none outline-none mr-8 text-2xl"
+              className="md:pb-2 pb-1 mb-2 border-none outline-none mr-8 text-2xl"
               type="email"
               id="nMail"
               placeholder={email === "" && "your@email.here"}
@@ -126,7 +126,7 @@ function Map() {
               </h6>
             )}
             <button
-              className="bton bton-white bton-animate uppercase no-underline	inline-block font-bold"
+              className="bton bton-white bton-animate uppercase no-underline	inline-block "
               type="submit"
               onClick={(e) => newsEmailSubmiteHandler(e)}
             >
@@ -149,7 +149,7 @@ function Map() {
           className="mapMail flex flex-row"
           href="mailto:info@genesismedia.com"
         >
-          <i className="fa fa-envelope pt-1 pr-1.5 pl-64"></i>
+          <i className="fa fa-envelope pt-1 pr-1.5 pl-60"></i>
           <p>info@genesismedia.com</p>
         </a>
       </div>
@@ -162,7 +162,7 @@ function Map() {
         <iframe
           className="gMap ml-3 md:ml-0"
           src="https://maps.google.com/maps?width=720&amp;height=600&amp;hl=en&amp;q=Genesis%20Media,%20Doddabommasandra+(Genesis%20Media)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          width={isMobile ? "1300" : "400"}
+          width={isMobile ? "1260" : "400"}
           height="300"
           allowfullscreen=""
           loading="lazy"
@@ -175,7 +175,8 @@ function Map() {
         data-aos-offset="-300"
         className="mapFooter flex flex-col md:flex-row justify-between pt-4 "
       >
-        <p className="order-1 mb-5 md:pt-3 md:-mt-2 text-base text-black md:pb-2 mr-5">
+        <p className="order-1 mb-5 md:pt-3 md:-mt-2 text-base text-black md:pb-2">
+          <i class="fa fa-map-marker pr-1.5 pt-1 flex-shrink-0"></i>
           65, 1st Main, 3rd Cross Road, Deshbandunagara, DB Sandra,
           Bengaluru-560097, Karnataka, India
         </p>
@@ -192,7 +193,7 @@ function Map() {
         <p className=" md:hidden order-4 text-lg">
           We'd love to hear from you.
         </p>
-        <p className="footerText md:mt-1 z-10 order-5 md:ml-32 md:pl-16 text-gray-700">
+        <p className="footerText md:mt-1 z-10 order-5 md:ml-24 md:pl-16 text-gray-700">
           Copyright © 2021, Genesis Media, All Rights Reserved
         </p>
       </div>

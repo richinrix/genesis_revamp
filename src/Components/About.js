@@ -70,9 +70,10 @@ function About() {
           </p>
         </div>
         <div className="counterContainer relative w-auto h-auto">
-          <div className="aboutPic md:-ml-5 w-screen mt-5 bg-black h-full">
+          <div className="aboutPic md:-ml-5 w-screen mt-5 bg-black">
             <img
-              className="relative object-cover opacity-80 "
+              className="teamPic relative object-cover opacity-50 "
+              height="100px"
               src={
                 window.innerWidth > 700
                   ? "https://res.cloudinary.com/zarry/image/upload/v1622608146/Genesis%20Revamp/aboutPic.jpg"
