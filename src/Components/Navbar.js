@@ -7,6 +7,11 @@ function Navbar() {
   const [scrollDetect, setScrollDetect] = useState(false);
   const screenWidth = useState(window.innerWidth);
 
+  //Function to uncheck navCheckbox
+  function uncheckNav() {
+    document.getElementById("menu-btn").checked = false;
+  }
+
   // Function to detect scrolling and change theme based on that
   const handleScroll = () => {
     if (screenWidth > 500) {
@@ -63,6 +68,7 @@ function Navbar() {
             <a
               href="/#teams"
               className="block md:inline-block  py-3 no-underline border-none text-black"
+              onClick={uncheckNav}
             >
               Team
             </a>
@@ -71,6 +77,7 @@ function Navbar() {
           <li className="navSer border-none text-center">
             <a
               href="/#services"
+              onClick={uncheckNav}
               className=" block md:inline-block  py-3 no-underline border-none text-black"
             >
               Services
@@ -81,6 +88,7 @@ function Navbar() {
             <a
               href="/blog"
               target="_blank"
+              onClick={uncheckNav}
               className="block md:inline-block py-3 no-underline border-none text-black"
             >
               Blog
@@ -90,6 +98,7 @@ function Navbar() {
           <li className="border-none text-center">
             <a
               href="/#contactContainer"
+              onClick={uncheckNav}
               className="block md:inline-block  py-3 no-underline border-none text-black"
             >
               Contact
