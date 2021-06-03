@@ -48,13 +48,13 @@ const Card = (props) => {
     >
       <img
         id="quoteImg"
-        className="absolute"
+        className="absolute left-8 top-8"
         src={image}
         style={{ width: "25px" }}
         alt=""
       />
       {/* text  */}
-      <div className="mt-10 leading-snug overflow-hidden">
+      <div className="mt-6 leading-snug  text-xs overflow-hidden">
         {testimonial.statement}
       </div>
       <div
@@ -65,12 +65,18 @@ const Card = (props) => {
         {/* profile image  */}
         <div
           ref={forwardedRef}
-          className=" testimonialProfilePic bg-gray-500 mx-auto"
+          className=" testimonialProfilePic bg-gray-500 mx-auto "
           style={{
             backgroundImage: `url('${testimonial.image}')`,
           }}
         />
-        <h2 className="text-white">{testimonial.name}</h2>
+        <h2 className="text-white text-lg ">{testimonial.name}</h2>
+        <img
+          className="mx-auto  -mb-5 mt-3"
+          src={IMAGES.stars5}
+          alt=""
+          style={{ height: "20px", width: "100px" }}
+        />
       </div>
       <div
         id="testimonialFooterImg"

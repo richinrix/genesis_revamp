@@ -10,6 +10,7 @@ const IMAGES = {
     require("../../images/icons/testimonial-bottom-purple.png").default,
   testimonialBottomBlue:
     require("../../images/icons/testimonial-bottom-blue.png").default,
+  stars5: require("../../images/icons/5stars.png").default,
 };
 
 export default IMAGES;

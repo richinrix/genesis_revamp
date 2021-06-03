@@ -112,7 +112,7 @@ const Imageflip = (props) => {
         >
           <div className="">
             <a.div
-              className="imageflip_c imageflip_back  bg-black"
+              className="imageflip_c imageflip_back  "
               style={{
                 opacity: opacity.to((o) => 1 - o),
                 transform,

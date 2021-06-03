@@ -71,6 +71,8 @@
   border-radius: 5px;
 }
 .testimonialProfilePic {
+  background-size: cover;
+  background-position: center;
   border-radius: 50%;
   height: 96px;
   width: 96px;
