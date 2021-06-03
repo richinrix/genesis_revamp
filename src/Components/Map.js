@@ -188,7 +188,7 @@ function Map() {
             className="fa fa-phone mt-3 md:mt-0  pt-1.5 pr-1.5 flex-shrink-0"
           ></i>
           <p className="text-lg mt-3 md:mt-0 md:text-base">
-            +91 8792384161/ +91 9886031980
+            +91 8792384161/ +91 7349571333
           </p>
         </div>
         <h2 className="md:hidden order-3 text-xl mt-2 md:mt-4">Say Hello!</h2>

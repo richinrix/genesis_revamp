@@ -48,7 +48,7 @@ const Card = (props) => {
     >
       <img
         id="quoteImg"
-        className="absolute md:left-8 left-6 md:top-8 top-4"
+        className="absolute md:left-8 left-4 md:top-8 top-3"
         src={image}
         style={{ width: "25px" }}
         alt=""
