@@ -99,7 +99,7 @@ function Contact() {
         }
       });
       if (checkz.length < 1) {
-        alert("Select more than one Service");
+        alert("Select atleast one Service");
         valid = false;
       }
       return valid;

@@ -19,11 +19,12 @@ export default function Services() {
 
   return (
     <ParallaxProvider className="">
-      <div id="services" className="h-0"></div>
-      {services &&
-        services.map((data, index) => (
-          <ServiceCard index={index} service={data} />
-        ))}
+      <div id="services" className="pt-12">
+        {services &&
+          services.map((data, index) => (
+            <ServiceCard index={index} service={data} />
+          ))}
+      </div>
     </ParallaxProvider>
   );
 }

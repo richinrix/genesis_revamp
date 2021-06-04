@@ -14,7 +14,7 @@
   position: absolute;
   will-change: transform, opacity;
   height: 350px;
-  width: 150px;
+  width: 140px;
   overflow: hidden;
 }
 
@@ -30,7 +30,7 @@
 
 .imageflip_container {
   height: 350px;
-  width: 150px;
+  width: 140px;
 }
 
 @media (max-width: 600px) {
@@ -63,6 +63,10 @@
 }
 
 /* ----------- testimonial-card --------------- */
+.slidenext,
+.slideprev {
+  display: none;
+}
 #testimonial-card {
   transition-property: all;
   transition-duration: 1s;
@@ -97,16 +101,15 @@
 
 /* testimonial navigation buttons  */
 
-/* hiding default arrows of swiper */
-
 @media (max-width: 600px) {
-  .swiper-button-next,
-  .swiper-button-prev {
+  .slideNextClass,
+  .slidePrevClass {
     width: 18px !important;
   }
+  /* hiding default arrows of swiper */
   .swiper-button-next::after,
   .swiper-button-prev::after {
-    display: none;
+    display: hidden;
   }
 
   .swiper-button-next {

@@ -3,7 +3,8 @@ import axios from "axios";
 // other components
 import API from "./services/API";
 import ImageFlip from "./Essentials/Imageflip";
-
+import arrow from "../images/icons/right-arrow-link.svg";
+import aos from "aos";
 export default function FlipContainer() {
   const [cards, setCards] = useState();
 
@@ -37,24 +38,38 @@ export default function FlipContainer() {
   return (
     <div
       id="teams"
-      className="  md:h-screen h-full flex flex-col my-auto md:px-10 sm:px-5 py-5 content-center justify-center proximity-snap "
+      className="  md:h-full md:mb-5   flex flex-col  md:px-10 sm:px-5 pt-5 content-center justify-center proximity-snap "
     >
       <div className="mx-auto">
         <div
           id="ImageFlip-Text"
-          className="font-plantc md:text-5xl text-4xl md:mb-10 mb-5  md:ml-0 ml-8 md:mt-16"
+          className="font-plantc md:text-5xl text-4xl md:mb-10 mb-5 md:pt-8  md:ml-0 ml-8 md:mt-16"
         >
           <h2 className=" ">Meet our team</h2>
         </div>
         <div>
           <div
             id="image-flip-wrapper"
-            className=" flex flex-wrap md:mt-8 md:ml-3 lg:justify-start justify-center lg:w-max"
+            className=" flex flex-wrap md:mt-8 md:ml-3 md:pt-6 lg:justify-start justify-center lg:w-max"
           >
             {/* limiting the cards to 8 if the cards are more than 8  */}
             {cards &&
               cards.slice(0, 8).map((card, index) => imageFlip(index, card))}
           </div>
+          <a
+            data-aos="slide-up"
+            className="absolute right-24  md:text-xl   mt-8 font-plantc flex justify-items-end"
+            href="/career"
+          >
+            <div className="font-normal justify-end">Join the team</div>
+            <img
+              src={arrow}
+              className=" md:-pt-1 -mx-3  flex-shrink-0"
+              style={{ height: "35px", width: "80px" }}
+              alt=""
+              srcset=""
+            />
+          </a>
         </div>
       </div>
     </div>

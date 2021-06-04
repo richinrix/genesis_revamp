@@ -51,7 +51,7 @@ export default function Testimonials() {
     );
   }
   return (
-    <div className="md:h-screen ">
+    <div className="md:h-screen w-auto overflow-hidden">
       {isPhone ? (
         // phone version
         <>
@@ -73,7 +73,7 @@ export default function Testimonials() {
         // desktop version
         <Swiper
           slidesPerView={3}
-          spaceBetween={-120}
+          spaceBetween={-160}
           breakpoints={{
             769: {
               slidesPerView: 3,
@@ -83,7 +83,7 @@ export default function Testimonials() {
           loop={true}
           navigation={true}
           id="testimonials"
-          className="h-full mx-auto md:my-14 my-8 lg:block hidden  overflow-hidden "
+          className="h-full mx-auto  my-8 lg:block hidden  overflow-hidden "
         >
           {testimonials &&
             testimonials.map((testimonial, index) =>
