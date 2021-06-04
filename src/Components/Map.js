@@ -59,7 +59,7 @@ function Map() {
       id="mapContainer"
       className="mapContainer flex flex-col pl-28 md:pt-12  md:justify-start md:items-start w-screen md:w-auto h-auto mb-3 md:-mt-32"
     >
-      <div className="socialMapContainer md:hidden  ">
+      <div className="socialMapContainer md:hidden md:mt-0 mt-5 mb-24  ">
         <div className="iconMapBar flex flex-row w-screen items-center content-center m-0">
           <a
             href="https://www.instagram.com/genesisproduction.in/"
@@ -96,15 +96,15 @@ function Map() {
         data-aos-easing="linear"
         data-aos-duration="800"
         data-aos-offset="200"
-        className="newsLetter flex flex-col mt-7 md:mt-12"
+        className="newsLetter flex flex-col  md:mt-12"
       >
-        <p className="text-lg md:mt-0">
+        <p className="text-lg md:mt-0 md:pt-0 pt-4">
           Stay up to date, subscribe to our newsletter:
         </p>
         <div className="newsInputs flex flex-row pt-2">
           <form id="newsForm">
             <input
-              className="md:pb-2 pb-1 mb-2 border-none outline-none mr-8 text-2xl"
+              className="md:pb-2 pb-1  mb-2 border-none outline-none mr-8 text-2xl"
               type="email"
               id="nMail"
               placeholder={email === "" && "your@email.here"}
@@ -159,13 +159,13 @@ function Map() {
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="800"
-        className="mapBox mt-2 mb-3 md:mb-0 overflow-hidden"
+        className="mapBox md:mt-2 mb-3 md:mb-0 overflow-hidden"
       >
         <iframe
-          className="gMap ml-3 md:ml-0"
+          className="gMap ml-3 md:ml-0 "
           src="https://maps.google.com/maps?width=720&amp;height=600&amp;hl=en&amp;q=Genesis%20Media,%20Doddabommasandra+(Genesis%20Media)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          height={isMobile ? "300" : "275"}
           width={isMobile ? "1260" : "400"}
-          height="300"
           allowfullscreen=""
           loading="lazy"
         ></iframe>
@@ -177,8 +177,8 @@ function Map() {
         data-aos-offset="-300"
         className="mapFooter flex flex-col md:flex-row justify-between pt-4 "
       >
-        <p className="order-1 mb-5 md:pt-3 md:-mt-2 text-base text-black md:pb-2">
-          <i class="fa fa-map-marker pr-1.5 pt-1 flex-shrink-0"></i>
+        <p className="order-1 mb-5 md:pt-3 md:-mt-2 text-base text-black md:pb-2 md:pr-0 pr-5">
+          <i class="fa fa-map-marker pr-1.5 flex-shrink-0 "></i>
           65, 1st Main, 3rd Cross Road, Deshbandunagara, DB Sandra,
           Bengaluru-560097, Karnataka, India
         </p>
@@ -191,10 +191,8 @@ function Map() {
             +91 8792384161/ +91 7349571333
           </p>
         </div>
-        <h2 className="md:hidden order-3 text-xl mt-2 md:mt-4">Say Hello!</h2>
-        <p className=" md:hidden order-4 text-lg">
-          We'd love to hear from you.
-        </p>
+        <h2 className="hidden order-3 text-xl mt-2 md:mt-4">Say Hello!</h2>
+        <p className=" hidden order-4 text-lg">We'd love to hear from you.</p>
         <p className="footerText md:mt-1 z-10 order-5 md:ml-24 md:pl-16 text-gray-700">
           Copyright © 2021, Genesis Media, All Rights Reserved
         </p>

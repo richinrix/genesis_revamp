@@ -38,9 +38,9 @@ export default function FlipContainer() {
   return (
     <div
       id="teams"
-      className="  md:h-full md:mb-5   flex flex-col  md:px-10 sm:px-5 pt-5 content-center justify-center proximity-snap "
+      className="  md:h-full md:mb-5    flex flex-col  md:px-10 sm:px-5 md:pt-5 pt-20  content-center justify-center proximity-snap "
     >
-      <div className="mx-auto">
+      <div className="mx-auto ">
         <div
           id="ImageFlip-Text"
           className="font-plantc md:text-5xl text-4xl md:mb-10 mb-5 md:pt-8  md:ml-0 ml-8 md:mt-16"
@@ -58,14 +58,14 @@ export default function FlipContainer() {
           </div>
           <a
             data-aos="slide-up"
-            className="absolute right-24  md:text-xl   mt-8 font-plantc flex justify-items-end"
+            className="absolute right-24  md:text-xl   mt-8 font-plantc flex justify-items-end "
             href="/career"
           >
-            <div className="font-normal justify-end">Join the team</div>
+            <div className="font-normal justify-end ">Join the team</div>
             <img
               src={arrow}
-              className=" md:-pt-1 -mx-3  flex-shrink-0"
-              style={{ height: "35px", width: "80px" }}
+              className=" md:-pt-1 -pt-4 -mx-3  flex-shrink-0"
+              style={{ height: "28px", width: "80px" }}
               alt=""
               srcset=""
             />

@@ -6,6 +6,7 @@ import axios from "axios";
 import API from "./services/API";
 
 function Contact() {
+  //An object that stores the Form values and errors
   const [formDetails, setFormDetails] = useState({
     name: "",
     mail: "",
@@ -18,7 +19,7 @@ function Contact() {
       msg: "Enter a vaild message",
     },
   });
-  const [checkz, setCheckz] = useState([]);
+  const [checkz, setCheckz] = useState([]); //Stores checkbox values
   const [borderColor, setBorderColor] = useState("gray");
   const [bordWidth, setBordWidth] = useState(1);
 
@@ -27,6 +28,7 @@ function Contact() {
     setCheckz([...checkz, { id: checkz.length, name: item }]);
   };
 
+  //Triggered whenever a field is changed
   let changeHandler = (event) => {
     let nam = event.target.name;
     let val = event.target.value;
@@ -87,6 +89,7 @@ function Contact() {
     setFormDetails((prevState) => ({ ...prevState, [nam]: val }));
   };
 
+  //Triggered when the submit button is pressed
   let handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formDetails.errors);
@@ -138,7 +141,7 @@ function Contact() {
   };
 
   return (
-    <div id="contactContainer" className=" h-auto md:mt-20  ">
+    <div id="contactContainer" className=" h-auto md:-mt-20   ">
       <div
         data-aos="fade-up"
         data-aos-easing="linear"
@@ -147,7 +150,7 @@ function Contact() {
       >
         <form
           id="cForm"
-          className="contactForm md:h-auto  pt-8 md:pt-0 md:-mt-44 px-5 md:pl-24 md:w-3/5 w-screen text-center md:text-left"
+          className="contactForm  md:h-auto  pt-20 md:pt-10 md:-mt-44 px-5 md:pl-24 md:w-3/5 w-screen text-center md:text-left"
         >
           <h2 className="font-plantc text-5xl md:text-6xl pb-2 md:pb-4 md:-mt-0">
             Get in Touch
@@ -310,9 +313,9 @@ function Contact() {
             Submit
           </button>
         </form>
-        <div className="circles md:w-screen md:block hidden">
+        <div className="circles md:w-screen md:block hidden  md:-mt-20 md:-pt-20">
           <img
-            className="contactCircles none md:inline-block ml-60 md:-mt-30 "
+            className="contactCircles none md:inline-block ml-60  "
             src={circles}
           ></img>
         </div>

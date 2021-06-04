@@ -46,7 +46,7 @@ function Navbar() {
         <div className="flex flex-no-shrink items-center mr-6 pl-0 md:pl-2">
           <a className="navLogo self-center" href="/#">
             <img
-              className="hidden md:block"
+              className=" md:block"
               src={scrollDetect ? logoLite : logoDark}
               alt=""
               srcset=""
@@ -55,9 +55,9 @@ function Navbar() {
           </a>
         </div>
 
-        <input className="menu-btn hidden" type="checkbox" id="menu-btn" />
+        <input className="menu-btn hidden " type="checkbox" id="menu-btn" />
         <label
-          className="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none"
+          className="menu-icon block cursor-pointer md:hidden px-2 my-0 relative select-none"
           for="menu-btn"
         >
           <span className="navicon flex items-center relative"></span>

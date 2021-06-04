@@ -7,8 +7,14 @@
   font-family: Plantagenet;
   src: url("./fonts/plantc.ttf");
 }
+.font-poppins {
+  font-family: Poppins;
+}
 .font-plantc {
   font-family: Plantagenet;
+}
+.font-montserrat {
+  font-family: Montserrat;
 }
 .imageflip_c {
   position: absolute;
@@ -36,7 +42,7 @@
 @media (max-width: 600px) {
   .imageflip_container,
   .imageflip_c {
-    height: 170px;
+    height: 200px;
     width: 140px;
   }
 }
@@ -92,7 +98,7 @@
 @media (max-width: 600px) {
   #testimonial-card {
     height: 400px;
-    width: 280px;
+    width: 260px;
   }
   #testimonialFooterImg {
     bottom: -110px;
@@ -101,26 +107,45 @@
 
 /* testimonial navigation buttons  */
 
+.slideNextClass,
+.slidePrevClass {
+  width: 18px !important;
+}
+/* hiding default arrows of swiper */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: hidden;
+}
+/* hiding default arrows of swiper */
+
+.swiper-button-next,
+.swiper-button-prev {
+  height: 32px;
+  width: 32px;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next {
+  background-image: url("../../images/icons/right-arrow.png") !important;
+  background-repeat: no-repeat;
+  margin-right: 4rem;
+}
+
+.swiper-button-prev {
+  display: block !important;
+  background-image: url("../../images/icons/left-arrow.png") !important;
+  background-repeat: no-repeat;
+  margin-left: 4rem;
+}
 @media (max-width: 600px) {
-  .slideNextClass,
-  .slidePrevClass {
-    width: 18px !important;
-  }
-  /* hiding default arrows of swiper */
-  .swiper-button-next::after,
-  .swiper-button-prev::after {
-    display: hidden;
-  }
-
   .swiper-button-next {
-    background-image: url("../../images/icons/rightArrow.svg") !important;
-    background-repeat: no-repeat;
+    margin-right: 0;
   }
-
   .swiper-button-prev {
-    display: block !important;
-    background-image: url("../../images/icons/leftArrow.svg") !important;
-    background-repeat: no-repeat;
+    margin-left: -4px;
   }
 }
 /* ----------- About us --------------- */
@@ -190,9 +215,15 @@
     margin-top: 2rem;
     margin-bottom: 0.5rem;
   }
+  @media (max-width: 600px) {
+    .mapBox {
+      margin-top: 1.05rem;
+      margin-bottom: 1.05rem;
+    }
+  }
   .gMap {
     width: screen;
-    height: 300px;
+    /* height: 300px; */
   }
   .mapFooter {
     order: 4;
@@ -202,7 +233,7 @@
     margin-left: 0.5rem;
   }
   .footerText {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     margin-left: -2rem;
     padding-left: 0;
     text-align: center;
@@ -291,10 +322,10 @@
   .navicon {
     width: 1.125em;
     height: 0.125em;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
   }
   .navList {
-    background: #ffd805;
+    background: #ffe450;
   }
   .navicon::before,
   .navicon::after {
@@ -311,7 +342,7 @@
   }
   .nav ul li a {
     color: black;
-    background-color: #ffd805;
+    background-color: #ffe450;
   }
   .nav ul li {
     border-bottom: 1px solid black;
@@ -434,7 +465,7 @@
   position: absolute;
   border-radius: 50%;
   transform: translate(0, 60px);
-  background-color: #ffd805;
+  background-color: #ffe450;
   transition: all 0.3s ease;
 }
 

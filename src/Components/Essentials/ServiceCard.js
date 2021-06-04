@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import handleViewport from "react-in-viewport";
+// import handleViewport from "react-in-viewport";
 // image
 import linesImg from "../../images/icons/services-line-and-dots.png";
 // other modules
