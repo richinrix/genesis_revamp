@@ -99,27 +99,29 @@
 
 /* hiding default arrows of swiper */
 
-@media (max-width: 600px) {
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 18px !important;
-  }
-  .swiper-button-next::after,
-  .swiper-button-prev::after {
-    display: none;
-  }
-
-  .swiper-button-next {
-    background-image: url("../../images/icons/rightArrow.svg") !important;
-    background-repeat: no-repeat;
-  }
-
-  .swiper-button-prev {
-    display: block !important;
-    background-image: url("../../images/icons/leftArrow.svg") !important;
-    background-repeat: no-repeat;
-  }
+.swiper-button-next,
+.swiper-button-prev {
+  height: 32px;
+  width: 32px;
 }
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next {
+  background-image: url("../../images/icons/right-arrow.png") !important;
+  background-repeat: no-repeat;
+  margin-right: 4rem;
+}
+
+.swiper-button-prev {
+  display: block !important;
+  background-image: url("../../images/icons/left-arrow.png") !important;
+  background-repeat: no-repeat;
+  margin-left: 4rem;
+}
+
 /* ----------- About us --------------- */
 
 .aboutParagraphs {
@@ -291,7 +293,7 @@
     margin-top: 3rem;
   }
   .navList {
-    background: #ffd805;
+    background: #e6c406;
   }
   .navicon::before,
   .navicon::after {
@@ -308,7 +310,7 @@
   }
   .nav ul li a {
     color: black;
-    background-color: #ffd805;
+    background-color: #e6c406;
   }
   .nav ul li {
     border-bottom: 1px solid black;
@@ -431,7 +433,7 @@
   position: absolute;
   border-radius: 50%;
   transform: translate(0, 60px);
-  background-color: #ffd805;
+  background-color: #e6c406;
   transition: all 0.3s ease;
 }
 

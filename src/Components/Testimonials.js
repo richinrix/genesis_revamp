@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import leftArrow from "../images/icons/leftArrow.svg";
 // services
 import API from "./services/API";
 // other component
@@ -51,7 +50,7 @@ export default function Testimonials() {
     );
   }
   return (
-    <div className="md:h-screen ">
+    <div className="md:h-auto md:mb-40">
       {isPhone ? (
         // phone version
         <>
@@ -89,7 +88,6 @@ export default function Testimonials() {
             testimonials.map((testimonial, index) =>
               currentView(testimonial, index)
             )}
-          <img src={leftArrow}></img>
         </Swiper>
       )}
     </div>

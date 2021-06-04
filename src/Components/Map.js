@@ -178,7 +178,7 @@ function Map() {
         className="mapFooter flex flex-col md:flex-row justify-between pt-4 "
       >
         <p className="order-1 mb-5 md:pt-3 md:-mt-2 text-base text-black md:pb-2">
-          <i class="fa fa-map-marker pr-1.5 pt-1 flex-shrink-0"></i>
+          <i class="fa fa-map-marker pr-1.5 flex-shrink-0 "></i>
           65, 1st Main, 3rd Cross Road, Deshbandunagara, DB Sandra,
           Bengaluru-560097, Karnataka, India
         </p>
