@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 import logoLite from "../images/icons/logoLite.png";
 import logoDark from "../images/icons/logoDark.png";
 import "./CSS/component.css";
@@ -76,7 +78,7 @@ function Navbar() {
 
           <li className="navSer border-none text-center">
             <a
-              href="/#services"
+              href="/#/services"
               onClick={uncheckNav}
               className=" block md:inline-block  py-3 no-underline border-none text-black"
             >
@@ -85,24 +87,25 @@ function Navbar() {
           </li>
 
           <li className="border-none text-center">
-            <a
-              href="/blog"
+            <Link
+              to="/blog"
               target="_blank"
               onClick={uncheckNav}
               className="block md:inline-block py-3 no-underline border-none text-black"
             >
               Blog
-            </a>
+            </Link>
           </li>
 
           <li className="border-none text-center">
-            <a
-              href="/#contactContainer"
+            <NavHashLink
+              to="contactContainer"
+              activeClassName="selected"
               onClick={uncheckNav}
               className="block md:inline-block  py-3 no-underline border-none text-black"
             >
               Contact
-            </a>
+            </NavHashLink>
           </li>
         </ul>
       </nav>

@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   Redirect,
+  HashRouter as Hash,
 } from "react-router-dom";
 import "./App.css";
 import "../src/Components/CSS/component.css";
@@ -28,8 +29,8 @@ function App() {
       <Sidebar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/notfound" component={ComingSoon} />
-        <Redirect to="/notfound" component={ComingSoon} />
+        <Route path="/notfoundr" component={ComingSoon} />
+        <Redirect to="/notfoundr" component={ComingSoon} />
       </Switch>
     </Router>
   );

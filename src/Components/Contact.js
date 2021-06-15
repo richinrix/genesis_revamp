@@ -317,6 +317,7 @@ function Contact() {
           <img
             className="contactCircles none md:inline-block ml-60  "
             src={circles}
+            alt="Yellow sConcentric circles for Design"
           ></img>
         </div>
       </div>
