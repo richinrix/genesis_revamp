@@ -34,14 +34,23 @@ function Map() {
       setValidEmail(true);
       setBorderColor("black");
       e.target.value = null;
-      axios.post(API.newsLetter, {
-        data: [
-          {
-            Email: email,
-            Date: new Date().toLocaleString(),
+      axios.post(
+        API.newsLetter,
+        {
+          data: [
+            {
+              Email: email,
+              Date: new Date().toLocaleString(),
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            Authorization: process.env.REACT_APP_NEWS_AUTH,
           },
-        ],
-      });
+        }
+      );
       setBorderColor("green");
       document.getElementById("newsForm").reset();
       // document.getElementById("nMail").placeholder = "your@email.here";

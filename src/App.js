@@ -24,7 +24,7 @@ import PreLoader from "./Components/Essentials/PreLoader";
 
 function App() {
   return (
-    <Router>
+    <Hash>
       <Navbar />
       <Sidebar />
       <Switch>
@@ -32,7 +32,7 @@ function App() {
         <Route path="/notfoundr" component={ComingSoon} />
         <Redirect to="/notfoundr" component={ComingSoon} />
       </Switch>
-    </Router>
+    </Hash>
   );
 }
 const Home = () => {

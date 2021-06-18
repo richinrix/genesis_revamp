@@ -108,18 +108,27 @@ function Contact() {
       return valid;
     };
     if (validateForm(formDetails.error)) {
-      axios.post(API.contactSheet, {
-        data: [
-          {
-            Name: formDetails.name,
-            Mail: formDetails.mail,
-            PhNo: formDetails.phno,
-            Message: formDetails.msg,
-            Interests: checkz,
-            Date: new Date().toLocaleString(),
+      axios.post(
+        API.contactSheet,
+        {
+          data: [
+            {
+              Name: formDetails.name,
+              Mail: formDetails.mail,
+              PhNo: formDetails.phno,
+              Message: formDetails.msg,
+              Interests: checkz,
+              Date: new Date().toLocaleString(),
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            Authorization: process.env.REACT_APP_CONTACT_AUTH,
           },
-        ],
-      });
+        }
+      );
       setBorderColor("green"); //Changes field border color to green
       setBordWidth(2); //Increases field vorder size
       alert("Details Submitted!");

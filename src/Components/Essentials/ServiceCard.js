@@ -47,8 +47,38 @@ const ServiceCard = (props) => {
   function videoCard(video, YTvideo, classname, xval, xvalPh) {
     const YTsrc = YTvideo + "?autoplay=1&mute=1";
     return (
-      <Parallax x={!isPhone ? xval : xvalPh}>
-        {video ? (
+      <>
+        {!isPhone ? (
+          <Parallax x={xval}>
+            {video ? (
+              <video
+                id="servicesImage"
+                className={classname}
+                width="80%"
+                height="280px"
+                autoPlay
+                muted
+                loop
+                disablePictureInPicture
+              >
+                <source src={video} type="video/mp4" />
+              </video>
+            ) : (
+              <iframe
+                src={YTsrc}
+                id="servicesImage"
+                className={classname}
+                autoPlay
+                muted
+                width="80%"
+                height="280px"
+                frameborder="0"
+                disablePictureInPicture
+                style={{ border: "none" }}
+              ></iframe>
+            )}
+          </Parallax>
+        ) : video ? (
           <video
             id="servicesImage"
             className={classname}
@@ -75,10 +105,10 @@ const ServiceCard = (props) => {
             style={{ border: "none" }}
           ></iframe>
         )}
-      </Parallax>
+      </>
     );
     // resource heavy :)
-    // for the video to play when in viewport and pause when offscreen
+    // for the video to play(with sound) when in viewport and pause when offscreen
     // return !isPhone ? (
     //   <Parallax x={xval} className=" md:block hidden ">
     //     <ReactPlayer
@@ -101,7 +131,6 @@ const ServiceCard = (props) => {
     //       width="80%"
     //       height="280px"
     //       autoPlay
-    //       muted
     //       loop
     //     >
     //       <source src={video} type="video/mp4" />
@@ -130,8 +159,8 @@ const ServiceCard = (props) => {
 
     let containerClassname = "relative  ";
     containerClassname += points > 5 ? " md:mt-14 " : " ";
-    if (floatPos === "right") containerClassname += " md:mr-20";
-    else containerClassname += " md:ml-20";
+    if (floatPos === "right") containerClassname += " md:mr-20 mr-5";
+    else containerClassname += " md:ml-20 ml-5";
 
     let imageClassname = "absolute  z-10 ";
     if (floatPos === "right") imageClassname += "md:right-24 right-6 top-10 ";
@@ -150,9 +179,7 @@ const ServiceCard = (props) => {
             {yellowRectangle(floatPos)}
           </Parallax>
         ) : (
-          <Parallax x={yellowRectXvalPh} className="md:hidden block ">
-            {yellowRectangle(floatPos)}
-          </Parallax>
+          yellowRectangle(floatPos)
         )}
         {/* if its a picture or video */}
         {image_path ? (
@@ -166,13 +193,11 @@ const ServiceCard = (props) => {
                 ></div>
               </Parallax>
             ) : (
-              <Parallax x={imageXvalPh} className="md:hidden block">
-                <div
-                  id="servicesImage"
-                  className={imageClassname}
-                  style={imageStyle}
-                ></div>
-              </Parallax>
+              <div
+                id="servicesImage"
+                className={imageClassname}
+                style={imageStyle}
+              ></div>
             )}
           </>
         ) : (
@@ -219,11 +244,17 @@ const ServiceCard = (props) => {
           " flex-col content-center items-center h-min my-auto   mx-auto  md:w-3/4 px-5 "
         }
       >
-        <Parallax className={"w-11/12  md:block "} x={descXval}>
+        {!isPhone ? (
+          <Parallax className={"w-11/12  md:block "} x={descXval}>
+            <div className="font-plantc md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
+              {desc}
+            </div>
+          </Parallax>
+        ) : (
           <div className="font-plantc md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
             {desc}
           </div>
-        </Parallax>
+        )}
         <div className="flex  my-auto pt-5">
           <ul className="ml-4 my-auto">
             {points.map((point, index) =>

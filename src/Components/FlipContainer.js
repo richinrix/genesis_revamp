@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 // other components
 import API from "./services/API";
 import ImageFlip from "./Essentials/Imageflip";
@@ -56,10 +57,10 @@ export default function FlipContainer() {
             {cards &&
               cards.slice(0, 8).map((card, index) => imageFlip(index, card))}
           </div>
-          <a
+          <Link
+            to="/career"
             data-aos="slide-up"
             className="absolute right-24  md:text-xl   mt-8 font-plantc flex justify-items-end "
-            href="/career"
           >
             <div className="font-normal justify-end ">Join the team</div>
             <img
@@ -69,7 +70,7 @@ export default function FlipContainer() {
               alt=""
               srcset=""
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
