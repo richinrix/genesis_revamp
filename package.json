@@ -12,6 +12,7 @@
     "aos": "^2.3.4",
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
+    "env-cmd": "^10.1.0",
     "jquery": "^3.6.0",
     "postcss": "^7.0.35",
     "react": "^17.0.2",
@@ -21,6 +22,7 @@
     "react-player": "^2.9.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-scroll-into-view": "^1.9.4",
     "react-scroll-parallax": "^2.4.0",
     "react-spring": "^9.2.0-beta.6",
     "react-tsparticles": "^1.27.0",
@@ -33,10 +35,10 @@
     "typescript": "3.3.3"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "start": "env-cmd craco start",
+    "build": "env-cmd craco build",
+    "test": "env-cmd craco test",
+    "eject": "env-cmd react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

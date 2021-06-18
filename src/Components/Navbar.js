@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import ScrollIntoView from "react-scroll-into-view";
 import logoLite from "../images/icons/logoLite.png";
 import logoDark from "../images/icons/logoDark.png";
 import "./CSS/component.css";
@@ -65,44 +67,45 @@ function Navbar() {
 
         <ul className="navList menu md:border-none font-normal flex mr-10 ml-10 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent">
           <li className="border-none text-center">
-            <a
-              href="/#teams"
+            <ScrollIntoView
+              selector="#teams"
               className="block md:inline-block  py-3 no-underline border-none text-black"
               onClick={uncheckNav}
             >
-              Team
-            </a>
+              <a className="cursor-pointer">Team</a>
+            </ScrollIntoView>
           </li>
 
           <li className="navSer border-none text-center">
-            <a
-              href="/#services"
+            <ScrollIntoView
+              selector="#services"
               onClick={uncheckNav}
               className=" block md:inline-block  py-3 no-underline border-none text-black"
             >
-              Services
-            </a>
+              <a className="cursor-pointer">Services</a>
+            </ScrollIntoView>
           </li>
 
           <li className="border-none text-center">
-            <a
-              href="/blog"
+            <Link
+              to="/blog"
               target="_blank"
               onClick={uncheckNav}
               className="block md:inline-block py-3 no-underline border-none text-black"
             >
               Blog
-            </a>
+            </Link>
           </li>
 
           <li className="border-none text-center">
-            <a
-              href="/#contactContainer"
+            <ScrollIntoView
+              selector="#contactContainer"
+              activeClassName="selected"
               onClick={uncheckNav}
               className="block md:inline-block  py-3 no-underline border-none text-black"
             >
-              Contact
-            </a>
+              <a className="cursor-pointer">Contact</a>
+            </ScrollIntoView>
           </li>
         </ul>
       </nav>
