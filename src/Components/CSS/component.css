@@ -1,6 +1,7 @@
 /* ----------- font imports --------------- */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 /* ----------- team image flip --------------- */
 @font-face {
@@ -156,11 +157,30 @@
 .aboutCounters {
   font-family: "Poppins", sans-serif;
 }
+.teamWords {
+  font-family: "Lato", sans-serif;
+}
 @media (min-width: 767px) {
   .teamPic {
     height: 220px !important;
     width: 100% !important;
     object-fit: fill !important;
+  }
+}
+@media (min-width: 1536px) {
+  .teamWords {
+    margin-right: 10% !important;
+    margin-left: 10% !important;
+    margin-top: 3% !important;
+  }
+  .aboutText {
+    margin-right: 10% !important;
+    margin-left: 10% !important;
+    margin-bottom: 3% !important;
+  }
+  .teamPic {
+    min-height: 20% !important;
+    backdrop-filter: blur(5px);
   }
 }
 
@@ -438,7 +458,8 @@
     color: black;
   }
   .navLiteBack {
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.8) !important;
     height: 70px !important;
   }
 }

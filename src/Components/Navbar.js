@@ -41,7 +41,7 @@ function Navbar() {
       <nav
         className={
           scrollDetect
-            ? "nav scrol fixed flex flex-wrap items-center justify-between px-4 navLiteBack top-0 w-full z-50"
+            ? "nav scrol fixed flex flex-wrap items-center justify-between px-4 top-0 w-full z-50 navLiteBack bg-red-300"
             : "nav scrol fixed flex flex-wrap items-center justify-between px-4 top-0 w-full z-50"
         }
       >

@@ -22,10 +22,10 @@ function About() {
 
   return (
     <div id="teamCall" className="h-auto w-auto ">
-      <div className="teamContainer h-auto flex flex-col mx-auto  sm:px-5 pt-10 w-screen ">
+      <div className="teamContainer h-auto flex flex-col mx-auto  sm:px-5 pt-10 w-screen left-">
         <div
           id="teamTitle"
-          className="teamWords font-plantc md:px-20 text-5xl mt-14 mb-3 px-4 "
+          className="teamWords md:px-20 text-5xl mt-14 2xl:mt-0 mb-3 px-4 ml-"
         >
           <h2 className={scrollDetect ? "text-black" : "text-white"}>
             We're creative thinkers
