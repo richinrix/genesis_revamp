@@ -18,8 +18,12 @@ export default function Services() {
   };
 
   return (
-    <ParallaxProvider className="">
-      <div id="services" className="md:pt-12 pt-10 mt-16 ">
+    <ParallaxProvider className="mx-auto">
+      <div
+        id="services"
+        className="md:pt-12 pt-10 mt-16 mx-auto"
+        style={{ maxWidth: "1600px" }}
+      >
         {services &&
           services.map((data, index) => (
             <ServiceCard index={index} service={data} />

@@ -10,9 +10,9 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 // import Swiper core and required modules
-import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
 // install Swiper modules
-SwiperCore.use([Pagination, Navigation]);
+SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState();
@@ -50,7 +50,10 @@ export default function Testimonials() {
     );
   }
   return (
-    <div className="md:h-auto md:mb-40 md:mt-32">
+    <div
+      className="md:h-auto my-20 md:mt-32 mx-auto  3xl:h-full "
+      style={{ maxWidth: "1600px" }}
+    >
       {isPhone ? (
         // phone version
         <>
@@ -58,6 +61,10 @@ export default function Testimonials() {
             id="testimonials"
             slidesPerView={1}
             spaceBetween={0}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
             loop={true}
             navigation={true}
             className=" mx-auto md:my-2 mt-8 mb-0 overflow-hidden lg:hidden  "
@@ -73,6 +80,10 @@ export default function Testimonials() {
         <Swiper
           slidesPerView={3}
           spaceBetween={-150}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             769: {
               slidesPerView: 3,
