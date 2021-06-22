@@ -66,16 +66,16 @@ function Map() {
   return (
     <div
       id="mapContainer"
-      className="mapContainer flex flex-col pl-28 md:pt-12  md:justify-start md:items-start w-screen md:w-auto h-auto mb-3 md:-mt-32"
+      className="mapContainer bottom-0 flex md:grid md:mt-0 mt-8 flex-col pl-28 md:pt-12 md:justify-start md:items-start w-screen md:w-auto md:h-auto mb-0"
     >
-      <div className="socialMapContainer md:hidden md:mt-0 mt-5 mb-24  ">
-        <div className="iconMapBar flex flex-row w-screen items-center content-center m-0">
+      <div className="socialMapContainer md:mt-0 mt-5 md:ml-0 ml-5 ">
+        <div className="iconMapBar flex flex-row w-screen items-center text-white content-center m-0">
           <a
             href="https://www.instagram.com/genesisproduction.in/"
-            className="social-icons flex relative text-center overflow-hidden items-center content-center no-underline"
+            className="social-icons flex relative text-center text-white overflow-hidden items-center content-center no-underline"
             target="_blank"
           >
-            <i className="fa fa-instagram"></i>
+            <i className="fa fa-instagram text-white"></i>
           </a>
           <a
             href="https://twitter.com/genesismedia_in"
@@ -100,20 +100,14 @@ function Map() {
           </a>
         </div>
       </div>
-      <div
-        data-aos="fade-right"
-        data-aos-easing="linear"
-        data-aos-duration="800"
-        data-aos-offset="200"
-        className="newsLetter flex flex-col  md:mt-12"
-      >
-        <p className="text-lg md:mt-0 md:pt-0 pt-4">
+      <div className="newsLetter flex flex-col  md:mt-3">
+        <p className="text-lg md:mt-0 md:pt-0 pt-4 text-white">
           Stay up to date, subscribe to our newsletter:
         </p>
         <div className="newsInputs flex flex-row pt-2">
           <form id="newsForm">
             <input
-              className="md:pb-2 pb-1  mb-2 border-none outline-none mr-8 text-2xl"
+              className="md:pb-2 pb-1  mb-2 bg-transparent border-none outline-none mr-8 text-2xl text-white"
               type="email"
               id="nMail"
               placeholder={email === "" && "your@email.here"}
@@ -146,25 +140,25 @@ function Map() {
           </form>
         </div>
       </div>
-      <div
-        data-aos="fade-up"
-        data-aos-easing="linear"
-        data-aos-duration="800"
-        className="preMap flex flex-row content-between mt-14"
-      >
-        <div className="mapPhone flex flex-row">
-          <i className="fa fa-phone pt-1.5 pr-1.5 flex-shrink-0"></i>
+      <div className="preMap absolute flex-col text-left content-between right-20 mt-10">
+        <div className="mapPhone flex text-lg text-white flex-row mb-3">
+          <i className="fa fa-phone pt-1.5 pr-1.5 text-white flex-shrink-0"></i>
           <p>+91 8792384161/ +91 7349571333</p>
         </div>
+
         <a
-          className="mapMail flex flex-row"
           href="mailto:info@genesismedia.com"
+          className="mapPhone flex text-lg text-white mb-3 flex-row"
         >
-          <i className="fa fa-envelope pt-1 pr-1.5 pl-60"></i>
-          <p>info@genesismedia.com</p>
+          <i className="fa fa-envelope pt-1 pr-1.5"> </i>
+          <p> info@genesismedia.com</p>
         </a>
+        <p className="order-1 md:pt-3 md:-mt-2 text-lg text-white md:pb-2 md:pr-0 pr-5">
+          <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>
+          65, 1st Main, DB Sandra, Bengaluru-560097
+        </p>
       </div>
-      <div
+      {/* <div
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="800"
@@ -178,34 +172,32 @@ function Map() {
           allowfullscreen=""
           loading="lazy"
         ></iframe>
-      </div>
-      <div
-        data-aos="fade-up"
-        data-aos-easing="linear"
-        data-aos-duration="300"
-        data-aos-offset="-300"
-        className="mapFooter flex flex-col md:flex-row justify-between pt-4 "
-      >
-        <p className="order-1 mb-5 md:pt-3 md:-mt-2 text-base text-black md:pb-2 md:pr-0 pr-5">
-          <i class="fa fa-map-marker pr-1.5 flex-shrink-0 "></i>
-          65, 1st Main, 3rd Cross Road, Deshbandunagara, DB Sandra,
-          Bengaluru-560097, Karnataka, India
+      </div> */}
+      <div className="mapFooter flex flex-col md:flex-row justify-between pt-4 ">
+        <p className="order-1 md:hidden md:pt-3 md:-mt-2 text-base text-white md:pb-2 md:pr-0 pr-5">
+          <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>
+          65, 1st Main, DB Sandra, Bengaluru-560097
         </p>
-        <div className="order-2 md:hidden pl-0.5 flex z-50 flex-row ">
+        <div className="order-2 md:ml-0 ml-4 text-center  md:hidden pl-0.5 mb-8 flex z-50 flex-row text-white ">
           <i
             id="fPicon"
             className="fa fa-phone mt-3 md:mt-0  pt-1.5 pr-1.5 flex-shrink-0"
           ></i>
-          <p className="text-lg mt-3 md:mt-0 md:text-base">
+          <p className="text-lg mt-3  md:mt-0 md:text-base">
             +91 8792384161/ +91 7349571333
           </p>
         </div>
-        <h2 className="hidden order-3 text-xl mt-2 md:mt-4">Say Hello!</h2>
-        <p className=" hidden order-4 text-lg">We'd love to hear from you.</p>
-        <p className="footerText md:mt-1 z-10 order-5 md:ml-24 md:pl-16 text-gray-700">
-          Copyright © 2021, Genesis Media, All Rights Reserved
+        <p className="order-5 md:hidden text-lg text-white text-center -ml-4 -mb-5">
+          Made in-house with <span className="text-lg">❤️</span>
+        </p>
+        <p className="footerText md:hidden md:w-half text-center  mt-4 md:mt-1 z-10 order-6 md:ml-24 mb-5 md:mb-0 text-gray-500">
+          Genesis Media © 2021, All Rights Reserved
         </p>
       </div>
+      <p className="footerText hidden md:block md:w-screen text-center mt-4 md:mt-1 z-10 order-6 pb-2 md:mb-0 text-gray-500 mb-3 -ml-20">
+        Made in-house with <span className="text-sm">❤️</span> | Genesis Media ©
+        2021
+      </p>
     </div>
   );
 }

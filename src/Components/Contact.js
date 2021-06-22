@@ -150,7 +150,7 @@ function Contact() {
   };
 
   return (
-    <div id="contactContainer" className=" h-auto md:-mt-20   ">
+    <div id="contactContainer" className=" h-auto md:-mt-10  ">
       <div
         data-aos="fade-up"
         data-aos-easing="linear"
