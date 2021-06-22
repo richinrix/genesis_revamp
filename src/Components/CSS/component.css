@@ -156,31 +156,39 @@
 }
 .aboutCounters {
   font-family: "Poppins", sans-serif;
+  margin-top: 0px;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.658) !important;
 }
 .teamWords {
   font-family: "Lato", sans-serif;
 }
-@media (min-width: 767px) {
-  .teamPic {
-    height: 220px !important;
-    width: 100% !important;
-    object-fit: fill !important;
-  }
+.teamPicMob {
+  background-image: url("https://res.cloudinary.com/myles27/image/upload/v1624354005/Genesis%20Revamp/imageedit_16_5479397363_ezvzqg.jpg");
+  min-height: 90vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 @media (min-width: 1536px) {
   .teamWords {
-    margin-right: 10% !important;
-    margin-left: 10% !important;
+    margin-right: 15% !important;
+    margin-left: 15% !important;
     margin-top: 3% !important;
   }
   .aboutText {
-    margin-right: 10% !important;
-    margin-left: 10% !important;
+    margin-right: 15% !important;
+    margin-left: 15% !important;
     margin-bottom: 3% !important;
   }
   .teamPic {
-    min-height: 20% !important;
-    backdrop-filter: blur(5px);
+    background-image: url("https://res.cloudinary.com/myles27/image/upload/v1624354005/Genesis%20Revamp/imageedit_16_5479397363_ezvzqg.jpg");
+    min-height: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
 }
 
