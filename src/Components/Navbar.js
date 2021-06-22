@@ -66,6 +66,16 @@ function Navbar() {
         </label>
 
         <ul className="navList menu md:border-none font-normal flex mr-10 ml-10 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent">
+          <li className="navSer border-none text-center">
+            <ScrollIntoView
+              selector="#services"
+              onClick={uncheckNav}
+              className=" block md:inline-block  py-3 no-underline border-none text-black"
+            >
+              <a className="cursor-pointer">Services</a>
+            </ScrollIntoView>
+          </li>
+
           <li className="border-none text-center">
             <ScrollIntoView
               selector="#teams"
@@ -76,13 +86,14 @@ function Navbar() {
             </ScrollIntoView>
           </li>
 
-          <li className="navSer border-none text-center">
+          <li className="border-none text-center">
             <ScrollIntoView
-              selector="#services"
+              selector="#contactContainer"
+              activeClassName="selected"
               onClick={uncheckNav}
-              className=" block md:inline-block  py-3 no-underline border-none text-black"
+              className="block md:inline-block  py-3 no-underline border-none text-black"
             >
-              <a className="cursor-pointer">Services</a>
+              <a className="cursor-pointer">Contact</a>
             </ScrollIntoView>
           </li>
 
@@ -104,7 +115,7 @@ function Navbar() {
               onClick={uncheckNav}
               className="block md:inline-block  py-3 no-underline border-none text-black"
             >
-              <a className="cursor-pointer">Contact</a>
+              <a className="cursor-pointer">Reach Us</a>
             </ScrollIntoView>
           </li>
         </ul>

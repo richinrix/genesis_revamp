@@ -21,8 +21,8 @@ function Homepage() {
         <source
           src={
             window.innerWidth > 700
-              ? "https://res.cloudinary.com/zarry/video/upload/v1622632388/Genesis%20Revamp/Showreel.mp4"
-              : "https://res.cloudinary.com/zarry/video/upload/v1622642945/Genesis%20Revamp/Showreel_mob.mp4"
+              ? "https://res.cloudinary.com/myles27/video/upload/v1624293786/Genesis%20Revamp/Showreel_r5cmzt.mp4"
+              : "https://res.cloudinary.com/myles27/video/upload/v1624293769/Genesis%20Revamp/Showreel_mob_ezjrxh.mp4"
           }
           type="video/mp4"
         />

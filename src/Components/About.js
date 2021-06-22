@@ -69,48 +69,46 @@ function About() {
             </p>
           </p>
         </div>
-        <div className="counterContainer relative w-auto h-auto">
+        <div className="counterContainer relative w-screen h-auto">
           <div className="aboutPic md:-ml-5 w-screen mt-5 bg-black">
-            <img
-              className="teamPic relative object-cover opacity-50 "
-              height="100px"
-              src={
+            <div
+              className={
                 window.innerWidth > 700
-                  ? "https://res.cloudinary.com/zarry/image/upload/v1622608146/Genesis%20Revamp/aboutPic.jpg"
-                  : "https://res.cloudinary.com/zarry/image/upload/v1622646770/Genesis%20Revamp/aboutPic_mob.jpg"
+                  ? "teamPic relative object-cover w-screen"
+                  : "teamPicMob relative w-screen"
               }
-              alt="people in a meeting"
-            ></img>
-          </div>
-          <div className="aboutCounters absolute flex flex-col md:flex-row  top-0 mt-5 md:-ml-8 left-0 w-screen h-full z-10 text-white pb-5">
-            <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center items-center gap-3">
-              <div ref={elemRef} className="text-7xl">
-                {isVisible && <CountUp start={0} end={26} duration={5} />}
-              </div>
-              <div className="text-2xl">
-                Services
-                <br />
-                Offered
-              </div>
-            </div>
-            <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center items-center gap-3">
-              <div ref={elemRef} className="text-7xl">
-                {isVisible && <CountUp start={0} end={40} duration={5} />}
-              </div>
-              <div className="text-2xl">
-                Projects
-                <br />
-                Completed
-              </div>
-            </div>
-            <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center items-center gap-3">
-              <div ref={elemRef} className="text-7xl">
-                {isVisible && <CountUp start={0} end={28} duration={5} />}
-              </div>
-              <div className="text-2xl">
-                Client
-                <br />
-                Collaborations
+            >
+              <div className="aboutCounters absolute flex flex-col md:flex-row  top-0 mt-5 left-0 w-screen h-full z-10 text-white pb-5">
+                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center items-center gap-3">
+                  <div ref={elemRef} className="text-7xl">
+                    {isVisible && <CountUp start={0} end={26} duration={5} />}
+                  </div>
+                  <div className="text-2xl">
+                    Services
+                    <br />
+                    Offered
+                  </div>
+                </div>
+                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center items-center gap-3">
+                  <div ref={elemRef} className="text-7xl">
+                    {isVisible && <CountUp start={0} end={40} duration={5} />}
+                  </div>
+                  <div className="text-2xl">
+                    Projects
+                    <br />
+                    Completed
+                  </div>
+                </div>
+                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center items-center gap-3">
+                  <div ref={elemRef} className="text-7xl">
+                    {isVisible && <CountUp start={0} end={28} duration={5} />}
+                  </div>
+                  <div className="text-2xl">
+                    Client
+                    <br />
+                    Collaborations
+                  </div>
+                </div>
               </div>
             </div>
           </div>
