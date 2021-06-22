@@ -259,7 +259,7 @@ const ServiceCard = (props) => {
   return (
     <>
       <div
-        className=" 3xl:h-full  lg:h-screen py-20 overflow-hidden  "
+        className=" 3xl:h-full  lg:h-screen md:py-20 py-10 overflow-hidden  "
         id="serciveCard"
       >
         <div className="mx-auto px-5 my-auto ">

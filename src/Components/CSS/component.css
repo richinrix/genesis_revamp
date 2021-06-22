@@ -20,6 +20,9 @@
 .font-lato {
   font-family: "Lato", sans-serif;
 }
+#teams {
+  background-color: #3fd30d;
+}
 .imageflip_c {
   position: absolute;
   will-change: transform, opacity;
@@ -90,8 +93,8 @@
   border-radius: 5px;
 }
 #testimonial-card:hover {
-  height: 470px;
-  width: 320px;
+  height: 455px;
+  width: 305px;
 }
 .testimonialProfilePic {
   background-size: cover;
@@ -110,6 +113,10 @@
 }
 @media (max-width: 600px) {
   #testimonial-card {
+    height: 400px;
+    width: 260px;
+  }
+  #testimonial-card:hover {
     height: 400px;
     width: 260px;
   }
