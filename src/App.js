@@ -48,9 +48,10 @@ const Home = () => {
     <>
       <Homepage />
       <About />
-      <FlipContainer />
       <Services />
       <Testimonials />
+      <FlipContainer />
+
       <Contact />
       <Map />
     </>

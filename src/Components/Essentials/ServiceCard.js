@@ -65,13 +65,10 @@ const ServiceCard = (props) => {
               </video>
             ) : (
               <iframe
-                src={YTsrc}
+                src={YTvideo}
                 id="servicesImage"
                 className={classname}
-                autoPlay
                 muted
-                width="80%"
-                height="280px"
                 frameborder="0"
                 disablePictureInPicture
                 style={{ border: "none" }}
@@ -82,8 +79,6 @@ const ServiceCard = (props) => {
           <video
             id="servicesImage"
             className={classname}
-            width="80%"
-            height="280px"
             autoPlay
             muted
             loop
@@ -93,13 +88,9 @@ const ServiceCard = (props) => {
           </video>
         ) : (
           <iframe
-            src={YTsrc}
+            src={YTvideo}
             id="servicesImage"
             className={classname}
-            autoPlay
-            muted
-            width="80%"
-            height="280px"
             frameborder="0"
             disablePictureInPicture
             style={{ border: "none" }}
@@ -215,14 +206,7 @@ const ServiceCard = (props) => {
     return (
       <div>
         <img src={linesImg} alt="" className="absolute" />
-        <li
-          className={className}
-          data-aos="slide-up"
-          data-aos-easing={servicePoint.easing}
-          data-aos-duration={servicePoint.duration}
-          data-aos-offset={servicePoint.offset}
-          key={index}
-        >
+        <li className={className} key={index}>
           {point}
         </li>
       </div>
@@ -237,7 +221,7 @@ const ServiceCard = (props) => {
     if (position === "right" && points.length > 8) {
       descXval = [-20, 15];
     }
-
+    let slideDirxn = position === "right" ? "slide-right" : "slide-left";
     return (
       <div
         className={
@@ -245,11 +229,17 @@ const ServiceCard = (props) => {
         }
       >
         {!isPhone ? (
-          <Parallax className={"w-11/12  md:block "} x={descXval}>
-            <div className="font-plantc md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
+          <div
+            data-aos={slideDirxn}
+            data-aos-once
+            data-aos-easing="linear"
+            className="w-11/12  md:block "
+            x={descXval}
+          >
+            <div className=" ml-4 font-plantc md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
               {desc}
             </div>
-          </Parallax>
+          </div>
         ) : (
           <div className="font-plantc md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
             {desc}
@@ -268,9 +258,12 @@ const ServiceCard = (props) => {
 
   return (
     <>
-      <div className="  h-full pt-8   " id="proximity-snap">
-        <div className="mx-auto p-5 my-auto">
-          <div className="mx-auto  md:mt-10 text-center font-plantc text-5xl ">
+      <div
+        className=" 3xl:h-full  lg:h-screen py-20 overflow-hidden  "
+        id="serciveCard"
+      >
+        <div className="mx-auto px-5 my-auto ">
+          <div className="mx-auto text-center font-lato text-5xl ">
             <h2>{service.heading}</h2>
           </div>
           <div className={descriptionClassname}>

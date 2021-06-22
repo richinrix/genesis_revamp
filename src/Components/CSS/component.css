@@ -17,6 +17,9 @@
 .font-montserrat {
   font-family: Montserrat;
 }
+.font-lato {
+  font-family: "Lato", sans-serif;
+}
 .imageflip_c {
   position: absolute;
   will-change: transform, opacity;
@@ -48,12 +51,15 @@
   }
 }
 /* ------------services ---------------- */
+#serciveCard:nth-child(even) {
+  background: #f1faee;
+}
 #yellowRectangle {
   width: 280px;
   height: 450px;
 }
 #servicesImage {
-  width: 80%;
+  width: 650px;
   height: 360px;
 }
 @media (max-width: 428px) {
@@ -62,6 +68,7 @@
     height: 220px;
   }
   #servicesImage {
+    width: 80%;
     height: 150px;
   }
 }
@@ -76,10 +83,15 @@
 }
 #testimonial-card {
   transition-property: all;
-  transition-duration: 1s;
+  transition-duration: 500ms;
+
   height: 450px;
   width: 300px;
   border-radius: 5px;
+}
+#testimonial-card:hover {
+  height: 470px;
+  width: 320px;
 }
 .testimonialProfilePic {
   background-size: cover;

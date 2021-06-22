@@ -31,9 +31,9 @@ const Imageflip = (props) => {
     offset: "150",
     duration: aosDuration,
   };
-  // change mass tension and friction values to change the spinning effects
+  // change mass tension and friction values to change the spinning effects.........[tension is the tension the card is spun with]
   const mass = 6,
-    tension = 400,
+    tension = 700,
     friction = 70;
 
   const { transform, opacity } = useSpring({
@@ -50,8 +50,8 @@ const Imageflip = (props) => {
   });
   // to flip when in view
   useEffect(() => {
-    if (!inViewport && !initFlip) setFlipped(true);
-    if (inViewport && !initFlip) {
+    if (!inViewport && !initFlip && !isPhone) setFlipped(true);
+    if (inViewport && !initFlip && !isPhone) {
       setFlipped(false);
       setInitFlip(true);
     }
@@ -103,6 +103,7 @@ const Imageflip = (props) => {
       <div className="lg:block " ref={forwardedRef}>
         <div
           className={classname}
+          data-aos-once
           data-aos="slide-up"
           data-aos-easing={cardAnimate.easeing}
           data-aos-offset={cardAnimate.offset}

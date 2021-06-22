@@ -39,19 +39,23 @@ export default function FlipContainer() {
   return (
     <div
       id="teams"
-      className="  md:h-full md:mb-5    flex flex-col  md:px-10 sm:px-5 md:pt-5 pt-20  content-center justify-center proximity-snap "
+      className="  md:h-screen 3xl:h-full  md:mb-20    flex flex-col  md:px-10 sm:px-5 3xl:pt-10 md:pt-5 pt-20  content-center justify-center proximity-snap mx-auto"
+      style={{
+        backgroundColor: "#f1faee",
+        maxWidth: "1600px",
+      }}
     >
       <div className="mx-auto ">
         <div
           id="ImageFlip-Text"
-          className="font-plantc md:text-5xl text-4xl md:mb-10 mb-5 md:pt-8  md:ml-0 ml-8 md:mt-16"
+          className="font-lato text-center md:text-5xl text-4xl md:mb-10 mb-5   "
         >
           <h2 className=" ">Meet our team</h2>
         </div>
-        <div>
+        <div className="">
           <div
             id="image-flip-wrapper"
-            className=" flex flex-wrap md:mt-8 md:ml-3 md:pt-6 lg:justify-start justify-center lg:w-max"
+            className=" flex flex-wrap  md:ml-3 md:pt-6 lg:justify-start justify-center lg:w-max"
           >
             {/* limiting the cards to 8 if the cards are more than 8  */}
             {cards &&
@@ -60,7 +64,9 @@ export default function FlipContainer() {
           <Link
             to="/career"
             data-aos="slide-up"
-            className="absolute right-24  md:text-xl   mt-8 font-plantc flex justify-items-end "
+            data-aos-once
+            className=" right-24  md:text-xl   md:mt-2 mt-8 md:mb-8  font-lato flex justify-items-end "
+            style={{ float: "right" }}
           >
             <div className="font-normal justify-end ">Join the team</div>
             <img

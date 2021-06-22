@@ -39,11 +39,12 @@ const Card = (props) => {
   return (
     <div
       id="testimonial-card"
-      className="relative lg:mx-10 mx-auto my-3 md:p-10 p-7 text-center flex h-screen flex-col justify-between overflow-hidden "
+      className="relative lg:mx-10 mx-auto my-3 md:p-10 p-7 text-center flex flex-col justify-between overflow-hidden  "
       style={{
-        boxShadow: bShadow,
-        transform: scale,
-        transitionDelay: transitionDelay,
+        boxShadow:
+          "2px 2px 10px #c7c7c798, -2px -2px 10px #c7c7c798,-2px 2px 10px #c7c7c798, 2px -2px 10px #c7c7c798",
+        // transform: scale,
+        // transitionDelay: transitionDelay,
       }}
     >
       <img
