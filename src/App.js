@@ -21,6 +21,7 @@ import ComingSoon from "./Components/Essentials/ComingSoon";
 import Services from "./Components/Services";
 import Map from "./Components/Map";
 import PreLoader from "./Components/Essentials/PreLoader";
+import ReachUs from "./Components/ReachUs";
 
 function App() {
   return (
@@ -47,13 +48,13 @@ const Home = () => {
   ) : (
     <>
       <Homepage />
-      <About />
+      <ReachUs />
+      {/* <About />
       <Services />
       <Testimonials />
       <FlipContainer />
-
       <Contact />
-      <Map />
+      <Map /> */}
     </>
   );
 };
