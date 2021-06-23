@@ -79,7 +79,7 @@ function About() {
               }
             >
               <div className="aboutCounters absolute flex flex-col md:flex-row  top-0 mt-5 left-0 w-screen h-full z-10 text-white pb-5">
-                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center items-center gap-3">
+                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-end items-center gap-3">
                   <div ref={elemRef} className="text-7xl">
                     {isVisible && <CountUp start={0} end={26} duration={5} />}
                   </div>
@@ -99,7 +99,7 @@ function About() {
                     Completed
                   </div>
                 </div>
-                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center items-center gap-3">
+                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-start items-center gap-3">
                   <div ref={elemRef} className="text-7xl">
                     {isVisible && <CountUp start={0} end={28} duration={5} />}
                   </div>
