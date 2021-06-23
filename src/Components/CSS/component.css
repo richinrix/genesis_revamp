@@ -184,7 +184,7 @@
 }
 .teamPicMob {
   background-image: url("https://res.cloudinary.com/myles27/image/upload/v1624354005/Genesis%20Revamp/imageedit_16_5479397363_ezvzqg.jpg");
-  min-height: 90vh;
+  min-height: 60vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -212,8 +212,16 @@
 }
 
 /* ----------- Contact Page --------------- */
+.contactContainer {
+  margin-left: 30% !important;
+  background-color: red !important;
+}
 
 @media (min-width: 767px) {
+  #contactContainer {
+    margin-left: 7% !important;
+    background-color: transparent !important;
+  }
   .contactFlexContainer {
     width: 120%;
   }
@@ -248,6 +256,15 @@
 .mapContainer {
   background-color: rgb(32, 39, 58);
   border-radius: 10px 10px 0 0;
+}
+.leftDiv {
+  margin-left: 15%;
+}
+.rightDiv {
+  margin-right: 15%;
+}
+.centerDivider {
+  min-width: 1px;
 }
 @media (max-width: 767px) {
   .mapContainer {
@@ -406,6 +423,21 @@
 
 .gMap {
   border: none;
+}
+.preMap {
+  margin-right: 10%;
+  padding-left: 5rem;
+}
+@media (max-width: 1440px) {
+  .preMap {
+    border-left: 1px solid white;
+  }
+}
+@media (min-width: 767px) {
+  .newsLetter,
+  .socialMapContainer {
+    margin-left: 10%;
+  }
 }
 
 /* -----------Navbar--------- */

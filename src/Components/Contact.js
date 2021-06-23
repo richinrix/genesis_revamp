@@ -153,6 +153,7 @@ function Contact() {
     <div id="contactContainer" className=" h-auto md:-mt-10  ">
       <div
         data-aos="fade-up"
+        data-aos-once
         data-aos-easing="linear"
         data-aos-duration="800"
         className="contactFlexContainer flex  justify-between items-center overflowY-hidden h-100"
