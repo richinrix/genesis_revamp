@@ -51,7 +51,7 @@ export default function Testimonials() {
   }
   return (
     <div
-      className="md:h-auto my-20 md:mt-32 mx-auto  3xl:h-full "
+      className="md:h-screen   mx-auto  3xl:h-full "
       style={{ maxWidth: "1600px" }}
     >
       {isPhone ? (
@@ -67,7 +67,7 @@ export default function Testimonials() {
             }}
             loop={true}
             navigation={true}
-            className=" mx-auto md:my-2 mt-8 mb-0 overflow-hidden lg:hidden  "
+            className=" mx-auto md:my-auto mt-8 mb-0 overflow-hidden lg:hidden  "
           >
             {testimonials &&
               testimonials

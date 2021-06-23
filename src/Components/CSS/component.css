@@ -93,8 +93,9 @@
   border-radius: 5px;
 }
 #testimonial-card:hover {
-  height: 455px;
-  width: 305px;
+  /* height: 455px;
+  width: 305px; */
+  transform: scale(1.05);
 }
 .testimonialProfilePic {
   background-size: cover;

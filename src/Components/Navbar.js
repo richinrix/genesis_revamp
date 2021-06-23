@@ -124,7 +124,7 @@ function Navbar() {
           </li>
         </ul>
       </nav>
-      <ReachUs display={displayReachUs} />
+      <ReachUs display={displayReachUs} toggleReachUs={toggleReachUs} />
     </div>
   );
 }
