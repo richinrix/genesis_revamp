@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 // import handleViewport from "react-in-viewport";
 // image
-import linesImg from "../../images/icons/services-line-and-dots.png";
+// import linesImg from "../../images/icons/services-line-and-dots.png";
+import linesImg from "../../images/icons/services-line-and-dots-new.png";
+
 // other modules
 import { Parallax } from "react-scroll-parallax";
 // import ReactPlayer from "react-player/lazy";
@@ -200,12 +202,18 @@ const ServiceCard = (props) => {
 
   function servicePoints(point, index, length) {
     let className = "pl-5 font-helvetica ";
-    if (length > 5) className += " lg:py-1.5 py-1.5 ";
+    if (length !== 5) className += " lg:py-2 py-1.5 ";
+    // else if (length < 5) className += " lg:py-2 py-1.5 ";
     else className += " lg:py-2.5 py-2 ";
 
     return (
       <div>
-        <img src={linesImg} alt="" className="absolute" />
+        <img
+          src={linesImg}
+          style={{ width: "8px", height: "45px" }}
+          alt="line img"
+          className="absolute"
+        />
         <li className={className} key={index}>
           {point}
         </li>

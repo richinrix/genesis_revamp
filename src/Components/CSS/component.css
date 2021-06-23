@@ -20,7 +20,9 @@
 .font-lato {
   font-family: "Lato", sans-serif;
 }
-
+#teams {
+  /* background-color: #green; */
+}
 .imageflip_c {
   position: absolute;
   will-change: transform, opacity;
