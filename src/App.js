@@ -48,13 +48,13 @@ const Home = () => {
   ) : (
     <>
       <Homepage />
-      <ReachUs />
-      {/* <About />
+
+      <About />
       <Services />
       <Testimonials />
       <FlipContainer />
       <Contact />
-      <Map /> */}
+      <Map />
     </>
   );
 };
