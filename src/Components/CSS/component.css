@@ -20,9 +20,6 @@
 .font-lato {
   font-family: "Lato", sans-serif;
 }
-#teams {
-  /* background-color: #green; */
-}
 .imageflip_c {
   position: absolute;
   will-change: transform, opacity;
@@ -93,9 +90,8 @@
   border-radius: 5px;
 }
 #testimonial-card:hover {
-  /* height: 455px;
-  width: 305px; */
-  transform: scale(1.05);
+  height: 470px;
+  width: 320px;
 }
 .testimonialProfilePic {
   background-size: cover;
@@ -114,10 +110,6 @@
 }
 @media (max-width: 600px) {
   #testimonial-card {
-    height: 400px;
-    width: 260px;
-  }
-  #testimonial-card:hover {
     height: 400px;
     width: 260px;
   }
@@ -342,30 +334,6 @@
     color: white;
     z-index: 1;
     transition: all 0.3s ease;
-  }
-  .social-icons i:hover {
-    color: white;
-    z-index: 2;
-  }
-
-  .social-icons:after {
-    content: "";
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    border-radius: 50%;
-    transform: translate(0, 71px);
-    background-color: #ffd805;
-    transition: all 0.3s ease;
-  }
-
-  .social-icons:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
-  }
-
-  .social-icons:hover:after {
-    transform: translate(0) scale(1.2);
   }
 }
 @media (min-width: 767px) {
@@ -623,4 +591,8 @@
 .social-icon i {
   transition: all 0.3s ease;
   padding: 15px;
+}
+.reachUsContainer {
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.8) !important;
 }

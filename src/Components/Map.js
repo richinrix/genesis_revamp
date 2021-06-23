@@ -162,10 +162,10 @@ function Map() {
     return (
       <div
         id="mapContainer"
-        className="mapContainer bottom-0 flex mt-8 flex-col pl-28  w-screen mb-0"
+        className="mapContainer bottom-0 flex mt-8 flex-col  w-screen mb-0"
       >
-        <div className="socialMapContainer mt-5 ml-5 ">
-          <div className="iconMapBar flex flex-row w-screen items-center text-white content-center m-0">
+        <div className="socialMapContainer mt-5 ">
+          <div className="flex flex-row w-screen justify-center items-center text-white content-center m-0">
             <a
               href="https://www.instagram.com/genesisproduction.in/"
               className="social-icons flex relative text-center text-white overflow-hidden items-center content-center no-underline"
@@ -196,7 +196,7 @@ function Map() {
             </a>
           </div>
         </div>
-        <div className="newsLetter flex flex-col">
+        <div className="newsLetter flex flex-col justify-center ml-5 md:ml-0">
           <p className="text-lg pt-4 text-white">
             Stay up to date, subscribe to our newsletter:
           </p>
@@ -221,20 +221,16 @@ function Map() {
           </div>
         </div>
         <div className="mapFooter flex flex-col justify-between pt-4 ">
-          <p className="order-1 text-base text-white pr-5">
-            <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>
-            65, 1st Main, DB Sandra, Bengaluru-560097
+          <p className="order-1 text-base text-center text-white pr-5 mb-3">
+            <i class="fa fa-map-marker pr-1.5 flex-shrink-0text-white"></i> 65,
+            1st Main, DB Sandra, Bengaluru-560097
           </p>
-          <div className="order-2 ml-4 text-center pl-0.5 mb-8 flex z-50 flex-row text-white ">
-            <i
-              id="fPicon"
-              className="fa fa-phone mt-3 pt-1.5 pr-1.5 flex-shrink-0"
-            ></i>
-            <p className="text-lg mt-3 ">
-              <a href="tel:+918792384161">+91 8792384161</a> /{" "}
-              <a href="tel:+917349571333">+91 7349571333</a>
-            </p>
-          </div>
+          <p className="order-1 text-center text-base text-white pr-5 mb-10">
+            <i class="fa fa-phone pr-1.5 flex-shrink-0 text-white"></i>
+            <a href="tel:+918792384161">+91 8792384161</a> /{" "}
+            <a href="tel:+917349571333">+91 7349571333</a>
+          </p>
+
           <p className="order-5 text-lg text-white text-center -ml-4 -mb-5">
             Made in-house with <span className="text-lg">❤️</span>
           </p>

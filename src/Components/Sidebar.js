@@ -27,7 +27,7 @@ function Sidebar() {
 
   return (
     <div className="socialContainer hidden md:block m-0">
-      <div className="icon-bar fixed top-3/4 z-50 pl-3 ">
+      <div className="icon-bar fixed top-3/4 z-20 pl-3 ">
         <a
           href="https://www.instagram.com/genesisproduction.in/"
           className={

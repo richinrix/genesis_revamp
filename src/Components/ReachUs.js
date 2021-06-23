@@ -5,11 +5,12 @@ function ReachUs({ display, toggleReachUs }) {
   if (display)
     return (
       <div
-        className="reachUsContainer w-screen bg-transparent fixed top-32 h-screen "
+        className="reachUsContainer flex justify-center items-center w-screen  fixed  h-screen "
         style={{ zIndex: "1000" }}
         onClick={toggleReachUs}
       >
         <div
+          data-aos="zoom-in"
           className="reachCard bg-blue-900 w-auto md:rounded-xl p-10 md:pb-20 flex flex-col text-center"
           style={
             window.innerWidth > 767
