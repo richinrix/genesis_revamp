@@ -21,7 +21,6 @@ import ComingSoon from "./Components/Essentials/ComingSoon";
 import Services from "./Components/Services";
 import Map from "./Components/Map";
 import PreLoader from "./Components/Essentials/PreLoader";
-import ReachUs from "./Components/ReachUs";
 
 function App() {
   return (
@@ -37,17 +36,16 @@ function App() {
   );
 }
 const Home = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  setTimeout(() => {
-    setLoading(true);
-  }, 2000);
+  const toggleLoading = () => {
+    setLoading(false);
+  };
 
-  return !loading ? (
-    <PreLoader />
-  ) : (
+  return (
     <>
-      <Homepage />
+      {loading && <PreLoader />}
+      <Homepage toggleLoading={toggleLoading} />
 
       <About />
       <Services />

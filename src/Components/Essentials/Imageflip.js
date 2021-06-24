@@ -104,7 +104,7 @@ const Imageflip = (props) => {
         <div
           className={classname}
           data-aos-once
-          data-aos="slide-up"
+          data-aos={!isPhone ? "slide-up" : ""}
           data-aos-easing={cardAnimate.easeing}
           data-aos-offset={cardAnimate.offset}
           data-aos-duration={cardAnimate.duration}

@@ -79,7 +79,7 @@ export default function Testimonials() {
         // desktop version
         <Swiper
           slidesPerView={3}
-          spaceBetween={-150}
+          spaceBetween={-140}
           autoplay={{
             delay: 4000,
             disableOnInteraction: false,
