@@ -4,7 +4,7 @@ import "../CSS/preloader.css";
 function PreLoader() {
   return (
     <div
-      className="h-screen fixed w-screen   flex justify-center items-center"
+      className="h-screen fixed w-screen  bg-black   flex justify-center items-center"
       // style={{ zIndex: "10000" }}
     >
       <div className="plContainer pl-5 my-auto">

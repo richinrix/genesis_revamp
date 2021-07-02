@@ -4,11 +4,9 @@ import PreLoader from "./Essentials/PreLoader";
 
 function Homepage({ toggleLoading }) {
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    // setTimeout(() => {
-    //   setLoading(false);
-    // }, 800);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
   return (
     <>
       {/* {loading && <PreLoader />} */}

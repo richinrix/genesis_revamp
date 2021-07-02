@@ -21,15 +21,17 @@ import ComingSoon from "./Components/Essentials/ComingSoon";
 import Services from "./Components/Services";
 import Map from "./Components/Map";
 import PreLoader from "./Components/Essentials/PreLoader";
+import ScrollToTop from "./Components/Essentials/ScrollToTop";
 
 function App() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, []);
   return (
     <Hash>
       <Navbar />
       <Sidebar />
+      <ScrollToTop />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/notfound" component={ComingSoon} />
@@ -59,4 +61,5 @@ const Home = () => {
     </>
   );
 };
+
 export default App;
