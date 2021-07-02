@@ -162,15 +162,15 @@ function Contact() {
           id="cForm"
           className="contactForm  md:h-auto  pt-20 md:pt-10 md:-mt-44 px-5 md:pl-24 md:w-3/5 w-screen text-center md:text-left"
         >
-          <h2 className="font-plantc text-5xl md:text-6xl pb-2 md:pb-4 md:-mt-0">
+          <h2 className="font-montserrat text-5xl md:text-6xl pb-2 md:pb-4 md:-mt-0">
             Get in Touch
           </h2>
-          <p className="contactCraft pb-5 md:text-lg">
+          <p className="font-montserrat contactCraft pb-5 md:text-lg">
             You have your craft. We have ours.
             <br />
             And that's bringing creative people together.
           </p>
-          <p className="contactHelpYou font-medium text-xl pb-2 pt-4 md:pt-0">
+          <p className=" contactHelpYou font-medium text-xl pb-2 pt-4 md:pt-0">
             What can we help you with?
           </p>
           <div className="contactChecks text-left grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-1 pb-6 md:font-light pl-4 md:pl-0 pt-2 md:pt-0 text-xl md:text-base">

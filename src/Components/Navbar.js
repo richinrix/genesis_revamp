@@ -3,14 +3,9 @@ import { Link } from "react-router-dom";
 import ScrollIntoView from "react-scroll-into-view";
 import logoLite from "../images/icons/logoLite.png";
 import logoDark from "../images/icons/logoDark.png";
-import ReachUs from "./ReachUs";
 import "./CSS/component.css";
 
 function Navbar() {
-  const [displayReachUs, setDisplayReachUs] = useState(false);
-  const toggleReachUs = () => {
-    setDisplayReachUs((prev) => !prev);
-  };
   const [scrollDetect, setScrollDetect] = useState(false);
   const screenWidth = useState(window.innerWidth);
 
@@ -111,19 +106,8 @@ function Navbar() {
               Blog
             </Link>
           </li>
-
-          <li className="border-none text-center" onClick={toggleReachUs}>
-            <div
-              activeClassName="selected"
-              onClick={uncheckNav}
-              className="block md:inline-block  py-3 no-underline border-none text-black"
-            >
-              <a className="cursor-pointer">Reach Us</a>
-            </div>
-          </li>
         </ul>
       </nav>
-      <ReachUs display={displayReachUs} toggleReachUs={toggleReachUs} />
     </div>
   );
 }

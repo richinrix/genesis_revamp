@@ -33,7 +33,7 @@ function About() {
           <h2 className="text-gray-500 md:mt-1">doing work that matters</h2>
         </div>
         <div className="aboutText text-gray-800 pt-4 md:pt-2 pb-2 pr-8 md:px-10 md:leading-6">
-          <p className="aboutParagraphs md:mr-20 ml-5 md:ml-10 md:tracking-wide">
+          <p className="aboutParagraphs md:mr-20 ml-5 md:ml-10 md:tracking-wider">
             <p>
               How are we different from the millions of companies out there,
               calling themselves the ‘Best Digital Agency’?
@@ -79,7 +79,7 @@ function About() {
               }
             >
               <div className="aboutCounters absolute flex flex-col md:flex-row  top-0 mt-5 left-0 w-screen h-full z-10 text-white pb-5">
-                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-end items-center gap-3">
+                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center md:justify-end items-center gap-3">
                   <div ref={elemRef} className="text-7xl">
                     {isVisible && <CountUp start={0} end={26} duration={5} />}
                   </div>
@@ -99,7 +99,7 @@ function About() {
                     Completed
                   </div>
                 </div>
-                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-start items-center gap-3">
+                <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center md:justify-start items-center gap-3">
                   <div ref={elemRef} className="text-7xl">
                     {isVisible && <CountUp start={0} end={28} duration={5} />}
                   </div>

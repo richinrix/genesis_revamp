@@ -69,50 +69,18 @@ function Map() {
     return (
       <div
         id="mapContainer"
-        className="mapContainer bottom-0 flex flex-col pt-12 justify-center items-start w-screen h-auto mb-0"
+        className="mapContainer bg-red-300  bottom-0 flex flex-col  pt-12 justify-center items-start w-screen h-auto mb-0"
       >
-        <div className="upperDiv flex flex-row w-screen justify-between">
-          <div className="leftDiv">
-            <div className="socialMapContainer">
-              <div className="flex flex-row w-auto text-white content-start justify-start">
-                <a
-                  href="https://www.instagram.com/genesisproduction.in/"
-                  className="social-icons flex relative text-center text-white overflow-hidden items-center content-center no-underline"
-                  target="_blank"
-                >
-                  <i className="fa fa-instagram text-white"></i>
-                </a>
-                <a
-                  href="https://twitter.com/genesismedia_in"
-                  className="social-icons  flex relative text-center overflow-hidden items-center content-center no-underline"
-                  target="_blank"
-                >
-                  <i className="fa fa-twitter"></i>
-                </a>
-                <a
-                  href="https://www.facebook.com/genesisproduction.in/"
-                  className="social-icons  flex relative text-center overflow-hidden items-center content-center no-underline"
-                  target="_blank"
-                >
-                  <i className="fa fa-facebook"></i>
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/genesis-production/"
-                  className="social-icons  flex relative text-center overflow-hidden items-center content-center no-underline"
-                  target="_blank"
-                >
-                  <i className="fa fa-linkedin"></i>
-                </a>
-              </div>
-            </div>
-            <div className="newsLetter flex flex-col  md:mt-3">
-              <p className="text-lg md:mt-0 md:pt-0 pt-4 text-white">
+        <div className="upperDiv flex flex-row w-screen -ml-10 justify-between">
+          <div className="leftDiv flex items-center">
+            <div className="newsLetter flex flex-col  md:mt-10">
+              <p className="text-lg md:mt-0 md:pt-0 pt-4 mb-2 text-white">
                 Stay up to date, subscribe to our newsletter:
               </p>
               <div className="newsInputs flex  pt-2">
                 <form id="newsForm">
                   <input
-                    className="md:pb-2 pb-1  mb-2 bg-transparent border-none outline-none mr-8 text-2xl text-white"
+                    className="md:pb-2 pb-1 mb-4 bg-transparent border-none outline-none mr-8 text-2xl text-white"
                     type="email"
                     id="nMail"
                     placeholder={email === "" && "your@email.here"}
@@ -130,7 +98,7 @@ function Map() {
               </div>
             </div>
           </div>
-          <div className="centerDivider min-h-full border-l mb-4"></div>
+          <div className="centerDivider min-h-full border-l mt-4 -mb-2"></div>
           <div className="rightDiv mt-5">
             <div className="mapPhone flex text-lg text-white flex-row mb-3 pb-5">
               <i className="fa fa-phone pt-1.5 pr-1.5 text-white flex-shrink-0"></i>
@@ -148,13 +116,22 @@ function Map() {
             </a>
             <p className="order-1 text-lg text-white md:pb-2 md:pr-0 pr-5">
               <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>
-              65, 1st Main, DB Sandra, Bengaluru-560097
+              65, 1st Main, DB Sandra, Bengaluru-560097 <br />
             </p>
+            <div className="bg-white  mt-2 mr-40 hover:bg-yellow-400 hover:transform hover:translate-y-4 text-center">
+              <a
+                className="block  p-1"
+                target="_blank"
+                href="https://g.page/genesis-media-india?share"
+              >
+                Get Directions
+              </a>
+            </div>
           </div>
         </div>
         <p className="w-screen text-center mt-10 pb-2 text-gray-500">
-          Made in-house with <span className="text-sm">❤️</span> | Genesis Media
-          © 2021
+          {/* Made in-house with <span className="text-sm">❤️</span> |  */}
+          Genesis Media © 2021
         </p>
       </div>
     );
@@ -200,7 +177,7 @@ function Map() {
           <p className="text-lg pt-4 text-white">
             Stay up to date, subscribe to our newsletter:
           </p>
-          <div className="newsInputs flex flex-row pt-2">
+          <div className="newsInputs flex flex-row justify-center pt-2">
             <form id="newsForm">
               <input
                 className="md:pb-2 pb-1  mb-2 bg-transparent border-none outline-none mr-8 text-2xl text-white"
@@ -225,16 +202,16 @@ function Map() {
             <i class="fa fa-map-marker pr-1.5 flex-shrink-0text-white"></i> 65,
             1st Main, DB Sandra, Bengaluru-560097
           </p>
-          <p className="order-1 text-center text-base text-white pr-5 mb-10">
+          <p className="order-1 text-center text-base text-white pr-5 mb-5">
             <i class="fa fa-phone pr-1.5 flex-shrink-0 text-white"></i>
             <a href="tel:+918792384161">+91 8792384161</a> /{" "}
             <a href="tel:+917349571333">+91 7349571333</a>
           </p>
 
-          <p className="order-5 text-lg text-white text-center -ml-4 -mb-5">
+          {/* <p className="order-5 text-lg text-white text-center -ml-4 -mb-5">
             Made in-house with <span className="text-lg">❤️</span>
-          </p>
-          <p className="footerText text-center  mt-4 z-10 order-6 mb-5 text-gray-500">
+          </p> */}
+          <p className="footerText text-center z-10 order-6 mb-5 text-gray-500">
             Genesis Media © 2021, All Rights Reserved
           </p>
         </div>

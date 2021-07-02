@@ -166,7 +166,7 @@
 /* ----------- About us --------------- */
 
 .aboutParagraphs {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Lato", sans-serif !important;
 }
 .aboutCounters {
   font-family: "Poppins", sans-serif;
@@ -250,7 +250,6 @@
 /* ----------Map Page------------- */
 .mapContainer {
   background-color: rgb(32, 39, 58);
-  border-radius: 10px 10px 0 0;
 }
 .leftDiv {
   margin-left: 15%;
