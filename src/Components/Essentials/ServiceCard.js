@@ -202,7 +202,7 @@ const ServiceCard = (props) => {
   }
 
   function servicePoints(point, index, length, pos) {
-    let className = "pl-5 font-helvetica ";
+    let className = "pl-5 font-helvetica  ";
     if (length !== 5) className += " lg:py-2 py-1.5 ";
     else if (length <= 5) className += " lg:py-2 py-1.5 ";
     else className += " lg:py-2.5 py-2 ";
