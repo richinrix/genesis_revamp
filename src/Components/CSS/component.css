@@ -52,7 +52,7 @@
 }
 /* ------------services ---------------- */
 #serciveCard:nth-child(even) {
-  background: #ebfcff;
+  background: #f0f0f0;
 }
 #yellowRectangle {
   width: 280px;
@@ -84,7 +84,6 @@
 #testimonial-card {
   transition-property: all;
   transition-duration: 500ms;
-
   height: 450px;
   width: 300px;
   border-radius: 5px;

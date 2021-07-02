@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 // image
 // import linesImg from "../../images/icons/services-line-and-dots.png";
 import linesImg from "../../images/icons/services-line-and-dots-new.png";
+import linesImgBlack from "../../images/icons/services-line-and-dots-black.png";
 
 // other modules
 import { Parallax } from "react-scroll-parallax";
@@ -200,17 +201,17 @@ const ServiceCard = (props) => {
     );
   }
 
-  function servicePoints(point, index, length) {
+  function servicePoints(point, index, length, pos) {
     let className = "pl-5 font-helvetica ";
     if (length !== 5) className += " lg:py-2 py-1.5 ";
-    // else if (length < 5) className += " lg:py-2 py-1.5 ";
+    else if (length <= 5) className += " lg:py-2 py-1.5 ";
     else className += " lg:py-2.5 py-2 ";
 
     return (
       <div>
         <img
-          src={linesImg}
-          style={{ width: "8px", height: "45px" }}
+          src={pos === "right" ? linesImg : linesImgBlack}
+          style={{ width: "8px", height: "40px" }}
           alt="line img"
           className="absolute"
         />
@@ -229,7 +230,7 @@ const ServiceCard = (props) => {
     if (position === "right" && points.length > 8) {
       descXval = [-20, 15];
     }
-    let slideDirxn = position === "right" ? "slide-right" : "slide-left";
+
     return (
       <div
         className={
@@ -237,14 +238,8 @@ const ServiceCard = (props) => {
         }
       >
         {!isPhone ? (
-          <div
-            data-aos={slideDirxn}
-            data-aos-once
-            data-aos-easing="linear"
-            className="w-11/12  md:block "
-            x={descXval}
-          >
-            <div className=" ml-4 font-plantc md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
+          <div className="w-11/12  md:block " x={descXval}>
+            <div className=" ml-4 font-montserrat md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
               {desc}
             </div>
           </div>
@@ -254,9 +249,9 @@ const ServiceCard = (props) => {
           </div>
         )}
         <div className="flex  my-auto pt-5">
-          <ul className="ml-4 my-auto">
+          <ul className="ml-4 font-montserrat my-auto">
             {points.map((point, index) =>
-              servicePoints(point, index, points.length)
+              servicePoints(point, index, points.length, position)
             )}
           </ul>
         </div>
@@ -270,7 +265,7 @@ const ServiceCard = (props) => {
         className=" 3xl:h-full  lg:h-screen md:py-20 py-10 overflow-hidden  "
         id="serciveCard"
       >
-        <div className="mx-auto px-5 my-auto ">
+        <div className="mx-auto px-5 my-auto " style={{ maxWidth: "1600px" }}>
           <div className="mx-auto text-center font-lato text-5xl ">
             <h2>{service.heading}</h2>
           </div>

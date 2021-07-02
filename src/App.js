@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,14 +23,17 @@ import Map from "./Components/Map";
 import PreLoader from "./Components/Essentials/PreLoader";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Hash>
       <Navbar />
       <Sidebar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/notfoundr" component={ComingSoon} />
-        <Redirect to="/notfoundr" component={ComingSoon} />
+        <Route path="/notfound" component={ComingSoon} />
+        <Redirect to="/notfound" component={ComingSoon} />
       </Switch>
     </Hash>
   );

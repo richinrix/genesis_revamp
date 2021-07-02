@@ -19,7 +19,7 @@ export default function Services() {
 
   return (
     <ParallaxProvider className="mx-auto">
-      <div id="services" className=" mx-auto" style={{ maxWidth: "1600px" }}>
+      <div id="services" className=" mx-auto">
         {services &&
           services.map((data, index) => (
             <ServiceCard index={index} service={data} />

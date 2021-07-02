@@ -42,8 +42,7 @@ export default function FlipContainer() {
       id="teams"
       className="  md:h-screen 3xl:h-full  md:mb-20    flex flex-col  md:px-10 sm:px-5 3xl:pt-10 md:pt-5 pt-20  content-center justify-center proximity-snap mx-auto"
       style={{
-        backgroundColor: "#f1faee",
-        maxWidth: "1600px",
+        backgroundColor: "#f0f0f0",
       }}
     >
       <div className="mx-auto ">
