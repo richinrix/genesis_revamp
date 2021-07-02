@@ -103,7 +103,7 @@ export default function Testimonials() {
           slidesPerView={3}
           spaceBetween={-140}
           autoplay={{
-            delay: 7000,
+            delay: 8000,
             disableOnInteraction: false,
           }}
           breakpoints={{
