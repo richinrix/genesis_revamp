@@ -239,12 +239,12 @@ const ServiceCard = (props) => {
       >
         {!isPhone ? (
           <div className="w-11/12  md:block " x={descXval}>
-            <div className=" ml-4 font-lato md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
+            <div className=" ml-4 font-lato md:text-1.5xl text-xl mx-auto  md:leading-7 leading-5">
               {desc}
             </div>
           </div>
         ) : (
-          <div className="font-lato md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
+          <div className="font-lato  text-lg  mx-auto md:leading-7 leading-5">
             {desc}
           </div>
         )}
