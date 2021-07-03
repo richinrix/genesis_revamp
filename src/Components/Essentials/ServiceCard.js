@@ -74,7 +74,7 @@ const ServiceCard = (props) => {
                 muted
                 frameborder="0"
                 disablePictureInPicture
-                style={{ border: "none" }}
+                style={{ border: "none", width: "595px" }}
               ></iframe>
             )}
           </Parallax>
@@ -156,9 +156,11 @@ const ServiceCard = (props) => {
     if (floatPos === "right") containerClassname += " md:mr-20 mr-5";
     else containerClassname += " md:ml-20 ml-5";
 
-    let imageClassname = "absolute  z-10 ";
-    if (floatPos === "right") imageClassname += "md:right-24 right-6 top-10 ";
-    else imageClassname += "md:left-24 left-6  md:top-16 top-10 ";
+    let imageClassname = "absolute    z-10 ";
+    if (floatPos === "right") imageClassname += "md:right-24 right-6  ";
+    else imageClassname += "md:left-24 left-6   ";
+    if (floatPos === "right") imageClassname += " bg-black ";
+    else imageClassname += " bg-gray-custom ";
 
     // parallax effect values for desktop and phone
     const yellowRectXval = floatPos === "left" ? [-20, 10] : [20, -10];
@@ -195,14 +197,16 @@ const ServiceCard = (props) => {
             )}
           </>
         ) : (
-          videoCard(video, YTvideo, imageClassname, imageXval, imageXvalPh)
+          <div id="service-image-wrapper" className="md:py-14 py-9">
+            {videoCard(video, YTvideo, imageClassname, imageXval, imageXvalPh)}
+          </div>
         )}
       </div>
     );
   }
 
   function servicePoints(point, index, length, pos) {
-    let className = "pl-5 font-helvetica  ";
+    let className = "pl-5   ";
     if (length !== 5) className += " lg:py-2 py-1.5 ";
     else if (length <= 5) className += " lg:py-2 py-1.5 ";
     else className += " lg:py-2.5 py-2 ";
@@ -239,17 +243,15 @@ const ServiceCard = (props) => {
       >
         {!isPhone ? (
           <div className="w-11/12  md:block " x={descXval}>
-            <div className=" ml-4 font-lato md:text-1.5xl text-xl mx-auto  md:leading-7 leading-5">
+            <div className=" ml-4 font-lato  text-lg mx-auto  md:leading-7 leading-5">
               {desc}
             </div>
           </div>
         ) : (
-          <div className="font-lato  text-lg  mx-auto md:leading-7 leading-5">
-            {desc}
-          </div>
+          <div className="font-lato mx-auto md:leading-7 leading-5">{desc}</div>
         )}
         <div className="flex  my-auto pt-5">
-          <ul className="ml-4 font-montserrat my-auto">
+          <ul className="ml-4 font-lato my-auto">
             {points.map((point, index) =>
               servicePoints(point, index, points.length, position)
             )}
