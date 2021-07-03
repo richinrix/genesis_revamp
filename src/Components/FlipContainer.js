@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import API from "./services/API";
 import ImageFlip from "./Essentials/Imageflip";
 import arrow from "../images/icons/right-arrow-link.svg";
-import aos from "aos";
 export default function FlipContainer() {
   const [cards, setCards] = useState();
 
@@ -40,7 +39,7 @@ export default function FlipContainer() {
   return (
     <div
       id="teams"
-      className="  md:h-screen 3xl:h-full  md:mb-20    flex flex-col  md:px-10 sm:px-5 3xl:pt-10 md:pt-5 pt-20  content-center justify-center proximity-snap mx-auto"
+      className="  md:h-screen 3xl:h-full  md:mb-20    flex flex-col  md:px-10 sm:px-5 3xl:pt-10 md:pt-5 pt-14 md:pb-0 pb-5  content-center justify-center proximity-snap mx-auto"
       style={{
         backgroundColor: "#f0f0f0",
       }}

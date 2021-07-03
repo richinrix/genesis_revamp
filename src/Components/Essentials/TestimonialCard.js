@@ -1,28 +1,8 @@
-import React, { useEffect, useState } from "react";
-import handleViewport from "react-in-viewport";
+import React from "react";
 import IMAGES from "../services/IMAGES";
 
 const Card = (props) => {
-  const { inViewport, forwardedRef, testimonial, index, isPhone } = props;
-  const [bShadow, setBShadow] = useState("none");
-  const [scale, setScale] = useState("scale(0.98)");
-  const [transitionDelay, SetDelay] = useState("0s");
-
-  // inserting boxshadow when in viewport with a delay depending on its index
-  useEffect(() => {
-    if (inViewport) {
-      if (!isPhone) SetDelay(((index % 3) + 1) * 400 + "ms");
-      else SetDelay("300ms");
-      setScale("scale(1)");
-      setBShadow(
-        "5px 5px 10px #c7c7c7, -5px -5px 10px #c7c7c7,-5px 5px 10px #c7c7c7, 5px -5px 10px #c7c7c7"
-      );
-    } else {
-      SetDelay("0s");
-      setScale("scale(0.98");
-      setBShadow("none");
-    }
-  }, [inViewport]);
+  const { testimonial, index } = props;
 
   // choosing color for images based on its index
   let image, footerImg;
@@ -65,7 +45,6 @@ const Card = (props) => {
       >
         {/* profile image  */}
         <div
-          ref={forwardedRef}
           className=" testimonialProfilePic bg-gray-500 mx-auto md:mb-2"
           style={{
             backgroundImage: `url('${testimonial.image}')`,
@@ -91,14 +70,4 @@ const Card = (props) => {
   );
 };
 
-const ViewportBlock = handleViewport(Card);
-
-const Component = (props) => (
-  <ViewportBlock
-    testimonial={props.testimonial}
-    index={props.index}
-    isPhone={props.isPhone}
-  />
-);
-
-export default React.memo(Component);
+export default React.memo(Card);

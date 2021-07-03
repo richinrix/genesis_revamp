@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-  HashRouter as Hash,
-} from "react-router-dom";
+import { Switch, Route, Redirect, HashRouter as Hash } from "react-router-dom";
 import "./App.css";
 import "../src/Components/CSS/component.css";
 
@@ -25,7 +19,7 @@ import ScrollToTop from "./Components/Essentials/ScrollToTop";
 
 function App() {
   useEffect(() => {
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, []);
   return (
     <Hash>

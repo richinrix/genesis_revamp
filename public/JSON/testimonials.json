@@ -1,27 +1,5 @@
 [
   {
-    "index": 1,
-    "name": "Bettadasiri Coffee ",
-    "statement": "I was in bit of confusion regarding the logo for my new brand Mr. Ashwin Iyer and Mr. Sharan made me comfortable from the first meeting itself and designed as per my ideas. These guys are very much professional and deliver their best as per our ideas .",
-    "image": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622725879/Genesis-media/clients/imageedit_190_5428801700_efcnyi.png",
-    "stars": 5
-  },
-  {
-    "index": 2,
-    "name": "Rehamo",
-    "statement": "It was great experience working with your team. We would be happy to work with your team on more projects.",
-    "image": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622725879/Genesis-media/clients/output-onlinepngtools_2_asohj6.png",
-    "stars": 5
-  },
-  {
-    "index": 3,
-    "name": "Sprint",
-    "statement": "Had approached them for an ad for a product that I manufacture. They are super-talented,creative and very friendly. They pitched their creative ideas and explained the shoot process in detail. I was extremely happy and delighted with the final video.The response to the ad was massive. Their team works extra hard to go beyond your expectations.They simply create magic. Would definitely recommend them👌🏽",
-    "image": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622724613/Genesis-media/clients/WhatsApp_Image_2021-06-03_at_5.31.51_PM_tlkeop.jpg",
-    "stars": 5
-  },
-
-  {
     "index": 4,
     "name": "Eagle Heights",
     "statement": "I had approached Genesis for our company's branding and setup our new business. They were patient in understanding our requirement and also gave thoughtful insights on setting up my business online.I would definitely recommend Genesis for your branding, setting up and consulting for your new business or to re-brand your business.",
@@ -40,6 +18,27 @@
     "index": 6,
     "name": "Sprint",
     "statement": "I had approached them for an ad for a product that I manufacture. They are super-talented, creative and very friendly. They pitched their creative ideas and explained the shoot process in detail. I was extremely happy and delighted with the final video. The response to the ad was massive. Their team works extra hard to go beyond your expectations. They simply create magic. Would definitely recommend them👌🏽",
+    "image": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622724613/Genesis-media/clients/WhatsApp_Image_2021-06-03_at_5.31.51_PM_tlkeop.jpg",
+    "stars": 5
+  },
+  {
+    "index": 1,
+    "name": "Bettadasiri Coffee ",
+    "statement": "I was in bit of confusion regarding the logo for my new brand Mr. Ashwin Iyer and Mr. Sharan made me comfortable from the first meeting itself and designed as per my ideas. These guys are very much professional and deliver their best as per our ideas .",
+    "image": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622725879/Genesis-media/clients/imageedit_190_5428801700_efcnyi.png",
+    "stars": 5
+  },
+  {
+    "index": 2,
+    "name": "Rehamo",
+    "statement": "It was great experience working with your team. We would be happy to work with your team on more projects.",
+    "image": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622725879/Genesis-media/clients/output-onlinepngtools_2_asohj6.png",
+    "stars": 5
+  },
+  {
+    "index": 3,
+    "name": "Sprint",
+    "statement": "Had approached them for an ad for a product that I manufacture. They are super-talented,creative and very friendly. They pitched their creative ideas and explained the shoot process in detail. I was extremely happy and delighted with the final video.The response to the ad was massive. Their team works extra hard to go beyond your expectations.They simply create magic. Would definitely recommend them👌🏽",
     "image": "https://res.cloudinary.com/genesiscloudimages/image/upload/v1622724613/Genesis-media/clients/WhatsApp_Image_2021-06-03_at_5.31.51_PM_tlkeop.jpg",
     "stars": 5
   }

@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import handleViewport from "react-in-viewport";
 // services
 import API from "./services/API";
 // other component
 import TestimonialCard from "./Essentials/TestimonialCard";
-import useVisible from "./Hooks/useIsVisible";
 // carousel
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -15,29 +15,22 @@ import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
-export default function Testimonials() {
+const Testimonials = ({ inViewport, forwardedRef }) => {
   const [testimonials, setTestimonials] = useState();
-  const [slideDelay, setSlideDelay] = useState(2000);
+  const [autoPlay, setAutoPlay] = useState(false);
+  const [shown, setShown] = useState(false);
   const isPhone = window.innerWidth < 700;
-  // Constants for custom Hook
-  const elemRef = useRef();
-  const isVisible = useVisible(elemRef);
 
   useEffect(() => {
     getData();
   }, []);
-  // const toggleAutoPlay = () => {
-  //   console.log("scrolling");
-  //   setSlideDelay(5000);
-  // };
-  // window.addEventListener("scroll", toggleAutoPlay);
-
-  // useEffect(() => {
-  //   if (isVisible === true) {
-  //     toggleAutoPlay();
-  //     console.log(isVisible);
-  //   }
-  // }, [isVisible]);
+  useEffect(() => {
+    if (inViewport && !shown) {
+      setAutoPlay(true);
+      setShown(true);
+    } else if (!shown) setAutoPlay(false);
+    else setAutoPlay(true);
+  }, [inViewport]);
 
   let getData = async () => {
     await fetch(API.testimonials).then((res) =>
@@ -61,68 +54,88 @@ export default function Testimonials() {
   }
   function currentPhoneView(cards, index) {
     return (
-      <SwiperSlide className="mx-auto md:my-auto my-8 md:flex-row  justify-center items-center">
+      <SwiperSlide className="mx-auto md:my-auto my-8 md:flex-row justify-center items-center">
         {<TestimonialCard testimonial={cards} index={index} isPhone={true} />}
       </SwiperSlide>
     );
   }
   return (
     <div
-      className=" md:my-18  mx-auto focus:3xl:h-full "
+      className="  md:my-10  mx-auto   3xl:h-full  h-full "
       style={{ maxWidth: "1600px" }}
-      // ref={elemRef}
+      ref={forwardedRef}
     >
-      <h2 className=" text-center  md:my-10 my-5 font-lato md:text-5xl text-4xl ">
-        Testimonials
-      </h2>
+      <div className="my-auto ">
+        <div className=" text-center  my-5 font-lato md:text-5xl text-4xl ">
+          Testimonials
+        </div>
 
-      {isPhone ? (
-        // phone version
-        <>
+        {isPhone ? (
+          // phone version
+          <>
+            <Swiper
+              id="testimonials"
+              slidesPerView={1}
+              spaceBetween={0}
+              autoplay={{
+                delay: 2000,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              navigation={true}
+              className=" mx-auto md:my-auto  mb-0 overflow-hidden lg:hidden  "
+            >
+              {testimonials &&
+                testimonials
+                  .slice(0, 5)
+                  .map((testimonial, index) => currentView(testimonial, index))}
+            </Swiper>
+          </>
+        ) : // desktop version
+        autoPlay ? (
           <Swiper
-            id="testimonials"
-            slidesPerView={1}
-            spaceBetween={0}
+            slidesPerView={3}
+            spaceBetween={-140}
             autoplay={{
-              delay: 2000,
+              delay: 5000,
               disableOnInteraction: false,
+            }}
+            breakpoints={{
+              769: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+              },
             }}
             loop={true}
             navigation={true}
-            className=" mx-auto md:my-auto  mb-0 overflow-hidden lg:hidden  "
+            id="testimonials"
+            className="  mx-auto  md:block hidden   "
           >
             {testimonials &&
-              testimonials
-                .slice(0, 5)
-                .map((testimonial, index) => currentView(testimonial, index))}
+              testimonials.map((testimonial, index) =>
+                currentView(testimonial, index)
+              )}
           </Swiper>
-        </>
-      ) : (
-        // desktop version
-        <Swiper
-          slidesPerView={3}
-          spaceBetween={-140}
-          autoplay={{
-            delay: 12000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            769: {
-              slidesPerView: 3,
-              slidesPerGroup: 3,
-            },
-          }}
-          loop={true}
-          navigation={true}
-          id="testimonials"
-          className="  mx-auto my-auto  mb-8 lg:block hidden  overflow-hidden "
-        >
-          {testimonials &&
-            testimonials.map((testimonial, index) =>
-              currentView(testimonial, index)
-            )}
-        </Swiper>
-      )}
+        ) : (
+          <div className=" text-3xl text-center py-56  ">{"   "}</div>
+          // <Swiper
+          //   slidesPerView={3}
+          //   spaceBetween={-140}
+          //   navigation={true}
+          //   id="testimonials"
+          //   className="  mx-auto my-auto  mb-8 lg:block hidden  overflow-hidden "
+          // >
+          //   {testimonials &&
+          //     testimonials
+          //       .slice(0, 1)
+          //       .map((testimonial, index) => currentView(testimonial, index))}
+          // </Swiper>
+        )}
+      </div>
     </div>
   );
-}
+};
+const ViewportBlock = handleViewport(Testimonials);
+
+const TestimonialComp = (props) => <ViewportBlock />;
+export default TestimonialComp;

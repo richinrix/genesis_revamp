@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 // services
 import API from "./services/API";
