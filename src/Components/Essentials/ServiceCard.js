@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // image
 // import linesImg from "../../images/icons/services-line-and-dots.png";
 import linesImg from "../../images/icons/services-line-and-dots-new.png";
-import linesImgBlack from "../../images/icons/services-line-and-dots-black.png";
+import linesImgBlack from "../../images/icons/services-line-and-dots-new.png";
 
 // other modules
 import { Parallax } from "react-scroll-parallax";
@@ -239,12 +239,12 @@ const ServiceCard = (props) => {
       >
         {!isPhone ? (
           <div className="w-11/12  md:block " x={descXval}>
-            <div className=" ml-4 font-montserrat md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
+            <div className=" ml-4 font-lato md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
               {desc}
             </div>
           </div>
         ) : (
-          <div className="font-plantc md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
+          <div className="font-lato md:text-1.5xl text-xl mx-auto text-gray-500 md:leading-7 leading-5">
             {desc}
           </div>
         )}
