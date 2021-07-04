@@ -67,7 +67,9 @@ export default function FlipContainer() {
             className=" right-24  md:text-xl   md:mt-2 mt-8 md:mb-8  font-lato flex justify-items-end "
             style={{ float: "right" }}
           >
-            <div className="font-normal justify-end ">Join the team</div>
+            <div className="font-normal font-montserrat justify-end ">
+              Join the team
+            </div>
             <img
               src={arrow}
               className=" md:-pt-1 -pt-4 -mx-3  flex-shrink-0"

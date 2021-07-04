@@ -152,35 +152,35 @@ function About() {
           <div className="counterContainer relative w-screen h-auto">
             <div className="aboutPic md:-ml-5 w-screen mt-5 bg-black">
               <div className="teamPicMob relative w-screen">
-                <div className="aboutCounters absolute grid grid-cols-2 gap-x-5 top-0 mt-5  w-screen h-full z-10 text-white">
+                <div className="aboutCounters absolute grid grid-cols-2 gap-x-2 top-0 mt-5  w-screen h-full z-10 text-white">
                   <div
                     ref={elemRef}
-                    className="text-7xl flex items-center justify-end pr-2 "
+                    className="text-7xl flex items-center justify-end pr-5 "
                   >
                     {isVisible && <CountUp start={0} end={26} duration={5} />}
                   </div>
-                  <div className="text-2xl flex items-center justify-start">
+                  <div className="text-2xl flex items-center justify-start -ml-4">
                     Services
                     <br />
                     Offered
                   </div>
                   {isVisible && (
-                    <div className="text-7xl flex items-center justify-end pr-2 ">
+                    <div className="text-7xl flex items-center justify-end pr-5 ">
                       <CountUp start={0} end={40} duration={5} />
                     </div>
                   )}
-                  <div className="text-2xl flex items-center justify-start">
+                  <div className="text-2xl flex items-center justify-start -ml-4">
                     Projects
                     <br />
                     Completed
                   </div>
 
                   {isVisible && (
-                    <div className="text-7xl flex items-center justify-end pr-2">
+                    <div className="text-7xl flex items-center justify-end pr-5">
                       <CountUp start={0} end={28} duration={5} />
                     </div>
                   )}
-                  <div className="text-2xl flex items-center justify-start">
+                  <div className="text-2xl flex items-center justify-start -ml-4">
                     Client
                     <br />
                     Collaborations
