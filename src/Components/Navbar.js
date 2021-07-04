@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ScrollIntoView from "react-scroll-into-view";
-import logoLite from "../images/icons/logo-small.png";
+import logoLite from "../images/icons/logoLite.png";
 import logoDark from "../images/icons/logoDark.png";
+import logoSmall from "../images/icons/logo-small.png";
 import "./CSS/component.css";
 
 function Navbar() {
@@ -40,23 +41,33 @@ function Navbar() {
       <nav
         className={
           scrollDetect
-            ? "nav scrol fixed flex flex-wrap items-center justify-between px-4 top-0 w-full z-20 navLiteBack bg-red-300"
+            ? "nav scrol fixed flex flex-wrap items-center justify-between px-4 top-0 w-full z-20 navLiteBack"
             : "nav scrol fixed flex flex-wrap items-center justify-between px-4 top-0 w-full z-20"
         }
       >
         <div className="flex flex-no-shrink items-center mr-6 pl-0 md:pl-2">
           <a className="navLogo self-center" href="/#">
-            <img
-              className=" md:block"
-              src={scrollDetect ? logoLite : logoDark}
-              alt=""
-              srcset=""
-              style={
-                scrollDetect
-                  ? { height: "60px", width: "60px" }
-                  : { height: "60px", width: "160px" }
-              }
-            />
+            {window.innerWidth > 767 ? (
+              <img
+                className=" md:block"
+                src={scrollDetect ? logoLite : logoDark}
+                alt=""
+                srcset=""
+                style={{ height: "60px", width: "160px" }}
+              />
+            ) : (
+              <img
+                className=" md:block"
+                src={scrollDetect ? logoSmall : logoDark}
+                alt=""
+                srcset=""
+                style={
+                  scrollDetect
+                    ? { height: "60px", width: "60px" }
+                    : { height: "60px", width: "160px" }
+                }
+              />
+            )}
           </a>
         </div>
 

@@ -21,7 +21,7 @@ function About() {
   window.addEventListener("scroll", handleScroll);
 
   return (
-    <div id="teamCall" className="h-auto w-auto ">
+    <div id="teamCall" className="h-auto w-auto">
       {window.innerWidth > 767 ? (
         <div className="teamContainer h-auto flex flex-col mx-auto  sm:px-5 pt-10 w-screen left-">
           <div
