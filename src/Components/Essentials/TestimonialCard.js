@@ -19,7 +19,7 @@ const Card = (props) => {
   return (
     <div
       id="testimonial-card"
-      className="relative lg:mx-10 mx-auto my-3 md:px-10 p-7 text-center flex flex-col justify-between overflow-hidden  "
+      className="relative lg:mx-10 mx-auto my-3 md:px-10 p-7 font-montserrat text-center flex flex-col justify-between overflow-hidden  "
       style={{
         boxShadow:
           "2px 2px 10px #c7c7c798, -2px -2px 10px #c7c7c798,-2px 2px 10px #c7c7c798, 2px -2px 10px #c7c7c798",
