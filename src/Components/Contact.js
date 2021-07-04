@@ -325,7 +325,7 @@ function Contact() {
               Submit
             </button>
             {tick && (
-              <div className="tick ml-5 mb-1 text-green-700 text-3xl">✓</div>
+              <div className="tick ml-3 mb-1 text-green-700 text-3xl">✓</div>
             )}
           </div>
         </form>
