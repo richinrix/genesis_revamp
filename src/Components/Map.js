@@ -147,7 +147,7 @@ function Map() {
     return (
       <div
         id="mapContainer"
-        className="mapContainer ml-3 bottom-0 flex mt-8 flex-col  w-screen mb-0"
+        className="mapContainer bottom-0 flex mt-8 flex-col  w-screen mb-0"
       >
         <div className="socialMapContainer mr-4 mt-5 px-4">
           <div className="flex  flex-row w-full justify-center items-center text-white content-center m-0">
@@ -185,10 +185,10 @@ function Map() {
           <p className="text-lg pt-4 text-white">
             Stay up to date, subscribe to our newsletter:
           </p>
-          <div className="newsInputs flex flex-row justify-center pt-2">
+          <div className="newsInputs flex flex-row justify-start pt-2">
             <form id="newsForm">
               <input
-                className="md:pb-2 pb-1  mb-2 bg-transparent border-none outline-none mr-8 text-2xl text-white"
+                className="md:pb-2 pb-1  mb-2 bg-transparent border-none outline-none text-2xl text-white"
                 type="email"
                 id="nMail"
                 placeholder={email === "" && "your@email.here"}
@@ -197,7 +197,7 @@ function Map() {
               />
               <div className="flex flex-row">
                 <button
-                  className="font-montserrat items-start btn btn-white uppercase no-underline	block font-semibold"
+                  className="font-montserrat items-start btn btn-white uppercase no-underline	block font-medium"
                   type="submit"
                   onClick={(e) => newsEmailSubmiteHandler(e)}
                 >
@@ -213,15 +213,24 @@ function Map() {
           </div>
         </div>
         <div className="mapFooter flex flex-col justify-between pt-4 ">
-          <p className="order-1 text-base pl-2 text-white pr-5 mb-3">
-            <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i> 65,
-            1st Main, DB Sandra, Bengaluru-560097
-          </p>
-          <p className="order-1 pl-2 text-base text-white pr-5 mb-5">
+          <p className="pl-2 text-base text-white pr-5 mb-5">
             <i class="fa fa-phone pr-1.5 flex-shrink-0 text-white"></i>
             <a href="tel:+918792384161">+91 8792384161</a> /{" "}
             <a href="tel:+917349571333">+91 7349571333</a>
           </p>
+          <p className="text-base pl-2 text-white pr-5 mb-3">
+            <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i> 65,
+            1st Main, DB Sandra, Bengaluru-560097
+          </p>
+          <button className="bg-white ml-2 w-40 font-montserrat items-start btn btn-white uppercase no-underline	block font-medium">
+            <a
+              className="block font-montserrat w-full"
+              target="_blank"
+              href="https://g.page/genesis-media-india?share"
+            >
+              Get Directions
+            </a>
+          </button>
 
           {/* <p className="order-5 text-lg text-white text-center -ml-4 -mb-5">
             Made in-house with <span className="text-lg">❤️</span>
