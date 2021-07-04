@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { withRouter } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 function ScrollToTop({ history }) {
   useEffect(() => {
     const unlisten = history.listen(() => {
@@ -9,6 +9,8 @@ function ScrollToTop({ history }) {
       unlisten();
     };
   }, []);
-  return null;
+
+  const refresh = () => {};
+  return <Redirect to="/" />;
 }
 export default withRouter(ScrollToTop);

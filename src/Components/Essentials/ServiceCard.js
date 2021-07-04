@@ -243,15 +243,16 @@ const ServiceCard = (props) => {
       >
         {!isPhone ? (
           <div className="w-11/12  md:block " x={descXval}>
-            <div className=" ml-4 font-lato  text-lg mx-auto  md:leading-7 leading-5">
+            <div className=" ml-4 font-montserrat  text-lg mx-auto  md:leading-6 leading-5">
               {desc}
             </div>
           </div>
         ) : (
-          <div className="font-lato mx-auto md:leading-7 leading-5">{desc}</div>
+          <div className="font-montserrat mx-auto  leading-5">{desc}</div>
         )}
+
         <div className="flex  my-auto pt-5">
-          <ul className="ml-4 font-lato my-auto">
+          <ul className="ml-4 font-montserrat my-auto">
             {points.map((point, index) =>
               servicePoints(point, index, points.length, position)
             )}
@@ -264,11 +265,11 @@ const ServiceCard = (props) => {
   return (
     <>
       <div
-        className=" 3xl:h-full  lg:h-screen md:py-20 py-10 overflow-hidden  "
+        className=" 3xl:h-full  md:h-screen md:py-20 py-10 overflow-hidden  "
         id="serciveCard"
       >
         <div className="mx-auto px-5 my-auto " style={{ maxWidth: "1600px" }}>
-          <div className="mx-auto text-center font-lato text-5xl ">
+          <div className="mx-auto text-center font-montserrat text-5xl ">
             <h2>{service.heading}</h2>
           </div>
           <div className={descriptionClassname}>

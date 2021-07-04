@@ -66,7 +66,7 @@ const Testimonials = ({ inViewport, forwardedRef }) => {
       ref={forwardedRef}
     >
       <div className="my-auto ">
-        <div className=" text-center  my-5 font-lato md:text-5xl text-4xl ">
+        <div className=" text-center  my-5  font-montserrat md:text-5xl text-4xl ">
           Testimonials
         </div>
 

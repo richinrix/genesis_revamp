@@ -122,7 +122,7 @@ const Imageflip = (props) => {
                   : `url('${frontImagePhone}')`,
               }}
             >
-              <div className="md:text-2xl text-2xl  w-full absolute md:bottom-5 bottom-1 md:ml-2  md:text-left text-center text-gray-100">
+              <div className="md:text-2xl text-2xl font-montserrat  w-full absolute md:bottom-5 bottom-1 md:ml-2  md:text-left text-center text-gray-100">
                 {name}
               </div>
             </a.div>

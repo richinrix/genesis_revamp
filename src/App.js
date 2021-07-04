@@ -19,13 +19,13 @@ import ScrollToTop from "./Components/Essentials/ScrollToTop";
 
 function App() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, []);
   return (
     <Hash>
       <Navbar />
       <Sidebar />
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/notfound" component={ComingSoon} />

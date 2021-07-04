@@ -47,7 +47,7 @@ export default function FlipContainer() {
       <div className="mx-auto ">
         <div
           id="ImageFlip-Text"
-          className="font-lato text-center md:text-5xl text-4xl md:mb-10 mb-5   "
+          className="font-montserrat text-center md:text-5xl text-4xl md:mb-10 mb-5   "
         >
           <h2 className=" ">Meet our team</h2>
         </div>
