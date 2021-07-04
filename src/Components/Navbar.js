@@ -68,7 +68,7 @@ function Navbar() {
           <span className="navicon flex items-center relative"></span>
         </label>
 
-        <ul className="navList menu md:border-none font-normal flex mr-10 ml-10 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent">
+        <ul className="navList menu md:border-none font-normal flex mr-5 mt-2 ml-5 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent">
           <li className="navSer border-none text-center">
             <ScrollIntoView
               selector="#services"

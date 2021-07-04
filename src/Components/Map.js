@@ -73,12 +73,12 @@ function Map() {
         className="mapContainer bg-red-300  bottom-0 flex flex-col  pt-12 justify-center items-start w-screen h-auto mb-0"
       >
         <div className="upperDiv flex flex-row w-screen -ml-10 justify-between">
-          <div className="leftDiv flex items-center">
+          <div className="leftDiv flex items-center mt-2">
             <div className="newsLetter flex flex-col  md:mt-10">
               <p className="font-montserrat text-lg md:mt-0 md:pt-0 pt-4 mb-2 text-white">
                 Stay up to date, subscribe to our newsletter:
               </p>
-              <div className="newsInputs flex  pt-2">
+              <div className="newsInputs flex mt-1  pt-2">
                 <form id="newsForm">
                   <input
                     className="font-montserrat md:pb-2 pb-1 mb-4 bg-transparent border-none outline-none mr-8 text-2xl text-white"
@@ -88,7 +88,7 @@ function Map() {
                     onChange={(e) => setEmail(e.target.value)}
                     style={{ borderColor: borderColor }}
                   />
-                  <div className="flex flex-row">
+                  <div className="flex flex-row mt-1">
                     <button
                       className="font-montserrat items-start btn btn-white uppercase no-underline	block font-medium"
                       type="submit"

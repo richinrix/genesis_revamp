@@ -413,7 +413,7 @@
     /* margin-top: 3rem; */
   }
   .navList {
-    background: #ffe450;
+    background: #f0f0f0;
   }
   .navicon::before,
   .navicon::after {
@@ -423,17 +423,17 @@
     height: 100%;
     transition: all 0.2s ease-out;
     content: "";
-    background: gray;
+    background: black;
   }
   .nav {
     background-color: rgba(0, 0, 0, 0.2);
   }
   .nav ul li a {
     color: black;
-    background-color: #ffe450;
+    background-color: #f0f0f0;
   }
   .nav ul li {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(128, 126, 126);
   }
 
   .navicon::before {
