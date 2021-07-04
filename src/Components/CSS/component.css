@@ -61,10 +61,7 @@
   width: 280px;
   height: 450px;
 }
-#service-image-wrapper {
-  /* height: 450px; */
-  /* width: 650px; */
-}
+
 #servicesImage {
   /* margin-top: 100px; */
   /* width: 600px; */
@@ -175,16 +172,13 @@
 /* ----------- About us --------------- */
 
 .aboutParagraphs {
-  font-family: "Lato", sans-serif !important;
+  font-weight: 500;
 }
 .aboutCounters {
   font-family: "Poppins", sans-serif;
   margin-top: 0px;
   backdrop-filter: blur(2px);
   background-color: rgba(0, 0, 0, 0.658) !important;
-}
-.teamWords {
-  font-family: "Lato", sans-serif;
 }
 .teamPicMob {
   background-image: url("https://res.cloudinary.com/myles27/image/upload/v1624354005/Genesis%20Revamp/imageedit_16_5479397363_ezvzqg.jpg");
@@ -271,7 +265,6 @@
 }
 @media (max-width: 767px) {
   .mapContainer {
-    padding-left: 1rem;
     height: screen !important;
   }
   .newsletter {
@@ -279,12 +272,6 @@
   }
   .preMap {
     display: none;
-  }
-  .mapBox {
-    order: 2;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
   }
   @media (max-width: 600px) {
     .mapBox {
@@ -300,9 +287,7 @@
     order: 4;
     padding-left: 1rem;
   }
-  .bton {
-    margin-left: 0.5rem;
-  }
+
   .footerText {
     margin-top: 1.5rem;
     margin-left: -2rem;

@@ -22,6 +22,7 @@ function Contact() {
   const [checkz, setCheckz] = useState([]); //Stores checkbox values
   const [borderColor, setBorderColor] = useState("gray");
   const [bordWidth, setBordWidth] = useState(1);
+  const [tick, setTick] = useState(false);
 
   //Adds list of checked items to an array
   const addInterest = (item) => {
@@ -131,7 +132,7 @@ function Contact() {
       );
       setBorderColor("green"); //Changes field border color to green
       setBordWidth(2); //Increases field vorder size
-      alert("Details Submitted!");
+      setTick(true);
       setCheckz("");
 
       // Reset checkboxes and fields
@@ -170,10 +171,10 @@ function Contact() {
             <br />
             And that's bringing creative people together.
           </p>
-          <p className=" contactHelpYou font-medium text-xl pb-2 pt-4 md:pt-0">
+          <p className="font-montserrat contactHelpYou font-semibold text-xl pb-2 pt-4 md:pt-0">
             What can we help you with?
           </p>
-          <div className="contactChecks text-left grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-1 pb-6 md:font-light pl-4 md:pl-0 pt-2 md:pt-0 text-xl md:text-base">
+          <div className="font-montserrat contactChecks text-left grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-1 pb-6 md:font-light pl-4 md:pl-0 pt-2 md:pt-0 text-xl md:text-base">
             <div className="checkItem">
               <input
                 type="checkbox"
@@ -313,15 +314,20 @@ function Contact() {
               }}
             />
           </div>
-          <button
-            className="btn btn-white btn-animate uppercase no-underline	inline-block font-bold"
-            type="submit"
-            onClick={(event) => {
-              handleSubmit(event);
-            }}
-          >
-            Submit
-          </button>
+          <div className="flex flex-row md:ml-0 ml-4">
+            <button
+              className="font-montserrat items-start btn btn-white uppercase no-underline	block font-semibold"
+              type="submit"
+              onClick={(event) => {
+                handleSubmit(event);
+              }}
+            >
+              Submit
+            </button>
+            {tick && (
+              <div className="tick ml-5 mb-1 text-green-700 text-3xl">✓</div>
+            )}
+          </div>
         </form>
         <div className="circles md:w-screen md:block hidden  md:-mt-20 md:-pt-20">
           <img

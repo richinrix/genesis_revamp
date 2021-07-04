@@ -29,8 +29,8 @@ function Homepage({ toggleLoading }) {
           <source
             src={
               window.innerWidth > 700
-                ? "https://res.cloudinary.com/myles27/video/upload/v1624293786/Genesis%20Revamp/Showreel_r5cmzt.mp4"
-                : "https://res.cloudinary.com/myles27/video/upload/v1624293769/Genesis%20Revamp/Showreel_mob_ezjrxh.mp4"
+                ? "https://res.cloudinary.com/dmv4z5mmv/video/upload/v1625332241/homepage%20video/homepage_desktop_video_hp97gv.mp4"
+                : "https://res.cloudinary.com/dmv4z5mmv/video/upload/v1625332240/homepage%20video/homepage_phone_video_bkqlaf.mp4"
             }
             type="video/mp4"
           />

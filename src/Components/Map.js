@@ -10,6 +10,7 @@ function Map() {
   const [borderColor, setBorderColor] = useState("gray");
   const [subbed, setSubbed] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [newsTick, setNewsTick] = useState(false);
 
   //Handy function to check if the device is a phone
   const checkPhone = () => {
@@ -52,7 +53,7 @@ function Map() {
         }
       );
       setBorderColor("green");
-      alert("You are subscribed!");
+      setNewsTick(true);
       document.getElementById("newsForm").reset();
       // document.getElementById("nMail").placeholder = "your@email.here";
       setSubbed(true);
@@ -74,35 +75,42 @@ function Map() {
         <div className="upperDiv flex flex-row w-screen -ml-10 justify-between">
           <div className="leftDiv flex items-center">
             <div className="newsLetter flex flex-col  md:mt-10">
-              <p className="text-lg md:mt-0 md:pt-0 pt-4 mb-2 text-white">
+              <p className="font-montserrat text-lg md:mt-0 md:pt-0 pt-4 mb-2 text-white">
                 Stay up to date, subscribe to our newsletter:
               </p>
               <div className="newsInputs flex  pt-2">
                 <form id="newsForm">
                   <input
-                    className="md:pb-2 pb-1 mb-4 bg-transparent border-none outline-none mr-8 text-2xl text-white"
+                    className="font-montserrat md:pb-2 pb-1 mb-4 bg-transparent border-none outline-none mr-8 text-2xl text-white"
                     type="email"
                     id="nMail"
                     placeholder={email === "" && "your@email.here"}
                     onChange={(e) => setEmail(e.target.value)}
                     style={{ borderColor: borderColor }}
                   />
-                  <button
-                    className="bton bton-white bton-animate uppercase no-underline	inline-block "
-                    type="submit"
-                    onClick={(e) => newsEmailSubmiteHandler(e)}
-                  >
-                    Subscribe
-                  </button>
+                  <div className="flex flex-row">
+                    <button
+                      className="font-montserrat items-start btn btn-white uppercase no-underline	block font-medium"
+                      type="submit"
+                      onClick={(e) => newsEmailSubmiteHandler(e)}
+                    >
+                      Subscribe
+                    </button>
+                    {newsTick && (
+                      <div className="tick ml-3 mb-1 text-green-700 text-3xl">
+                        ✓
+                      </div>
+                    )}
+                  </div>
                 </form>
               </div>
             </div>
           </div>
-          <div className="centerDivider min-h-full border-l mt-4 -mb-2"></div>
+          <div className="centerDivider min-h-full border-l mt-4 ml-24 -mb-2"></div>
           <div className="rightDiv mt-5">
             <div className="mapPhone flex text-lg text-white flex-row mb-3 pb-5">
               <i className="fa fa-phone pt-1.5 pr-1.5 text-white flex-shrink-0"></i>
-              <p>
+              <p className="font-montserrat">
                 <a href="tel:+918792384161">+91 8792384161</a> /{" "}
                 <a href="tel:+917349571333">+91 7349571333</a>
               </p>
@@ -112,24 +120,24 @@ function Map() {
               className="mapPhone flex text-lg text-white mb-3 flex-row pb-5"
             >
               <i className="fa fa-envelope pt-1 pr-1.5"> </i>
-              <p> info@genesismedia.com</p>
+              <p className="font-montserrat"> info@genesismedia.com</p>
             </a>
-            <p className="order-1 text-lg text-white md:pb-2 md:pr-0 pr-5">
+            <p className="order-1 font-montserrat text-lg text-white md:pb-2 md:pr-0 pr-5">
               <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>
               65, 1st Main, DB Sandra, Bengaluru-560097 <br />
             </p>
-            <div className="bg-white  mt-2 mr-40 hover:bg-yellow-400 hover:transform hover:translate-y-4 text-center">
+            <button className="bg-white  mt-2 mr-64 font-montserrat items-start btn btn-white uppercase no-underline	block font-semibold">
               <a
-                className="block  p-1"
+                className="block font-montserrat w-full"
                 target="_blank"
                 href="https://g.page/genesis-media-india?share"
               >
                 Get Directions
               </a>
-            </div>
+            </button>
           </div>
         </div>
-        <p className="w-screen text-center mt-10 pb-2 text-gray-500">
+        <p className="w-screen font-montserrat text-center mt-10 pb-2 text-gray-500">
           {/* Made in-house with <span className="text-sm">❤️</span> |  */}
           Genesis Media © 2021
         </p>
@@ -139,13 +147,13 @@ function Map() {
     return (
       <div
         id="mapContainer"
-        className="mapContainer bottom-0 flex mt-8 flex-col  w-screen mb-0"
+        className="mapContainer ml-3 bottom-0 flex mt-8 flex-col  w-screen mb-0"
       >
-        <div className="socialMapContainer mt-5 ">
-          <div className="flex flex-row w-screen justify-center items-center text-white content-center m-0">
+        <div className="socialMapContainer mr-4 mt-5 px-4">
+          <div className="flex  flex-row w-full justify-center items-center text-white content-center m-0">
             <a
               href="https://www.instagram.com/genesisproduction.in/"
-              className="social-icons flex relative text-center text-white overflow-hidden items-center content-center no-underline"
+              className="social-icons  flex relative text-center text-white overflow-hidden items-center content-center no-underline"
               target="_blank"
             >
               <i className="fa fa-instagram text-white"></i>
@@ -187,22 +195,29 @@ function Map() {
                 onChange={(e) => setEmail(e.target.value)}
                 style={{ borderColor: borderColor }}
               />
-              <button
-                className="bton bton-white bton-animate uppercase no-underline	inline-block "
-                type="submit"
-                onClick={(e) => newsEmailSubmiteHandler(e)}
-              >
-                Subscribe
-              </button>
+              <div className="flex flex-row">
+                <button
+                  className="font-montserrat items-start btn btn-white uppercase no-underline	block font-semibold"
+                  type="submit"
+                  onClick={(e) => newsEmailSubmiteHandler(e)}
+                >
+                  Subscribe
+                </button>
+                {newsTick && (
+                  <div className="tick ml-1 mb-1 text-green-700 text-3xl">
+                    ✓
+                  </div>
+                )}
+              </div>
             </form>
           </div>
         </div>
         <div className="mapFooter flex flex-col justify-between pt-4 ">
-          <p className="order-1 text-base text-center text-white pr-5 mb-3">
-            <i class="fa fa-map-marker pr-1.5 flex-shrink-0text-white"></i> 65,
+          <p className="order-1 text-base pl-2 text-white pr-5 mb-3">
+            <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i> 65,
             1st Main, DB Sandra, Bengaluru-560097
           </p>
-          <p className="order-1 text-center text-base text-white pr-5 mb-5">
+          <p className="order-1 pl-2 text-base text-white pr-5 mb-5">
             <i class="fa fa-phone pr-1.5 flex-shrink-0 text-white"></i>
             <a href="tel:+918792384161">+91 8792384161</a> /{" "}
             <a href="tel:+917349571333">+91 7349571333</a>
