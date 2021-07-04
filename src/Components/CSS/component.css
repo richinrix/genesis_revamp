@@ -539,7 +539,7 @@
 .nav {
   background-color: rgba(0, 0, 0, 0);
   height: 90px;
-  transition: 0.8s;
+  transition: all 1s ease;
 }
 
 /* ------------SideBar---------- */

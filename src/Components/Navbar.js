@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ScrollIntoView from "react-scroll-into-view";
-import logoLite from "../images/icons/logoLite.png";
+import logoLite from "../images/icons/logo-small.png";
 import logoDark from "../images/icons/logoDark.png";
 import "./CSS/component.css";
 
@@ -51,7 +51,11 @@ function Navbar() {
               src={scrollDetect ? logoLite : logoDark}
               alt=""
               srcset=""
-              style={{ height: "60px", width: "160px" }}
+              style={
+                scrollDetect
+                  ? { height: "60px", width: "60px" }
+                  : { height: "60px", width: "160px" }
+              }
             />
           </a>
         </div>
