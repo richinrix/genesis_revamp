@@ -21,10 +21,11 @@ function App() {
   useEffect(() => {
     // window.scrollTo(0, 0);
   }, []);
+
   return (
     <Hash>
       <Navbar />
-      <Sidebar />
+      {window.innerWidth > 767 ? <Sidebar /> : <div></div>}
       {/* <ScrollToTop /> */}
       <Switch>
         <Route exact path="/" component={Home} />
@@ -40,9 +41,12 @@ const Home = () => {
   const toggleLoading = () => {
     setLoading(false);
   };
+  function uncheckNav() {
+    document.getElementById("menu-btn").checked = false;
+  }
 
   return (
-    <>
+    <div onClick={uncheckNav}>
       {loading && <PreLoader />}
       <Homepage toggleLoading={toggleLoading} />
 
@@ -52,7 +56,7 @@ const Home = () => {
       <FlipContainer />
       <Contact />
       <Map />
-    </>
+    </div>
   );
 };
 
