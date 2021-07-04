@@ -32,12 +32,13 @@ const ServiceCard = (props) => {
     easing: "linear",
   };
 
-  function yellowRectangle(floatPos, phone = false) {
+  function yellowRectangle(floatPos, color, phone = false) {
     let classname = floatPos === "left" ? " ml-10 " : " mr-10 ";
     let floatDirection = floatPos === "right" ? "right" : "left";
+
     let style = {
       // backgroundColor: "#ffd805",
-      backgroundColor: "#FFE450",
+      backgroundColor: color,
       float: floatDirection,
     };
     if (!phone) return <div id="yellowRectangle" style={style}></div>;
@@ -145,7 +146,7 @@ const ServiceCard = (props) => {
   }
 
   // image/video element
-  function imageSection(image_path, video, YTvideo, floatPos, points) {
+  function imageSection(image_path, video, YTvideo, floatPos, points, color) {
     const imageStyle = {
       backgroundImage: `url('${image_path}')`,
       backgroundRepeat: "no-repeat",
@@ -172,10 +173,10 @@ const ServiceCard = (props) => {
       <div className={containerClassname}>
         {!isPhone ? (
           <Parallax x={yellowRectXval} className="md:block hidden ">
-            {yellowRectangle(floatPos)}
+            {yellowRectangle(floatPos, color)}
           </Parallax>
         ) : (
-          yellowRectangle(floatPos)
+          yellowRectangle(floatPos, color)
         )}
         {/* if its a picture or video */}
         {image_path ? (
@@ -282,7 +283,8 @@ const ServiceCard = (props) => {
                 service.video,
                 service.YTvideo,
                 imagePos,
-                service.points.length
+                service.points.length,
+                service.blockColor
               )}
             </div>
           </div>

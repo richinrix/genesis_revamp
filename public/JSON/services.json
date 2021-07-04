@@ -1,6 +1,7 @@
 [
   {
     "heading": "Development",
+    "blockColor": "#fc564a",
     "description": "Good design makes a strong and lasting impression of a brand on people. Turning creative designs into functional products is a skill that comes easily to us.",
     "points": [
       "UI Design",
@@ -13,6 +14,7 @@
   },
   {
     "heading": "Branding",
+    "blockColor": "#1da479",
     "description": "Proper branding brings an invaluable personal dimension to your business.",
     "points": [
       "Consultation",
@@ -27,6 +29,7 @@
   },
   {
     "heading": "Marketing",
+    "blockColor": "#26428c",
     "description": "By blending great ideas and technology, we ensure that you have all the ingredients to make the right noises in the market.",
     "points": [
       "SEO",
@@ -45,6 +48,7 @@
   },
   {
     "heading": "Production",
+    "blockColor": "#f3d605",
     "description": "Being authentic is vital to a brand’s legacy. Our in-house production team is dedicated to creating rich media content on the fly.",
     "points": [
       "Commercial AD Films",
