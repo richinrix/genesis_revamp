@@ -126,7 +126,7 @@ function Map() {
               <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>
               65, 1st Main, DB Sandra, Bengaluru-560097 <br />
             </p>
-            <button className="bg-white  mt-2 mr-64 font-montserrat items-start btn btn-white uppercase no-underline	block font-semibold">
+            <button className="bg-white  mt-2 mr-64 font-montserrat items-start btn btn-white uppercase no-underline	block font-medium">
               <a
                 className="block font-montserrat w-full"
                 target="_blank"
