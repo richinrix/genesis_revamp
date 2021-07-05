@@ -13,8 +13,8 @@ const ServiceCard = (props) => {
   const { service, index } = props;
   let imagePos = index % 2 === 0 ? "right" : "left";
   let descriptionClassname = "flex  flex-col-reverse mt-5 justify-center ";
-  if (imagePos === "right") descriptionClassname += " md:flex-row";
-  else descriptionClassname += " md:flex-row-reverse";
+  if (imagePos === "right") descriptionClassname += " lg:flex-row";
+  else descriptionClassname += " lg:flex-row-reverse";
 
   const isPhone = window.innerWidth < 700;
 
@@ -58,8 +58,8 @@ const ServiceCard = (props) => {
               <video
                 id="servicesImage"
                 className={classname}
-                width="80%"
-                height="280px"
+                // width="80%"
+                // height="280px"
                 autoPlay
                 muted
                 loop
@@ -70,12 +70,12 @@ const ServiceCard = (props) => {
             ) : (
               <iframe
                 src={YTvideo}
-                id="servicesImage"
+                id="ytServiceImg"
                 className={classname}
                 muted
                 frameborder="0"
                 disablePictureInPicture
-                style={{ border: "none", width: "595px" }}
+                style={{ border: "none" }}
               ></iframe>
             )}
           </Parallax>
@@ -93,7 +93,7 @@ const ServiceCard = (props) => {
         ) : (
           <iframe
             src={YTvideo}
-            id="servicesImage"
+            id="ytServiceImg"
             className={classname}
             frameborder="0"
             disablePictureInPicture
@@ -266,7 +266,7 @@ const ServiceCard = (props) => {
   return (
     <>
       <div
-        className=" 3xl:h-full  md:h-screen md:py-20 py-10 overflow-hidden  "
+        className=" 3xl:h-full  lg:h-full md:h-auto md:py-20 py-10 overflow-hidden  "
         id="serciveCard"
       >
         <div className="mx-auto px-5 my-auto " style={{ maxWidth: "1600px" }}>
@@ -277,7 +277,7 @@ const ServiceCard = (props) => {
             <div className="lg:w-3/6 flex content-center">
               {textSection(service.description, service.points, imagePos)}
             </div>
-            <div className="md:w-4/6 lg:mb-0 mb-4">
+            <div className="lg:w-4/6 lg:mb-0 mb-4">
               {imageSection(
                 service.image,
                 service.video,

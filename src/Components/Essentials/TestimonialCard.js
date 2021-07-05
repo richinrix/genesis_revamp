@@ -50,7 +50,9 @@ const Card = (props) => {
             backgroundImage: `url('${testimonial.image}')`,
           }}
         />
-        <h2 className="text-white text-lg md:-mb-2">{testimonial.name}</h2>
+        <h2 className="text-white xl:text-lg lg:text-base  md:-mb-2">
+          {testimonial.name}
+        </h2>
         <img
           className="mx-auto  -mb-5 mt-3"
           src={IMAGES.stars5}

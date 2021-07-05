@@ -19,7 +19,7 @@ const Testimonials = ({ inViewport, forwardedRef }) => {
   const [testimonials, setTestimonials] = useState();
   const [autoPlay, setAutoPlay] = useState(false);
   const [shown, setShown] = useState(false);
-  const isPhone = window.innerWidth < 700;
+  const isPhone = window.innerWidth < 800;
 
   useEffect(() => {
     getData();
@@ -41,7 +41,7 @@ const Testimonials = ({ inViewport, forwardedRef }) => {
   // displaying the current three cards
   function currentView(cards, index) {
     return (
-      <SwiperSlide className="mx-auto md:my-auto my-8 lg:flex  md:flex-row  justify-center items-center">
+      <SwiperSlide className=" md:my-auto my-8 lg:flex  md:flex-row  justify-center items-center ">
         {
           <TestimonialCard
             testimonial={cards}
@@ -83,7 +83,7 @@ const Testimonials = ({ inViewport, forwardedRef }) => {
               }}
               loop={true}
               navigation={true}
-              className=" mx-auto md:my-auto  mb-0 overflow-hidden lg:hidden  "
+              className=" mx-auto md:my-auto  mb-0 overflow-hidden lg:hidden   "
             >
               {testimonials &&
                 testimonials
@@ -93,29 +93,32 @@ const Testimonials = ({ inViewport, forwardedRef }) => {
           </>
         ) : // desktop version
         autoPlay ? (
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={-140}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              769: {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-              },
-            }}
-            loop={true}
-            navigation={true}
-            id="testimonials"
-            className="  mx-auto  md:block hidden   "
-          >
-            {testimonials &&
-              testimonials.map((testimonial, index) =>
-                currentView(testimonial, index)
-              )}
-          </Swiper>
+          <div className=" w-11/12 overflow-hidden mx-auto ">
+            <Swiper
+              slidesPerView={3}
+              // spaceBetween={-140}
+              spaceBetween={-30}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                769: {
+                  slidesPerView: 3,
+                  slidesPerGroup: 3,
+                },
+              }}
+              loop={true}
+              navigation={true}
+              id="testimonials"
+              className="  mx-auto  md:block hidden   "
+            >
+              {testimonials &&
+                testimonials.map((testimonial, index) =>
+                  currentView(testimonial, index)
+                )}
+            </Swiper>
+          </div>
         ) : (
           <div className=" text-3xl text-center py-56  ">{"   "}</div>
           // <Swiper
