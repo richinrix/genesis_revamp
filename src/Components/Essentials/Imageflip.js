@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 //dependencies
-import handleViewport from "react-in-viewport";
+// import handleViewport from "react-in-viewport";
 import { useSpring, a } from "@react-spring/web";
 
 const Imageflip = (props) => {
   const {
-    inViewport,
-    forwardedRef,
+    // inViewport,
+    // forwardedRef,
     position,
     phonePosition,
     phoneDisplay,
@@ -49,13 +49,13 @@ const Imageflip = (props) => {
     AOS.init();
   });
   // to flip when in view
-  useEffect(() => {
-    if (!inViewport && !initFlip && !isPhone) setFlipped(true);
-    if (inViewport && !initFlip && !isPhone) {
-      setFlipped(false);
-      setInitFlip(true);
-    }
-  }, [inViewport]);
+  // useEffect(() => {
+  //   if (!inViewport && !initFlip && !isPhone) setFlipped(true);
+  //   if (inViewport && !initFlip && !isPhone) {
+  //     setFlipped(false);
+  //     setInitFlip(true);
+  //   }
+  // }, [inViewport]);
 
   // ripple effect
   // let flipTimerId;
@@ -100,7 +100,10 @@ const Imageflip = (props) => {
     if (!phoneDisplay) classname += " lg:block md:block hidden ";
     if (!tabDisplay) classname += " md:hidden ";
     return (
-      <div className="lg:block " ref={forwardedRef}>
+      <div
+        className="lg:block "
+        // ref={forwardedRef}
+      >
         <div
           className={classname}
           data-aos-once
@@ -147,17 +150,17 @@ const Imageflip = (props) => {
   );
 };
 
-const ViewportBlock = handleViewport(Imageflip);
+// const ViewportBlock = handleViewport(Imageflip);
 
-const Component = (props) => (
-  <ViewportBlock
-    index={props.index}
-    phoneDisplay={props.phoneDisplay}
-    tabDisplay={props.tabDisplay}
-    position={props.position}
-    card={props.card}
-    phonePosition={props.phonePosition}
-  />
-);
+// const Component = (props) => (
+//   <ViewportBlock
+//     index={props.index}
+//     phoneDisplay={props.phoneDisplay}
+//     tabDisplay={props.tabDisplay}
+//     position={props.position}
+//     card={props.card}
+//     phonePosition={props.phonePosition}
+//   />
+// );
 
-export default React.memo(Component);
+export default Imageflip;
