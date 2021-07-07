@@ -54,7 +54,7 @@ export default function FlipContainer() {
         <div className="">
           <div
             id="image-flip-wrapper"
-            className=" flex flex-wrap  md:ml-3 md:pt-6 lg:justify-start justify-center lg:w-max"
+            className=" flex flex-wrap   md:ml-3 md:pt-6 lg:justify-start justify-center lg:w-max"
           >
             {/* limiting the cards to 8 if the cards are more than 8  */}
             {cards &&
