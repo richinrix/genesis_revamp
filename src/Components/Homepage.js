@@ -20,7 +20,7 @@ function Homepage({ toggleLoading }) {
         <HomeParticles id="tsHome" />
       </div> */}
         <video
-          className="absolute block w-100 md:w-screen h-screen md:opacity-90 opacity-90 md:object-cover object-fill"
+          className="absolute block w-100 md:w-screen h-screen md:opacity-90 opacity-100 md:object-cover object-fill"
           loop
           autoPlay
           muted

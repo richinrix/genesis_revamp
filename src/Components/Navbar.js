@@ -18,20 +18,16 @@ function Navbar() {
   // Function to detect scrolling and change theme based on that
   const handleScroll = () => {
     if (screenWidth > 500) {
-      if (window.scrollY > 600) {
+      if (window.scrollY > 100) {
         setScrollDetect(true);
-        document.body.style.backgroundColor = "white";
       } else {
         setScrollDetect(false);
-        document.body.style.backgroundColor = "black";
       }
     } else {
       if (window.scrollY > 350) {
         setScrollDetect(true);
-        document.body.style.backgroundColor = "white";
       } else {
         setScrollDetect(false);
-        document.body.style.backgroundColor = "black";
       }
     }
   };
@@ -79,8 +75,8 @@ function Navbar() {
           <span className="navicon flex items-center relative"></span>
         </label>
 
-        <ul className="navList menu md:border-none font-normal flex mr-5 mt-2 ml-5 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent">
-          <li className="navSer border-none text-center">
+        <ul className="navList menu md:border-none font-normal flex mr-5 md:mt-0 md:my-2 mt-2 ml-5 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent">
+          <li className="border-none text-center">
             <ScrollIntoView
               selector="#services"
               onClick={uncheckNav}
@@ -111,7 +107,7 @@ function Navbar() {
             </ScrollIntoView>
           </li>
 
-          <li className="border-none text-center">
+          <li className="navBlog border-none text-center">
             <Link
               to="/blog"
               target="_blank"

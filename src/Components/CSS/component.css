@@ -479,6 +479,10 @@
   }
   .nav ul li {
     border-bottom: 1px solid rgb(128, 126, 126);
+    margin: 0px 6px;
+  }
+  .navBlog {
+    border-bottom: none !important;
   }
 
   .navicon::before {

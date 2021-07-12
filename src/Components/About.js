@@ -11,14 +11,14 @@ function About() {
   const isVisible = useVisible(elemRef);
 
   // Function to detect scrolling and change theme based on that
-  const handleScroll = () => {
-    if (window.scrollY > 350) {
-      setScrollDetect(true);
-    } else {
-      setScrollDetect(false);
-    }
-  };
-  window.addEventListener("scroll", handleScroll);
+  // const handleScroll = () => {
+  //   if (window.scrollY > 350) {
+  //     setScrollDetect(true);
+  //   } else {
+  //     setScrollDetect(false);
+  //   }
+  // };
+  // window.addEventListener("scroll", handleScroll);
 
   return (
     <div id="teamCall" className="h-auto w-auto">
@@ -28,9 +28,7 @@ function About() {
             id="teamTitle"
             className="teamWords font-montserrat md:px-20 text-5xl mt-14 2xl:mt-0 mb-3 px-4 ml-"
           >
-            <h2 className={scrollDetect ? "text-black" : "text-white"}>
-              We're creative thinkers
-            </h2>
+            <h2 className="text-black">We're creative thinkers</h2>
             <h2 className="text-gray-500 md:mt-1">doing work that matters</h2>
           </div>
           <div className="aboutText font-montserrat text-gray-800 pt-4 md:pt-2 pb-2 pr-8 md:px-10 md:leading-6">
@@ -118,9 +116,7 @@ function About() {
             id="teamTitle"
             className="teamWords font-montserrat md:px-20 text-5xl mt-14 2xl:mt-0 mb-3 px-4"
           >
-            <h2 className={scrollDetect ? "text-black" : "text-white"}>
-              We're creative thinkers
-            </h2>
+            <h2 className="text-black">We're creative thinkers</h2>
             <h2 className="text-gray-500 md:mt-1">doing work that matters</h2>
           </div>
           <div className="aboutText font-montserrat text-gray-800 pt-4 md:pt-2 pb-2 pr-8 md:px-10 md:leading-6">

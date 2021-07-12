@@ -218,6 +218,10 @@ function Map() {
             <a href="tel:+918792384161">+91 8792384161</a> /{" "}
             <a href="tel:+917349571333">+91 7349571333</a>
           </p>
+          <p className="pl-2 text-base text-white pr-5 mb-5 tracking-wide">
+            <i class="fa fa-envelope pr-2 flex-shrink-0 text-white"></i>
+            <a href="mailto:info@genesismedia.com">info@genesismedia.com</a>
+          </p>
           <p className="text-base pl-2 text-white pr-5 mb-3">
             <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i> 65,
             1st Main, DB Sandra, Bengaluru-560097
@@ -236,7 +240,7 @@ function Map() {
             Made in-house with <span className="text-lg">❤️</span>
           </p> */}
           <p className="footerText text-center z-10 order-6 mb-5 text-gray-500">
-            Genesis Media © 2021, All Rights Reserved
+            Genesis Media © 2021 | All Rights Reserved
           </p>
         </div>
       </div>
