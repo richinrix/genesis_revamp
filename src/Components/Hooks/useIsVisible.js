@@ -1,3 +1,5 @@
+//This Hook is used to detect whether a given element is visible in the viewport
+
 import { useState, useEffect } from "react";
 
 const OPTIONS = {

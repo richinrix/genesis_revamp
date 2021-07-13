@@ -1,36 +1,25 @@
-import React, { useState, useEffect } from "react";
-// import HomeParticles from "./Essentials/HomeParticles";
-import PreLoader from "./Essentials/PreLoader";
+import React from "react";
 
 function Homepage({ toggleLoading }) {
-  const [loading, setLoading] = useState(true);
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
   return (
     <>
-      {/* {loading && <PreLoader />} */}
-
       <div
         id="homeContainer"
         className="flex relative homeContainer w-screen  h-screen top-0"
       >
-        {/* Enable the following div and disable video for the particles */}
-        {/* <div className="particleContainer">
-        <HomeParticles id="tsHome" />
-      </div> */}
         <video
-          className="absolute block w-100 md:w-screen h-screen md:opacity-90 opacity-100 md:object-cover object-fill"
+          className="absolute block w-100 md:w-screen h-screen md:opacity-100 opacity-100 md:object-cover object-fill"
           loop
           autoPlay
           muted
           onLoadedData={toggleLoading}
         >
           <source
+            // Changing source of video depending on size of the screen
             src={
               window.innerWidth > 700
-                ? "https://res.cloudinary.com/dmv4z5mmv/video/upload/v1625332241/homepage%20video/homepage_desktop_video_hp97gv.mp4"
-                : "https://res.cloudinary.com/dmv4z5mmv/video/upload/v1625332240/homepage%20video/homepage_phone_video_bkqlaf.mp4"
+                ? "https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3YvcyFBb3FPVmtqSmQwMzNibHNZRHRYdEtZMGlOeVE_ZT1KeW51a3I/root/content"
+                : "https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3YvcyFBb3FPVmtqSmQwMzNiM3lfa09EVlhzeDVuQ00_ZT1ZMmVOVXY/root/content"
             }
             type="video/mp4"
           />

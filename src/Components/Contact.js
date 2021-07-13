@@ -35,6 +35,7 @@ function Contact() {
     let val = event.target.value;
 
     const validateContactEmail = RegExp(
+      // eslint-disable-next-line
       /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     );
     const validateContactphone = RegExp(/^\d{10}$/i);

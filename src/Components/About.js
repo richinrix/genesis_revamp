@@ -1,27 +1,16 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import CountUp from "react-countup";
 import useVisible from "./Hooks/useIsVisible";
 import "./CSS/component.css";
 
 function About() {
-  const [scrollDetect, setScrollDetect] = useState(false);
-
   // Constants for custom Hook
   const elemRef = useRef();
   const isVisible = useVisible(elemRef);
 
-  // Function to detect scrolling and change theme based on that
-  // const handleScroll = () => {
-  //   if (window.scrollY > 350) {
-  //     setScrollDetect(true);
-  //   } else {
-  //     setScrollDetect(false);
-  //   }
-  // };
-  // window.addEventListener("scroll", handleScroll);
-
   return (
     <div id="teamCall" className="h-auto w-auto">
+      {/* Rendering two seperate divs for mobile and desktop versions */}
       {window.innerWidth > 767 ? (
         <div className="teamContainer h-auto flex flex-col mx-auto  sm:px-5 pt-10 w-screen left-">
           <div
@@ -76,6 +65,7 @@ function About() {
               <div className="teamPic relative object-cover w-screen">
                 <div className="aboutCounters absolute flex flex-col md:flex-row  top-0 mt-5 left-0 w-screen h-full z-10 text-white pb-5">
                   <div className="h-1/3 w-auto md:h-auto md:w-1/3  flex flex-row justify-center md:justify-end items-center gap-3">
+                    {/* Using a custom hook to start the counters when the div is in view */}
                     <div ref={elemRef} className="text-7xl">
                       {isVisible && <CountUp start={0} end={26} duration={5} />}
                     </div>

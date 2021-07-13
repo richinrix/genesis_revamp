@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ScrollIntoView from "react-scroll-into-view";
 import logoLite from "../images/icons/logoLite.png";
@@ -15,7 +15,7 @@ function Navbar() {
     document.getElementById("menu-btn").checked = false;
   }
 
-  // Function to detect scrolling and change theme based on that
+  // Function to detect scrolling and change navbar type based on that
   const handleScroll = () => {
     if (screenWidth > 500) {
       if (window.scrollY > 100) {
@@ -32,6 +32,7 @@ function Navbar() {
     }
   };
   window.addEventListener("scroll", handleScroll);
+
   return (
     <div className="navContainer">
       <nav
@@ -42,28 +43,30 @@ function Navbar() {
         }
       >
         <div className="flex flex-no-shrink items-center mr-6 pl-0 md:pl-2">
-          <a className="navLogo self-center" href="/#">
-            {window.innerWidth > 767 ? (
-              <img
-                className=" md:block"
-                src={scrollDetect ? logoLite : logoDark}
-                alt=""
-                srcset=""
-                style={{ height: "60px", width: "160px" }}
-              />
-            ) : (
-              <img
-                className=" md:block"
-                src={scrollDetect ? logoSmall : logoDark}
-                alt=""
-                srcset=""
-                style={
-                  scrollDetect
-                    ? { height: "60px", width: "60px" }
-                    : { height: "60px", width: "160px" }
-                }
-              />
-            )}
+          <a className="navLogo self-center md:pb-3" href="/#">
+            <button>
+              {window.innerWidth > 767 ? (
+                <img
+                  className=" md:block"
+                  src={scrollDetect ? logoLite : logoDark}
+                  alt=""
+                  srcset=""
+                  style={{ height: "60px", width: "160px" }}
+                />
+              ) : (
+                <img
+                  className=" md:block"
+                  src={scrollDetect ? logoSmall : logoDark}
+                  alt=""
+                  srcset=""
+                  style={
+                    scrollDetect
+                      ? { height: "60px", width: "60px" }
+                      : { height: "60px", width: "160px" }
+                  }
+                />
+              )}
+            </button>
           </a>
         </div>
 
@@ -75,14 +78,14 @@ function Navbar() {
           <span className="navicon flex items-center relative"></span>
         </label>
 
-        <ul className="navList menu md:border-none font-normal flex mr-5 md:mt-0 md:my-2 mt-2 ml-5 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent">
-          <li className="border-none text-center">
+        <ul className="navList menu md:border-none  font-normal flex mr-5 md:mt-0 md:my-2 mt-2 ml-5 items-center justify-end list-none m-0 p-0 w-screen md:w-auto  md:bg-transparent">
+          <li className="border-none text-center md:pb-3">
             <ScrollIntoView
               selector="#services"
               onClick={uncheckNav}
               className=" block md:inline-block  py-3 no-underline border-none text-black"
             >
-              <a className="cursor-pointer">Services</a>
+              <button className="cursor-pointer">Services</button>
             </ScrollIntoView>
           </li>
 
@@ -92,7 +95,7 @@ function Navbar() {
               className="block md:inline-block  py-3 no-underline border-none text-black"
               onClick={uncheckNav}
             >
-              <a className="cursor-pointer">Team</a>
+              <button className="cursor-pointer">Team</button>
             </ScrollIntoView>
           </li>
 
@@ -103,7 +106,7 @@ function Navbar() {
               onClick={uncheckNav}
               className="block md:inline-block  py-3 no-underline border-none text-black"
             >
-              <a className="cursor-pointer">Contact</a>
+              <button className="cursor-pointer">Contact</button>
             </ScrollIntoView>
           </li>
 
@@ -111,6 +114,7 @@ function Navbar() {
             <Link
               to="/blog"
               target="_blank"
+              rel="noreferrer"
               onClick={uncheckNav}
               className="block md:inline-block py-3 no-underline border-none text-black"
             >

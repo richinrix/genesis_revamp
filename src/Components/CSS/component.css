@@ -116,9 +116,7 @@
 .slideprev {
   display: none;
 }
-#testimonials {
-  /* min-width: 400px; */
-}
+
 #testimonial-card {
   transition-property: all;
   transition-duration: 500ms;
@@ -295,7 +293,7 @@
   margin-right: 7px;
 }
 
-/* ----------Map Page------------- */
+/* ----------Footer Page------------- */
 .mapContainer {
   background-color: rgb(32, 39, 58);
 }
@@ -536,6 +534,52 @@
     border: none;
     text-decoration: none;
     font-size: 17px;
+  }
+  .navList button {
+    padding: 0.5em 0.8em;
+    color: white !important;
+    position: relative;
+    font-weight: 400;
+    border: none;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .lite button {
+    color: white !important;
+  }
+  .navList button::before,
+  .navList button::after {
+    content: "";
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    transition: all 0.35s ease;
+    opacity: 0;
+  }
+  .navList button::before {
+    content: "";
+    right: 0;
+    top: 0;
+    border-top: 3px solid #ffd805;
+    border-right: 3px solid #e0c10e;
+    transform: translate(-100%, 50%);
+  }
+  .navList button:after {
+    content: "";
+    left: 0;
+    bottom: 0;
+    border-bottom: 3px solid #e0c10e;
+    border-left: 3px solid #ffd805;
+    transform: translate(100%, -50%);
+  }
+  .navList button:hover:before,
+  .navList button:hover:after {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  .navList button:hover,
+  .navList .lite a:hover {
+    color: black;
   }
   .lite a {
     color: white !important;

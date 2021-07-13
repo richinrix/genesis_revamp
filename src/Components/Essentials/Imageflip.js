@@ -23,7 +23,7 @@ const Imageflip = (props) => {
   const aosDuration = props.index * 250;
   const [flipped, setFlipped] = useState(false);
   const isPhone = window.innerWidth < 700;
-  const [initFlip, setInitFlip] = useState(false);
+  // const [initFlip, setInitFlip] = useState(false);
 
   // aos animation
   const cardAnimate = {

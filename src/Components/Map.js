@@ -6,9 +6,7 @@ import API from "./services/API";
 
 function Map() {
   const [email, setEmail] = useState("");
-  const [validEmail, setValidEmail] = useState(true);
   const [borderColor, setBorderColor] = useState("gray");
-  const [subbed, setSubbed] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const [newsTick, setNewsTick] = useState(false);
 
@@ -32,7 +30,6 @@ function Map() {
   function newsEmailSubmiteHandler(e) {
     e.preventDefault();
     if (validateNewsEmail(email)) {
-      setValidEmail(true);
       setBorderColor("black");
       e.target.value = null;
       axios.post(
@@ -56,12 +53,9 @@ function Map() {
       setNewsTick(true);
       document.getElementById("newsForm").reset();
       // document.getElementById("nMail").placeholder = "your@email.here";
-      setSubbed(true);
     } else {
       setBorderColor("red");
       alert("Invalid email!");
-      setValidEmail(false);
-      setSubbed(false);
     }
   }
 
@@ -130,6 +124,7 @@ function Map() {
               <a
                 className="block font-montserrat w-full"
                 target="_blank"
+                rel="noreferrer"
                 href="https://g.page/genesis-media-india?share"
               >
                 Get Directions
@@ -138,7 +133,6 @@ function Map() {
           </div>
         </div>
         <p className="w-screen font-montserrat text-center mt-10 pb-2 text-gray-500">
-          {/* Made in-house with <span className="text-sm">❤️</span> |  */}
           Genesis Media © 2021
         </p>
       </div>
@@ -155,6 +149,7 @@ function Map() {
               href="https://www.instagram.com/genesisproduction.in/"
               className="social-icons  flex relative text-center text-white overflow-hidden items-center content-center no-underline"
               target="_blank"
+              rel="noreferrer"
             >
               <i className="fa fa-instagram text-white"></i>
             </a>
@@ -162,6 +157,7 @@ function Map() {
               href="https://twitter.com/genesismedia_in"
               className="social-icons  flex relative text-center overflow-hidden items-center content-center no-underline"
               target="_blank"
+              rel="noreferrer"
             >
               <i className="fa fa-twitter"></i>
             </a>
@@ -169,6 +165,7 @@ function Map() {
               href="https://www.facebook.com/genesisproduction.in/"
               className="social-icons  flex relative text-center overflow-hidden items-center content-center no-underline"
               target="_blank"
+              rel="noreferrer"
             >
               <i className="fa fa-facebook"></i>
             </a>
@@ -176,6 +173,7 @@ function Map() {
               href="https://www.linkedin.com/company/genesis-production/"
               className="social-icons  flex relative text-center overflow-hidden items-center content-center no-underline"
               target="_blank"
+              rel="noreferrer"
             >
               <i className="fa fa-linkedin"></i>
             </a>
@@ -230,15 +228,12 @@ function Map() {
             <a
               className="block font-montserrat w-full"
               target="_blank"
+              rel="noreferrer"
               href="https://g.page/genesis-media-india?share"
             >
               Get Directions
             </a>
           </button>
-
-          {/* <p className="order-5 text-lg text-white text-center -ml-4 -mb-5">
-            Made in-house with <span className="text-lg">❤️</span>
-          </p> */}
           <p className="footerText text-center z-10 order-6 mb-5 text-gray-500">
             Genesis Media © 2021 | All Rights Reserved
           </p>

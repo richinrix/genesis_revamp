@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import handleViewport from "react-in-viewport";
 // image
 // import linesImg from "../../images/icons/services-line-and-dots.png";
@@ -26,11 +26,11 @@ const ServiceCard = (props) => {
   // }, [inViewport]);
 
   // aos styling settings for points in service
-  let servicePoint = {
-    duration: "600",
-    offset: "100",
-    easing: "linear",
-  };
+  // let servicePoint = {
+  //   duration: "600",
+  //   offset: "100",
+  //   easing: "linear",
+  // };
 
   function yellowRectangle(floatPos, color, phone = false) {
     let classname = floatPos === "left" ? " ml-10 " : " mr-10 ";
@@ -49,7 +49,7 @@ const ServiceCard = (props) => {
   }
   // video element
   function videoCard(video, YTvideo, classname, xval, xvalPh) {
-    const YTsrc = YTvideo + "?autoplay=1&mute=1";
+    // const YTsrc = YTvideo + "?autoplay=1&mute=1";
     return (
       <>
         {!isPhone ? (
@@ -71,6 +71,7 @@ const ServiceCard = (props) => {
               <iframe
                 src={YTvideo}
                 id="ytServiceImg"
+                title="ytServiceImg"
                 className={classname}
                 muted
                 frameborder="0"
@@ -94,6 +95,7 @@ const ServiceCard = (props) => {
           <iframe
             src={YTvideo}
             id="ytServiceImg"
+            title="ytServiceImg"
             className={classname}
             frameborder="0"
             disablePictureInPicture
@@ -165,7 +167,7 @@ const ServiceCard = (props) => {
 
     // parallax effect values for desktop and phone
     const yellowRectXval = floatPos === "left" ? [-20, 10] : [20, -10];
-    const yellowRectXvalPh = floatPos === "left" ? [-20, 10] : [20, -10];
+    // const yellowRectXvalPh = floatPos === "left" ? [-20, 10] : [20, -10];
     const imageXval = floatPos === "left" ? [-10, 5] : [10, -5];
     const imageXvalPh = floatPos === "left" ? [-10, 10] : [10, -10];
 

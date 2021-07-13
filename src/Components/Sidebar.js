@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./CSS/component.css";
 
 function Sidebar() {
+  //Function to detect scroll and then change icon colors based on that
   const [scrollDetect, setScrollDetect] = useState(false);
-
-  // Function to detect scrolling and change theme based on that
-  const screenWidth = useState(window.innerWidth);
-
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setScrollDetect(true);
@@ -28,6 +25,7 @@ function Sidebar() {
               : "social-icon slite flex relative text-center overflow-hidden content-center items-center text-gray-600"
           }
           target="_blank"
+          rel="noreferrer"
         >
           <i className="fa fa-instagram m-auto text-black z-1"></i>
         </a>
@@ -39,6 +37,7 @@ function Sidebar() {
               : "social-icon slite flex relative text-center overflow-hidden content-center items-center text-gray-600"
           }
           target="_blank"
+          rel="noreferrer"
         >
           <i className="fa fa-twitter m-auto text-black z-1"></i>
         </a>
@@ -50,6 +49,7 @@ function Sidebar() {
               : "social-icon slite flex relative text-center overflow-hidden content-center items-center text-gray-600"
           }
           target="_blank"
+          rel="noreferrer"
         >
           <i className="fa fa-facebook m-auto text-black z-1"></i>
         </a>
@@ -61,6 +61,7 @@ function Sidebar() {
               : "social-icon slite flex relative text-center overflow-hidden content-center items-center text-gray-600"
           }
           target="_blank"
+          rel="noreferrer"
         >
           <i className="fa fa-linkedin m-auto text-black z-1"></i>
         </a>
