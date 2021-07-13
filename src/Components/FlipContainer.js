@@ -74,8 +74,7 @@ export default function FlipContainer() {
               src={arrow}
               className=" md:-pt-1 -pt-4 -mx-3  flex-shrink-0"
               style={{ height: "28px", width: "80px" }}
-              alt=""
-              srcSet=""
+              alt="team arrow"
             />
           </Link>
         </div>

@@ -30,7 +30,7 @@ const Testimonials = ({ inViewport, forwardedRef }) => {
       setShown(true);
     } else if (!shown) setAutoPlay(false);
     else setAutoPlay(true);
-    // eslint-disable-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inViewport]);
 
   let getData = async () => {
