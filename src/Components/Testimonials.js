@@ -30,6 +30,7 @@ const Testimonials = ({ inViewport, forwardedRef }) => {
       setShown(true);
     } else if (!shown) setAutoPlay(false);
     else setAutoPlay(true);
+    // eslint-disable-line
   }, [inViewport]);
 
   let getData = async () => {
@@ -49,13 +50,6 @@ const Testimonials = ({ inViewport, forwardedRef }) => {
             isPhone={isPhone}
           />
         }
-      </SwiperSlide>
-    );
-  }
-  function currentPhoneView(cards, index) {
-    return (
-      <SwiperSlide className="mx-auto md:my-auto my-8 md:flex-row justify-center items-center">
-        {<TestimonialCard testimonial={cards} index={index} isPhone={true} />}
       </SwiperSlide>
     );
   }
