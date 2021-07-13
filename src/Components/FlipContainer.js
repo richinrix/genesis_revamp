@@ -75,7 +75,7 @@ export default function FlipContainer() {
               className=" md:-pt-1 -pt-4 -mx-3  flex-shrink-0"
               style={{ height: "28px", width: "80px" }}
               alt=""
-              srcset=""
+              srcSet=""
             />
           </Link>
         </div>
