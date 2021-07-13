@@ -50,7 +50,7 @@ function Navbar() {
                   className=" md:block"
                   src={scrollDetect ? logoLite : logoDark}
                   alt=""
-                  srcset=""
+                  srcSet=""
                   style={{ height: "60px", width: "160px" }}
                 />
               ) : (
@@ -58,7 +58,7 @@ function Navbar() {
                   className=" md:block"
                   src={scrollDetect ? logoSmall : logoDark}
                   alt=""
-                  srcset=""
+                  srcSet=""
                   style={
                     scrollDetect
                       ? { height: "60px", width: "60px" }

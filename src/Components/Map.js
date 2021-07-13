@@ -117,7 +117,7 @@ function Map() {
               <p className="font-montserrat"> info@genesismedia.com</p>
             </a>
             <p className="order-1 font-montserrat text-lg text-white md:pb-2 md:pr-0 pr-5">
-              <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>
+              <i className="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>
               65, 1st Main, DB Sandra, Bengaluru-560097 <br />
             </p>
             <button className="bg-white  mt-2 mr-64 font-montserrat items-start btn btn-white uppercase no-underline	block font-medium">
@@ -212,17 +212,17 @@ function Map() {
         </div>
         <div className="mapFooter flex flex-col justify-between pt-4 ">
           <p className="pl-2 text-base text-white pr-5 mb-5">
-            <i class="fa fa-phone pr-1.5 flex-shrink-0 text-white"></i>
+            <i className="fa fa-phone pr-1.5 flex-shrink-0 text-white"></i>
             <a href="tel:+918792384161">+91 8792384161</a> /{" "}
             <a href="tel:+917349571333">+91 7349571333</a>
           </p>
           <p className="pl-2 text-base text-white pr-5 mb-5 tracking-wide">
-            <i class="fa fa-envelope pr-2 flex-shrink-0 text-white"></i>
+            <i className="fa fa-envelope pr-2 flex-shrink-0 text-white"></i>
             <a href="mailto:info@genesismedia.com">info@genesismedia.com</a>
           </p>
           <p className="text-base pl-2 text-white pr-5 mb-3">
-            <i class="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i> 65,
-            1st Main, DB Sandra, Bengaluru-560097
+            <i className="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>{" "}
+            65, 1st Main, DB Sandra, Bengaluru-560097
           </p>
           <button className="bg-white ml-2 w-40 font-montserrat items-start btn btn-white uppercase no-underline	block font-medium">
             <a
