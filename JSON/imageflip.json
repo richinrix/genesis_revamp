@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Vidya ",
+    "desktopImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255195/Team%20images%20WebP/team_images/vidya-3_s2inih_iuqcug.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255196/Team%20images%20WebP/desktop_doodles/vidya_doodle_lpp6do_kw2vrg.webp"
+    },
+    "phoneImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255193/Team%20images%20WebP/team_images/Copy_of_DSC_0059_zy0noc.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255197/Team%20images%20WebP/phone_doodles/vidya_doodle_pzg03o_hgufuj.webp"
+    }
+  },
+  {
+    "name": "Sarvesh ",
+    "desktopImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255193/Team%20images%20WebP/team_images/Copy_of_DSC_0072_knpoo4.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255195/Team%20images%20WebP/desktop_doodles/sarvesh_doodle_r6rktr_gh042i.webp"
+    },
+    "phoneImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255193/Team%20images%20WebP/team_images/Copy_of_DSC_0072_knpoo4.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255197/Team%20images%20WebP/phone_doodles/sarvesh_doodle_o7q544_tes7fl.webp"
+    }
+  },
+  {
+    "name": "Deepak ",
+    "desktopImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255194/Team%20images%20WebP/team_images/deepak_2_uvuiow_qns6yz.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255195/Team%20images%20WebP/desktop_doodles/deepak_doodle_nhgfu9.webp"
+    },
+    "phoneImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255194/Team%20images%20WebP/team_images/deepak_2_lxbhmz.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255196/Team%20images%20WebP/phone_doodles/deepak_doodle_fmjapn_d4dbdw.webp"
+    }
+  },
+  {
+    "name": "Dheeraj ",
+    "desktopImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255194/Team%20images%20WebP/team_images/dheeraj_ranhex.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255195/Team%20images%20WebP/desktop_doodles/dheeraj_doodle_tea0r0_idhl8p.webp"
+    },
+    "phoneImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255193/Team%20images%20WebP/team_images/Copy_of_DSC_0042_rg5hi6_vsdnpg.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255196/Team%20images%20WebP/phone_doodles/dheeraj_doodle_jlgk3u_m9afol.webp"
+    }
+  },
+  {
+    "name": "Sharan ",
+    "desktopImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255195/Team%20images%20WebP/team_images/sharan_oduef3.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255196/Team%20images%20WebP/desktop_doodles/sharan_doodle_khgqq2_agw9vq.webp"
+    },
+    "phoneImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255193/Team%20images%20WebP/team_images/Copy_of_DSC_0081_r12kir.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255197/Team%20images%20WebP/phone_doodles/sharan_doodle_a4tikf_ric3ua.webp"
+    }
+  },
+  {
+    "name": "Ashwin ",
+    "desktopImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255193/Team%20images%20WebP/team_images/Copy_of_DSC_0057_x8verz.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255195/Team%20images%20WebP/desktop_doodles/ashwin_doodle_azpc06_fmh6li.webp"
+    },
+    "phoneImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255193/Team%20images%20WebP/team_images/Copy_of_DSC_0057_x8verz.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255196/Team%20images%20WebP/phone_doodles/ashwin_doodle_b9crip_jkrap4.webp"
+    }
+  },
+  {
+    "name": "Rohith ",
+    "desktopImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255195/Team%20images%20WebP/team_images/rohith-2__khzsid.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255195/Team%20images%20WebP/desktop_doodles/rohit_doodle_d1y0sr_oaqrv0.webp"
+    },
+    "phoneImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255193/Team%20images%20WebP/team_images/Copy_of_DSC_0073_heoscj.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255197/Team%20images%20WebP/phone_doodles/rohit_doodle_maihl6_g7w1hd.webp"
+    }
+  },
+  {
+    "name": "Ragini ",
+    "desktopImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255194/Team%20images%20WebP/team_images/imageedit_ragini_o3x3xj.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255195/Team%20images%20WebP/desktop_doodles/ragini_doodle_xzqumf.webp"
+    },
+    "phoneImg": {
+      "frontImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255194/Team%20images%20WebP/team_images/Copy_of_DSC_0106_fx6t8z.webp",
+      "backImage": "https://res.cloudinary.com/dmv4z5mmv/image/upload/v1626255197/Team%20images%20WebP/phone_doodles/ragini_doodle_ho7y5p_g4sjgj.webp"
+    }
+  }
+]

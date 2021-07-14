@@ -1,0 +1,62 @@
+[
+  {
+    "heading": "Development",
+    "blockColor": "#fc564a",
+    "description": "Good design makes a strong and lasting impression of a brand on people. Turning creative designs into functional products is a skill that comes easily to us.",
+    "points": [
+      "UI Design",
+      "Website Development",
+      "AR Integrated Web Development",
+      "Application Development",
+      "Ecommerce Application"
+    ],
+    "video": "https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3YvcyFBb3FPVmtqSmQwMzNiUDhrem54cV9pTEc4V0E_ZT1KNmg5RFA/root/content"
+  },
+  {
+    "heading": "Branding",
+    "blockColor": "#1da479",
+    "description": "Proper branding brings an invaluable personal dimension to your business.",
+    "points": [
+      "Consultation",
+      "Market Research",
+      "Logo Design",
+      "Archetype Defenition",
+      "Visual Design",
+      "Collateral Design",
+      "Launch Strategy"
+    ],
+    "video": "https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3YvcyFBb3FPVmtqSmQwMzNiV1FPYnVscFl0dnk3SDQ_ZT0zU1FBak4/root/content"
+  },
+  {
+    "heading": "Marketing",
+    "blockColor": "#26428c",
+    "description": "By blending great ideas and technology, we ensure that you have all the ingredients to make the right noises in the market.",
+    "points": [
+      "SEO",
+      "Social Media Marketing",
+      "Content Marketing",
+      "Website Automation",
+      "E-mail Marketing",
+      "E-commerce Marketing",
+      "Campagn Optimization",
+      "Influencer Marketing",
+      "Marketing Psychology",
+      "Market analysis / Data Analysis"
+    ],
+
+    "video": "https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3YvcyFBb3FPVmtqSmQwMzNhN0J6QU1ZM2NEaTBqcUk_ZT1PZmI4SWs/root/content"
+  },
+  {
+    "heading": "Production",
+    "blockColor": "#f3d605",
+    "description": "Being authentic is vital to a brand’s legacy. Our in-house production team is dedicated to creating rich media content on the fly.",
+    "points": [
+      "Commercial AD Films",
+      "Product Photography",
+      "Copy Writing",
+      "Creative Design"
+    ],
+    "image": null,
+    "YTvideo": "https://www.youtube.com/embed/4DRnhmdUu8A"
+  }
+]
