@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Switch, Route, Redirect, HashRouter as Hash } from "react-router-dom";
 import "./App.css";
 import "../src/Components/CSS/component.css";
-
 //Components
 import Homepage from "./Components/Homepage";
 import Navbar from "./Components/Navbar";
@@ -12,10 +11,12 @@ import About from "./Components/About";
 import FlipContainer from "./Components/FlipContainer";
 import Testimonials from "./Components/Testimonials";
 import Contact from "./Components/Contact";
-import ComingSoon from "./Components/Essentials/ComingSoon";
 import Services from "./Components/Services";
 import Map from "./Components/Map";
 import PreLoader from "./Components/Essentials/PreLoader";
+const ComingSoon = React.lazy(() =>
+  import("./Components/Essentials/ComingSoon")
+);
 
 function App() {
   return (

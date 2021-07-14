@@ -4,8 +4,8 @@ import React from "react";
 // import linesImg from "../../images/icons/services-line-and-dots.png";
 import linesImg from "../../images/icons/services-line-and-dots-new.png";
 import linesImgBlack from "../../images/icons/services-line-and-dots-new.png";
-
 // other modules
+import ReactPlayer from "react-player/lazy";
 import { Parallax } from "react-scroll-parallax";
 // import ReactPlayer from "react-player/lazy";
 
@@ -68,8 +68,10 @@ const ServiceCard = (props) => {
                 <source src={video} type="video/mp4" />
               </video>
             ) : (
-              <iframe
-                src={YTvideo}
+              <ReactPlayer
+                url={YTvideo}
+                height="340px"
+                width="575px"
                 id="ytServiceImg"
                 title="ytServiceImg"
                 className={classname}
@@ -77,7 +79,7 @@ const ServiceCard = (props) => {
                 frameborder="0"
                 disablePictureInPicture
                 style={{ border: "none" }}
-              ></iframe>
+              ></ReactPlayer>
             )}
           </Parallax>
         ) : video ? (
@@ -92,15 +94,17 @@ const ServiceCard = (props) => {
             <source src={video} type="video/mp4" />
           </video>
         ) : (
-          <iframe
-            src={YTvideo}
+          <ReactPlayer
+            url={YTvideo}
+            height="150px"
+            width="80%"
             id="ytServiceImg"
             title="ytServiceImg"
             className={classname}
             frameborder="0"
             disablePictureInPicture
             style={{ border: "none" }}
-          ></iframe>
+          ></ReactPlayer>
         )}
       </>
     );
