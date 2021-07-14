@@ -32,7 +32,7 @@ const Card = (props) => {
         className="absolute md:left-8 left-4 md:top-8 top-3 "
         src={image}
         style={{ width: "20px" }}
-        alt=""
+        alt="quote"
       />
       {/* text  */}
       <div className=" leading-snug  my-auto  text-xs overflow-hidden text-justify md:pt-4">
@@ -56,7 +56,7 @@ const Card = (props) => {
         <img
           className="mx-auto  -mb-5 mt-3"
           src={IMAGES.stars5}
-          alt=""
+          alt="stars"
           style={{ height: "20px", width: "100px" }}
         />
       </div>
