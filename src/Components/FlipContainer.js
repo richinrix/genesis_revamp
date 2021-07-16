@@ -54,7 +54,7 @@ export default function FlipContainer() {
         <div className="">
           <div
             id="image-flip-wrapper"
-            className=" flex flex-wrap md:pt-6 lg:justify-start justify-center lg:w-max"
+            className=" flex flex-wrap md:pt-6 lg:justify-start justify-center lg:w-max z-20"
           >
             {/* limiting the cards to 8 if the cards are more than 8  */}
             {cards &&
@@ -64,7 +64,7 @@ export default function FlipContainer() {
             to="/career"
             data-aos="slide-up"
             data-aos-once
-            className=" right-24  md:text-xl   md:mt-2 mt-8 md:mb-8  font-lato flex justify-items-end "
+            className=" right-24  md:text-xl   md:mt-2 mt-8 md:mb-8  font-lato flex justify-items-end z-10"
             style={{ float: "right" }}
           >
             <div className="font-normal font-montserrat justify-end ">

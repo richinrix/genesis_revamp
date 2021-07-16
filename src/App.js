@@ -14,9 +14,10 @@ import Contact from "./Components/Contact";
 import Services from "./Components/Services";
 import Map from "./Components/Map";
 import PreLoader from "./Components/Essentials/PreLoader";
-const ComingSoon = React.lazy(() =>
-  import("./Components/Essentials/ComingSoon")
-);
+import ComingSoon from "./Components/Essentials/ComingSoon";
+// const ComingSoon = React.lazy(() =>
+//   import("./Components/Essentials/ComingSoon")
+// );
 
 function App() {
   return (
