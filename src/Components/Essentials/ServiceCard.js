@@ -1,13 +1,9 @@
 import React from "react";
 // import handleViewport from "react-in-viewport";
-// image
-// import linesImg from "../../images/icons/services-line-and-dots.png";
 import linesImg from "../../images/icons/services-line-and-dots-new.png";
 import linesImgBlack from "../../images/icons/services-line-and-dots-new.png";
 // other modules
-import ReactPlayer from "react-player/lazy";
 import { Parallax } from "react-scroll-parallax";
-// import ReactPlayer from "react-player/lazy";
 
 const ServiceCard = (props) => {
   const { service, index } = props;
@@ -68,8 +64,9 @@ const ServiceCard = (props) => {
                 <source src={video} type="video/mp4" />
               </video>
             ) : (
-              <ReactPlayer
-                url={YTvideo}
+              // youtubeplayer dependency was replaced with iframe for timebeing since youtube videos werent being used, this mi8 not work if we use youtube video again,
+              <iframe
+                src={YTvideo}
                 height="340px"
                 width="575px"
                 id="ytServiceImg"
@@ -79,7 +76,7 @@ const ServiceCard = (props) => {
                 frameborder="0"
                 disablePictureInPicture
                 style={{ border: "none" }}
-              ></ReactPlayer>
+              ></iframe>
             )}
           </Parallax>
         ) : video ? (
@@ -94,8 +91,8 @@ const ServiceCard = (props) => {
             <source src={video} type="video/mp4" />
           </video>
         ) : (
-          <ReactPlayer
-            url={YTvideo}
+          <iframe
+            src={YTvideo}
             height="150px"
             width="80%"
             id="ytServiceImg"
@@ -104,7 +101,7 @@ const ServiceCard = (props) => {
             frameborder="0"
             disablePictureInPicture
             style={{ border: "none" }}
-          ></ReactPlayer>
+          ></iframe>
         )}
       </>
     );
