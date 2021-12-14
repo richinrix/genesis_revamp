@@ -24,9 +24,9 @@ function PreLoader() {
         <div className="bracket left"></div>
         <div className="bracket right"></div>
         <div className="small top">
-          <span className="first-letter">d</span>esign.
-          <span className="first-letter">d</span>evelop.
-          <span className="first-letter">e</span>volve.
+          <span className="first-letter">d</span>esign.{" "}
+          <span className="first-letter">d</span>evelop.{" "}
+          <span className="first-letter">e</span>volve.{" "}
         </div>
       </div>
     </div>
