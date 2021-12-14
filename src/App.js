@@ -40,6 +40,7 @@ const Home = () => {
   const toggleLoading = () => {
     setLoading(false);
   };
+  setTimeout(toggleLoading, 3000);
 
   //Function that closes navbar on phone when clicked anywhere else
   function uncheckNav() {

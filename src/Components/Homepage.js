@@ -12,7 +12,7 @@ function Homepage({ toggleLoading }) {
           loop
           autoPlay
           muted
-          onLoadedData={toggleLoading}
+          // onLoadedData={toggleLoading}
         >
           <source
             // Changing source of video depending on size of the screen
