@@ -110,11 +110,11 @@ function Map() {
               </p>
             </div>
             <a
-              href="mailto:info@genesismedia.com"
+              href="mailto:info@genesisdesign.in"
               className="mapPhone flex text-lg text-white mb-3 flex-row pb-5"
             >
               <i className="fa fa-envelope pt-1 pr-1.5"> </i>
-              <p className="font-montserrat"> info@genesismedia.com</p>
+              <p className="font-montserrat"> info@genesisdesign.in</p>
             </a>
             <p className="order-1 font-montserrat text-lg text-white md:pb-2 md:pr-0 pr-5">
               <i className="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>
@@ -218,7 +218,7 @@ function Map() {
           </p>
           <p className="pl-2 text-base text-white pr-5 mb-5 tracking-wide">
             <i className="fa fa-envelope pr-2 flex-shrink-0 text-white"></i>
-            <a href="mailto:info@genesismedia.com">info@genesismedia.com</a>
+            <a href="mailto:info@genesisdesign.in">info@genesisdesign.in</a>
           </p>
           <p className="text-base pl-2 text-white pr-5 mb-3">
             <i className="fa fa-map-marker pr-1.5 flex-shrink-0 text-white"></i>{" "}
